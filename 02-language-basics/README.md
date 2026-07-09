@@ -160,12 +160,29 @@ Arrays are fixed-size, zero-indexed containers of a single type.
 int[] numbers = new int[5];          // five zeros
 int[] primes  = {2, 3, 5, 7, 11};   // initialized
 
-for (int p : primes) {               // enhanced for loop
+primes[0]   // → 2  (first element)
+primes[4]   // → 11 (last element)
+primes[5]   // → ArrayIndexOutOfBoundsException at runtime!
+
+for (int i = 0; i < primes.length; i++) {
+    System.out.println("primes[" + i + "] = " + primes[i]);
+}
+// primes[0] = 2
+// primes[1] = 3
+// primes[2] = 5
+// primes[3] = 7
+// primes[4] = 11
+```
+
+Arrays know their length: `primes.length` is `5`. Indices go from `0` to `length - 1`. There is no bounds checking at compile time — accessing an invalid index throws `ArrayIndexOutOfBoundsException` at runtime.
+
+When you don't need the index, the enhanced `for` loop is more concise:
+
+```java
+for (int p : primes) {
     System.out.println(p);
 }
 ```
-
-Arrays know their length: `primes.length` is `5`. There is no bounds checking at compile time — accessing an invalid index throws `ArrayIndexOutOfBoundsException` at runtime.
 
 ## Examples
 
