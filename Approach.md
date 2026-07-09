@@ -11,6 +11,14 @@ This table of contents is synthesized from patterns across the Java education ec
 - **Online courses** (Coursera, Udemy, Pluralsight) — popular Java courses tend to converge on a similar structure.
 - **JEP history and release notes** — knowing which features landed in which version (records in 16, sealed in 17, virtual threads in 21) informed where modern features got placed.
 
+## Tooling Decisions
+
+| Area | Choice | Version |
+|------|--------|---------|
+| Java | Latest LTS | 25 |
+| Build system | Maven | |
+| Testing framework | JUnit | 6 |
+
 ## Key Design Decisions
 
 ### 1. Nine parts instead of fewer, larger ones
