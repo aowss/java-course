@@ -65,20 +65,26 @@
 - Custom exceptions
 - Best practices (Effective Java)
 
-### 9. Strings and Text
+### 9. Packages and Modules
+
+- Package naming and organization
+- The module system (JPMS): `module-info.java`
+- Exports, requires, services
+
+### 10. Strings and Text
 
 - `String`, `StringBuilder`, `StringBuffer`
 - Text blocks
 - Formatting and regular expressions
 
-### 10. Generics
+### 11. Generics
 
 - Generic classes and methods
 - Bounded type parameters
 - Wildcards (`?`, `? extends`, `? super`)
 - Type erasure and limitations
 
-### 11. Collections Framework
+### 12. Collections Framework
 
 - `List`, `Set`, `Map`, `Queue`, `Deque`
 - Implementations: `ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, `HashMap`, `TreeMap`
@@ -86,14 +92,14 @@
 - Iterators and the enhanced `for` loop
 - Sequenced collections (Java 21+)
 
-### 12. Functional Programming
+### 13. Functional Programming
 
 - Lambda expressions
 - Method references
 - `java.util.function` — `Predicate`, `Function`, `Consumer`, `Supplier`
 - Composing and chaining functions
 
-### 13. Streams API
+### 14. Streams API
 
 - Creating streams
 - Intermediate operations: `filter`, `map`, `flatMap`, `sorted`, `distinct`
@@ -101,7 +107,7 @@
 - Collectors: `toList`, `groupingBy`, `partitioningBy`, `joining`
 - Parallel streams — when and when not to use them
 
-### 14. The Optional Type
+### 15. The Optional Type
 
 - Creating and unwrapping
 - Chaining with `map`, `flatMap`, `filter`, `or`
@@ -109,7 +115,7 @@
 
 ## Part IV: I/O
 
-### 15. I/O and NIO
+### 16. I/O and NIO
 
 - Byte streams and character streams
 - `Path`, `Files`, `FileSystem` (NIO.2)
@@ -118,34 +124,28 @@
 
 ## Part V: Concurrency
 
-### 16. Threads and Synchronization
+### 17. Threads and Synchronization
 
 - Creating threads (`Thread`, `Runnable`)
 - Thread lifecycle
 - `synchronized`, `volatile`, locks
 - Common pitfalls: deadlock, livelock, starvation
 
-### 17. Concurrency Utilities
+### 18. Concurrency Utilities
 
 - `ExecutorService` and thread pools
 - `Future`, `CompletableFuture`
 - Concurrent collections (`ConcurrentHashMap`, `CopyOnWriteArrayList`)
 - Atomic variables
 
-### 18. Virtual Threads (Project Loom)
+### 19. Virtual Threads (Project Loom)
 
 - Motivation and mental model
 - Creating and using virtual threads
 - Structured concurrency
 - Migration considerations
 
-## Part VI: Modules, Packages, and the Build Ecosystem
-
-### 19. Packages and Modules
-
-- Package naming and organization
-- The module system (JPMS): `module-info.java`
-- Exports, requires, services
+## Part VI: Build Tools
 
 ### 20. Build Tools
 

@@ -236,7 +236,7 @@ mvn test -Dtest="course.ch02.exercises.ArrayStatsTest"
 - Prefer `int` for integers and `double` for floating-point unless you have a specific reason for another type.
 - Use `final` for values that should not change.
 - `var` is a convenience for local variables — it does not weaken type safety.
-- Arrays are fixed-size; for dynamic collections, use the Collections Framework (Chapter 11).
+- Arrays are fixed-size; for dynamic collections, use the Collections Framework (Chapter 12).
 
 ## Further Reading
 

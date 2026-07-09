@@ -77,17 +77,17 @@
         <module>06-interfaces</module>
         <module>07-encapsulation-and-data-modeling</module>
         <module>08-exception-handling</module>
-        <module>09-strings-and-text</module>
-        <module>10-generics</module>
-        <module>11-collections-framework</module>
-        <module>12-functional-programming</module>
-        <module>13-streams-api</module>
-        <module>14-the-optional-type</module>
-        <module>15-io-and-nio</module>
-        <module>16-threads-and-synchronization</module>
-        <module>17-concurrency-utilities</module>
-        <module>18-virtual-threads</module>
-        <module>19-packages-and-modules</module>
+        <module>09-packages-and-modules</module>
+        <module>10-strings-and-text</module>
+        <module>11-generics</module>
+        <module>12-collections-framework</module>
+        <module>13-functional-programming</module>
+        <module>14-streams-api</module>
+        <module>15-the-optional-type</module>
+        <module>16-io-and-nio</module>
+        <module>17-threads-and-synchronization</module>
+        <module>18-concurrency-utilities</module>
+        <module>19-virtual-threads</module>
         <module>20-build-tools</module>
         <module>21-unit-testing-with-junit</module>
         <module>22-mocking-and-integration-testing</module>
