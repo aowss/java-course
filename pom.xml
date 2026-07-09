@@ -51,15 +51,54 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.5.5</version>
+                    <configuration>
+                        <!-- Exercise tests are for students; they fail until implemented. -->
+                        <excludes>
+                            <exclude>**/exercises/*Test.java</exclude>
+                        </excludes>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
     </build>
 
     <modules>
         <module>01-introduction-to-java</module>
         <module>02-language-basics</module>
         <module>03-methods</module>
+        <module>04-classes-and-objects</module>
+        <module>05-inheritance-and-polymorphism</module>
+        <module>06-interfaces</module>
+        <module>07-encapsulation-and-data-modeling</module>
+        <module>08-strings-and-text</module>
+        <module>09-generics</module>
+        <module>10-collections-framework</module>
+        <module>11-functional-programming</module>
+        <module>12-streams-api</module>
+        <module>13-the-optional-type</module>
+        <module>14-exception-handling</module>
+        <module>15-io-and-nio</module>
+        <module>16-threads-and-synchronization</module>
+        <module>17-concurrency-utilities</module>
+        <module>18-virtual-threads</module>
+        <module>19-packages-and-modules</module>
+        <module>20-build-tools</module>
+        <module>21-unit-testing-with-junit</module>
+        <module>22-mocking-and-integration-testing</module>
+        <module>23-annotations-and-reflection</module>
+        <module>24-date-and-time-api</module>
+        <module>25-networking-basics</module>
+        <module>26-database-access-with-jdbc</module>
+        <module>27-modern-java-features</module>
+        <module>28-jvm-internals</module>
+        <module>29-design-principles-and-patterns</module>
+        <module>30-capstone-project</module>
     </modules>
 
 </project>

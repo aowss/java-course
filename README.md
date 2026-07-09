@@ -107,11 +107,13 @@ mvn compile
 mvn compile -pl 03-methods
 ```
 
-**Run all tests in a chapter:**
+**Run example tests in a chapter:**
 
 ```bash
 mvn test -pl 03-methods
 ```
+
+Exercise tests are excluded from the default run — use `-Dtest` to run one explicitly (see step 3).
 
 **Run a specific test class:**
 
@@ -133,11 +135,7 @@ mvn clean
 
 ### Understanding the output
 
-When you run `mvn test`, Maven will:
-
-1. **Compile** the main source code (`src/main/java`).
-2. **Compile** the test source code (`src/test/java`).
-3. **Run** the tests and report results.
+When you run `mvn test`, Maven compiles sources and runs **example** tests only.
 
 A passing test run looks like:
 
@@ -146,7 +144,7 @@ A passing test run looks like:
 [INFO] BUILD SUCCESS
 ```
 
-A failing test (which is expected when you haven't implemented the exercise yet) looks like:
+When you run an exercise test with `-Dtest`, failures are expected until you implement the `// TODO` methods:
 
 ```
 [ERROR] Tests run: 4, Failures: 0, Errors: 3, Skipped: 0
