@@ -57,20 +57,28 @@
 
 ## Part III: Core APIs and Language Features
 
-### 8. Strings and Text
+### 8. Exception Handling
+
+- Checked vs. unchecked exceptions
+- The `throws` clause (including optional declaration of runtime exceptions)
+- `try-catch-finally`, try-with-resources
+- Custom exceptions
+- Best practices (Effective Java)
+
+### 9. Strings and Text
 
 - `String`, `StringBuilder`, `StringBuffer`
 - Text blocks
 - Formatting and regular expressions
 
-### 9. Generics
+### 10. Generics
 
 - Generic classes and methods
 - Bounded type parameters
 - Wildcards (`?`, `? extends`, `? super`)
 - Type erasure and limitations
 
-### 10. Collections Framework
+### 11. Collections Framework
 
 - `List`, `Set`, `Map`, `Queue`, `Deque`
 - Implementations: `ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, `HashMap`, `TreeMap`
@@ -78,14 +86,14 @@
 - Iterators and the enhanced `for` loop
 - Sequenced collections (Java 21+)
 
-### 11. Functional Programming
+### 12. Functional Programming
 
 - Lambda expressions
 - Method references
 - `java.util.function` — `Predicate`, `Function`, `Consumer`, `Supplier`
 - Composing and chaining functions
 
-### 12. Streams API
+### 13. Streams API
 
 - Creating streams
 - Intermediate operations: `filter`, `map`, `flatMap`, `sorted`, `distinct`
@@ -93,20 +101,13 @@
 - Collectors: `toList`, `groupingBy`, `partitioningBy`, `joining`
 - Parallel streams — when and when not to use them
 
-### 13. The Optional Type
+### 14. The Optional Type
 
 - Creating and unwrapping
 - Chaining with `map`, `flatMap`, `filter`, `or`
 - Anti-patterns to avoid
 
-## Part IV: Error Handling and I/O
-
-### 14. Exception Handling
-
-- Checked vs. unchecked exceptions
-- `try-catch-finally`, try-with-resources
-- Custom exceptions
-- Best practices
+## Part IV: I/O
 
 ### 15. I/O and NIO
 

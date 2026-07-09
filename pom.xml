@@ -76,13 +76,13 @@
         <module>05-inheritance-and-polymorphism</module>
         <module>06-interfaces</module>
         <module>07-encapsulation-and-data-modeling</module>
-        <module>08-strings-and-text</module>
-        <module>09-generics</module>
-        <module>10-collections-framework</module>
-        <module>11-functional-programming</module>
-        <module>12-streams-api</module>
-        <module>13-the-optional-type</module>
-        <module>14-exception-handling</module>
+        <module>08-exception-handling</module>
+        <module>09-strings-and-text</module>
+        <module>10-generics</module>
+        <module>11-collections-framework</module>
+        <module>12-functional-programming</module>
+        <module>13-streams-api</module>
+        <module>14-the-optional-type</module>
         <module>15-io-and-nio</module>
         <module>16-threads-and-synchronization</module>
         <module>17-concurrency-utilities</module>
