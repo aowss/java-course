@@ -17,11 +17,11 @@ This course targets **Java 25**, the latest Long-Term Support (LTS) release.
 
 **Install:**
 
-| OS | Recommended method |
-|----|-------------------|
-| macOS | `brew install --cask temurin@25` or download the `.dmg` from Oracle |
-| Linux | Package manager (`apt`, `dnf`, `pacman`) or download the `.tar.gz` |
-| Windows | Download the `.msi` installer from Oracle |
+| OS      | Recommended method                                                   |
+|---------|----------------------------------------------------------------------|
+| macOS   | `brew install --cask temurin@25` or download the `.dmg` from Oracle  |
+| Linux   | Package manager (`apt`, `dnf`, `pacman`) or download the `.tar.gz`   |
+| Windows | Download the `.msi` installer from Oracle                            |
 
 **Verify your installation:**
 
@@ -53,10 +53,10 @@ This course uses **Maven** as its build system. Any version 3.9+ will work (late
 
 **Install:**
 
-| OS | Recommended method |
-|----|-------------------|
-| macOS | `brew install maven` |
-| Linux | Package manager or download and extract manually |
+| OS      | Recommended method                                                       |
+|---------|--------------------------------------------------------------------------|
+| macOS   | `brew install maven`                                                     |
+| Linux   | Package manager or download and extract manually                         |
 | Windows | Download the `.zip`, extract, and add the `bin` directory to your `PATH` |
 
 **Manual installation (all platforms):**

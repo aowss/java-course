@@ -13,11 +13,11 @@ This table of contents is synthesized from patterns across the Java education ec
 
 ## Tooling Decisions
 
-| Area | Choice | Version |
-|------|--------|---------|
-| Java | Latest LTS | 25 |
-| Build system | Maven | |
-| Testing framework | JUnit | 6 |
+| Area              | Choice     | Version |
+|-------------------|------------|---------|
+| Java              | Latest LTS | 25      |
+| Build system      | Maven      |         |
+| Testing framework | JUnit      | 6       |
 
 ## Structural Decisions
 

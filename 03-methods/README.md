@@ -148,11 +148,11 @@ public static void demo() {
 
 ## Examples
 
-| File | Demonstrates |
-|------|-------------|
-| [`MethodBasics.java`](src/main/java/course/ch03/examples/MethodBasics.java) | Defining, calling, return types, pass-by-value |
-| [`Overloading.java`](src/main/java/course/ch03/examples/Overloading.java) | Overloaded methods and resolution rules |
-| [`VarargsDemo.java`](src/main/java/course/ch03/examples/VarargsDemo.java) | Varargs syntax and usage |
+| File                                                                             | Demonstrates                                    |
+|----------------------------------------------------------------------------------|-------------------------------------------------|
+| [`MethodBasics.java`](src/main/java/course/ch03/examples/MethodBasics.java)      | Defining, calling, return types, pass-by-value   |
+| [`Overloading.java`](src/main/java/course/ch03/examples/Overloading.java)        | Overloaded methods and resolution rules          |
+| [`VarargsDemo.java`](src/main/java/course/ch03/examples/VarargsDemo.java)        | Varargs syntax and usage                         |
 
 ## Exercises
 

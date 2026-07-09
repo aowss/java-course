@@ -15,10 +15,10 @@
 
 Before diving into types, it's worth understanding *why* Java requires you to declare the type of every variable.
 
-| Typing | When types are checked | What it means | Examples |
-|--------|----------------------|---------------|----------|
-| **Static** | At **compile time** | Every variable has a fixed type. The compiler rejects type errors before the program runs. | Java, C, C++, Rust, Go |
-| **Dynamic** | At **runtime** | Variables can hold any type. Type errors only surface when the faulty line executes. | Python, Ruby, JavaScript |
+| Typing       | When types are checked | What it means                                                                              | Examples                  |
+|--------------|------------------------|--------------------------------------------------------------------------------------------|---------------------------|
+| **Static**   | At **compile time**    | Every variable has a fixed type. The compiler rejects type errors before the program runs.  | Java, C, C++, Rust, Go    |
+| **Dynamic**  | At **runtime**         | Variables can hold any type. Type errors only surface when the faulty line executes.         | Python, Ruby, JavaScript  |
 
 In Python, you can write:
 
@@ -45,16 +45,16 @@ x = "hello";      // ✗ compile error: still an int
 
 Java has exactly eight primitive types. Everything else is a reference type.
 
-| Type | Size | Range | Default | Use case |
-|------|------|-------|---------|----------|
-| `byte` | 8 bits | -128 to 127 | 0 | Raw binary data, I/O |
-| `short` | 16 bits | -32,768 to 32,767 | 0 | Rarely used |
-| `int` | 32 bits | -2³¹ to 2³¹-1 | 0 | General-purpose integer |
-| `long` | 64 bits | -2⁶³ to 2⁶³-1 | 0L | Large counts, timestamps |
-| `float` | 32 bits | ~±3.4×10³⁸ | 0.0f | Rarely used (prefer `double`) |
-| `double` | 64 bits | ~±1.8×10³⁰⁸ | 0.0 | Floating-point math |
-| `char` | 16 bits | '\u0000' to '\uffff' | '\u0000' | Single Unicode character |
-| `boolean` | — | `true` / `false` | `false` | Logical flags |
+| Type      | Size    | Range                  | Default    | Use case                       |
+|-----------|---------|------------------------|------------|--------------------------------|
+| `byte`    | 8 bits  | -128 to 127            | 0          | Raw binary data, I/O           |
+| `short`   | 16 bits | -32,768 to 32,767      | 0          | Rarely used                    |
+| `int`     | 32 bits | -2³¹ to 2³¹-1          | 0          | General-purpose integer        |
+| `long`    | 64 bits | -2⁶³ to 2⁶³-1          | 0L         | Large counts, timestamps       |
+| `float`   | 32 bits | ~±3.4×10³⁸             | 0.0f       | Rarely used (prefer `double`)  |
+| `double`  | 64 bits | ~±1.8×10³⁰⁸            | 0.0        | Floating-point math            |
+| `char`    | 16 bits | '\u0000' to '\uffff'   | '\u0000'   | Single Unicode character       |
+| `boolean` | —       | `true` / `false`       | `false`    | Logical flags                  |
 
 **Literals:**
 
@@ -80,14 +80,14 @@ var name = "Alice";         // type inferred as String (Java 10+)
 
 ### Operators
 
-| Category | Operators |
-|----------|----------|
-| Arithmetic | `+`, `-`, `*`, `/`, `%` |
-| Relational | `==`, `!=`, `<`, `>`, `<=`, `>=` |
-| Logical | `&&`, `\|\|`, `!` |
-| Bitwise | `&`, `\|`, `^`, `~`, `<<`, `>>`, `>>>` |
-| Assignment | `=`, `+=`, `-=`, `*=`, `/=`, `%=` |
-| Ternary | `condition ? valueIfTrue : valueIfFalse` |
+| Category   | Operators                                  |
+|------------|--------------------------------------------|
+| Arithmetic | `+`, `-`, `*`, `/`, `%`                    |
+| Relational | `==`, `!=`, `<`, `>`, `<=`, `>=`           |
+| Logical    | `&&`, `\|\|`, `!`                          |
+| Bitwise    | `&`, `\|`, `^`, `~`, `<<`, `>>`, `>>>`    |
+| Assignment | `=`, `+=`, `-=`, `*=`, `/=`, `%=`          |
+| Ternary    | `condition ? valueIfTrue : valueIfFalse`   |
 
 **Integer division truncates:** `7 / 2` evaluates to `3`, not `3.5`.
 
@@ -186,11 +186,11 @@ for (int p : primes) {
 
 ## Examples
 
-| File | Demonstrates |
-|------|-------------|
-| [`PrimitiveTypes.java`](src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitive types, literals, and ranges |
-| [`ControlFlow.java`](src/main/java/course/ch02/examples/ControlFlow.java) | `if`, enhanced `switch`, all loop forms |
-| [`ArrayBasics.java`](src/main/java/course/ch02/examples/ArrayBasics.java) | Array creation, access, iteration, common pitfalls |
+| File                                                                               | Demonstrates                                      |
+|------------------------------------------------------------------------------------|--------------------------------------------------|
+| [`PrimitiveTypes.java`](src/main/java/course/ch02/examples/PrimitiveTypes.java)    | All eight primitive types, literals, and ranges    |
+| [`ControlFlow.java`](src/main/java/course/ch02/examples/ControlFlow.java)          | `if`, enhanced `switch`, all loop forms            |
+| [`ArrayBasics.java`](src/main/java/course/ch02/examples/ArrayBasics.java)          | Array creation, access, iteration, common pitfalls |
 
 ## Exercises
 

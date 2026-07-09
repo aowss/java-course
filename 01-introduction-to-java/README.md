@@ -21,11 +21,11 @@ Java was created by James Gosling at Sun Microsystems in 1995. Its core design p
 
 ### JDK, JRE, JVM
 
-| Component | What it is | Contains |
-|-----------|-----------|----------|
-| **JVM** (Java Virtual Machine) | The runtime engine that executes bytecode | Interpreter, JIT compiler, garbage collector |
-| **JRE** (Java Runtime Environment) | Everything needed to *run* Java programs | JVM + standard library (rt.jar / modules) |
-| **JDK** (Java Development Kit) | Everything needed to *develop* Java programs | JRE + `javac`, `jshell`, `jpackage`, debugger, etc. |
+| Component                        | What it is                                      | Contains                                             |
+|----------------------------------|------------------------------------------------|------------------------------------------------------|
+| **JVM** (Java Virtual Machine)   | The runtime engine that executes bytecode       | Interpreter, JIT compiler, garbage collector         |
+| **JRE** (Java Runtime Environment) | Everything needed to *run* Java programs       | JVM + standard library (rt.jar / modules)            |
+| **JDK** (Java Development Kit)   | Everything needed to *develop* Java programs    | JRE + `javac`, `jshell`, `jpackage`, debugger, etc.  |
 
 > Since Java 11, the JRE is no longer distributed separately. The JDK is the only download.
 
@@ -33,10 +33,10 @@ Java was created by James Gosling at Sun Microsystems in 1995. Its core design p
 
 Programming languages are often described as either **compiled** or **interpreted**, but the distinction is really about implementation strategy, not the language itself.
 
-| Strategy | How it works | Examples |
-|----------|-------------|----------|
-| **Compiled** | Source code is translated to machine code *before* execution. The compiler catches errors early and produces a fast binary, but it's platform-specific. | C, C++, Rust, Go |
-| **Interpreted** | Source code is read and executed line by line at runtime. No separate compilation step, but errors only surface when the faulty line runs. | Python, Ruby, JavaScript (historically) |
+| Strategy         | How it works                                                                                                                                      | Examples                               |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| **Compiled**     | Source code is translated to machine code *before* execution. The compiler catches errors early and produces a fast binary, but it's platform-specific. | C, C++, Rust, Go                       |
+| **Interpreted**  | Source code is read and executed line by line at runtime. No separate compilation step, but errors only surface when the faulty line runs.           | Python, Ruby, JavaScript (historically) |
 
 **Java does both.** `javac` compiles source code to **bytecode** — an intermediate representation that is neither source code nor native machine code. The JVM then interprets this bytecode at runtime. For frequently executed code paths, the JVM's **JIT (Just-In-Time) compiler** goes further and compiles bytecode to optimized native machine code on the fly.
 
@@ -103,10 +103,10 @@ mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 
 ## Examples
 
-| File | Demonstrates |
-|------|-------------|
-| [`HelloWorld.java`](src/main/java/course/ch01/examples/HelloWorld.java) | Minimal Java program — class, main method, println |
-| [`JvmInfo.java`](src/main/java/course/ch01/examples/JvmInfo.java) | Querying JVM properties at runtime |
+| File                                                                     | Demonstrates                                       |
+|--------------------------------------------------------------------------|---------------------------------------------------|
+| [`HelloWorld.java`](src/main/java/course/ch01/examples/HelloWorld.java)  | Minimal Java program — class, main method, println |
+| [`JvmInfo.java`](src/main/java/course/ch01/examples/JvmInfo.java)        | Querying JVM properties at runtime                 |
 
 ## Exercises
 
