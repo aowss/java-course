@@ -19,6 +19,52 @@ This table of contents is synthesized from patterns across the Java education ec
 | Build system | Maven | |
 | Testing framework | JUnit | 6 |
 
+## Structural Decisions
+
+### Flat chapter folders
+
+Each chapter is a top-level directory numbered `01-` through `29-`. No nesting by part — the part groupings exist in the TOC for reading order, but nesting in the filesystem adds depth without benefit. The chapter numbers encode the order.
+
+### Multi-module Maven project
+
+A root `pom.xml` defines shared configuration (Java version, JUnit dependency, plugin versions). Each chapter is a Maven module with a minimal `pom.xml` that inherits from the parent. This lets a student build the whole course or work on a single chapter independently.
+
+### Consistent chapter structure
+
+Every chapter follows the same layout:
+
+```
+NN-chapter-name/
+  README.md                           # The lesson: objectives, concepts, examples, exercises
+  pom.xml                             # Module POM inheriting from root
+  src/
+    main/java/course/chNN/
+      examples/                       # Runnable, annotated example code
+      exercises/                      # Skeleton code with TODOs for the student
+    test/java/course/chNN/
+      examples/                       # Tests that demonstrate the examples
+      exercises/                      # Tests that validate the exercises
+  solutions/course/chNN/exercises/    # Complete exercise solutions
+```
+
+### Test-driven exercises
+
+Every exercise comes with a pre-written test suite. The student gets skeleton code with `// TODO` markers and runs the tests to check their work. The expected behavior is defined by the tests, not by vague instructions.
+
+### Three exercise tiers per chapter
+
+1. **Guided** — heavily scaffolded, one method to fill in.
+2. **Practice** — less scaffolding, student designs the solution within constraints.
+3. **Challenge** — minimal guidance, may combine concepts from prior chapters.
+
+### Solutions alongside each chapter
+
+Solutions live in a `solutions/` subfolder inside each chapter, keeping them close to the exercises while clearly separated.
+
+### Best practices enforced by example
+
+The example code *is* the style guide: proper naming, access modifiers, Javadoc on public APIs, no wildcard imports, `final` where appropriate. No separate style guide document — the code demonstrates the standard.
+
 ## Key Design Decisions
 
 ### 1. Nine parts instead of fewer, larger ones
