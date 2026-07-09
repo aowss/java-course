@@ -2,6 +2,7 @@
 
 ## Objectives
 
+- Understand the difference between static and dynamic typing, and why Java chose static
 - Know Java's eight primitive types and when to use each
 - Declare variables, constants, and use type inference with `var`
 - Write expressions using arithmetic, relational, logical, and bitwise operators
@@ -9,6 +10,36 @@
 - Create, access, and iterate over arrays
 
 ## Concepts
+
+### Static vs. Dynamic Typing
+
+Before diving into types, it's worth understanding *why* Java requires you to declare the type of every variable.
+
+| Typing | When types are checked | What it means | Examples |
+|--------|----------------------|---------------|----------|
+| **Static** | At **compile time** | Every variable has a fixed type. The compiler rejects type errors before the program runs. | Java, C, C++, Rust, Go |
+| **Dynamic** | At **runtime** | Variables can hold any type. Type errors only surface when the faulty line executes. | Python, Ruby, JavaScript |
+
+In Python, you can write:
+
+```python
+x = 42
+x = "hello"   # no error — x just changes type
+```
+
+In Java, this is a compile error:
+
+```java
+int x = 42;
+x = "hello";   // ✗ compile error: incompatible types
+```
+
+Static typing catches entire categories of bugs before you ever run the program. The trade-off is verbosity — you must declare types. Java's `var` keyword (Java 10+) reduces that verbosity without sacrificing static typing: the compiler still infers and enforces the exact type, you just don't write it out.
+
+```java
+var x = 42;       // compiler infers int — x is still statically typed as int
+x = "hello";      // ✗ compile error: still an int
+```
 
 ### Primitive Types
 

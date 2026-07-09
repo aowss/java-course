@@ -3,6 +3,7 @@
 ## Objectives
 
 - Understand Java's design philosophy and where it fits in the programming landscape
+- Distinguish between compiled and interpreted languages, and understand why Java is both
 - Distinguish between the JDK, JRE, and JVM
 - Compile and run a Java program from the command line
 - Understand the relationship between source code, bytecode, and the JVM
@@ -28,19 +29,35 @@ Java was created by James Gosling at Sun Microsystems in 1995. Its core design p
 
 > Since Java 11, the JRE is no longer distributed separately. The JDK is the only download.
 
+### Compiled vs. Interpreted Languages
+
+Programming languages are often described as either **compiled** or **interpreted**, but the distinction is really about implementation strategy, not the language itself.
+
+| Strategy | How it works | Examples |
+|----------|-------------|----------|
+| **Compiled** | Source code is translated to machine code *before* execution. The compiler catches errors early and produces a fast binary, but it's platform-specific. | C, C++, Rust, Go |
+| **Interpreted** | Source code is read and executed line by line at runtime. No separate compilation step, but errors only surface when the faulty line runs. | Python, Ruby, JavaScript (historically) |
+
+**Java does both.** `javac` compiles source code to **bytecode** — an intermediate representation that is neither source code nor native machine code. The JVM then interprets this bytecode at runtime. For frequently executed code paths, the JVM's **JIT (Just-In-Time) compiler** goes further and compiles bytecode to optimized native machine code on the fly.
+
+This two-stage approach gives Java the best of both worlds:
+- The compiler catches type errors, missing methods, and syntax problems *before* the program runs.
+- Bytecode is platform-independent, enabling "write once, run anywhere."
+- JIT compilation delivers near-native performance for hot code paths.
+
 ### Compilation and Execution
 
 ```
   Source code (.java)
         │
         ▼
-    javac (compiler)
+    javac (compiler)          ← ahead-of-time compilation
         │
         ▼
   Bytecode (.class)
         │
         ▼
-    java (JVM)
+    java (JVM)                ← interpretation + JIT compilation
         │
         ▼
    Program output
@@ -48,7 +65,7 @@ Java was created by James Gosling at Sun Microsystems in 1995. Its core design p
 
 1. You write source code in `.java` files.
 2. `javac` compiles source code into `.class` files containing bytecode.
-3. `java` launches the JVM, which loads and executes the bytecode.
+3. `java` launches the JVM, which loads and executes the bytecode. Hot code paths are JIT-compiled to native machine code for performance.
 
 Bytecode is platform-independent. The JVM is platform-specific. This is the mechanism behind "write once, run anywhere."
 
