@@ -89,11 +89,11 @@ To understand how methods, variables, and objects interact at runtime, you need 
         │  │ main()                                    │  │
         │  │   greeting = ──► (reference to "Hi")      │  │
         │  │   primes   = ──► (reference to int[])     │  │
-        │  │   count    = 42  (primitive, stored here)  │  │
+        │  │   count    = 42  (primitive, stored here) │  │
         │  └───────────────────────────────────────────┘  │
         │  ┌───────────────────────────────────────────┐  │
         │  │ add(a=3, b=4)                             │  │
-        │  │   result   = 7   (primitive, stored here)  │  │
+        │  │   result   = 7   (primitive, stored here) │  │
         │  └───────────────────────────────────────────┘  │
         └─────────────────────────────────────────────────┘
 ```
