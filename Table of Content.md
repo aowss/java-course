@@ -22,6 +22,7 @@
 - Defining and calling methods
 - Parameters, return types, overloading
 - Variable arguments (varargs)
+- Stack and heap — memory model for method calls and objects
 - Scope and lifetime
 
 ## Part II: Object-Oriented Programming
@@ -200,15 +201,23 @@
 - Unnamed variables and patterns
 - Foreign Function & Memory API (overview)
 
+### 28. JVM Internals
+
+- Class loading lifecycle (load, link, initialize)
+- Memory areas in depth: stack, heap, metaspace, program counter
+- Garbage collection (generational GC, GC roots, pauses)
+- JIT compilation (tiered compilation, C1/C2)
+- Diagnostic tools (`jcmd`, `jfr`, `jmap`, `jstack`)
+
 ## Part IX: Putting It All Together
 
-### 28. Design Principles and Patterns
+### 29. Design Principles and Patterns
 
 - SOLID principles
 - Common patterns: Strategy, Observer, Factory, Builder, Singleton
 - When patterns help and when they hurt
 
-### 29. Capstone Project
+### 30. Capstone Project
 
 - Requirements and design
 - Implementation walkthrough

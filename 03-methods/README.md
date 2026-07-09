@@ -5,6 +5,7 @@
 - Define methods with parameters and return types
 - Understand method overloading and how the compiler resolves calls
 - Use varargs for variable-length argument lists
+- Understand the stack and heap memory model and how it relates to pass-by-value
 - Reason about variable scope and lifetime
 
 ## Concepts
@@ -66,11 +67,74 @@ Rules:
 - It must be the **last** parameter.
 - Inside the method, it is an `int[]` (or whatever the declared type is).
 
+### Stack and Heap
+
+To understand how methods, variables, and objects interact at runtime, you need a mental model of where things live in memory.
+
+```
+        ┌─────────────────────────────────────────────────┐
+        │                     HEAP                        │
+        │  (shared, long-lived)                           │
+        │                                                 │
+        │   ┌──────────────┐    ┌──────────────────────┐  │
+        │   │ String "Hi"  │    │ int[] {2, 3, 5, 7}   │  │
+        │   └──────────────┘    └──────────────────────┘  │
+        │          ▲                      ▲               │
+        └──────────┼──────────────────────┼───────────────┘
+                   │                      │
+        ┌──────────┼──────────────────────┼───────────────┐
+        │  STACK   │                      │               │
+        │          │                      │               │
+        │  ┌───────┴──────────────────────┴────────────┐  │
+        │  │ main()                                    │  │
+        │  │   greeting = ──► (reference to "Hi")      │  │
+        │  │   primes   = ──► (reference to int[])     │  │
+        │  │   count    = 42  (primitive, stored here)  │  │
+        │  └───────────────────────────────────────────┘  │
+        │  ┌───────────────────────────────────────────┐  │
+        │  │ add(a=3, b=4)                             │  │
+        │  │   result   = 7   (primitive, stored here)  │  │
+        │  └───────────────────────────────────────────┘  │
+        └─────────────────────────────────────────────────┘
+```
+
+**The stack** holds method calls. Each method invocation creates a **stack frame** containing its parameters and local variables. When the method returns, its frame is popped and all its locals are gone. Stack memory is fast, automatic, and scoped to the method call.
+
+**The heap** holds objects and arrays. They are created with `new` (or implicitly, like string literals) and live until no references point to them, at which point the **garbage collector** reclaims the memory.
+
+**Key rules:**
+- **Primitives** (`int`, `double`, `boolean`, etc.) are stored directly in the stack frame.
+- **Objects and arrays** are stored on the heap. The variable on the stack holds a **reference** (a pointer) to the heap object.
+- When you pass a variable to a method, Java copies the value on the stack — the primitive value itself, or the reference. This is why Java is **pass-by-value**: the method gets its own copy of the reference, not the object itself.
+
+```java
+public static void tryToReassign(String s) {
+    s = "changed";   // reassigns the local copy of the reference
+}
+
+String greeting = "hello";
+tryToReassign(greeting);
+// greeting is still "hello" — the method only changed its own copy
+```
+
+```java
+public static void modifyArray(int[] arr) {
+    arr[0] = 999;    // follows the reference to the same heap object
+}
+
+int[] numbers = {1, 2, 3};
+modifyArray(numbers);
+// numbers[0] is now 999 — both references point to the same array
+```
+
+> We cover the heap, garbage collection, and JVM memory areas in depth in Chapter 28.
+
 ### Scope and Lifetime
 
 - **Local variables** exist from declaration to the end of their enclosing block.
 - **Parameters** are local variables scoped to the method body.
 - **A variable declared inside a loop** is created and destroyed on each iteration.
+- When a method returns, its **stack frame** is destroyed and all its locals cease to exist.
 
 ```java
 public static void demo() {
