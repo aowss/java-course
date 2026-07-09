@@ -105,15 +105,42 @@ if (score >= 90) {
 }
 ```
 
+**`switch` statement (classic form):**
+
+```java
+switch (day) {
+    case "MONDAY":
+    case "TUESDAY":
+        System.out.println("Start of the week");
+        break;
+    case "WEDNESDAY":
+        System.out.println("Midweek");
+        break;
+    case "SATURDAY":
+    case "SUNDAY":
+        System.out.println("Weekend");
+        break;
+    default:
+        System.out.println("Other");
+        break;
+}
+```
+
+Each `case` falls through to the next unless you add `break`. Forgetting `break` is a common source of bugs — the code silently executes the next case's body. Grouping cases (like `MONDAY` and `TUESDAY` above) is the only legitimate use of fall-through.
+
 **Enhanced `switch` (expression form, Java 14+):**
+
+The arrow (`->`) form eliminates fall-through entirely and can return a value:
 
 ```java
 String label = switch (day) {
-    case MONDAY, FRIDAY    -> "Work";
-    case SATURDAY, SUNDAY  -> "Rest";
-    default                -> "Midweek";
+    case "MONDAY", "FRIDAY"    -> "Work";
+    case "SATURDAY", "SUNDAY"  -> "Rest";
+    default                    -> "Midweek";
 };
 ```
+
+Prefer the enhanced form in new code — it is more concise, safer (no fall-through), and can be used as an expression (assigning the result to a variable).
 
 **Loops:**
 
