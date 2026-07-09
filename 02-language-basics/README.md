@@ -84,8 +84,8 @@ var name = "Alice";         // type inferred as String (Java 10+)
 |----------|----------|
 | Arithmetic | `+`, `-`, `*`, `/`, `%` |
 | Relational | `==`, `!=`, `<`, `>`, `<=`, `>=` |
-| Logical | `&&`, `||`, `!` |
-| Bitwise | `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>` |
+| Logical | `&&`, `\|\|`, `!` |
+| Bitwise | `&`, `\|`, `^`, `~`, `<<`, `>>`, `>>>` |
 | Assignment | `=`, `+=`, `-=`, `*=`, `/=`, `%=` |
 | Ternary | `condition ? valueIfTrue : valueIfFalse` |
 
