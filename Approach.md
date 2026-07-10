@@ -23,7 +23,7 @@ This table of contents is synthesized from patterns across the Java education ec
 
 ### Flat chapter folders
 
-Each chapter is a top-level directory numbered `01-` through `29-`. No nesting by part — the part groupings exist in the TOC for reading order, but nesting in the filesystem adds depth without benefit. The chapter numbers encode the order.
+Each chapter is a top-level directory numbered `01-` through `30-`. No nesting by part — the part groupings exist in the TOC for reading order, but nesting in the filesystem adds depth without benefit. The chapter numbers encode the order.
 
 ### Multi-module Maven project
 
@@ -36,6 +36,7 @@ Every chapter follows the same layout:
 ```
 NN-chapter-name/
   README.md                           # The lesson: objectives, concepts, examples, exercises
+  slides.md                           # Marp source per chapter (see slides/README.md)
   pom.xml                             # Module POM inheriting from root
   src/
     main/java/course/chNN/
@@ -45,6 +46,11 @@ NN-chapter-name/
       examples/                       # Tests that demonstrate the examples
       exercises/                      # Tests that validate the exercises
   solutions/course/chNN/exercises/    # Complete exercise solutions
+
+slides/
+  full-course.html                    # Reveal.js deck for all chapters (generated)
+  build-full-deck.sh                  # Build script
+  reveal-theme.css                    # Full-course styling
 ```
 
 ### Test-driven exercises

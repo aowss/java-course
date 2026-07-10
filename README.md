@@ -4,6 +4,11 @@ A practical, example-driven Java course from language foundations to advanced to
 
 See the [Table of Content](Table%20of%20Content.md) for the full curriculum and the [Approach](Approach.md) for the design rationale.
 
+Every chapter includes a slide deck for classroom or video use:
+
+- **Full course** — run `./slides/build-full-deck.sh`, then open [`slides/full-course.html`](slides/full-course.html) (Reveal.js: **→** chapter, **↓** slide). See [`slides/README.md`](slides/README.md).
+- **Per chapter** — `slides.md` in each chapter folder (Marp). Same guide covers editing and single-chapter export.
+
 ## Prerequisites
 
 ### Java Development Kit (JDK) 25

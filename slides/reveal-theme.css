@@ -1,0 +1,286 @@
+/* Java Course — Reveal.js theme (edit freely, then rebuild full-course.html) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --jc-primary: #1a5276;
+  --jc-primary-light: #2e86ab;
+  --jc-accent: #e67e22;
+  --jc-bg: #f4f6f8;
+  --jc-surface: #ffffff;
+  --jc-text: #2c3e50;
+  --jc-muted: #5d6d7e;
+  --jc-code-bg: #1e2a32;
+  --jc-border: #d5dbdb;
+}
+
+/* Base */
+.reveal {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--jc-text);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 0.5em 1em;
+}
+
+.reveal .slides section:not(.stack):not([data-background]):not([data-background-color]):not([data-background-image]) {
+  background: var(--jc-surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(26, 82, 118, 0.08);
+}
+
+/* Horizontal chapter stacks must stay transparent so title backgrounds show through */
+.reveal .slides section.stack {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Headings */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+.reveal h1 {
+  font-size: 1.9em;
+  color: var(--jc-primary);
+  margin-bottom: 0.3em;
+}
+
+.reveal h2 {
+  font-size: 1.35em;
+  color: var(--jc-primary);
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 3px solid var(--jc-accent);
+  display: block;
+  width: fit-content;
+}
+
+.reveal h3 {
+  font-size: 1.05em;
+  color: var(--jc-primary-light);
+}
+
+/* Dark / chapter title slides */
+.reveal .slides section[data-background-color] h1,
+.reveal .slides section[data-background-color] h2,
+.reveal .slides section[data-background-gradient] h1,
+.reveal .slides section[data-background-gradient] h2 {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.reveal .slides section[data-background-color],
+.reveal .slides section[data-background-gradient] {
+  color: #e8f4f8;
+  box-shadow: none;
+}
+
+.reveal .slides section[data-background-color] strong,
+.reveal .slides section[data-background-gradient] strong {
+  color: #ffffff;
+}
+
+/* Tables on dark slides — cells are white, so keep text dark */
+.reveal .slides section[data-background-color] table td,
+.reveal .slides section[data-background-gradient] table td {
+  color: var(--jc-text);
+}
+
+.reveal .slides section[data-background-color] table td strong,
+.reveal .slides section[data-background-gradient] table td strong {
+  color: var(--jc-primary);
+}
+
+/* Intro slide — centered title + navigation table on light card */
+.reveal .slides section.intro-slide {
+  text-align: center;
+}
+
+.reveal .slides section.intro-slide h1,
+.reveal .slides section.intro-slide h2 {
+  text-align: center;
+}
+
+.reveal .slides section.intro-slide h2 {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .slides section.intro-slide table {
+  margin: 1.4em auto 0;
+  max-width: 82%;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+/* Body text on content slides only (not dark chapter titles) */
+.reveal .slides section:not([data-background-color]):not([data-background-gradient]) p,
+.reveal .slides section:not([data-background-color]):not([data-background-gradient]) li {
+  line-height: 1.55;
+  color: var(--jc-text);
+}
+
+.reveal ul {
+  display: block;
+  margin-left: 0.5em;
+}
+
+.reveal li {
+  margin-bottom: 0.35em;
+}
+
+.reveal li::marker {
+  color: var(--jc-accent);
+}
+
+/* Tables */
+.reveal table {
+  font-size: 0.72em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.8em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.reveal table th {
+  background: var(--jc-primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6em 0.9em;
+  text-align: left;
+}
+
+.reveal table td {
+  padding: 0.55em 0.9em;
+  border-bottom: 1px solid var(--jc-border);
+  background: var(--jc-surface);
+}
+
+.reveal table tr:nth-child(even) td {
+  background: #f8fafb;
+}
+
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Code */
+.reveal code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.88em;
+  background: #eef2f5;
+  color: #c0392b;
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+}
+
+.reveal pre {
+  margin: 0.8em 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.reveal pre code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.52em;
+  line-height: 1.45;
+  max-height: 460px;
+  padding: 1em 1.2em;
+  background: var(--jc-code-bg);
+  color: #abb2bf;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Blockquotes / callout notes (markdown `>` lines) */
+.reveal blockquote {
+  background: #eaf2f8;
+  border-left: 4px solid var(--jc-accent);
+  padding: 0.55em 0.9em;
+  margin: 0.8em 0 0;
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+  font-size: 0.78em;
+  line-height: 1.45;
+  color: var(--jc-muted);
+  box-shadow: none;
+}
+
+.reveal blockquote p {
+  margin: 0;
+}
+
+/* Links */
+.reveal a {
+  color: var(--jc-primary-light);
+}
+
+/* Slide number & progress */
+.reveal .slide-number {
+  background: var(--jc-primary);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.reveal .progress span {
+  background: var(--jc-accent);
+}
+
+/* Navigation hint */
+.nav-hint {
+  position: fixed;
+  bottom: 14px;
+  left: 16px;
+  z-index: 40;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--jc-muted);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--jc-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.nav-hint kbd {
+  display: inline-block;
+  background: var(--jc-bg);
+  border: 1px solid var(--jc-border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--jc-primary);
+}
+
+/* Overview mode */
+.reveal .overview .slides section {
+  border-radius: 8px;
+}
+
+/* Background canvas */
+.reveal .backgrounds {
+  background: var(--jc-bg);
+}
