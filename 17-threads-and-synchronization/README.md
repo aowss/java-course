@@ -140,6 +140,16 @@ synchronized (buffer) {
 - **Livelock** — Threads keep responding to each other without making progress (e.g., both yield and retry indefinitely).
 - **Starvation** — A thread never gets CPU time because other threads dominate the lock. Fix: use fair locks (`new ReentrantLock(true)`) or redesign the locking strategy.
 
+## Common Mistakes
+
+- **Calling `run()` instead of `start()`** — `run()` executes on the **current** thread. Only `start()` creates a new thread of execution.
+- **Using `volatile` for `count++`** — `volatile` gives visibility, not atomicity. Compound read-modify-write still races; use `synchronized`, `AtomicInteger`, or concurrent utilities.
+- **Synchronizing on the wrong object** — two threads locking different monitors do not exclude each other. Ensure all threads use the **same** lock instance for shared state.
+- **`if` instead of `while` with `wait()`** — always loop: `while (!condition) wait();`. A single `if` misses spurious wakeups and multiple waiters waking at once.
+- **Calling `wait()`/`notify()` without holding the lock** — these methods require ownership of the monitor; otherwise you get `IllegalMonitorStateException`.
+- **Holding locks during slow I/O** — blocks other threads for the entire network/disk wait. Keep critical sections short; do not guard entire HTTP calls with `synchronized`.
+- **Inconsistent lock ordering** — thread A locks `lock1` then `lock2` while thread B does the reverse → deadlock. Acquire locks in a fixed global order (see also **Common Pitfalls** above).
+
 ## Examples
 
 | File                                                                                     | Demonstrates                                               |

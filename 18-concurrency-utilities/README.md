@@ -96,6 +96,16 @@ count.getAndUpdate(x -> x * 2);            // atomic read-modify-write
 
 These are faster than `synchronized` for simple counters and flags because they use hardware CAS instructions instead of locks.
 
+## Common Mistakes
+
+- **Forgetting `shutdown()`** — a running `ExecutorService` keeps the JVM alive. Call `shutdown()` and `awaitTermination()` (or use try-with-resources on Java 19+ executors).
+- **Submitting unbounded work to `newCachedThreadPool()`** — under load it creates unbounded threads. Use a fixed pool or virtual-thread executor with backpressure at the application level.
+- **`Future.get()` on the same pool that runs the task** — with a single-thread executor, submitting work and then `get()` on the same thread from within a pool task can deadlock. Structure tasks to avoid self-blocking.
+- **Ignoring `CompletableFuture` failures** — `join()` and `get()` propagate exceptions, but fire-and-forget `supplyAsync` without `exceptionally`/`handle` can lose errors silently in logs.
+- **Using `HashMap` from multiple threads** — even read-only concurrent access during a resize can corrupt the map. Use `ConcurrentHashMap` or external synchronization.
+- **`ConcurrentHashMap` compound ops without atomic methods** — `if (!map.containsKey(k)) map.put(k, v)` races. Use `putIfAbsent`, `compute`, or `merge`.
+- **Blocking inside `parallelStream()` tasks on a limited pool** — can exhaust the common `ForkJoinPool` and stall unrelated parallel streams. Keep pool tasks short or use a dedicated executor.
+
 ## Examples
 
 | File                                                                                                  | Demonstrates                                                       |

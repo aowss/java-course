@@ -117,6 +117,17 @@ Use parallel streams when:
 
 Avoid parallel streams for small data sets, I/O-bound work, or when order matters.
 
+## Common Mistakes
+
+- **Reusing a stream** — once a terminal operation runs, the stream is consumed. Call `collection.stream()` again for a second pipeline.
+- **Side effects in `forEach`** — mutating an external `ArrayList` from `forEach` works sequentially but is fragile and breaks with parallel streams. Prefer `collect(toList())`.
+- **`map` when you need `flatMap`** — `stream.map(line -> line.split(" "))` gives `Stream<String[]>`, not `Stream<String>`. Use `flatMap(line -> Arrays.stream(line.split(" ")))`.
+- **Assuming intermediate ops run without a terminal op** — `filter` and `map` are lazy. Nothing happens until you call `collect`, `count`, `forEach`, or another terminal operation.
+- **Modifying the source during a pipeline** — adding to a list while streaming it causes `ConcurrentModificationException` (or worse, silent bugs with parallel streams).
+- **`parallelStream()` on small or I/O-bound work** — splitting overhead often exceeds the gain. Parallel streams suit large, in-memory, CPU-bound, side-effect-free workloads.
+- **Relying on encounter order in parallel streams** — `forEachOrdered` preserves order but costs performance; unordered parallel pipelines may return results in arbitrary order.
+- **Confusing `Stream` with `Collection`** — a stream is a one-shot view, not a data structure you can store and revisit.
+
 ## Examples
 
 | File                                                                                    | Demonstrates                                           |

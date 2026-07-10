@@ -146,6 +146,17 @@ Additional rules:
 - **Use try-with-resources** — never rely on `finally` alone for closing resources.
 - **Use exception chaining** — pass the original exception as the `cause` when wrapping (`new DomainException("...", e)`).
 
+## Common Mistakes
+
+- **Empty or silent `catch` blocks** — an empty `catch` hides failures. At minimum, log the exception; better, handle it or rethrow with context.
+- **`catch (Exception e)` everywhere** — catches too much, including errors you should not handle. Catch the most specific type you can recover from.
+- **Using exceptions for control flow** — don't throw to exit a loop or return a status code. Use normal returns, `Optional`, or a result type for expected outcomes.
+- **Checked exceptions callers cannot fix** — if the caller has no meaningful recovery, prefer an unchecked exception (Item 71) rather than forcing a useless `try-catch`.
+- **`throws` without `@throws` documentation** — callers need to know what can fail. Document every thrown type in Javadoc, whether checked or unchecked.
+- **Wrapping without a cause** — `throw new ServiceException("failed")` loses the original stack trace. Use `throw new ServiceException("failed", e)`.
+- **Closing resources manually in `finally`** — easy to get wrong when multiple exceptions occur. Prefer try-with-resources so `close()` runs reliably and suppressed exceptions are preserved.
+- **Declaring runtime exceptions you don't intend to throw** — listing `throws IllegalArgumentException` on every method adds noise. Declare unchecked types only when they are part of the real API contract.
+
 ## Examples
 
 | File                                                                                        | Demonstrates                                            |

@@ -95,6 +95,15 @@ Without the preview flag, you can approximate structured concurrency using `Exec
 - **CPU-bound tasks** do not benefit from virtual threads — they need a carrier the entire time.
 - Virtual threads are ideal for **I/O-bound workloads** (HTTP calls, database queries, file I/O).
 
+## Common Mistakes
+
+- **Pooling virtual threads** — virtual threads are cheap to create; pooling adds complexity and defeats the scheduler. Use `newVirtualThreadPerTaskExecutor()` per request or scoped task batch.
+- **`synchronized` around blocking I/O** — pins the virtual thread to its carrier thread, reducing scalability. Prefer `ReentrantLock` or refactor so blocking happens outside synchronized regions.
+- **Expecting speedups on CPU-bound work** — virtual threads help when tasks **block**; CPU-heavy work still needs all cores busy on platform threads or a sized fixed pool.
+- **Replacing every `CompletableFuture` chain blindly** — async pipelines with explicit composition still make sense. Virtual threads shine when you want straightforward blocking code at scale.
+- **Unbounded `ThreadLocal` use** — millions of virtual threads make thread-local storage expensive. Consider `ScopedValue` (preview) for request-scoped context.
+- **Ignoring carrier-thread pool size for mixed workloads** — when virtual threads pin carriers (native code, some `synchronized` blocks), fewer carriers are available for other virtual threads. Profile under realistic load.
+
 ## Examples
 
 | File                                                                                                    | Demonstrates                                                              |

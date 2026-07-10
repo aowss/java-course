@@ -55,6 +55,16 @@ Predicate<String> longEnough = s -> s.length() > 5;
 Predicate<String> both = nonEmpty.and(longEnough);
 ```
 
+## Common Mistakes
+
+- **Using a lambda where a method reference reads better** — `s -> System.out.println(s)` should be `System.out::println`; reserve lambdas for non-trivial logic.
+- **Wrong method reference form** — `String::toUpperCase` is an unbound instance reference (`s -> s.toUpperCase()`); `System.out::println` is bound. Pick the form that matches how the method is called.
+- **Lambdas are not standalone functions** — a lambda must target a **functional interface** (one abstract method). You cannot assign a lambda to `Object` or a non-functional interface.
+- **Capturing non-final variables** — lambdas can only use local variables that are **effectively final**. Reassigning `count` before using it inside a lambda is a compile error.
+- **Mutating shared state from lambdas** — `list.forEach(x -> total += x)` fails for the same reason, and is unsafe with parallel execution anyway. Use `reduce` or a proper accumulator.
+- **Reinventing `java.util.function`** — prefer `Predicate`, `Function`, and `Consumer` over custom single-method interfaces unless you need a domain-specific name.
+- **Anonymous classes when a lambda suffices** — for simple functional interfaces, lambdas are shorter. Keep anonymous classes when you need multiple methods or explicit type parameters the compiler cannot infer.
+
 ## Examples
 
 | File                                                                                     | Demonstrates                          |
@@ -72,7 +82,7 @@ Predicate<String> both = nonEmpty.and(longEnough);
 Build `Predicate<String>` factories and a filter method.
 
 ```bash
-mvn test -pl 12-functional-programming -Dtest="StringFiltersTest"
+mvn test -pl 13-functional-programming -Dtest="StringFiltersTest"
 ```
 
 ### Exercise 2: Pipeline (Practice)
@@ -82,7 +92,7 @@ mvn test -pl 12-functional-programming -Dtest="StringFiltersTest"
 Chain `Function<T, T>` transformations in a fluent builder.
 
 ```bash
-mvn test -pl 12-functional-programming -Dtest="PipelineTest"
+mvn test -pl 13-functional-programming -Dtest="PipelineTest"
 ```
 
 ### Exercise 3: Event Bus (Challenge)
@@ -92,7 +102,7 @@ mvn test -pl 12-functional-programming -Dtest="PipelineTest"
 Register listeners by event type and publish events to matching consumers.
 
 ```bash
-mvn test -pl 12-functional-programming -Dtest="EventBusTest"
+mvn test -pl 13-functional-programming -Dtest="EventBusTest"
 ```
 
 ## Key Takeaways

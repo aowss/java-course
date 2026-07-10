@@ -149,6 +149,16 @@ System.out.println(strings.getClass() == ints.getClass()); // true — same clas
 
 To work around these limitations, use `Object[]` internally (as in `ArrayList`'s implementation) and cast when returning elements.
 
+## Common Mistakes
+
+- **Raw types** — writing `List list = new ArrayList()` disables generics and brings back `ClassCastException` at runtime. Always parameterize: `List<String>`.
+- **Ignoring PECS** — using `List<? extends T>` when you need to **add** elements, or `List<? super T>` when you only need to **read**. Producers extend, consumers super.
+- **`List<Object>` is not a supertype of `List<String>`** — you cannot pass a `List<String>` where a `List<Object>` is expected. Use wildcards: `List<? extends Object>` or a generic method.
+- **Overusing wildcards** — if the same type parameter appears in multiple parameter positions, a named `<T>` is clearer than `?`.
+- **Expecting runtime type information** — `list instanceof List<String>` does not compile; after erasure, only `List` exists at runtime.
+- **Creating generic arrays** — `new T[10]` and `new List<String>[10]` are illegal. Use `List<T>` or `(T[]) new Object[n]` only inside library code with care.
+- **Mixing primitives and generics** — `List<int>` is invalid. Use `List<Integer>` or an `IntStream` for primitive-heavy code.
+
 ## Examples
 
 | File                                                                       | Demonstrates                                                  |
