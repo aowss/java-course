@@ -113,6 +113,8 @@ This seems contradictory — if modern features are already woven in, why a roun
 
 Synthesis matters. Without it, the course is a reference manual. With it, students prove to themselves they can build something real by combining what they've learned.
 
+Three **bridge projects** in `bridges/` (contact book, log analyzer, catalog service) provide stepping stones between chapter exercises and the capstone.
+
 ### 11. Stack and heap introduced early (Chapter 3), JVM internals late (Chapter 28)
 
 The stack/heap memory model is introduced in Chapter 3 (Methods) with a visual diagram — just enough for students to understand pass-by-value, why primitives differ from objects, and what a stack frame is. The full treatment — class loading lifecycle, all memory areas, garbage collection, JIT compilation, and diagnostic tools — lives in Chapter 28 (JVM Internals) in Part VIII. This progressive disclosure avoids overwhelming beginners while ensuring advanced students get the complete picture.

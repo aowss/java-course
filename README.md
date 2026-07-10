@@ -192,3 +192,13 @@ If you get stuck, look at the `solutions/` folder inside the chapter. Try to sol
 ### 5. Move to the next chapter
 
 The chapters build on each other. Follow the numbered order.
+
+### Bridge projects (optional)
+
+After key milestones, try the multi-class **bridge projects** in [`bridges/`](bridges/README.md) — smaller than the capstone, but closer to a real app than single-file exercises:
+
+| When | Project |
+|------|---------|
+| After Part II (Ch. 7) | [Contact Book](bridges/contact-book/) |
+| After Part IV (Ch. 16) | [Log Analyzer](bridges/log-analyzer/) |
+| After Part VII (Ch. 22) | [Catalog Service](bridges/catalog-service/) |

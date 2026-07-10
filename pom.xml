@@ -99,6 +99,9 @@
         <module>28-jvm-internals</module>
         <module>29-design-principles-and-patterns</module>
         <module>30-capstone-project</module>
+        <module>bridges/contact-book</module>
+        <module>bridges/log-analyzer</module>
+        <module>bridges/catalog-service</module>
     </modules>
 
 </project>

@@ -165,6 +165,10 @@ mvn test -Dtest="course.ch16.exercises.CsvParserTest"
 - `Files.walk()` returns a `Stream<Path>` that **must** be closed (use try-with-resources).
 - Avoid Java serialization for data exchange — use JSON, CSV, or another structured format instead.
 
+## Bridge Project — Log Analyzer
+
+Finished Part IV? Parse and summarize log files with NIO.2 and streams: [`bridges/log-analyzer`](../bridges/log-analyzer/README.md).
+
 ## Further Reading
 
 - [JLS §9.7.4 — `java.io.Serializable`](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.7.4)

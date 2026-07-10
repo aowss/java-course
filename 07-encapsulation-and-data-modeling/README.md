@@ -153,6 +153,10 @@ mvn test -Dtest="course.ch07.exercises.JsonValueTest"
 - Pattern matching **`switch`** provides concise, compiler-checked dispatch over subtypes.
 - Choose the modeling tool that best fits: records for data, enums for fixed sets, sealed types for known hierarchies.
 
+## Bridge Project — Contact Book
+
+Finished Part II? Build a small layered CLI app that combines records, interfaces, and collections: [`bridges/contact-book`](../bridges/contact-book/README.md).
+
 ## Further Reading
 
 - [JLS §8.10 — Record Classes](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10)

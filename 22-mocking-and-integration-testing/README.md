@@ -100,6 +100,10 @@ mvn test -pl 22-mocking-and-integration-testing -Dtest="NotificationServiceTest"
 - Use `@ExtendWith(MockitoExtension.class)` to initialize mocks.
 - Over-mocking leads to brittle tests — mock only what you need to isolate.
 
+## Bridge Project — Catalog Service
+
+Finished Part VII? Practice a testable service layer with JUnit and Mockito: [`bridges/catalog-service`](../bridges/catalog-service/README.md).
+
 ## Further Reading
 
 - [Mockito documentation](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html)

@@ -1,0 +1,56 @@
+# Bridge Projects
+
+Three optional mini-projects sit between isolated chapter exercises and the Chapter 30 capstone. Each is a **complete reference implementation** you study, run, test, and extend — not a skeleton with TODOs.
+
+| Bridge | After | Module | Skills |
+|--------|-------|--------|--------|
+| [Contact Book](contact-book/) | Part II (Ch. 7) | `bridges/contact-book` | Records, interfaces, collections, CLI, layering |
+| [Log Analyzer](log-analyzer/) | Part IV (Ch. 16) | `bridges/log-analyzer` | NIO.2 file I/O, streams, collectors, regex |
+| [Catalog Service](catalog-service/) | Part VII (Ch. 22) | `bridges/catalog-service` | Service layer, JUnit, Mockito, test doubles |
+
+## Build and test all bridges
+
+From the repo root:
+
+```bash
+mvn test -pl bridges/contact-book,bridges/log-analyzer,bridges/catalog-service
+```
+
+## Run the CLIs
+
+**Contact Book** (interactive):
+
+```bash
+mvn compile exec:java -pl bridges/contact-book \
+  -Dexec.mainClass="course.bridge.contactbook.cli.ContactBookCli"
+```
+
+**Log Analyzer** (file path argument):
+
+```bash
+mvn compile exec:java -pl bridges/log-analyzer \
+  -Dexec.mainClass="course.bridge.loganalyzer.cli.LogAnalyzerApp" \
+  -Dexec.args="bridges/log-analyzer/src/test/resources/sample.log"
+```
+
+**Catalog Service** has no CLI — run `mvn test -pl bridges/catalog-service` and read the tests as examples.
+
+## How these relate to the capstone
+
+```
+Chapter exercises (single-class TODOs)
+        ↓
+Bridge projects (small multi-class apps)
+        ↓
+Chapter 30 capstone (full CLI + persistence + tests)
+```
+
+Each bridge reuses the capstone's **CLI → service → repository → model** shape at a smaller scale.
+
+## When to do them
+
+- **Contact Book** — right after finishing OOP (Part II), before diving into exceptions and APIs.
+- **Log Analyzer** — after I/O (Ch. 16); uses streams from Ch. 14.
+- **Catalog Service** — after testing chapters (Ch. 21–22); prepares you for the capstone service layer.
+
+See each bridge's `README.md` for extension ideas.
