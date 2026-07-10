@@ -4,6 +4,8 @@ A practical, example-driven Java course from language foundations to advanced to
 
 See the [Table of Content](Table%20of%20Content.md) for the full curriculum and the [Approach](Approach.md) for the design rationale.
 
+[![CI](https://github.com/aowss/java-course/actions/workflows/ci.yml/badge.svg)](https://github.com/aowss/java-course/actions/workflows/ci.yml)
+
 Every chapter includes a slide deck for classroom or video use:
 
 - **Full course** — run `./slides/build-full-deck.sh`, then open [`slides/full-course.html`](slides/full-course.html) (Reveal.js: **→** chapter, **↓** slide). See [`slides/README.md`](slides/README.md).
