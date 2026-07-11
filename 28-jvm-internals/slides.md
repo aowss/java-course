@@ -35,22 +35,13 @@ The JVM loads classes **lazily** — when first referenced:
 | **Linking** | Verify bytecode, prepare static fields, resolve references |
 | **Initialization** | Run static initializers (`<clinit>`) in source order |
 
-```mermaid
-flowchart LR
-    A["Loading"] --> B["Linking"]
-    B --> C["Initialization"]
-```
+**Loading** → **Linking** → **Initialization**
 
 ---
 
 ## Initialization Order
 
-```mermaid
-flowchart TD
-    A["Parent static"] --> B["Child static"]
-    B --> C["Parent instance + ctor"]
-    C --> D["Child instance + ctor"]
-```
+**Parent static** → **Child static** → **Parent instance + ctor** → **Child instance + ctor**
 
 Parent before child; static before instance.
 
@@ -58,14 +49,7 @@ Parent before child; static before instance.
 
 ## Class Loader Hierarchy
 
-```mermaid
-flowchart BT
-    App["Application ClassLoader"]
-    Plat["Platform ClassLoader"]
-    Boot["Bootstrap ClassLoader"]
-    App --> Plat
-    Plat --> Boot
-```
+**Application ClassLoader** → **Platform ClassLoader** → **Bootstrap ClassLoader**
 
 Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
@@ -73,15 +57,7 @@ Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
 ## JVM Memory Areas
 
-```mermaid
-flowchart TB
-    subgraph jvm["JVM process"]
-        heap["Heap - objects and arrays"]
-        meta["Metaspace - class metadata"]
-        stacks["Thread stacks"]
-        code["Code cache - JIT"]
-    end
-```
+**Heap** (objects and arrays) · **Metaspace** (class metadata) · **Thread stacks** · **Code cache** (JIT)
 
 ---
 
@@ -178,7 +154,7 @@ java -XX:+HeapDumpOnOutOfMemoryError MyApp
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -192,7 +168,7 @@ mvn test -pl 28-jvm-internals
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **MemoryAnalyzer** (Guided) — report heap usage with `Runtime`
 2. **ClassInspector** (Practice) — extract class metadata via reflection
@@ -202,7 +178,7 @@ mvn test -pl 28-jvm-internals
 mvn test -pl 28-jvm-internals -Dtest="MemoryAnalyzerTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -214,4 +190,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - The **JIT compiler** profiles hot methods and compiles them after warmup
 - **Diagnostic tools** (`jcmd`, `jstat`, `jfr`, JMX) observe memory, GC, and threads at runtime
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JVM Spec Ch. 5](https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html) · [Java Performance (Oaks)](https://www.oreilly.com/library/view/java-performance-2nd/9781492056102/)

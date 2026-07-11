@@ -150,7 +150,7 @@ for (int i = 0; i < 5; i++) {
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -164,7 +164,7 @@ mvn test -pl 03-methods
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Math Utilities** (Guided) — `clamp`, `isPrime`, `factorial`
 2. **String Utilities** (Practice) — `reverse`, `isPalindrome`, `countOccurrences`
@@ -174,7 +174,7 @@ mvn test -pl 03-methods
 mvn test -pl 03-methods -Dtest="MathUtilsTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -185,4 +185,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Overloading ≠ polymorphism (that's Chapter 5)
 - Keep variable scope as **narrow** as possible
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §8.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4) · *Effective Java* Item 52

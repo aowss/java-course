@@ -149,7 +149,7 @@ Keep critical sections **as short as possible** to reduce contention.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -163,7 +163,7 @@ mvn test -pl 17-threads-and-synchronization
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **SafeCounter** (Guided) — thread-safe counter with `synchronized`
 2. **ProducerConsumer** (Practice) — bounded buffer with `wait()` / `notifyAll()`
@@ -173,7 +173,7 @@ mvn test -pl 17-threads-and-synchronization
 mvn test -pl 17-threads-and-synchronization -Dtest="SafeCounterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -185,4 +185,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Acquire locks in a **consistent global order** to prevent deadlock
 - `volatile` provides visibility but **not** atomicity
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §17.4 — Memory Model](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4) · *Effective Java* Items 78–79

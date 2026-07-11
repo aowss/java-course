@@ -191,7 +191,7 @@ In production, always use a pool — never `DriverManager` per request.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -205,7 +205,7 @@ mvn test -pl 26-database-access-with-jdbc
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **StudentDao** (Guided) — find and insert for a students table
 2. **TransactionManager** (Practice) — wrap work in commit/rollback
@@ -215,7 +215,7 @@ mvn test -pl 26-database-access-with-jdbc
 mvn test -pl 26-database-access-with-jdbc -Dtest="StudentDaoTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -227,4 +227,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - In production, use a **connection pool** — not `DriverManager` per request
 - Tests can use in-memory **H2** without external infrastructure
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JDBC Tutorial](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html) · [HikariCP](https://github.com/brettwooldridge/HikariCP)

@@ -131,7 +131,9 @@ Chapter 30 (capstone) uses a project walkthrough instead of the three-tier exerc
 
 When editing, separate slides with a line containing only `---`. The chapter `README.md` remains the source of truth for depth.
 
-**Mermaid diagrams** — chapters use ` ```mermaid ` blocks in `slides.md` and `README.md`. The build script converts them to `<div class="mermaid">` in `full-course.html` (Reveal's syntax highlighter breaks fenced mermaid blocks). Diagrams render via Mermaid.js when you navigate to the slide.
+**Flow diagrams** — use text arrow chains in `slides.md` (e.g. `Source → javac → Bytecode → JVM`). Chapter `README.md` files may still use Mermaid for self-study on GitHub.
+
+**Callouts and further reading** — the build script tags blockquotes (`callout-note`, `callout-tip`, `callout-cli`) and `Further reading:` lines for distinct styling in `reveal-theme.css`.
 
 ---
 
@@ -172,7 +174,7 @@ The live site is deployed from this repo:
   - `slides/index.html` → site homepage (full course)
   - `quizzes/index.html` → `/quizzes/` (in-class quizzes)
   - Shared `reveal-theme.css` + `quiz-reveal-theme.css`
-- Reveal.js, Mermaid, and fonts load from CDNs — no extra assets to ship.
+- Reveal.js and fonts load from CDNs — no extra assets to ship.
 
 ### Manual deploy
 

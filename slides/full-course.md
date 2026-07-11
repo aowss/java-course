@@ -47,16 +47,9 @@ Created by James Gosling at Sun Microsystems (1995):
 | **JRE** | Run Java programs | JVM + standard library |
 | **JDK** | Develop Java programs | JRE + `javac`, `jshell`, debugger |
 
-> Since Java 11, only the **JDK** is distributed — no separate JRE download.
+<aside class="callout-note"><p>Since Java 11, only the <strong>JDK</strong> is distributed — no separate JRE download.</p></aside>
 
-<div class="mermaid">
-flowchart TB
-    JDK["JDK - develop and run"]
-    JRE["JRE / runtime libraries"]
-    JVM["JVM executes bytecode"]
-    JDK --> JRE
-    JRE --> JVM
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">JDK</span><span class="flow-sub">develop and run</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">JRE</span><span class="flow-sub">runtime libraries</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">JVM</span><span class="flow-sub">executes bytecode</span></div></div>
 
 --
 
@@ -83,13 +76,7 @@ Java does **both** — ahead-of-time compilation *and* runtime interpretation.
 
 ## Compilation and Execution
 
-<div class="mermaid">
-flowchart TD
-    A["Source (.java)"] --> B["javac"]
-    B --> C["Bytecode (.class)"]
-    C --> D["JVM and JIT"]
-    D --> E["Program output"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Source</span><span class="flow-sub">.java</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">javac</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Bytecode</span><span class="flow-sub">.class</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">JVM + JIT</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Program output</span></div></div>
 
 - Bytecode is **platform-independent**
 - The JVM is **platform-specific**
@@ -128,12 +115,12 @@ mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `HelloWorld` | Minimal program — class, main, println |
-| `JvmInfo` | Querying JVM properties at runtime |
+| [`HelloWorld`](../01-introduction-to-java/src/main/java/course/ch01/examples/HelloWorld.java) | Minimal program — class, main, println |
+| [`JvmInfo`](../01-introduction-to-java/src/main/java/course/ch01/examples/JvmInfo.java) | Querying JVM properties at runtime |
 
 ```bash
 mvn test -pl 01-introduction-to-java
@@ -141,16 +128,14 @@ mvn test -pl 01-introduction-to-java
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Greeting** (Guided) — print `Hello, <name>!` from command-line args
-2. **System Reporter** (Practice) — return Java version, OS name, and architecture
+1. **Greeting** (Guided) — print `Hello, <name>!` from command-line args<br><span class="exercise-links">[Test](../01-introduction-to-java/src/test/java/course/ch01/exercises/GreetingTest.java) · [Solution](../01-introduction-to-java/solutions/course/ch01/exercises/Greeting.java)</span>
+2. **System Reporter** (Practice) — return Java version, OS name, and architecture<br><span class="exercise-links">[Test](../01-introduction-to-java/src/test/java/course/ch01/exercises/SystemReporterTest.java) · [Solution](../01-introduction-to-java/solutions/course/ch01/exercises/SystemReporter.java)</span>
 
 ```bash
 mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -161,7 +146,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Every program starts at `public static void main(String[] args)`
 - File name must match the public class name
 
-Further reading: [JLS §7.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6) · [Oracle Getting Started](https://docs.oracle.com/en/java/javase/25/docs/api/)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../01-introduction-to-java/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6">JLS §7.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/">Oracle Getting Started</a></span></aside>
 
 ---
 
@@ -250,9 +236,9 @@ var name = "Alice";         // inferred as String (Java 10+)
 | Bitwise | `&`, `\|`, `^`, `~`, `<<`, `>>`, `>>>` |
 | Ternary | `condition ? trueVal : falseVal` |
 
-> **Integer division truncates:** `7 / 2` → `3`, not `3.5`
->
-> Deeper precedence and evaluation rules: [Operator Precedence appendix](../../appendices/operator-precedence/README.md)
+<aside class="callout-note"><p><strong>Integer division truncates:</strong> <code>7 / 2</code> → <code>3</code>, not <code>3.5</code></p></aside>
+
+<aside class="callout-note"><p>Deeper precedence and evaluation rules: <a href="../../appendices/operator-precedence/README.md">Operator Precedence appendix</a></p></aside>
 
 --
 
@@ -352,13 +338,13 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `PrimitiveTypes` | All eight primitives, literals, ranges |
-| `ControlFlow` | `if`, enhanced `switch`, all loop forms |
-| `ArrayBasics` | Creation, access, iteration, pitfalls |
+| [`PrimitiveTypes`](../02-language-basics/src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitives, literals, ranges |
+| [`ControlFlow`](../02-language-basics/src/main/java/course/ch02/examples/ControlFlow.java) | `if`, enhanced `switch`, all loop forms |
+| [`ArrayBasics`](../02-language-basics/src/main/java/course/ch02/examples/ArrayBasics.java) | Creation, access, iteration, pitfalls |
 
 ```bash
 mvn test -pl 02-language-basics
@@ -366,17 +352,15 @@ mvn test -pl 02-language-basics
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Temperature Converter** (Guided) — Celsius ↔ Fahrenheit
-2. **FizzBuzz** (Practice) — divisibility by 3 and 5
-3. **Array Statistics** (Challenge) — min, max, sum, average
+1. **Temperature Converter** (Guided) — Celsius ↔ Fahrenheit<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/TemperatureConverterTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/TemperatureConverter.java)</span>
+2. **FizzBuzz** (Practice) — divisibility by 3 and 5<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/FizzBuzzTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/FizzBuzz.java)</span>
+3. **Array Statistics** (Challenge) — min, max, sum, average<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/ArrayStatsTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/ArrayStats.java)</span>
 
 ```bash
 mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -387,7 +371,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `var` is a local convenience — it does not weaken type safety
 - Arrays are fixed-size; for dynamic collections, see Chapter 12
 
-Further reading: [JLS §4.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2) · *Effective Java* Item 61
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../02-language-basics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2">JLS §4.2</a> · <em>Effective Java</em> Item 61</span></aside>
 
 ---
 
@@ -512,7 +497,7 @@ modifyArray(numbers);
 // numbers[0] is now 999
 ```
 
-> Deep dive on GC and JVM memory in **Chapter 28**.
+<aside class="callout-note"><p>Deep dive on GC and JVM memory in <strong>Chapter 28</strong>.</p></aside>
 
 --
 
@@ -532,13 +517,13 @@ for (int i = 0; i < 5; i++) {
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `MethodBasics` | Defining, calling, return types, pass-by-value |
-| `Overloading` | Overloaded methods and resolution rules |
-| `VarargsDemo` | Varargs syntax and usage |
+| [`MethodBasics`](../03-methods/src/main/java/course/ch03/examples/MethodBasics.java) | Defining, calling, return types, pass-by-value |
+| [`Overloading`](../03-methods/src/main/java/course/ch03/examples/Overloading.java) | Overloaded methods and resolution rules |
+| [`VarargsDemo`](../03-methods/src/main/java/course/ch03/examples/VarargsDemo.java) | Varargs syntax and usage |
 
 ```bash
 mvn test -pl 03-methods
@@ -546,17 +531,15 @@ mvn test -pl 03-methods
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Math Utilities** (Guided) — `clamp`, `isPrime`, `factorial`
-2. **String Utilities** (Practice) — `reverse`, `isPalindrome`, `countOccurrences`
-3. **Overloaded `format`** (Challenge) — three overloads with varargs
+1. **Math Utilities** (Guided) — `clamp`, `isPrime`, `factorial`<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/MathUtilsTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/MathUtils.java)</span>
+2. **String Utilities** (Practice) — `reverse`, `isPalindrome`, `countOccurrences`<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/StringUtilsTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/StringUtils.java)</span>
+3. **Overloaded `format`** (Challenge) — three overloads with varargs<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/FormatterTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/Formatter.java)</span>
 
 ```bash
 mvn test -pl 03-methods -Dtest="MathUtilsTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -567,7 +550,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Overloading ≠ polymorphism (that's Chapter 5)
 - Keep variable scope as **narrow** as possible
 
-Further reading: [JLS §8.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4) · *Effective Java* Item 52
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../03-methods/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4">JLS §8.4</a> · <em>Effective Java</em> Item 52</span></aside>
 
 ---
 
@@ -721,23 +705,17 @@ static { /* runs once when class loads */ }
 
 **Order for `new Demo()`:**
 
-<div class="mermaid">
-flowchart TD
-    A["Static fields"] --> B["Static blocks"]
-    B --> C["Instance fields"]
-    C --> D["Instance blocks"]
-    D --> E["Constructor"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Static fields</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Static blocks</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Instance fields</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Instance blocks</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Constructor</span></div></div>
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `BankAccount` | Fields, constructor, `this`, encapsulation |
-| `Counter` | Static vs instance members |
-| `InitializationOrder` | Static/instance blocks and field initializer order |
+| [`BankAccount`](../04-classes-and-objects/src/main/java/course/ch04/examples/BankAccount.java) | Fields, constructor, `this`, encapsulation |
+| [`Counter`](../04-classes-and-objects/src/main/java/course/ch04/examples/Counter.java) | Static vs instance members |
+| [`InitializationOrder`](../04-classes-and-objects/src/main/java/course/ch04/examples/InitializationOrder.java) | Static/instance blocks and field initializer order |
 
 ```bash
 mvn test -pl 04-classes-and-objects
@@ -745,17 +723,15 @@ mvn test -pl 04-classes-and-objects
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Rectangle** (Guided) — area, perimeter, `toString`
-2. **Student** (Practice) — grades, average, highest, unmodifiable view
-3. **Stopwatch** (Challenge) — `System.nanoTime()` timing with state checks
+1. **Rectangle** (Guided) — area, perimeter, `toString`<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/RectangleTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Rectangle.java)</span>
+2. **Student** (Practice) — grades, average, highest, unmodifiable view<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/StudentTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Student.java)</span>
+3. **Stopwatch** (Challenge) — `System.nanoTime()` timing with state checks<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/StopwatchTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Stopwatch.java)</span>
 
 ```bash
 mvn test -pl 04-classes-and-objects -Dtest="RectangleTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -767,7 +743,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `static` members belong to the class, not instances
 - Initialization blocks run in a fixed, predictable order
 
-Further reading: [JLS §8.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2) · *Effective Java* Items 15–16
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../04-classes-and-objects/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2">JLS §8.2</a> · <em>Effective Java</em> Items 15–16</span></aside>
 
 ---
 
@@ -808,12 +785,7 @@ public class Car extends Vehicle {
 
 ## Initialization with Inheritance
 
-<div class="mermaid">
-flowchart TD
-    A["Parent static"] --> B["Child static"]
-    B --> C["Parent instance + ctor"]
-    C --> D["Child instance + ctor"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Parent static</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Child static</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Parent instance + ctor</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Child instance + ctor</span></div></div>
 
 `super(...)` must be the **first** statement in a subclass constructor.
 
@@ -853,11 +825,7 @@ Vehicle v = new Car("Toyota", 4);
 v.describe();   // → "Toyota car with 4 doors" (Car's version)
 ```
 
-<div class="mermaid">
-flowchart LR
-    V["Declared: Vehicle"] --> O["Actual: Car"]
-    O --> M["Calls Car describe"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Declared: Vehicle</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Actual: Car</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Calls <code>Car.describe()</code></span></div></div>
 
 This is **polymorphism** — same interface, different behavior.
 
@@ -913,7 +881,7 @@ Equal objects **must** share the same hash code — required for `HashMap` / `Ha
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -926,17 +894,15 @@ mvn test -pl 05-inheritance-and-polymorphism
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Animal Hierarchy** (Guided) — `speak()` and `toString` for Dog, Cat
-2. **Employee Hierarchy** (Practice) — `equals`, `hashCode`, `toString` with `getClass()`
-3. **Expression Tree** (Challenge) — `eval()` and parenthesized `toString()`
+1. **Animal Hierarchy** (Guided) — `speak()` and `toString` for Dog, Cat<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/AnimalTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Animal.java)</span>
+2. **Employee Hierarchy** (Practice) — `equals`, `hashCode`, `toString` with `getClass()`<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/EmployeeTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Employee.java)</span>
+3. **Expression Tree** (Challenge) — `eval()` and parenthesized `toString()`<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/ExprTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Expr.java)</span>
 
 ```bash
 mvn test -pl 05-inheritance-and-polymorphism -Dtest="AnimalTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -947,7 +913,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Abstract classes** define a contract subclasses must fulfill
 - Always override `hashCode` when you override `equals`; use `@Override` everywhere
 
-Further reading: [JLS §8.1.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.1.4) · *Effective Java* Items 10–11
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../05-inheritance-and-polymorphism/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.1.4">JLS §8.1.4</a> · <em>Effective Java</em> Items 10–11</span></aside>
 
 ---
 
@@ -1065,7 +1032,7 @@ Functional interfaces are the foundation of **lambda expressions** and **method 
 | `static`               | Utility methods scoped to the interface              |
 | `private`              | Shared helper logic for default/static methods       |
 
-> **Effective Java Item 20:** Prefer interfaces to abstract classes.
+<aside class="callout-tip"><p><strong>Effective Java Item 20:</strong> Prefer interfaces to abstract classes.</p></aside>
 
 --
 
@@ -1082,13 +1049,13 @@ Prefer interfaces for pure contracts. Use abstract classes when related types sh
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `Printable` | Basic interface, default `print()`, static `printAll()` |
-| `Sortable` | Default methods, private helpers, F-bounded type parameter |
-| `ComparatorDemo` | `Comparator` functional interface, `comparing`, `thenComparing` |
+| [`Printable`](../06-interfaces/src/main/java/course/ch06/examples/Printable.java) | Basic interface, default `print()`, static `printAll()` |
+| [`Sortable`](../06-interfaces/src/main/java/course/ch06/examples/Sortable.java) | Default methods, private helpers, F-bounded type parameter |
+| [`ComparatorDemo`](../06-interfaces/src/main/java/course/ch06/examples/ComparatorDemo.java) | `Comparator` functional interface, `comparing`, `thenComparing` |
 
 ```bash
 mvn test -pl 06-interfaces
@@ -1096,17 +1063,15 @@ mvn test -pl 06-interfaces
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Measurable Shapes** (Guided) — `Circle` and `Rectangle` records implementing `MeasurableShape`
-2. **Validator** (Practice) — `@FunctionalInterface` with factory methods and `and()`
-3. **Plugin System** (Challenge) — `PluginManager` with registration and ordered execution
+1. **Measurable Shapes** (Guided) — `Circle` and `Rectangle` records implementing `MeasurableShape`<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/MeasurableTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/Measurable.java)</span>
+2. **Validator** (Practice) — `@FunctionalInterface` with factory methods and `and()`<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/ValidatorTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/Validator.java)</span>
+3. **Plugin System** (Challenge) — `PluginManager` with registration and ordered execution<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/PluginSystemTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/PluginSystem.java)</span>
 
 ```bash
 mvn test -pl 06-interfaces -Dtest="MeasurableTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -1118,7 +1083,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `@FunctionalInterface` marks a SAM type, enabling **lambdas** and **method references**
 - A class can **implement multiple interfaces**, achieving flexible polymorphism
 
-Further reading: [JLS §9.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1) · [JLS §9.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.4) · *Effective Java* Item 20
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../06-interfaces/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1">JLS §9.1</a> · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.4">JLS §9.4</a> · <em>Effective Java</em> Item 20</span></aside>
 
 ---
 
@@ -1248,13 +1214,13 @@ Choose the tool that best fits each domain concept.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `Point` | Record basics, custom methods, compact data modeling |
-| `Season` | Enum fields, constructors, instance methods |
-| `ShapeDemo` | Sealed hierarchy, pattern matching `switch`/`instanceof` |
+| [`Point`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Point.java) | Record basics, custom methods, compact data modeling |
+| [`Season`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Season.java) | Enum fields, constructors, instance methods |
+| [`ShapeDemo`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/ShapeDemo.java) | Sealed hierarchy, pattern matching `switch`/`instanceof` |
 
 ```bash
 mvn test -pl 07-encapsulation-and-data-modeling
@@ -1262,17 +1228,15 @@ mvn test -pl 07-encapsulation-and-data-modeling
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Color Enum** (Guided) — `fromHex()`, `isDark()`, `complement()`
-2. **Result Type** (Practice) — sealed `Result<T>` with `Success` and `Failure`
-3. **JSON Pretty Printer** (Challenge) — sealed `JsonValue` hierarchy with `prettyPrint()`
+1. **Color Enum** (Guided) — `fromHex()`, `isDark()`, `complement()`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ColorTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Color.java)</span>
+2. **Result Type** (Practice) — sealed `Result<T>` with `Success` and `Failure`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ResultTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Result.java)</span>
+3. **JSON Pretty Printer** (Challenge) — sealed `JsonValue` hierarchy with `prettyPrint()`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/JsonValueTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/JsonValue.java)</span>
 
 ```bash
 mvn test -pl 07-encapsulation-and-data-modeling -Dtest="ColorTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -1284,7 +1248,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Pattern matching **`instanceof`** eliminates manual casting in conditionals
 - Pattern matching **`switch`** provides concise, compiler-checked dispatch over subtypes
 
-Further reading: [JLS §8.10](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10) · JEP 409 · JEP 394 · JEP 441
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../07-encapsulation-and-data-modeling/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10">JLS §8.10</a> · <a href="https://openjdk.org/jeps/409">JEP 409</a> · <a href="https://openjdk.org/jeps/394">JEP 394</a> · <a href="https://openjdk.org/jeps/441">JEP 441</a></span></aside>
 
 ---
 
@@ -1325,7 +1290,7 @@ Throwable
 | **Checked** (`IOException`) | Yes | Recoverable — caller should handle |
 | **Unchecked** (`IllegalArgumentException`) | No | Programming error — bad input or state |
 
-> **Item 69:** Use exceptions only for **exceptional** conditions — not control flow.
+<aside class="callout-tip"><p><strong>Item 69:</strong> Use exceptions only for <strong>exceptional</strong> conditions — not control flow.</p></aside>
 
 --
 
@@ -1434,14 +1399,14 @@ Also: catch **specific** types, use **exception chaining** (`cause`), prefer try
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `ExceptionHierarchy` | Specific catch, multi-catch |
-| `ThrowsClauseDemo` | Checked + unchecked in `throws` |
-| `TryWithResources` | `AutoCloseable`, suppressed exceptions |
-| `CustomExceptions` | `BankAccount` with domain exceptions |
+| [`ExceptionHierarchy`](../08-exception-handling/src/main/java/course/ch08/examples/ExceptionHierarchy.java) | Specific catch, multi-catch |
+| [`ThrowsClauseDemo`](../08-exception-handling/src/main/java/course/ch08/examples/ThrowsClauseDemo.java) | Checked + unchecked in `throws` |
+| [`TryWithResources`](../08-exception-handling/src/main/java/course/ch08/examples/TryWithResources.java) | `AutoCloseable`, suppressed exceptions |
+| [`CustomExceptions`](../08-exception-handling/src/main/java/course/ch08/examples/CustomExceptions.java) | `BankAccount` with domain exceptions |
 
 ```bash
 mvn test -pl 08-exception-handling
@@ -1449,17 +1414,15 @@ mvn test -pl 08-exception-handling
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Validator** (Guided) — custom checked `ValidationException`
-2. **RetryExecutor** (Practice) — retry with suppressed exceptions
-3. **ResourcePool** (Challenge) — pooled `AutoCloseable` resources
+1. **Validator** (Guided) — custom checked `ValidationException`<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/ValidatorTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/Validator.java)</span>
+2. **RetryExecutor** (Practice) — retry with suppressed exceptions<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/RetryExecutorTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/RetryExecutor.java)</span>
+3. **ResourcePool** (Challenge) — pooled `AutoCloseable` resources<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/ResourcePoolTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/ResourcePool.java)</span>
 
 ```bash
 mvn test -pl 08-exception-handling -Dtest="ValidatorTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -1470,7 +1433,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **try-with-resources** is the standard pattern for closing resources
 - Prefer standard exception types with **informative messages**
 
-Further reading: *Effective Java* Items 69–75, 77–78 · [JLS §11](https://docs.oracle.com/javase/specs/jls/se25/html/jls-11.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../08-exception-handling/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Items 69–75, 77–78 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-11.html">JLS §11</a></span></aside>
 
 ---
 
@@ -1652,12 +1616,12 @@ for (Codec codec : loader) {
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `PackageStructure` | Package naming conventions, validation, and project layout |
-| `ServiceLoaderDemo` | Discovering JDK tools via `ServiceLoader` and `ToolProvider` |
+| [`PackageStructure`](../09-packages-and-modules/src/main/java/course/ch09/examples/PackageStructure.java) | Package naming conventions, validation, and project layout |
+| [`ServiceLoaderDemo`](../09-packages-and-modules/src/main/java/course/ch09/examples/ServiceLoaderDemo.java) | Discovering JDK tools via `ServiceLoader` and `ToolProvider` |
 
 ```bash
 mvn test -pl 09-packages-and-modules
@@ -1665,17 +1629,15 @@ mvn test -pl 09-packages-and-modules
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Package Organizer** (Guided) — assign class names to correct package layers
-2. **Module Info Parser** (Practice) — parse `module-info.java` into a `ModuleInfo` record
-3. **Service Registry** (Challenge) — type-safe service locator mimicking `ServiceLoader`
+1. **Package Organizer** (Guided) — assign class names to correct package layers<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/PackageOrganizerTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/PackageOrganizer.java)</span>
+2. **Module Info Parser** (Practice) — parse `module-info.java` into a `ModuleInfo` record<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/ModuleInfoParserTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/ModuleInfoParser.java)</span>
+3. **Service Registry** (Challenge) — type-safe service locator mimicking `ServiceLoader`<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/ServiceRegistryTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/ServiceRegistry.java)</span>
 
 ```bash
 mvn test -pl 09-packages-and-modules -Dtest="PackageOrganizerTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -1687,7 +1649,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`ServiceLoader`** decouples interfaces from implementations, enabling plug-in architectures
 - Every module implicitly requires `java.base`; the JDK itself is modularized
 
-Further reading: [JLS §7](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html) · [JEP 261](https://openjdk.org/jeps/261) · [ServiceLoader Javadoc](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../09-packages-and-modules/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html">JLS §7</a> · <a href="https://openjdk.org/jeps/261">JEP 261</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html">ServiceLoader Javadoc</a></span></aside>
 
 ---
 
@@ -1862,13 +1825,13 @@ String[] parts = "one,two,three".split(",");           // ["one","two","three"]
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `StringImmutability` | Immutability, interning, common String methods |
-| `TextBlockDemo` | Text blocks, `String.format()`, `formatted()` |
-| `RegexBasics` | `Pattern`, `Matcher`, `findAll`, `replaceAll`, capture groups |
+| [`StringImmutability`](../10-strings-and-text/src/main/java/course/ch10/examples/StringImmutability.java) | Immutability, interning, common String methods |
+| [`TextBlockDemo`](../10-strings-and-text/src/main/java/course/ch10/examples/TextBlockDemo.java) | Text blocks, `String.format()`, `formatted()` |
+| [`RegexBasics`](../10-strings-and-text/src/main/java/course/ch10/examples/RegexBasics.java) | `Pattern`, `Matcher`, `findAll`, `replaceAll`, capture groups |
 
 ```bash
 mvn test -pl 10-strings-and-text
@@ -1876,17 +1839,15 @@ mvn test -pl 10-strings-and-text
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Word Counter** (Guided) — `countWords()`, `countUniqueWords()`, `mostFrequentWord()`
-2. **Template Engine** (Practice) — replace `{{placeholder}}` patterns from a map
-3. **Markdown to HTML** (Challenge) — convert `**bold**`, `*italic*`, and `` `code` `` to HTML
+1. **Word Counter** (Guided) — `countWords()`, `countUniqueWords()`, `mostFrequentWord()`<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/WordCounterTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/WordCounter.java)</span>
+2. **Template Engine** (Practice) — replace `{{placeholder}}` patterns from a map<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/TemplateEngineTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/TemplateEngine.java)</span>
+3. **Markdown to HTML** (Challenge) — convert `**bold**`, `*italic*`, and `` `code` `` to HTML<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/MarkdownToHtmlTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/MarkdownToHtml.java)</span>
 
 ```bash
 mvn test -pl 10-strings-and-text -Dtest="WordCounterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -1899,7 +1860,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `String.format()` and `formatted()` provide powerful formatting with `%s`, `%d`, `%f`, etc.
 - `Pattern` and `Matcher` provide full regex support; `matches()`, `replaceAll()`, and `split()` offer shortcuts
 
-Further reading: [JLS §3.10.5](https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10.5) · [JEP 378](https://openjdk.org/jeps/378) · [Pattern API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../10-strings-and-text/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10.5">JLS §3.10.5</a> · <a href="https://openjdk.org/jeps/378">JEP 378</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html">Pattern API</a></span></aside>
 
 ---
 
@@ -2050,14 +2012,14 @@ Accepts `List<Integer>`, `List<Number>`, `List<Object>`.
 
 ## PECS Principle
 
-> **P**roducer **E**xtends, **C**onsumer **S**uper
+<aside class="callout-tip"><p><strong>P</strong>roducer <strong>E</strong>xtends, <strong>C</strong>onsumer <strong>S</strong>uper</p></aside>
 
 | Role | Wildcard | Example |
 |------|----------|---------|
 | **Producer** (read) | `? extends T` | `List<? extends Number>` |
 | **Consumer** (write) | `? super T` | `List<? super Integer>` |
 
-> **Item 31:** Use bounded wildcards to increase API flexibility.
+<aside class="callout-tip"><p><strong>Item 31:</strong> Use bounded wildcards to increase API flexibility.</p></aside>
 
 --
 
@@ -2087,13 +2049,13 @@ Workaround: use `Object[]` internally (as `ArrayList` does) and cast on return.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `Box` | Simple generic class with one type parameter |
-| `Pair` | Two type parameters and a factory method |
-| `GenericUtils` | Generic methods (max, swap) and wildcards |
+| [`Box`](../11-generics/src/main/java/course/ch11/examples/Box.java) | Simple generic class with one type parameter |
+| [`Pair`](../11-generics/src/main/java/course/ch11/examples/Pair.java) | Two type parameters and a factory method |
+| [`GenericUtils`](../11-generics/src/main/java/course/ch11/examples/GenericUtils.java) | Generic methods (max, swap) and wildcards |
 
 ```bash
 mvn test -pl 11-generics
@@ -2101,17 +2063,15 @@ mvn test -pl 11-generics
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Stack\<T\>** (Guided) — LIFO stack backed by `Object[]`
-2. **Transformer\<T,R\>** (Practice) — compose transformers, apply to lists
-3. **SortedList\<T extends Comparable\<T\>\>** (Challenge) — sorted insert + binary search
+1. **Stack\<T\>** (Guided) — LIFO stack backed by `Object[]`<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/StackTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/Stack.java)</span>
+2. **Transformer\<T,R\>** (Practice) — compose transformers, apply to lists<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/TransformerTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/Transformer.java)</span>
+3. **SortedList\<T extends Comparable\<T\>\>** (Challenge) — sorted insert + binary search<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/SortedListTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/SortedList.java)</span>
 
 ```bash
 mvn test -pl 11-generics -Dtest="StackTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2123,7 +2083,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Type erasure** removes generic info at runtime — no `instanceof`, no generic arrays
 - Prefer `List<String>` over raw `List`
 
-Further reading: *Effective Java* Item 31 · [JLS §4.5](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.5)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../11-generics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 31 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.5">JLS §4.5</a></span></aside>
 
 ---
 
@@ -2177,7 +2138,7 @@ Further reading: *Effective Java* Item 31 · [JLS §4.5](https://docs.oracle.com
 | Key-value lookup | `HashMap` |
 | FIFO processing | `ArrayDeque` (preferred over `LinkedList`) |
 
-> Declare variables with **interface types** (`List`, `Set`, `Map`) — not concrete classes.
+<aside class="callout-note"><p>Declare variables with <strong>interface types</strong> (<code>List</code>, <code>Set</code>, <code>Map</code>) — not concrete classes.</p></aside>
 
 --
 
@@ -2260,14 +2221,14 @@ Prefer `ArrayDeque` over `LinkedList` for queue and stack operations.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `ListOperations` | `ArrayList`, sorting, reversing |
-| `SetOperations` | `HashSet`, `TreeSet`, uniqueness |
-| `MapOperations` | `HashMap`, `TreeMap`, key-value ops |
-| `QueueDemo` | `ArrayDeque`, FIFO and LIFO |
+| [`ListOperations`](../12-collections-framework/src/main/java/course/ch12/examples/ListOperations.java) | `ArrayList`, sorting, reversing |
+| [`SetOperations`](../12-collections-framework/src/main/java/course/ch12/examples/SetOperations.java) | `HashSet`, `TreeSet`, uniqueness |
+| [`MapOperations`](../12-collections-framework/src/main/java/course/ch12/examples/MapOperations.java) | `HashMap`, `TreeMap`, key-value ops |
+| [`QueueDemo`](../12-collections-framework/src/main/java/course/ch12/examples/QueueDemo.java) | `ArrayDeque`, FIFO and LIFO |
 
 ```bash
 mvn test -pl 12-collections-framework
@@ -2275,17 +2236,15 @@ mvn test -pl 12-collections-framework
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Frequency Counter** (Guided) — word frequencies with `HashMap`, sorted by count
-2. **Unique Queue** (Practice) — FIFO queue that rejects duplicates
-3. **LRU Cache** (Challenge) — fixed-capacity cache with `LinkedHashMap`
+1. **Frequency Counter** (Guided) — word frequencies with `HashMap`, sorted by count<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/FrequencyCounterTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/FrequencyCounter.java)</span>
+2. **Unique Queue** (Practice) — FIFO queue that rejects duplicates<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/UniqueQueueTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/UniqueQueue.java)</span>
+3. **LRU Cache** (Challenge) — fixed-capacity cache with `LinkedHashMap`<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/LRUCacheTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/LRUCache.java)</span>
 
 ```bash
 mvn test -pl 12-collections-framework -Dtest="FrequencyCounterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2296,7 +2255,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Collections are **not thread-safe** unless designed for concurrency (Chapter 18)
 - Use **streams** (Chapter 14) for declarative collection processing
 
-Further reading: *Effective Java* Item 54 · [JLS §4.8](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.8)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../12-collections-framework/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 54 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.8">JLS §4.8</a></span></aside>
 
 ---
 
@@ -2417,19 +2377,19 @@ Runnable r1 = new Runnable() {
 Runnable r2 = () -> System.out.println("Hi");
 ```
 
-> **Item 42:** Prefer lambdas to anonymous classes when the interface is functional.
+<aside class="callout-tip"><p><strong>Item 42:</strong> Prefer lambdas to anonymous classes when the interface is functional.</p></aside>
 
 Lambdas are the foundation of the **Streams API** (Chapter 14).
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `LambdaBasics` | Comparator lambdas, Runnable |
-| `MethodReferenceDemo` | All four method reference forms |
-| `FunctionComposition` | `andThen`, `compose`, predicate chaining |
+| [`LambdaBasics`](../13-functional-programming/src/main/java/course/ch13/examples/LambdaBasics.java) | Comparator lambdas, Runnable |
+| [`MethodReferenceDemo`](../13-functional-programming/src/main/java/course/ch13/examples/MethodReferenceDemo.java) | All four method reference forms |
+| [`FunctionComposition`](../13-functional-programming/src/main/java/course/ch13/examples/FunctionComposition.java) | `andThen`, `compose`, predicate chaining |
 
 ```bash
 mvn test -pl 13-functional-programming
@@ -2437,17 +2397,15 @@ mvn test -pl 13-functional-programming
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **String Filters** (Guided) — `Predicate<String>` factories and a filter method
-2. **Pipeline** (Practice) — chain `Function<T, T>` transformations in a fluent builder
-3. **Event Bus** (Challenge) — register listeners by type, publish to matching consumers
+1. **String Filters** (Guided) — `Predicate<String>` factories and a filter method<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/StringFiltersTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/StringFilters.java)</span>
+2. **Pipeline** (Practice) — chain `Function<T, T>` transformations in a fluent builder<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/PipelineTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/Pipeline.java)</span>
+3. **Event Bus** (Challenge) — register listeners by type, publish to matching consumers<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/EventBusTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/EventBus.java)</span>
 
 ```bash
 mvn test -pl 13-functional-programming -Dtest="StringFiltersTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2458,7 +2416,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Use `Predicate`, `Function`, `Consumer` from `java.util.function` — don't reinvent
 - Lambdas are the foundation of the **Streams API** (Chapter 14)
 
-Further reading: *Effective Java* Item 42 · [JLS §15.27](https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.27)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../13-functional-programming/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 42 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.27">JLS §15.27</a></span></aside>
 
 ---
 
@@ -2603,18 +2562,18 @@ Use when:
 
 Avoid for small data, I/O-bound work, or when order matters.
 
-> **Item 48:** Use caution when making streams parallel.
+<aside class="callout-tip"><p><strong>Item 48:</strong> Use caution when making streams parallel.</p></aside>
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `StreamCreation` | Collections, arrays, ranges, generators |
-| `IntermediateOps` | `filter`, `map`, `flatMap`, `distinct`, `sorted` |
-| `TerminalOps` | `reduce`, `collect`, `count`, `min`/`max` |
-| `CollectorExamples` | `groupingBy`, `partitioningBy`, `joining` |
+| [`StreamCreation`](../14-streams-api/src/main/java/course/ch14/examples/StreamCreation.java) | Collections, arrays, ranges, generators |
+| [`IntermediateOps`](../14-streams-api/src/main/java/course/ch14/examples/IntermediateOps.java) | `filter`, `map`, `flatMap`, `distinct`, `sorted` |
+| [`TerminalOps`](../14-streams-api/src/main/java/course/ch14/examples/TerminalOps.java) | `reduce`, `collect`, `count`, `min`/`max` |
+| [`CollectorExamples`](../14-streams-api/src/main/java/course/ch14/examples/CollectorExamples.java) | `groupingBy`, `partitioningBy`, `joining` |
 
 ```bash
 mvn test -pl 14-streams-api
@@ -2622,17 +2581,15 @@ mvn test -pl 14-streams-api
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Stream Exercises** (Guided) — evens, squares, sum, average
-2. **Text Analyzer** (Practice) — word count, frequencies, longest word
-3. **Transaction Report** (Challenge) — group by category, top expenses
+1. **Stream Exercises** (Guided) — evens, squares, sum, average<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/StreamExercisesTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/StreamExercises.java)</span>
+2. **Text Analyzer** (Practice) — word count, frequencies, longest word<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/TextAnalyzerTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/TextAnalyzer.java)</span>
+3. **Transaction Report** (Challenge) — group by category, top expenses<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/TransactionReportTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/TransactionReport.java)</span>
 
 ```bash
 mvn test -pl 14-streams-api -Dtest="StreamExercisesTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2644,7 +2601,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Parallel streams** help large CPU-bound workloads but add overhead for small data
 - Streams are **one-shot** — create a new stream for each pipeline
 
-Further reading: *Effective Java* Items 45, 48 · [java.util.stream](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../14-streams-api/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Items 45, 48 · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html">java.util.stream</a></span></aside>
 
 ---
 
@@ -2767,13 +2725,13 @@ Terminal ops like `findFirst`, `min`, `max` return `Optional` — no more sentin
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `OptionalCreation` | `of`, `ofNullable`, `empty`, unwrapping |
-| `OptionalChaining` | `map`, `flatMap`, `filter`, pipelines |
-| `OptionalAntiPatterns` | Common mistakes and correct alternatives |
+| [`OptionalCreation`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalCreation.java) | `of`, `ofNullable`, `empty`, unwrapping |
+| [`OptionalChaining`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalChaining.java) | `map`, `flatMap`, `filter`, pipelines |
+| [`OptionalAntiPatterns`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalAntiPatterns.java) | Common mistakes and correct alternatives |
 
 ```bash
 mvn test -pl 15-the-optional-type
@@ -2781,17 +2739,15 @@ mvn test -pl 15-the-optional-type
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Safe Parser** (Guided) — `parseInt`, `parseDouble`, `firstValidInt`
-2. **User Service** (Practice) — lookup, email domain, greeting with Optional chains
-3. **Config Reader** (Challenge) — typed accessors with defaults and `requireString`
+1. **Safe Parser** (Guided) — `parseInt`, `parseDouble`, `firstValidInt`<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/SafeParserTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/SafeParser.java)</span>
+2. **User Service** (Practice) — lookup, email domain, greeting with Optional chains<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/UserServiceTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/UserService.java)</span>
+3. **Config Reader** (Challenge) — typed accessors with defaults and `requireString`<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/ConfigReaderTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/ConfigReader.java)</span>
 
 ```bash
 mvn test -pl 15-the-optional-type -Dtest="SafeParserTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2803,7 +2759,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`filter`** narrows to values matching a predicate
 - Use Optional for **return types only** — not fields, parameters, or collections
 
-Further reading: *Effective Java* Item 55 · [java.util.Optional](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../15-the-optional-type/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 55 · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html">java.util.Optional</a></span></aside>
 
 ---
 
@@ -2932,17 +2889,17 @@ public class Student implements Serializable {
 
 Write with `ObjectOutputStream`, read with `ObjectInputStream`.
 
-> **Item 85:** Prefer JSON, CSV, or other structured formats — serialization has security and versioning pitfalls.
+<aside class="callout-tip"><p><strong>Item 85:</strong> Prefer JSON, CSV, or other structured formats — serialization has security and versioning pitfalls.</p></aside>
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `FileReadWrite` | NIO.2 Files API: write, read, append, readAllLines |
-| `DirectoryWalker` | Walking directory trees, filtering, calculating sizes |
-| `ByteStreamDemo` | Byte-oriented I/O with streams and Files convenience |
+| [`FileReadWrite`](../16-io-and-nio/src/main/java/course/ch16/examples/FileReadWrite.java) | NIO.2 Files API: write, read, append, readAllLines |
+| [`DirectoryWalker`](../16-io-and-nio/src/main/java/course/ch16/examples/DirectoryWalker.java) | Walking directory trees, filtering, calculating sizes |
+| [`ByteStreamDemo`](../16-io-and-nio/src/main/java/course/ch16/examples/ByteStreamDemo.java) | Byte-oriented I/O with streams and Files convenience |
 
 ```bash
 mvn test -pl 16-io-and-nio
@@ -2950,17 +2907,15 @@ mvn test -pl 16-io-and-nio
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **LineCounter** (Guided) — count lines, words, and characters in a file
-2. **FileSearch** (Practice) — recursively search directories with glob patterns
-3. **CsvParser** (Challenge) — parse CSV into `List<Map<String,String>>`
+1. **LineCounter** (Guided) — count lines, words, and characters in a file<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/LineCounterTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/LineCounter.java)</span>
+2. **FileSearch** (Practice) — recursively search directories with glob patterns<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/FileSearchTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/FileSearch.java)</span>
+3. **CsvParser** (Challenge) — parse CSV into `List<Map<String,String>>`<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/CsvParserTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/CsvParser.java)</span>
 
 ```bash
 mvn test -pl 16-io-and-nio -Dtest="LineCounterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -2972,7 +2927,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `Files.walk()` returns a `Stream<Path>` that must be closed
 - Avoid Java serialization for data exchange — use JSON or CSV instead
 
-Further reading: [java.nio.file package](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/package-summary.html) · *Effective Java* Item 85
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../16-io-and-nio/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/package-summary.html">java.nio.file package</a> · <em>Effective Java</em> Item 85</span></aside>
 
 ---
 
@@ -3016,7 +2972,7 @@ t.start();
 Thread t = Thread.ofPlatform().name("my-thread").start(() -> doWork());
 ```
 
-> Always call `start()`, never `run()` directly — `run()` executes on the **current** thread.
+<aside class="callout-note"><p>Always call <code>start()</code>, never <code>run()</code> directly — <code>run()</code> executes on the <strong>current</strong> thread.</p></aside>
 
 --
 
@@ -3116,13 +3072,13 @@ Keep critical sections **as short as possible** to reduce contention.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `ThreadCreation` | Thread subclass, Runnable lambda, `Thread.ofPlatform()` |
-| `SynchronizedCounter` | Thread-safe vs unsafe counter with `synchronized` |
-| `DeadlockDemo` | Deadlock scenario and fix with consistent lock ordering |
+| [`ThreadCreation`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/ThreadCreation.java) | Thread subclass, Runnable lambda, `Thread.ofPlatform()` |
+| [`SynchronizedCounter`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/SynchronizedCounter.java) | Thread-safe vs unsafe counter with `synchronized` |
+| [`DeadlockDemo`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/DeadlockDemo.java) | Deadlock scenario and fix with consistent lock ordering |
 
 ```bash
 mvn test -pl 17-threads-and-synchronization
@@ -3130,17 +3086,15 @@ mvn test -pl 17-threads-and-synchronization
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **SafeCounter** (Guided) — thread-safe counter with `synchronized`
-2. **ProducerConsumer** (Practice) — bounded buffer with `wait()` / `notifyAll()`
-3. **DiningPhilosophers** (Challenge) — solve without deadlock using `ReentrantLock.tryLock()`
+1. **SafeCounter** (Guided) — thread-safe counter with `synchronized`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/SafeCounterTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/SafeCounter.java)</span>
+2. **ProducerConsumer** (Practice) — bounded buffer with `wait()` / `notifyAll()`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/ProducerConsumerTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/ProducerConsumer.java)</span>
+3. **DiningPhilosophers** (Challenge) — solve without deadlock using `ReentrantLock.tryLock()`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/DiningPhilosophersTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/DiningPhilosophers.java)</span>
 
 ```bash
 mvn test -pl 17-threads-and-synchronization -Dtest="SafeCounterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -3152,7 +3106,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Acquire locks in a **consistent global order** to prevent deadlock
 - `volatile` provides visibility but **not** atomicity
 
-Further reading: [JLS §17.4 — Memory Model](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4) · *Effective Java* Items 78–79
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../17-threads-and-synchronization/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4">JLS §17.4 — Memory Model</a> · <em>Effective Java</em> Items 78–79</span></aside>
 
 ---
 
@@ -3281,13 +3236,13 @@ if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `ExecutorServiceDemo` | Thread pools, `Future` results, graceful shutdown |
-| `CompletableFutureChaining` | `thenApply`, `thenCompose`, `thenCombine`, `exceptionally` |
-| `AtomicCounter` | `AtomicInteger` vs non-atomic, `compareAndSet`, `getAndUpdate` |
+| [`ExecutorServiceDemo`](../18-concurrency-utilities/src/main/java/course/ch18/examples/ExecutorServiceDemo.java) | Thread pools, `Future` results, graceful shutdown |
+| [`CompletableFutureChaining`](../18-concurrency-utilities/src/main/java/course/ch18/examples/CompletableFutureChaining.java) | `thenApply`, `thenCompose`, `thenCombine`, `exceptionally` |
+| [`AtomicCounter`](../18-concurrency-utilities/src/main/java/course/ch18/examples/AtomicCounter.java) | `AtomicInteger` vs non-atomic, `compareAndSet`, `getAndUpdate` |
 
 ```bash
 mvn test -pl 18-concurrency-utilities
@@ -3295,17 +3250,15 @@ mvn test -pl 18-concurrency-utilities
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **ParallelSum** (Guided) — split array into chunks, sum in parallel with `ExecutorService`
-2. **AsyncPipeline** (Practice) — chain `CompletableFuture` stages with error handling
-3. **ConcurrentWordCounter** (Challenge) — count word frequencies with `ConcurrentHashMap.merge()`
+1. **ParallelSum** (Guided) — split array into chunks, sum in parallel with `ExecutorService`<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/ParallelSumTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/ParallelSum.java)</span>
+2. **AsyncPipeline** (Practice) — chain `CompletableFuture` stages with error handling<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/AsyncPipelineTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/AsyncPipeline.java)</span>
+3. **ConcurrentWordCounter** (Challenge) — count word frequencies with `ConcurrentHashMap.merge()`<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/ConcurrentWordCounterTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/ConcurrentWordCounter.java)</span>
 
 ```bash
 mvn test -pl 18-concurrency-utilities -Dtest="ParallelSumTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -3317,7 +3270,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `ConcurrentHashMap` provides atomic compound operations without external synchronization
 - `AtomicInteger` and friends are the right tool for simple counters and flags
 
-Further reading: [java.util.concurrent](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html) · *Effective Java* Item 81
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../18-concurrency-utilities/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a> · <em>Effective Java</em> Item 81</span></aside>
 
 ---
 
@@ -3399,7 +3353,7 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 
 ## Structured Concurrency (Preview)
 
-> `StructuredTaskScope` is a **preview API** in Java 25 — requires `--enable-preview`.
+<aside class="callout-note"><p><code>StructuredTaskScope</code> is a <strong>preview API</strong> in Java 25 — requires <code>--enable-preview</code>.</p></aside>
 
 Subtasks are treated as a unit — start together, parent waits for all, failures cancel siblings:
 
@@ -3442,13 +3396,13 @@ Rule of thumb: if the task **blocks waiting**, virtual threads shine. If it **co
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `VirtualThreadBasics` | Creating virtual threads, named factories, daemon behavior |
-| `VirtualVsPlatformThreads` | Scalability comparison, `newVirtualThreadPerTaskExecutor()` |
-| `StructuredConcurrencyDemo` | Structured concurrency with virtual threads and executors |
+| [`VirtualThreadBasics`](../19-virtual-threads/src/main/java/course/ch19/examples/VirtualThreadBasics.java) | Creating virtual threads, named factories, daemon behavior |
+| [`VirtualVsPlatformThreads`](../19-virtual-threads/src/main/java/course/ch19/examples/VirtualVsPlatformThreads.java) | Scalability comparison, `newVirtualThreadPerTaskExecutor()` |
+| [`StructuredConcurrencyDemo`](../19-virtual-threads/src/main/java/course/ch19/examples/StructuredConcurrencyDemo.java) | Structured concurrency with virtual threads and executors |
 
 ```bash
 mvn test -pl 19-virtual-threads
@@ -3456,17 +3410,15 @@ mvn test -pl 19-virtual-threads
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **VirtualThreadPool** (Guided) — execute tasks with `newVirtualThreadPerTaskExecutor()`
-2. **WebScraper** (Practice) — concurrent URL fetching with timeout support
-3. **StructuredFanOut** (Challenge) — `firstSuccess` and `allSuccesses` patterns
+1. **VirtualThreadPool** (Guided) — execute tasks with `newVirtualThreadPerTaskExecutor()`<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/VirtualThreadPoolTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/VirtualThreadPool.java)</span>
+2. **WebScraper** (Practice) — concurrent URL fetching with timeout support<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/WebScraperTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/WebScraper.java)</span>
+3. **StructuredFanOut** (Challenge) — `firstSuccess` and `allSuccesses` patterns<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/StructuredFanOutTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/StructuredFanOut.java)</span>
 
 ```bash
 mvn test -pl 19-virtual-threads -Dtest="VirtualThreadPoolTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -3478,7 +3430,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Structured concurrency** treats subtasks as a unit — no thread leaks, clear error propagation
 - Avoid pooling VTs; avoid `synchronized` on blocking paths; prefer `ReentrantLock`
 
-Further reading: [JEP 444: Virtual Threads](https://openjdk.org/jeps/444) · [JEP 453: Structured Concurrency](https://openjdk.org/jeps/453) · *Effective Java* Item 80
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../19-virtual-threads/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://openjdk.org/jeps/444">JEP 444: Virtual Threads</a> · <a href="https://openjdk.org/jeps/453">JEP 453: Structured Concurrency</a> · <em>Effective Java</em> Item 80</span></aside>
 
 ---
 
@@ -3662,11 +3615,11 @@ Building the same source should always produce the same artifact:
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `MavenLifecycleDemo` | Maven lifecycle phases modeled as data, phase ordering |
+| [`MavenLifecycleDemo`](../20-build-tools/src/main/java/course/ch20/examples/MavenLifecycleDemo.java) | Maven lifecycle phases modeled as data, phase ordering |
 
 ```bash
 mvn test -pl 20-build-tools
@@ -3674,17 +3627,15 @@ mvn test -pl 20-build-tools
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **DependencyAnalyzer** (Guided) — parse POM XML into `Dependency` records
-2. **VersionResolver** (Practice) — semantic version parsing and range matching
-3. **BuildOrderSolver** (Challenge) — topological sort for module build order
+1. **DependencyAnalyzer** (Guided) — parse POM XML into `Dependency` records<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/DependencyAnalyzerTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/DependencyAnalyzer.java)</span>
+2. **VersionResolver** (Practice) — semantic version parsing and range matching<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/VersionResolverTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/VersionResolver.java)</span>
+3. **BuildOrderSolver** (Challenge) — topological sort for module build order<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/BuildOrderSolverTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/BuildOrderSolver.java)</span>
 
 ```bash
 mvn test -pl 20-build-tools -Dtest="DependencyAnalyzerTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -3696,7 +3647,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Gradle** offers a flexible, script-based alternative with incremental builds
 - Always **pin dependency and plugin versions** for reproducible builds
 
-Further reading: [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) · [Gradle User Manual](https://docs.gradle.org/current/userguide/userguide.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../20-build-tools/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 Minutes</a> · <a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle User Manual</a></span></aside>
 
 ---
 
@@ -3880,7 +3832,7 @@ assumeTrue(System.getProperty("os.name").contains("Linux"));
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -3895,19 +3847,17 @@ mvn test -pl 21-unit-testing-with-junit
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
 Exercises are **reversed** — production code is provided; you write the tests.
 
-1. **Calculator Tests** (Guided) — `add`, `subtract`, `multiply`, `divide`, division by zero
-2. **Roman Numeral** (Practice) — parameterized tests with `@CsvSource` / `@MethodSource`
-3. **Shopping Cart** (Challenge) — nested tests: `WhenEmpty`, `WhenHasItems`, `WithDiscount`
+1. **Calculator Tests** (Guided) — `add`, `subtract`, `multiply`, `divide`, division by zero<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/CalculatorTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/CalculatorTest.java)</span>
+2. **Roman Numeral** (Practice) — parameterized tests with `@CsvSource` / `@MethodSource`<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/RomanNumeralTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/RomanNumeralTest.java)</span>
+3. **Shopping Cart** (Challenge) — nested tests: `WhenEmpty`, `WhenHasItems`, `WithDiscount`<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/ShoppingCartTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/ShoppingCartTest.java)</span>
 
 ```bash
 mvn test -pl 21-unit-testing-with-junit -Dtest="CalculatorTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -3919,7 +3869,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Parameterized tests** eliminate duplication; **nested tests** organize by state
 - `@DisplayName` makes test output human-readable
 
-Further reading: [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) · [Parameterized Tests (Baeldung)](https://www.baeldung.com/parameterized-tests-junit-5)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../21-unit-testing-with-junit/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a> · <a href="https://www.baeldung.com/parameterized-tests-junit-5">Parameterized Tests (Baeldung)</a></span></aside>
 
 ---
 
@@ -4041,7 +3992,7 @@ Use spies when you want partial real behavior with selective stubbing.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -4055,17 +4006,15 @@ mvn test -pl 22-mocking-and-integration-testing
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **UserService** (Guided) — mock `UserRepository` and `EmailService`
-2. **OrderService** (Practice) — mock `PaymentGateway` and `InventoryService`
-3. **NotificationService** (Challenge) — use a spy to verify dispatch methods by preference
+1. **UserService** (Guided) — mock `UserRepository` and `EmailService`<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/UserServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/UserServiceTest.java)</span>
+2. **OrderService** (Practice) — mock `PaymentGateway` and `InventoryService`<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/OrderServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/OrderServiceTest.java)</span>
+3. **NotificationService** (Challenge) — use a spy to verify dispatch methods by preference<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/NotificationServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/NotificationServiceTest.java)</span>
 
 ```bash
 mvn test -pl 22-mocking-and-integration-testing -Dtest="UserServiceTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4076,7 +4025,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Use `@ExtendWith(MockitoExtension.class)` to initialize mocks
 - Over-mocking leads to brittle tests — mock only what you need to isolate
 
-Further reading: [Mockito documentation](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html) · *Effective Java* Item 51
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../22-mocking-and-integration-testing/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html">Mockito documentation</a> · <em>Effective Java</em> Item 51</span></aside>
 
 ---
 
@@ -4209,13 +4159,13 @@ This pattern powers validation, serialization, and framework-style behavior.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `BuiltInAnnotations` | `@Override`, `@Deprecated`, `@FunctionalInterface` |
-| `CustomAnnotationDemo` | Custom `@NotNull` and `@Range` with runtime validation |
-| `ReflectionBasics` | Inspecting fields, methods, invoking behavior |
+| [`BuiltInAnnotations`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/BuiltInAnnotations.java) | `@Override`, `@Deprecated`, `@FunctionalInterface` |
+| [`CustomAnnotationDemo`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/CustomAnnotationDemo.java) | Custom `@NotNull` and `@Range` with runtime validation |
+| [`ReflectionBasics`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/ReflectionBasics.java) | Inspecting fields, methods, invoking behavior |
 
 ```bash
 mvn test -pl 23-annotations-and-reflection
@@ -4223,17 +4173,15 @@ mvn test -pl 23-annotations-and-reflection
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Object Inspector** (Guided) — summarize class name, fields, and methods via reflection
-2. **Simple Serializer** (Practice) — serialize only `@Serializable` fields to `key=value,...`
-3. **Mini Test Runner** (Challenge) — discover and run methods annotated with course `@Test`
+1. **Object Inspector** (Guided) — summarize class name, fields, and methods via reflection<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/ObjectInspectorTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/ObjectInspector.java)</span>
+2. **Simple Serializer** (Practice) — serialize only `@Serializable` fields to `key=value,...`<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/SimpleSerializerTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/SimpleSerializer.java)</span>
+3. **Mini Test Runner** (Challenge) — discover and run methods annotated with course `@Test`<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/MiniTestRunnerTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/MiniTestRunner.java)</span>
 
 ```bash
 mvn test -pl 23-annotations-and-reflection -Dtest="ObjectInspectorTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4244,7 +4192,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Custom annotations** power validation, serialization, and framework behavior
 - **Reflection** inspects types at runtime — use sparingly (performance and encapsulation costs)
 
-Further reading: [JLS §9.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.6) · [java.lang.reflect API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/package-summary.html)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../23-annotations-and-reflection/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.6">JLS §9.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/package-summary.html">java.lang.reflect API</a></span></aside>
 
 ---
 
@@ -4361,14 +4310,14 @@ Never use legacy `Date`/`Calendar` in new code.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `DateTimeCreation` | Creating and parsing local dates and times |
-| `DateTimeFormatting` | Formatting with ISO and custom patterns |
-| `DurationAndPeriod` | Elapsed time and calendar periods |
-| `ZonedDateTimeDemo` | Zone conversion and offsets |
+| [`DateTimeCreation`](../24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeCreation.java) | Creating and parsing local dates and times |
+| [`DateTimeFormatting`](../24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeFormatting.java) | Formatting with ISO and custom patterns |
+| [`DurationAndPeriod`](../24-date-and-time-api/src/main/java/course/ch24/examples/DurationAndPeriod.java) | Elapsed time and calendar periods |
+| [`ZonedDateTimeDemo`](../24-date-and-time-api/src/main/java/course/ch24/examples/ZonedDateTimeDemo.java) | Zone conversion and offsets |
 
 ```bash
 mvn test -pl 24-date-and-time-api
@@ -4376,17 +4325,15 @@ mvn test -pl 24-date-and-time-api
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Age Calculator** (Guided) — age in years and as a full `Period`
-2. **Meeting Scheduler** (Practice) — detect overlapping meetings, find next slot
-3. **Time Zone Converter** (Challenge) — convert zoned date-times between regions
+1. **Age Calculator** (Guided) — age in years and as a full `Period`<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/AgeCalculatorTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/AgeCalculator.java)</span>
+2. **Meeting Scheduler** (Practice) — detect overlapping meetings, find next slot<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/MeetingSchedulerTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/MeetingScheduler.java)</span>
+3. **Time Zone Converter** (Challenge) — convert zoned date-times between regions<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/TimeZoneConverterTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/TimeZoneConverter.java)</span>
 
 ```bash
 mvn test -pl 24-date-and-time-api -Dtest="AgeCalculatorTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4397,7 +4344,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`Duration`** measures time; **`Period`** measures calendar dates
 - **`DateTimeFormatter`** is immutable and thread-safe — define formatters as constants
 
-Further reading: [java.time API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/package-summary.html) · [JEP 150](https://openjdk.org/jeps/150)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../24-date-and-time-api/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/package-summary.html">java.time API</a> · <a href="https://openjdk.org/jeps/150">JEP 150</a></span></aside>
 
 ---
 
@@ -4544,12 +4492,12 @@ In tests: use `com.sun.net.httpserver.HttpServer` on a random port or a stub `Ht
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `HttpClientDemo` | Creating clients, sending GET requests |
-| `RequestBuilderDemo` | POST with JSON, timeouts, Authorization headers |
+| [`HttpClientDemo`](../25-networking-basics/src/main/java/course/ch25/examples/HttpClientDemo.java) | Creating clients, sending GET requests |
+| [`RequestBuilderDemo`](../25-networking-basics/src/main/java/course/ch25/examples/RequestBuilderDemo.java) | POST with JSON, timeouts, Authorization headers |
 
 ```bash
 mvn test -pl 25-networking-basics
@@ -4557,17 +4505,15 @@ mvn test -pl 25-networking-basics
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **Request Builder** (Guided) — build GET and POST requests with appropriate headers
-2. **JSON Placeholder Client** (Practice) — REST client with injectable `HttpClient` and base URL
-3. **Retrying HTTP Client** (Challenge) — automatic retries via injectable `HttpSender`
+1. **Request Builder** (Guided) — build GET and POST requests with appropriate headers<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/RequestBuilderTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/RequestBuilder.java)</span>
+2. **JSON Placeholder Client** (Practice) — REST client with injectable `HttpClient` and base URL<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/JsonPlaceholderClientTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/JsonPlaceholderClient.java)</span>
+3. **Retrying HTTP Client** (Challenge) — automatic retries via injectable `HttpSender`<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/RetryingHttpClientTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/RetryingHttpClient.java)</span>
 
 ```bash
 mvn test -pl 25-networking-basics -Dtest="RequestBuilderTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4579,7 +4525,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Accept **injectable dependencies** so network code can be tested locally
 - Handle **status codes** explicitly — do not assume every response is 200
 
-Further reading: [HttpClient API](https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html) · [JEP 321](https://openjdk.org/jeps/321)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../25-networking-basics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html">HttpClient API</a> · <a href="https://openjdk.org/jeps/321">JEP 321</a></span></aside>
 
 ---
 
@@ -4765,13 +4712,13 @@ In production, always use a pool — never `DriverManager` per request.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `JdbcBasics` | `Statement`, `ResultSet`, row counting |
-| `PreparedStatementDemo` | Parameterized queries, inserts, generated keys |
-| `TransactionDemo` | Commit, rollback, fund transfer |
+| [`JdbcBasics`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/JdbcBasics.java) | `Statement`, `ResultSet`, row counting |
+| [`PreparedStatementDemo`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/PreparedStatementDemo.java) | Parameterized queries, inserts, generated keys |
+| [`TransactionDemo`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/TransactionDemo.java) | Commit, rollback, fund transfer |
 
 ```bash
 mvn test -pl 26-database-access-with-jdbc
@@ -4779,17 +4726,15 @@ mvn test -pl 26-database-access-with-jdbc
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **StudentDao** (Guided) — find and insert for a students table
-2. **TransactionManager** (Practice) — wrap work in commit/rollback
-3. **GenericDao** (Challenge) — reusable query helper with `RowMapper`
+1. **StudentDao** (Guided) — find and insert for a students table<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/StudentDaoTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/StudentDao.java)</span>
+2. **TransactionManager** (Practice) — wrap work in commit/rollback<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/TransactionManagerTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/TransactionManager.java)</span>
+3. **GenericDao** (Challenge) — reusable query helper with `RowMapper`<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/GenericDaoTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/GenericDao.java)</span>
 
 ```bash
 mvn test -pl 26-database-access-with-jdbc -Dtest="StudentDaoTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4801,7 +4746,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - In production, use a **connection pool** — not `DriverManager` per request
 - Tests can use in-memory **H2** without external infrastructure
 
-Further reading: [JDBC Tutorial](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html) · [HikariCP](https://github.com/brettwooldridge/HikariCP)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../26-database-access-with-jdbc/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">JDBC Tutorial</a> · <a href="https://github.com/brettwooldridge/HikariCP">HikariCP</a></span></aside>
 
 ---
 
@@ -4924,7 +4870,7 @@ Unnamed variables document that a value is **deliberately ignored**.
 
 ## Preview Features (Java 25)
 
-> Require `--enable-preview` at compile and runtime. This chapter uses only **finalized** features.
+<aside class="callout-note"><p>Require <code>--enable-preview</code> at compile and runtime. This chapter uses only <strong>finalized</strong> features.</p></aside>
 
 | JEP | Feature | Status |
 |-----|---------|--------|
@@ -4938,13 +4884,13 @@ Do not use preview APIs in production without understanding stability risk.
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `PatternMatchingSwitch` | Type patterns, null cases, `when` guards |
-| `UnnamedVariables` | `_` in loops, catch, lambdas, record patterns |
-| `GuardedPatterns` | Sealed `Shape` hierarchy with exhaustive switch |
+| [`PatternMatchingSwitch`](../27-modern-java-features/src/main/java/course/ch27/examples/PatternMatchingSwitch.java) | Type patterns, null cases, `when` guards |
+| [`UnnamedVariables`](../27-modern-java-features/src/main/java/course/ch27/examples/UnnamedVariables.java) | `_` in loops, catch, lambdas, record patterns |
+| [`GuardedPatterns`](../27-modern-java-features/src/main/java/course/ch27/examples/GuardedPatterns.java) | Sealed `Shape` hierarchy with exhaustive switch |
 
 ```bash
 mvn test -pl 27-modern-java-features
@@ -4952,17 +4898,15 @@ mvn test -pl 27-modern-java-features
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **ShapeFormatter** (Guided) — pattern matching switch with guards for squares
-2. **ExpressionEvaluator** (Practice) — evaluate sealed `Expr` hierarchy recursively
-3. **JsonPrettyPrinter** (Challenge) — pretty-print sealed `JsonValue` with indentation
+1. **ShapeFormatter** (Guided) — pattern matching switch with guards for squares<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/ShapeFormatterTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/ShapeFormatter.java)</span>
+2. **ExpressionEvaluator** (Practice) — evaluate sealed `Expr` hierarchy recursively<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/ExpressionEvaluatorTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/ExpressionEvaluator.java)</span>
+3. **JsonPrettyPrinter** (Challenge) — pretty-print sealed `JsonValue` with indentation<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/JsonPrettyPrinterTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/JsonPrettyPrinter.java)</span>
 
 ```bash
 mvn test -pl 27-modern-java-features -Dtest="ShapeFormatterTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -4974,7 +4918,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Sealed types + patterns** give compile-time exhaustiveness checking
 - **Preview features** require explicit opt-in — prefer finalized APIs for production
 
-Further reading: [JEP 441](https://openjdk.org/jeps/441) · [JEP 456](https://openjdk.org/jeps/456) · [JEP 409](https://openjdk.org/jeps/409)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../27-modern-java-features/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://openjdk.org/jeps/441">JEP 441</a> · <a href="https://openjdk.org/jeps/456">JEP 456</a> · <a href="https://openjdk.org/jeps/409">JEP 409</a></span></aside>
 
 ---
 
@@ -5004,22 +4949,13 @@ The JVM loads classes **lazily** — when first referenced:
 | **Linking** | Verify bytecode, prepare static fields, resolve references |
 | **Initialization** | Run static initializers (`<clinit>`) in source order |
 
-<div class="mermaid">
-flowchart LR
-    A["Loading"] --> B["Linking"]
-    B --> C["Initialization"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Loading</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Linking</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Initialization</span></div></div>
 
 --
 
 ## Initialization Order
 
-<div class="mermaid">
-flowchart TD
-    A["Parent static"] --> B["Child static"]
-    B --> C["Parent instance + ctor"]
-    C --> D["Child instance + ctor"]
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Parent static</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Child static</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Parent instance + ctor</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Child instance + ctor</span></div></div>
 
 Parent before child; static before instance.
 
@@ -5027,14 +4963,7 @@ Parent before child; static before instance.
 
 ## Class Loader Hierarchy
 
-<div class="mermaid">
-flowchart BT
-    App["Application ClassLoader"]
-    Plat["Platform ClassLoader"]
-    Boot["Bootstrap ClassLoader"]
-    App --> Plat
-    Plat --> Boot
-</div>
+<div class="flow"><div class="flow-box"><span class="flow-title">Application ClassLoader</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Platform ClassLoader</span></div><span class="flow-arrow" aria-hidden="true"></span><div class="flow-box"><span class="flow-title">Bootstrap ClassLoader</span></div></div>
 
 Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
@@ -5042,15 +4971,7 @@ Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
 ## JVM Memory Areas
 
-<div class="mermaid">
-flowchart TB
-    subgraph jvm["JVM process"]
-        heap["Heap - objects and arrays"]
-        meta["Metaspace - class metadata"]
-        stacks["Thread stacks"]
-        code["Code cache - JIT"]
-    end
-</div>
+<div class="flow flow-cluster"><div class="flow-box"><span class="flow-title">Heap</span><span class="flow-sub">objects and arrays</span></div><div class="flow-box"><span class="flow-title">Metaspace</span><span class="flow-sub">class metadata</span></div><div class="flow-box"><span class="flow-title">Thread stacks</span></div><div class="flow-box"><span class="flow-title">Code cache</span><span class="flow-sub">JIT</span></div></div>
 
 --
 
@@ -5147,13 +5068,13 @@ java -XX:+HeapDumpOnOutOfMemoryError MyApp
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `ClassLoadingOrder` | Static and instance initialization order |
-| `MemoryDemo` | Heap sizing via `Runtime`, allocation, `System.gc()` |
-| `GCObserver` | GC statistics via `GarbageCollectorMXBean` |
+| [`ClassLoadingOrder`](../28-jvm-internals/src/main/java/course/ch28/examples/ClassLoadingOrder.java) | Static and instance initialization order |
+| [`MemoryDemo`](../28-jvm-internals/src/main/java/course/ch28/examples/MemoryDemo.java) | Heap sizing via `Runtime`, allocation, `System.gc()` |
+| [`GCObserver`](../28-jvm-internals/src/main/java/course/ch28/examples/GCObserver.java) | GC statistics via `GarbageCollectorMXBean` |
 
 ```bash
 mvn test -pl 28-jvm-internals
@@ -5161,17 +5082,15 @@ mvn test -pl 28-jvm-internals
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **MemoryAnalyzer** (Guided) — report heap usage with `Runtime`
-2. **ClassInspector** (Practice) — extract class metadata via reflection
-3. **ObjectSizeEstimator** (Challenge) — estimate sizes with HotSpot heuristics
+1. **MemoryAnalyzer** (Guided) — report heap usage with `Runtime`<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/MemoryAnalyzerTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/MemoryAnalyzer.java)</span>
+2. **ClassInspector** (Practice) — extract class metadata via reflection<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/ClassInspectorTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/ClassInspector.java)</span>
+3. **ObjectSizeEstimator** (Challenge) — estimate sizes with HotSpot heuristics<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/ObjectSizeEstimatorTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/ObjectSizeEstimator.java)</span>
 
 ```bash
 mvn test -pl 28-jvm-internals -Dtest="MemoryAnalyzerTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -5183,7 +5102,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - The **JIT compiler** profiles hot methods and compiles them after warmup
 - **Diagnostic tools** (`jcmd`, `jstat`, `jfr`, JMX) observe memory, GC, and threads at runtime
 
-Further reading: [JVM Spec Ch. 5](https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html) · [Java Performance (Oaks)](https://www.oreilly.com/library/view/java-performance-2nd/9781492056102/)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../28-jvm-internals/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html">JVM Spec Ch. 5</a> · <a href="https://www.oreilly.com/library/view/java-performance-2nd/9781492056102/">Java Performance (Oaks)</a></span></aside>
 
 ---
 
@@ -5315,18 +5235,18 @@ Use when: an object has many optional parameters, or construction involves multi
 | Factory | Decouple creation from usage | Factory method/class |
 | Builder | Complex object construction | Fluent step-by-step API |
 
-> Patterns are tools, not goals — apply them when they solve a **real** problem.
+<aside class="callout-note"><p>Patterns are tools, not goals — apply them when they solve a <strong>real</strong> problem.</p></aside>
 
 --
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
-| `StrategyPattern` | Pricing strategies (no/percentage/fixed) |
-| `ObserverPattern` | Weather station with temperature observers |
-| `BuilderPattern` | Fluent pizza builder |
-| `FactoryPattern` | Vehicle factory by type name |
+| [`StrategyPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/StrategyPattern.java) | Pricing strategies (no/percentage/fixed) |
+| [`ObserverPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/ObserverPattern.java) | Weather station with temperature observers |
+| [`BuilderPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/BuilderPattern.java) | Fluent pizza builder |
+| [`FactoryPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/FactoryPattern.java) | Vehicle factory by type name |
 
 ```bash
 mvn test -pl 29-design-principles-and-patterns
@@ -5334,17 +5254,15 @@ mvn test -pl 29-design-principles-and-patterns
 
 --
 
-## Exercises — Your Turn
+## Exercises
 
-1. **NotificationStrategy** (Guided) — email, SMS, and push notification strategies
-2. **EventSystem** (Practice) — generic event bus with subscribe/publish
-3. **QueryBuilder** (Challenge) — SQL SELECT with optional WHERE, ORDER BY, LIMIT
+1. **NotificationStrategy** (Guided) — email, SMS, and push notification strategies<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/NotificationStrategyTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/NotificationStrategy.java)</span>
+2. **EventSystem** (Practice) — generic event bus with subscribe/publish<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/EventSystemTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/EventSystem.java)</span>
+3. **QueryBuilder** (Challenge) — SQL SELECT with optional WHERE, ORDER BY, LIMIT<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/QueryBuilderTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/QueryBuilder.java)</span>
 
 ```bash
 mvn test -pl 29-design-principles-and-patterns -Dtest="NotificationStrategyTest"
 ```
-
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 
 --
 
@@ -5356,7 +5274,8 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Factory** hides concrete types and centralizes creation logic
 - **Builder** makes complex object construction readable and safe
 
-Further reading: [GoF Design Patterns](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/) · [Refactoring Guru](https://refactoring.guru/design-patterns)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../29-design-principles-and-patterns/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://www.oreilly.com/library/view/design-patterns-elements/0201633612/">GoF Design Patterns</a> · <a href="https://refactoring.guru/design-patterns">Refactoring Guru</a></span></aside>
 
 ---
 
@@ -5538,17 +5457,17 @@ java -jar target/ch30-capstone-project-1.0.0.jar
 
 ```
 Task Manager — type 'help' for commands
-> add Buy groceries --desc Milk and eggs
+<aside class="callout-cli"><p>add Buy groceries --desc Milk and eggs</p></aside>
 Created: [a1b2c3d4-...] Buy groceries (PENDING)
-> list
+<aside class="callout-cli"><p>list</p></aside>
 [a1b2c3d4-...] Buy groceries (PENDING)
-> update a1b2c3d4-... IN_PROGRESS
+<aside class="callout-cli"><p>update a1b2c3d4-... IN_PROGRESS</p></aside>
 Updated: [a1b2c3d4-...] Buy groceries (IN_PROGRESS)
-> list --status IN_PROGRESS
+<aside class="callout-cli"><p>list --status IN_PROGRESS</p></aside>
 [a1b2c3d4-...] Buy groceries (IN_PROGRESS)
-> count
+<aside class="callout-cli"><p>count</p></aside>
 Total tasks: 1
-> exit
+<aside class="callout-cli"><p>exit</p></aside>
 Goodbye.
 ```
 
@@ -5577,4 +5496,4 @@ Goodbye.
 - A complete application combines language features, design patterns, I/O, testing, and build tooling
 - This project is a **foundation** — extend it to make it your own
 
-Full lesson: [`README.md`](README.md)
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../30-capstone-project/README.md"><code>README.md</code></a></span></aside>

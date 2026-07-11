@@ -142,7 +142,7 @@ Prefer `ArrayDeque` over `LinkedList` for queue and stack operations.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -157,7 +157,7 @@ mvn test -pl 12-collections-framework
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Frequency Counter** (Guided) — word frequencies with `HashMap`, sorted by count
 2. **Unique Queue** (Practice) — FIFO queue that rejects duplicates
@@ -167,7 +167,7 @@ mvn test -pl 12-collections-framework
 mvn test -pl 12-collections-framework -Dtest="FrequencyCounterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -178,4 +178,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Collections are **not thread-safe** unless designed for concurrency (Chapter 18)
 - Use **streams** (Chapter 14) for declarative collection processing
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Item 54 · [JLS §4.8](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.8)

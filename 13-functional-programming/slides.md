@@ -132,7 +132,7 @@ Lambdas are the foundation of the **Streams API** (Chapter 14).
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -146,7 +146,7 @@ mvn test -pl 13-functional-programming
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **String Filters** (Guided) — `Predicate<String>` factories and a filter method
 2. **Pipeline** (Practice) — chain `Function<T, T>` transformations in a fluent builder
@@ -156,7 +156,7 @@ mvn test -pl 13-functional-programming
 mvn test -pl 13-functional-programming -Dtest="StringFiltersTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -167,4 +167,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Use `Predicate`, `Function`, `Consumer` from `java.util.function` — don't reinvent
 - Lambdas are the foundation of the **Streams API** (Chapter 14)
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Item 42 · [JLS §15.27](https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.27)

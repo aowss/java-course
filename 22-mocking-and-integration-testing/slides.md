@@ -127,7 +127,7 @@ Use spies when you want partial real behavior with selective stubbing.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -141,7 +141,7 @@ mvn test -pl 22-mocking-and-integration-testing
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **UserService** (Guided) — mock `UserRepository` and `EmailService`
 2. **OrderService** (Practice) — mock `PaymentGateway` and `InventoryService`
@@ -151,7 +151,7 @@ mvn test -pl 22-mocking-and-integration-testing
 mvn test -pl 22-mocking-and-integration-testing -Dtest="UserServiceTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -162,4 +162,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Use `@ExtendWith(MockitoExtension.class)` to initialize mocks
 - Over-mocking leads to brittle tests — mock only what you need to isolate
 
+Full lesson: [`README.md`](README.md)
 Further reading: [Mockito documentation](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html) · *Effective Java* Item 51

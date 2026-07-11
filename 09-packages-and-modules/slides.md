@@ -187,7 +187,7 @@ for (Codec codec : loader) {
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -200,7 +200,7 @@ mvn test -pl 09-packages-and-modules
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Package Organizer** (Guided) — assign class names to correct package layers
 2. **Module Info Parser** (Practice) — parse `module-info.java` into a `ModuleInfo` record
@@ -210,7 +210,7 @@ mvn test -pl 09-packages-and-modules
 mvn test -pl 09-packages-and-modules -Dtest="PackageOrganizerTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -222,4 +222,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`ServiceLoader`** decouples interfaces from implementations, enabling plug-in architectures
 - Every module implicitly requires `java.base`; the JDK itself is modularized
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §7](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html) · [JEP 261](https://openjdk.org/jeps/261) · [ServiceLoader Javadoc](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html)

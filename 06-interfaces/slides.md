@@ -140,7 +140,7 @@ Prefer interfaces for pure contracts. Use abstract classes when related types sh
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -154,7 +154,7 @@ mvn test -pl 06-interfaces
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Measurable Shapes** (Guided) — `Circle` and `Rectangle` records implementing `MeasurableShape`
 2. **Validator** (Practice) — `@FunctionalInterface` with factory methods and `and()`
@@ -164,7 +164,7 @@ mvn test -pl 06-interfaces
 mvn test -pl 06-interfaces -Dtest="MeasurableTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -176,4 +176,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `@FunctionalInterface` marks a SAM type, enabling **lambdas** and **method references**
 - A class can **implement multiple interfaces**, achieving flexible polymorphism
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §9.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1) · [JLS §9.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.4) · *Effective Java* Item 20

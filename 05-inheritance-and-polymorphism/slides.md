@@ -46,12 +46,7 @@ public class Car extends Vehicle {
 
 ## Initialization with Inheritance
 
-```mermaid
-flowchart TD
-    A["Parent static"] --> B["Child static"]
-    B --> C["Parent instance + ctor"]
-    C --> D["Child instance + ctor"]
-```
+**Parent static** → **Child static** → **Parent instance + ctor** → **Child instance + ctor**
 
 `super(...)` must be the **first** statement in a subclass constructor.
 
@@ -91,11 +86,7 @@ Vehicle v = new Car("Toyota", 4);
 v.describe();   // → "Toyota car with 4 doors" (Car's version)
 ```
 
-```mermaid
-flowchart LR
-    V["Declared: Vehicle"] --> O["Actual: Car"]
-    O --> M["Calls Car describe"]
-```
+**Declared: Vehicle** → **Actual: Car** → **Calls `Car.describe()`**
 
 This is **polymorphism** — same interface, different behavior.
 
@@ -151,7 +142,7 @@ Equal objects **must** share the same hash code — required for `HashMap` / `Ha
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -164,7 +155,7 @@ mvn test -pl 05-inheritance-and-polymorphism
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Animal Hierarchy** (Guided) — `speak()` and `toString` for Dog, Cat
 2. **Employee Hierarchy** (Practice) — `equals`, `hashCode`, `toString` with `getClass()`
@@ -174,7 +165,7 @@ mvn test -pl 05-inheritance-and-polymorphism
 mvn test -pl 05-inheritance-and-polymorphism -Dtest="AnimalTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -185,4 +176,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Abstract classes** define a contract subclasses must fulfill
 - Always override `hashCode` when you override `equals`; use `@Override` everywhere
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §8.1.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.1.4) · *Effective Java* Items 10–11

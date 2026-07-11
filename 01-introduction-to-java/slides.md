@@ -46,14 +46,7 @@ Created by James Gosling at Sun Microsystems (1995):
 
 > Since Java 11, only the **JDK** is distributed — no separate JRE download.
 
-```mermaid
-flowchart TB
-    JDK["JDK - develop and run"]
-    JRE["JRE / runtime libraries"]
-    JVM["JVM executes bytecode"]
-    JDK --> JRE
-    JRE --> JVM
-```
+**JDK** (develop and run) → **JRE** (runtime libraries) → **JVM** (executes bytecode)
 
 ---
 
@@ -80,13 +73,7 @@ Java does **both** — ahead-of-time compilation *and* runtime interpretation.
 
 ## Compilation and Execution
 
-```mermaid
-flowchart TD
-    A["Source (.java)"] --> B["javac"]
-    B --> C["Bytecode (.class)"]
-    C --> D["JVM and JIT"]
-    D --> E["Program output"]
-```
+**Source** (.java) → **javac** → **Bytecode** (.class) → **JVM + JIT** → **Program output**
 
 - Bytecode is **platform-independent**
 - The JVM is **platform-specific**
@@ -125,7 +112,7 @@ mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -138,7 +125,7 @@ mvn test -pl 01-introduction-to-java
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Greeting** (Guided) — print `Hello, <name>!` from command-line args
 2. **System Reporter** (Practice) — return Java version, OS name, and architecture
@@ -147,7 +134,7 @@ mvn test -pl 01-introduction-to-java
 mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -158,4 +145,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Every program starts at `public static void main(String[] args)`
 - File name must match the public class name
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §7.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6) · [Oracle Getting Started](https://docs.oracle.com/en/java/javase/25/docs/api/)

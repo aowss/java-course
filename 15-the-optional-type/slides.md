@@ -128,7 +128,7 @@ Terminal ops like `findFirst`, `min`, `max` return `Optional` — no more sentin
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -142,7 +142,7 @@ mvn test -pl 15-the-optional-type
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Safe Parser** (Guided) — `parseInt`, `parseDouble`, `firstValidInt`
 2. **User Service** (Practice) — lookup, email domain, greeting with Optional chains
@@ -152,7 +152,7 @@ mvn test -pl 15-the-optional-type
 mvn test -pl 15-the-optional-type -Dtest="SafeParserTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -164,4 +164,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`filter`** narrows to values matching a predicate
 - Use Optional for **return types only** — not fields, parameters, or collections
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Item 55 · [java.util.Optional](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html)

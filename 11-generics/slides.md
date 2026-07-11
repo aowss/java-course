@@ -193,7 +193,7 @@ Workaround: use `Object[]` internally (as `ArrayList` does) and cast on return.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -207,7 +207,7 @@ mvn test -pl 11-generics
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Stack\<T\>** (Guided) — LIFO stack backed by `Object[]`
 2. **Transformer\<T,R\>** (Practice) — compose transformers, apply to lists
@@ -217,7 +217,7 @@ mvn test -pl 11-generics
 mvn test -pl 11-generics -Dtest="StackTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -229,4 +229,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Type erasure** removes generic info at runtime — no `instanceof`, no generic arrays
 - Prefer `List<String>` over raw `List`
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Item 31 · [JLS §4.5](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.5)

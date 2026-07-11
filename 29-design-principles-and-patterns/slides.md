@@ -141,7 +141,7 @@ Use when: an object has many optional parameters, or construction involves multi
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -156,7 +156,7 @@ mvn test -pl 29-design-principles-and-patterns
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **NotificationStrategy** (Guided) — email, SMS, and push notification strategies
 2. **EventSystem** (Practice) — generic event bus with subscribe/publish
@@ -166,7 +166,7 @@ mvn test -pl 29-design-principles-and-patterns
 mvn test -pl 29-design-principles-and-patterns -Dtest="NotificationStrategyTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -178,4 +178,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Factory** hides concrete types and centralizes creation logic
 - **Builder** makes complex object construction readable and safe
 
+Full lesson: [`README.md`](README.md)
 Further reading: [GoF Design Patterns](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/) · [Refactoring Guru](https://refactoring.guru/design-patterns)

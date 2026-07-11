@@ -134,7 +134,7 @@ if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -148,7 +148,7 @@ mvn test -pl 18-concurrency-utilities
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **ParallelSum** (Guided) — split array into chunks, sum in parallel with `ExecutorService`
 2. **AsyncPipeline** (Practice) — chain `CompletableFuture` stages with error handling
@@ -158,7 +158,7 @@ mvn test -pl 18-concurrency-utilities
 mvn test -pl 18-concurrency-utilities -Dtest="ParallelSumTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -170,4 +170,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `ConcurrentHashMap` provides atomic compound operations without external synchronization
 - `AtomicInteger` and friends are the right tool for simple counters and flags
 
+Full lesson: [`README.md`](README.md)
 Further reading: [java.util.concurrent](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html) · *Effective Java* Item 81

@@ -116,7 +116,7 @@ Run with: `java Main` (no arguments)
 
 ## Q6 · True or false
 
-> Since Java 11, Oracle distributes the JRE as a separate download from the JDK.
+<aside class="callout-note"><p>Since Java 11, Oracle distributes the JRE as a separate download from the JDK.</p></aside>
 
 --
 
@@ -273,7 +273,7 @@ What is `nums[2]`? What happens if you access `nums[3]` at runtime?
 
 ## Q6 · True or false
 
-> A `final` local variable can be assigned more than once as long as each assignment is in a different block.
+<aside class="callout-note"><p>A <code>final</code> local variable can be assigned more than once as long as each assignment is in a different block.</p></aside>
 
 --
 
@@ -664,7 +664,7 @@ Fix: `this.owner = owner.trim();`
 
 ## Q6 · True or false
 
-> These two field declarations are equivalent to the compiler: `final public static int X` and `public static final int X`.
+<aside class="callout-note"><p>These two field declarations are equivalent to the compiler: <code>final public static int X</code> and <code>public static final int X</code>.</p></aside>
 
 --
 
@@ -816,7 +816,7 @@ What is the difference between **overriding** and **overloading**?
 
 ## Q5 · True or false
 
-> If a subclass overrides `equals()`, it is optional to override `hashCode()` as long as `equals()` is correct.
+<aside class="callout-note"><p>If a subclass overrides <code>equals()</code>, it is optional to override <code>hashCode()</code> as long as <code>equals()</code> is correct.</p></aside>
 
 --
 
@@ -974,7 +974,7 @@ class App {
 
 ## Q4 · True or false
 
-> All methods in an interface are `public` and `abstract` unless marked otherwise.
+<aside class="callout-note"><p>All methods in an interface are <code>public</code> and <code>abstract</code> unless marked otherwise.</p></aside>
 
 --
 
@@ -1208,7 +1208,7 @@ Enum constructors are implicitly **private**.
 
 ## Q6 · True or false
 
-> A sealed class can be extended by any class in the same package.
+<aside class="callout-note"><p>A sealed class can be extended by any class in the same package.</p></aside>
 
 --
 

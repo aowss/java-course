@@ -138,7 +138,7 @@ Write with `ObjectOutputStream`, read with `ObjectInputStream`.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -152,7 +152,7 @@ mvn test -pl 16-io-and-nio
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **LineCounter** (Guided) — count lines, words, and characters in a file
 2. **FileSearch** (Practice) — recursively search directories with glob patterns
@@ -162,7 +162,7 @@ mvn test -pl 16-io-and-nio
 mvn test -pl 16-io-and-nio -Dtest="LineCounterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -174,4 +174,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `Files.walk()` returns a `Stream<Path>` that must be closed
 - Avoid Java serialization for data exchange — use JSON or CSV instead
 
+Full lesson: [`README.md`](README.md)
 Further reading: [java.nio.file package](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/package-summary.html) · *Effective Java* Item 85

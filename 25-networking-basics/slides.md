@@ -152,7 +152,7 @@ In tests: use `com.sun.net.httpserver.HttpServer` on a random port or a stub `Ht
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -165,7 +165,7 @@ mvn test -pl 25-networking-basics
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Request Builder** (Guided) — build GET and POST requests with appropriate headers
 2. **JSON Placeholder Client** (Practice) — REST client with injectable `HttpClient` and base URL
@@ -175,7 +175,7 @@ mvn test -pl 25-networking-basics
 mvn test -pl 25-networking-basics -Dtest="RequestBuilderTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -187,4 +187,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Accept **injectable dependencies** so network code can be tested locally
 - Handle **status codes** explicitly — do not assume every response is 200
 
+Full lesson: [`README.md`](README.md)
 Further reading: [HttpClient API](https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html) · [JEP 321](https://openjdk.org/jeps/321)

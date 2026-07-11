@@ -159,17 +159,11 @@ static { /* runs once when class loads */ }
 
 **Order for `new Demo()`:**
 
-```mermaid
-flowchart TD
-    A["Static fields"] --> B["Static blocks"]
-    B --> C["Instance fields"]
-    C --> D["Instance blocks"]
-    D --> E["Constructor"]
-```
+**Static fields** → **Static blocks** → **Instance fields** → **Instance blocks** → **Constructor**
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -183,7 +177,7 @@ mvn test -pl 04-classes-and-objects
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Rectangle** (Guided) — area, perimeter, `toString`
 2. **Student** (Practice) — grades, average, highest, unmodifiable view
@@ -193,7 +187,7 @@ mvn test -pl 04-classes-and-objects
 mvn test -pl 04-classes-and-objects -Dtest="RectangleTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -205,4 +199,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `static` members belong to the class, not instances
 - Initialization blocks run in a fixed, predictable order
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §8.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2) · *Effective Java* Items 15–16

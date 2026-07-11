@@ -17,6 +17,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(sys.argv[1]).parent / "slides"))
+from reveal_transforms import transform_slide
+
 quiz_dir = Path(sys.argv[1])
 slides_dir = Path(sys.argv[2])
 out_md = Path(sys.argv[3])
@@ -124,26 +127,24 @@ def build_reveal_markdown(all_quizzes: list[tuple[Path, dict]]) -> str:
         "",
     ]
 
+    def slide_block(content: str) -> str:
+        return transform_slide(content.strip())
+
     for quiz_path, data in all_quizzes:
         lines.append("---")
         lines.append("")
         lines.append('<!-- .slide: data-background-color="#1a5276" -->')
-        lines.append(f"# Quiz")
-        lines.append(f"## {data['title']}")
+        header = f"# Quiz\n## {data['title']}"
         if data["subtitle"]:
-            lines.append("")
-            lines.append(data["subtitle"])
+            header += f"\n\n{data['subtitle']}"
+        lines.append(slide_block(header))
 
         for q in data["questions"]:
             lines.extend(["", "--", ""])
-            lines.append(f"## Q{q['num']} · {q['type']}")
-            lines.append("")
-            lines.append(q["question"])
+            lines.append(slide_block(f"## Q{q['num']} · {q['type']}\n\n{q['question']}"))
             lines.extend(["", "--", ""])
             lines.append('<!-- .slide: class="answer-slide" -->')
-            lines.append(f"## Answer — Q{q['num']}")
-            lines.append("")
-            lines.append(q["answer"])
+            lines.append(slide_block(f"## Answer — Q{q['num']}\n\n{q['answer']}"))
 
         lines.append("")
 
@@ -172,9 +173,9 @@ html_doc = f"""<!DOCTYPE html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Course — In-Class Quizzes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight/monokai.css">
   <link rel="stylesheet" href="reveal-theme.css">
   <link rel="stylesheet" href="quiz-reveal-theme.css">
 </head>
@@ -192,13 +193,16 @@ html_doc = f"""<!DOCTYPE html>
       </section>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight.js"></script>
   <script>
     Reveal.initialize({{
       hash: true,
       slideNumber: 'c/t',
+      width: 1280,
+      height: 780,
+      margin: 0.02,
       transition: 'slide',
       transitionSpeed: 'default',
       backgroundTransition: 'fade',

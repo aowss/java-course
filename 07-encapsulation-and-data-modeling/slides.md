@@ -135,7 +135,7 @@ Choose the tool that best fits each domain concept.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -149,7 +149,7 @@ mvn test -pl 07-encapsulation-and-data-modeling
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Color Enum** (Guided) — `fromHex()`, `isDark()`, `complement()`
 2. **Result Type** (Practice) — sealed `Result<T>` with `Success` and `Failure`
@@ -159,7 +159,7 @@ mvn test -pl 07-encapsulation-and-data-modeling
 mvn test -pl 07-encapsulation-and-data-modeling -Dtest="ColorTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -171,4 +171,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Pattern matching **`instanceof`** eliminates manual casting in conditionals
 - Pattern matching **`switch`** provides concise, compiler-checked dispatch over subtypes
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §8.10](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10) · JEP 409 · JEP 394 · JEP 441

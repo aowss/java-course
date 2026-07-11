@@ -17,7 +17,7 @@
 /* Base */
 .reveal {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 400;
   color: var(--jc-text);
 }
@@ -27,16 +27,16 @@
 }
 
 .reveal .slides section {
-  padding: 0.5em 1em;
+  box-sizing: border-box;
+  padding: 0.35em 0.65em;
 }
 
 .reveal .slides section:not(.stack):not([data-background]):not([data-background-color]):not([data-background-image]) {
   background: var(--jc-surface);
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(26, 82, 118, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(26, 82, 118, 0.05);
 }
 
-/* Horizontal chapter stacks must stay transparent so title backgrounds show through */
 .reveal .slides section.stack {
   background: transparent;
   box-shadow: none;
@@ -62,8 +62,8 @@
 .reveal h2 {
   font-size: 1.35em;
   color: var(--jc-primary);
-  margin-bottom: 0.5em;
-  padding-bottom: 0.25em;
+  margin-bottom: 0.4em;
+  padding-bottom: 0.2em;
   border-bottom: 3px solid var(--jc-accent);
   display: block;
   width: fit-content;
@@ -94,7 +94,6 @@
   color: #ffffff;
 }
 
-/* Tables on dark slides — cells are white, so keep text dark */
 .reveal .slides section[data-background-color] table td,
 .reveal .slides section[data-background-gradient] table td {
   color: var(--jc-text);
@@ -105,7 +104,7 @@
   color: var(--jc-primary);
 }
 
-/* Intro slide — centered title + navigation table on light card */
+/* Intro slide */
 .reveal .slides section.intro-slide {
   text-align: center;
 }
@@ -129,7 +128,7 @@
   font-size: 0.8em;
 }
 
-/* Body text on content slides only (not dark chapter titles) */
+/* Body text */
 .reveal .slides section:not([data-background-color]):not([data-background-gradient]) p,
 .reveal .slides section:not([data-background-color]):not([data-background-gradient]) li {
   line-height: 1.55;
@@ -142,7 +141,7 @@
 }
 
 .reveal li {
-  margin-bottom: 0.35em;
+  margin-bottom: 0.25em;
 }
 
 .reveal li::marker {
@@ -155,7 +154,7 @@
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
-  margin: 0.8em 0;
+  margin: 0.45em 0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -165,12 +164,12 @@
   background: var(--jc-primary);
   color: #fff;
   font-weight: 600;
-  padding: 0.6em 0.9em;
+  padding: 0.45em 0.75em;
   text-align: left;
 }
 
 .reveal table td {
-  padding: 0.55em 0.9em;
+  padding: 0.4em 0.75em;
   border-bottom: 1px solid var(--jc-border);
   background: var(--jc-surface);
 }
@@ -194,39 +193,231 @@
 }
 
 .reveal pre {
-  margin: 0.8em 0;
+  margin: 0.45em 0;
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-width: 100%;
 }
 
-.reveal pre code {
+.reveal pre code,
+.reveal pre code.hljs {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.52em;
-  line-height: 1.45;
-  max-height: 460px;
-  padding: 1em 1.2em;
+  font-size: 0.74em;
+  line-height: 1.38;
+  max-height: 380px;
+  padding: 0.85em 1em;
   background: var(--jc-code-bg);
   color: #abb2bf;
   border-radius: 10px;
   display: block;
 }
 
-/* Blockquotes / callout notes (markdown `>` lines) */
-.reveal blockquote {
-  background: #eaf2f8;
-  border-left: 4px solid var(--jc-accent);
-  padding: 0.55em 0.9em;
-  margin: 0.8em 0 0;
-  border-radius: 0 8px 8px 0;
-  font-style: normal;
-  font-size: 0.78em;
-  line-height: 1.45;
-  color: var(--jc-muted);
-  box-shadow: none;
+/* Flow diagrams (CSS boxes) */
+.reveal .flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em 0.2em;
+  margin: 0.5em 0;
+  width: 100%;
 }
 
-.reveal blockquote p {
+.reveal .flow-cluster {
+  justify-content: space-between;
+}
+
+.reveal .flow-box {
+  background: linear-gradient(180deg, #f8fafb 0%, #eef2f5 100%);
+  border: 1px solid var(--jc-border);
+  border-radius: 8px;
+  padding: 0.4em 0.6em;
+  text-align: center;
+  min-width: 4.8em;
+  flex: 0 1 auto;
+  box-shadow: 0 1px 4px rgba(26, 82, 118, 0.06);
+}
+
+.reveal .flow-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.68em;
+  color: var(--jc-primary);
+  line-height: 1.2;
+}
+
+.reveal .flow-title code {
+  font-size: 0.92em;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.reveal .flow-sub {
+  display: block;
+  font-size: 0.5em;
+  color: var(--jc-muted);
+  margin-top: 0.12em;
+  line-height: 1.2;
+}
+
+.reveal .flow-arrow::after {
+  content: "→";
+  color: var(--jc-accent);
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 0 0.1em;
+}
+
+/* Callouts — fit content when short, expand up to full slide width */
+.reveal aside.callout-note,
+.reveal aside.callout-tip,
+.reveal aside.callout-cli {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.45em 0 0;
+  box-sizing: border-box;
+}
+
+.reveal aside.callout-note {
+  padding: 0.42em 0.85em;
+  background: #eaf2f8;
+  border: 1px solid #d4e6f1;
+  border-left: 5px solid var(--jc-primary-light);
+  border-radius: 6px;
+  font-size: 0.74em;
+  line-height: 1.3;
+  color: var(--jc-text);
+}
+
+.reveal aside.callout-note p {
   margin: 0;
+}
+
+.reveal aside.callout-note strong {
+  color: var(--jc-primary);
+  font-weight: 600;
+}
+
+.reveal aside.callout-tip {
+  padding: 0.42em 0.85em;
+  background: #fff8ef;
+  border: 1px solid #f0e4c8;
+  border-left: 4px solid #d4a017;
+  border-radius: 6px;
+  font-size: 0.7em;
+  line-height: 1.35;
+  color: #6d5a3e;
+}
+
+.reveal aside.callout-tip p {
+  margin: 0;
+}
+
+.reveal aside.callout-tip strong {
+  color: #8a6d1d;
+  font-weight: 600;
+}
+
+.reveal aside.callout-cli {
+  padding: 0.5em 0.85em;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.68em;
+  line-height: 1.45;
+  background: var(--jc-code-bg);
+  border: 1px solid #2a3a44;
+  border-left: 4px solid var(--jc-accent);
+  border-radius: 6px;
+  color: #abb2bf;
+}
+
+.reveal aside.callout-cli p {
+  margin: 0.12em 0;
+}
+
+.reveal .exercise-links {
+  display: inline-block;
+  font-size: 0.72em;
+  margin-top: 0.15em;
+  color: var(--jc-muted);
+}
+
+.reveal .exercise-links a {
+  color: var(--jc-primary-light);
+}
+
+/* Link boxes — footers and per-exercise code links */
+.reveal .slides section.slide-has-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reveal aside.link-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em 0.75em;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.35em 0 0;
+  padding: 0.45em 0.75em;
+  box-sizing: border-box;
+  background: #f0f3f6;
+  border: 1px solid var(--jc-border);
+  border-radius: 6px;
+  font-size: 0.46em;
+  line-height: 1.45;
+  color: var(--jc-muted);
+  text-align: left;
+}
+
+.reveal .slides section.slide-has-footer aside.slide-footer:first-of-type {
+  margin-top: auto;
+}
+
+.reveal .slides section.slide-has-footer aside.slide-footer + aside.slide-footer {
+  margin-top: 0.35em;
+}
+
+.reveal aside.link-box .footer-label {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8a9bab;
+  white-space: nowrap;
+}
+
+.reveal aside.slide-footer.lesson-link .footer-label {
+  color: #6b7f93;
+}
+
+.reveal aside.link-box .footer-links {
+  font-weight: 400;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.reveal aside.link-box a {
+  color: var(--jc-primary-light);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.reveal aside.link-box a:hover {
+  text-decoration: underline;
+}
+
+.reveal aside.link-box em {
+  font-style: italic;
+  color: var(--jc-muted);
+}
+
+.reveal aside.link-box code {
+  font-size: 0.95em;
+  background: #e4e9ed;
+  color: #5d6d7e;
 }
 
 /* Links */
@@ -275,27 +466,10 @@
   color: var(--jc-primary);
 }
 
-/* Overview mode */
 .reveal .overview .slides section {
   border-radius: 8px;
 }
 
-/* Background canvas */
 .reveal .backgrounds {
   background: var(--jc-bg);
-}
-
-/* Mermaid diagrams */
-.reveal .mermaid {
-  margin: 0.6em auto;
-  text-align: center;
-}
-
-.reveal .mermaid svg {
-  max-width: 100%;
-  height: auto;
-}
-
-.reveal .slides section .mermaid {
-  font-size: 0.72em;
 }

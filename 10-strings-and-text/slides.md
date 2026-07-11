@@ -180,7 +180,7 @@ String[] parts = "one,two,three".split(",");           // ["one","two","three"]
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -194,7 +194,7 @@ mvn test -pl 10-strings-and-text
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Word Counter** (Guided) — `countWords()`, `countUniqueWords()`, `mostFrequentWord()`
 2. **Template Engine** (Practice) — replace `{{placeholder}}` patterns from a map
@@ -204,7 +204,7 @@ mvn test -pl 10-strings-and-text
 mvn test -pl 10-strings-and-text -Dtest="WordCounterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -217,4 +217,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `String.format()` and `formatted()` provide powerful formatting with `%s`, `%d`, `%f`, etc.
 - `Pattern` and `Matcher` provide full regex support; `matches()`, `replaceAll()`, and `split()` offer shortcuts
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §3.10.5](https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10.5) · [JEP 378](https://openjdk.org/jeps/378) · [Pattern API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html)

@@ -154,7 +154,7 @@ Avoid for small data, I/O-bound work, or when order matters.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -169,7 +169,7 @@ mvn test -pl 14-streams-api
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Stream Exercises** (Guided) — evens, squares, sum, average
 2. **Text Analyzer** (Practice) — word count, frequencies, longest word
@@ -179,7 +179,7 @@ mvn test -pl 14-streams-api
 mvn test -pl 14-streams-api -Dtest="StreamExercisesTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -191,4 +191,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Parallel streams** help large CPU-bound workloads but add overhead for small data
 - Streams are **one-shot** — create a new stream for each pipeline
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Items 45, 48 · [java.util.stream](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html)

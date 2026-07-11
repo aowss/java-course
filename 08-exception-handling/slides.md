@@ -155,7 +155,7 @@ Also: catch **specific** types, use **exception chaining** (`cause`), prefer try
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -170,7 +170,7 @@ mvn test -pl 08-exception-handling
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Validator** (Guided) — custom checked `ValidationException`
 2. **RetryExecutor** (Practice) — retry with suppressed exceptions
@@ -180,7 +180,7 @@ mvn test -pl 08-exception-handling
 mvn test -pl 08-exception-handling -Dtest="ValidatorTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -191,4 +191,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **try-with-resources** is the standard pattern for closing resources
 - Prefer standard exception types with **informative messages**
 
+Full lesson: [`README.md`](README.md)
 Further reading: *Effective Java* Items 69–75, 77–78 · [JLS §11](https://docs.oracle.com/javase/specs/jls/se25/html/jls-11.html)

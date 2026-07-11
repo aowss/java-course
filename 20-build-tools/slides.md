@@ -189,7 +189,7 @@ Building the same source should always produce the same artifact:
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -201,7 +201,7 @@ mvn test -pl 20-build-tools
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **DependencyAnalyzer** (Guided) — parse POM XML into `Dependency` records
 2. **VersionResolver** (Practice) — semantic version parsing and range matching
@@ -211,7 +211,7 @@ mvn test -pl 20-build-tools
 mvn test -pl 20-build-tools -Dtest="DependencyAnalyzerTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -223,4 +223,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Gradle** offers a flexible, script-based alternative with incremental builds
 - Always **pin dependency and plugin versions** for reproducible builds
 
+Full lesson: [`README.md`](README.md)
 Further reading: [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) · [Gradle User Manual](https://docs.gradle.org/current/userguide/userguide.html)

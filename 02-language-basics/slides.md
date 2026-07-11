@@ -95,7 +95,7 @@ var name = "Alice";         // inferred as String (Java 10+)
 | Ternary | `condition ? trueVal : falseVal` |
 
 > **Integer division truncates:** `7 / 2` → `3`, not `3.5`
->
+
 > Deeper precedence and evaluation rules: [Operator Precedence appendix](../../appendices/operator-precedence/README.md)
 
 ---
@@ -196,7 +196,7 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -210,7 +210,7 @@ mvn test -pl 02-language-basics
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Temperature Converter** (Guided) — Celsius ↔ Fahrenheit
 2. **FizzBuzz** (Practice) — divisibility by 3 and 5
@@ -220,7 +220,7 @@ mvn test -pl 02-language-basics
 mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -231,4 +231,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - `var` is a local convenience — it does not weaken type safety
 - Arrays are fixed-size; for dynamic collections, see Chapter 12
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §4.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2) · *Effective Java* Item 61

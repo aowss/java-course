@@ -138,7 +138,7 @@ This pattern powers validation, serialization, and framework-style behavior.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -152,7 +152,7 @@ mvn test -pl 23-annotations-and-reflection
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Object Inspector** (Guided) — summarize class name, fields, and methods via reflection
 2. **Simple Serializer** (Practice) — serialize only `@Serializable` fields to `key=value,...`
@@ -162,7 +162,7 @@ mvn test -pl 23-annotations-and-reflection
 mvn test -pl 23-annotations-and-reflection -Dtest="ObjectInspectorTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -173,4 +173,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Custom annotations** power validation, serialization, and framework behavior
 - **Reflection** inspects types at runtime — use sparingly (performance and encapsulation costs)
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JLS §9.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.6) · [java.lang.reflect API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/package-summary.html)

@@ -130,7 +130,7 @@ Rule of thumb: if the task **blocks waiting**, virtual threads shine. If it **co
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -144,7 +144,7 @@ mvn test -pl 19-virtual-threads
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **VirtualThreadPool** (Guided) — execute tasks with `newVirtualThreadPerTaskExecutor()`
 2. **WebScraper** (Practice) — concurrent URL fetching with timeout support
@@ -154,7 +154,7 @@ mvn test -pl 19-virtual-threads
 mvn test -pl 19-virtual-threads -Dtest="VirtualThreadPoolTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -166,4 +166,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Structured concurrency** treats subtasks as a unit — no thread leaks, clear error propagation
 - Avoid pooling VTs; avoid `synchronized` on blocking paths; prefer `ReentrantLock`
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JEP 444: Virtual Threads](https://openjdk.org/jeps/444) · [JEP 453: Structured Concurrency](https://openjdk.org/jeps/453) · *Effective Java* Item 80

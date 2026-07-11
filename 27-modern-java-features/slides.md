@@ -142,7 +142,7 @@ Do not use preview APIs in production without understanding stability risk.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -156,7 +156,7 @@ mvn test -pl 27-modern-java-features
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **ShapeFormatter** (Guided) — pattern matching switch with guards for squares
 2. **ExpressionEvaluator** (Practice) — evaluate sealed `Expr` hierarchy recursively
@@ -166,7 +166,7 @@ mvn test -pl 27-modern-java-features
 mvn test -pl 27-modern-java-features -Dtest="ShapeFormatterTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -178,4 +178,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Sealed types + patterns** give compile-time exhaustiveness checking
 - **Preview features** require explicit opt-in — prefer finalized APIs for production
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JEP 441](https://openjdk.org/jeps/441) · [JEP 456](https://openjdk.org/jeps/456) · [JEP 409](https://openjdk.org/jeps/409)

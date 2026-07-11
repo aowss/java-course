@@ -189,7 +189,7 @@ assumeTrue(System.getProperty("os.name").contains("Linux"));
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -204,7 +204,7 @@ mvn test -pl 21-unit-testing-with-junit
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 Exercises are **reversed** — production code is provided; you write the tests.
 
@@ -216,7 +216,7 @@ Exercises are **reversed** — production code is provided; you write the tests.
 mvn test -pl 21-unit-testing-with-junit -Dtest="CalculatorTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -228,4 +228,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **Parameterized tests** eliminate duplication; **nested tests** organize by state
 - `@DisplayName` makes test output human-readable
 
+Full lesson: [`README.md`](README.md)
 Further reading: [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) · [Parameterized Tests (Baeldung)](https://www.baeldung.com/parameterized-tests-junit-5)

@@ -122,7 +122,7 @@ Never use legacy `Date`/`Calendar` in new code.
 
 ---
 
-## Examples in This Chapter
+## Examples
 
 | File | Topic |
 |------|-------|
@@ -137,7 +137,7 @@ mvn test -pl 24-date-and-time-api
 
 ---
 
-## Exercises — Your Turn
+## Exercises
 
 1. **Age Calculator** (Guided) — age in years and as a full `Period`
 2. **Meeting Scheduler** (Practice) — detect overlapping meetings, find next slot
@@ -147,7 +147,7 @@ mvn test -pl 24-date-and-time-api
 mvn test -pl 24-date-and-time-api -Dtest="AgeCalculatorTest"
 ```
 
-Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
+
 
 ---
 
@@ -158,4 +158,5 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - **`Duration`** measures time; **`Period`** measures calendar dates
 - **`DateTimeFormatter`** is immutable and thread-safe — define formatters as constants
 
+Full lesson: [`README.md`](README.md)
 Further reading: [java.time API](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/package-summary.html) · [JEP 150](https://openjdk.org/jeps/150)

@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Course — In-Class Quizzes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight/monokai.css">
   <link rel="stylesheet" href="reveal-theme.css">
   <link rel="stylesheet" href="quiz-reveal-theme.css">
 </head>
@@ -138,7 +138,7 @@ Run with: `java Main` (no arguments)
 
 ## Q6 · True or false
 
-> Since Java 11, Oracle distributes the JRE as a separate download from the JDK.
+<aside class="callout-note"><p>Since Java 11, Oracle distributes the JRE as a separate download from the JDK.</p></aside>
 
 --
 
@@ -295,7 +295,7 @@ What is `nums[2]`? What happens if you access `nums[3]` at runtime?
 
 ## Q6 · True or false
 
-> A `final` local variable can be assigned more than once as long as each assignment is in a different block.
+<aside class="callout-note"><p>A <code>final</code> local variable can be assigned more than once as long as each assignment is in a different block.</p></aside>
 
 --
 
@@ -686,7 +686,7 @@ Fix: `this.owner = owner.trim();`
 
 ## Q6 · True or false
 
-> These two field declarations are equivalent to the compiler: `final public static int X` and `public static final int X`.
+<aside class="callout-note"><p>These two field declarations are equivalent to the compiler: <code>final public static int X</code> and <code>public static final int X</code>.</p></aside>
 
 --
 
@@ -838,7 +838,7 @@ What is the difference between **overriding** and **overloading**?
 
 ## Q5 · True or false
 
-> If a subclass overrides `equals()`, it is optional to override `hashCode()` as long as `equals()` is correct.
+<aside class="callout-note"><p>If a subclass overrides <code>equals()</code>, it is optional to override <code>hashCode()</code> as long as <code>equals()</code> is correct.</p></aside>
 
 --
 
@@ -996,7 +996,7 @@ class App {
 
 ## Q4 · True or false
 
-> All methods in an interface are `public` and `abstract` unless marked otherwise.
+<aside class="callout-note"><p>All methods in an interface are <code>public</code> and <code>abstract</code> unless marked otherwise.</p></aside>
 
 --
 
@@ -1230,7 +1230,7 @@ Enum constructors are implicitly **private**.
 
 ## Q6 · True or false
 
-> A sealed class can be extended by any class in the same package.
+<aside class="callout-note"><p>A sealed class can be extended by any class in the same package.</p></aside>
 
 --
 
@@ -1282,13 +1282,16 @@ Sealing tells the compiler **every possible subtype**. The compiler can verify t
       </section>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight.js"></script>
   <script>
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
+      width: 1280,
+      height: 780,
+      margin: 0.02,
       transition: 'slide',
       transitionSpeed: 'default',
       backgroundTransition: 'fade',
