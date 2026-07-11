@@ -139,6 +139,10 @@ mvn test -Dtest="course.ch01.exercises.SystemReporterTest"
 - Every Java program starts at `public static void main(String[] args)`.
 - The file name must match the public class name.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 1 quiz](../quizzes/01-introduction-to-java.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §7.6 — Top Level Type Declarations](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6)

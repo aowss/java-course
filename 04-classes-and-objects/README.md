@@ -269,6 +269,10 @@ mvn test -Dtest="course.ch04.exercises.StopwatchTest"
 - Initialization blocks run in a fixed order — static once per class, instance before every constructor.
 - Prefer the most restrictive access level that works.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 4 quiz](../quizzes/04-classes-and-objects.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §8.2 — Class Members](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2)

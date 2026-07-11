@@ -1,0 +1,52 @@
+/* Quiz deck — answer slide styling (paired with slides/reveal-theme.css) */
+
+.reveal .slides section.answer-slide {
+  background: #e8f6ef;
+  border-left: 6px solid #1e7a46;
+  box-shadow: 0 4px 24px rgba(30, 122, 70, 0.12);
+  color: var(--jc-text);
+}
+
+.reveal .slides section.answer-slide h2 {
+  color: #1e7a46;
+  border-bottom-color: #52b788;
+}
+
+.reveal .slides section.answer-slide p,
+.reveal .slides section.answer-slide li {
+  color: var(--jc-text);
+  line-height: 1.55;
+}
+
+.reveal .slides section.answer-slide strong {
+  color: var(--jc-primary);
+}
+
+.reveal .slides section.answer-slide code {
+  background: #ffffff;
+  color: #c0392b;
+  border: 1px solid #b8dfc8;
+}
+
+.reveal .slides section.answer-slide pre code {
+  background: var(--jc-code-bg);
+  color: #abb2bf;
+  border: none;
+}
+
+.reveal .slides section.answer-slide a {
+  color: var(--jc-primary-light);
+}
+
+.reveal .slides section.answer-slide table td {
+  color: var(--jc-text);
+  background: #ffffff;
+}
+
+.reveal .slides section.answer-slide table td strong {
+  color: var(--jc-primary);
+}
+
+.reveal .slides section.answer-slide table th {
+  background: #1e7a46;
+}

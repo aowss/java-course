@@ -122,3 +122,7 @@ The stack/heap memory model is introduced in Chapter 3 (Methods) with a visual d
 ### 12. Appendices for reference depth
 
 Chapter lessons stay practical. Material that is useful but easy to over-teach early — operator precedence tables, promotion rules, evaluation-order puzzles — lives in `appendices/` and is linked from the relevant chapter. This mirrors how the old PPTX course had a dedicated Operators section without forcing every student through exam-level detail on day one.
+
+### 13. In-class quizzes for Parts I–II
+
+`quizzes/` holds short formative checks for live sessions (predict-the-output, spot-the-bug, concept checks). Answers use collapsible `<details>` sections in the written quizzes; `build-quiz-decks.sh` generates Marp and Reveal.js slide decks where **↓** reveals each answer on a green slide.

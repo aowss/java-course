@@ -234,3 +234,12 @@ Optional reference material — read when you want more depth on a topic already
 - Precedence table and numeric promotion
 - Tricky expression samples
 - Related: Chapter 2
+
+## In-Class Quizzes
+
+Optional formative quizzes for live sessions (Parts I–II). Answers are in collapsible sections in the written quizzes — or press **↓** in [`quizzes/full-quizzes.html`](quizzes/full-quizzes.html) (run `./quizzes/build-quiz-decks.sh` first). See [`quizzes/`](quizzes/README.md).
+
+| Part | Chapters |
+|------|----------|
+| Part I: Foundations | [Ch. 1](quizzes/01-introduction-to-java.md) · [Ch. 2](quizzes/02-language-basics.md) · [Ch. 3](quizzes/03-methods.md) |
+| Part II: OOP | [Ch. 4](quizzes/04-classes-and-objects.md) · [Ch. 5](quizzes/05-inheritance-and-polymorphism.md) · [Ch. 6](quizzes/06-interfaces.md) · [Ch. 7](quizzes/07-encapsulation-and-data-modeling.md) |

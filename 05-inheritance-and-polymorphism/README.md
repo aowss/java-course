@@ -209,6 +209,10 @@ mvn test -Dtest="course.ch05.exercises.ExprTest"
 - Always override `hashCode` when you override `equals` — the contract demands it.
 - Use `@Override` on every overridden method to catch mistakes at compile time.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 5 quiz](../quizzes/05-inheritance-and-polymorphism.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §8.1.4 — Superclasses and Subclasses](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.1.4)

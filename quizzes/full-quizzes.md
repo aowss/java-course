@@ -1,0 +1,1256 @@
+<!-- .slide: class="intro-slide" -->
+# In-Class Quizzes
+## Parts I–II (Chapters 1–7)
+
+| Key | Action |
+|-----|--------|
+| **→** / **←** | Next / previous **quiz** (chapter) |
+| **↓** / **↑** | Question → answer → next question |
+| **Esc** | Slide overview |
+
+Pause on each **question** slide. Press **↓** to reveal the answer.
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 1: Introduction to Java
+
+Part I: Foundations · ~10 minutes · no IDE required
+
+--
+
+## Q1 · Concept check
+
+Which download do you need on your machine to **compile** Java source code into bytecode?
+
+- A) JVM only
+- B) JRE only
+- C) JDK
+- D) Any text editor
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+**C) JDK**
+
+The JDK includes the compiler (`javac`) plus the tools to run and package programs. The JRE (or a JRE-equivalent runtime inside the JDK) is enough to *run* bytecode, but not to compile `.java` files.
+
+--
+
+## Q2 · Concept check
+
+Why is Java often described as both **compiled** and **interpreted**?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+`javac` compiles source to **bytecode** ahead of time (compiled step). The **JVM** executes that bytecode at runtime, initially by interpretation and later by **JIT** compilation of hot paths (interpreted/JIT step). It is not a single pure strategy like C (native compile only) or classic Python (source interpret only).
+
+--
+
+## Q3 · Concept check
+
+What is the main reason bytecode is **platform-independent** while the JVM is **platform-specific**?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+Bytecode is a standardized intermediate format — the same `.class` file can run on any OS that has a JVM. The JVM itself is implemented separately for each platform (Windows, macOS, Linux, …) and translates bytecode to that platform's native environment.
+
+--
+
+## Q4 · Spot the bug
+
+A student saves this file as `Hello.java` and runs `javac Hello.java`, but compilation fails. What is wrong?
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+In Java, the **public class name must match the filename**. The file must be renamed to `HelloWorld.java`, or the class must be renamed to `Hello`.
+
+--
+
+## Q5 · Predict the output
+
+Assume this compiles and runs. What prints?
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(args.length);
+    }
+}
+```
+
+Run with: `java Main` (no arguments)
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+**`0`**
+
+`args` is always a `String` array. With no command-line arguments, its length is 0. It is never `null`.
+
+--
+
+## Q6 · True or false
+
+> Since Java 11, Oracle distributes the JRE as a separate download from the JDK.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+**False.**
+
+Since Java 11, the JRE is no longer shipped as a standalone product. You download the JDK; it includes what you need to run Java programs.
+
+--
+
+## Q7 · Short answer
+
+Name **two** design principles from Java's original philosophy (from the chapter).
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+Any two of:
+
+- **Write once, run anywhere** (portable bytecode + JVM)
+- **Object-oriented** (everything except primitives is an object)
+- **Strongly typed** (compile-time type checking)
+- **Memory-managed** (garbage collection)
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 2: Language Basics
+
+Part I: Foundations · ~12 minutes · no IDE required
+
+--
+
+## Q1 · Predict the output
+
+```java
+int result = 7 / 2;
+System.out.println(result);
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+**`3`**
+
+Integer division **truncates** toward zero. It does not produce `3.5`. To get `3.5`, at least one operand must be floating-point: `7.0 / 2` or `7 / 2.0`.
+
+--
+
+## Q2 · Spot the bug
+
+```java
+var count = 10;
+count = "ten";
+```
+
+Does this compile?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+**No.**
+
+`var` infers `int` from the initializer. Reassigning a `String` is a compile-time type error. `var` is not dynamic typing — it is still **static** typing with inferred types.
+
+--
+
+## Q3 · Predict the output
+
+```java
+int x = 5;
+System.out.println(x++ + ++x);
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+**`12`**
+
+Evaluation is left-to-right for operands:
+
+1. `x++` uses the value `5`, then `x` becomes `6`.
+2. `++x` increments `x` to `7` and uses `7`.
+3. `5 + 7 = 12`. Final value of `x` is `7`.
+
+(See also the [Operator Precedence appendix](../appendices/operator-precedence/README.md).)
+
+--
+
+## Q4 · Concept check
+
+What prints?
+
+```java
+String day = "WEDNESDAY";
+switch (day) {
+    case "MONDAY":
+        System.out.print("Mon ");
+    case "TUESDAY":
+        System.out.print("Tue ");
+        break;
+    case "WEDNESDAY":
+        System.out.print("Wed ");
+    case "THURSDAY":
+        System.out.print("Thu ");
+        break;
+    default:
+        System.out.print("Other ");
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+**`Wed Thu `**
+
+Classic `switch` **falls through** when there is no `break`. `"WEDNESDAY"` matches the third case, prints `Wed `, then falls into `THURSDAY`, prints `Thu `, then hits `break`.
+
+--
+
+## Q5 · Concept check
+
+How many elements does this array have?
+
+```java
+int[] nums = {10, 20, 30};
+```
+
+What is `nums[2]`? What happens if you access `nums[3]` at runtime?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+- **Length:** 3 (valid indices: 0, 1, 2).
+- **`nums[2]`:** `30`.
+- **`nums[3]`:** `ArrayIndexOutOfBoundsException` at runtime — the compiler does not catch out-of-bounds access.
+
+--
+
+## Q6 · True or false
+
+> A `final` local variable can be assigned more than once as long as each assignment is in a different block.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+**False.**
+
+`final` means the variable must be assigned **exactly once**. You cannot reassign it after the initial assignment, regardless of block scope.
+
+--
+
+## Q7 · Predict the output
+
+```java
+boolean a = true;
+boolean b = false;
+System.out.println(a || expensive());
+System.out.println(b && expensive());
+
+// expensive() prints "called" and returns true
+```
+
+Which calls to `expensive()` actually run?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+**Neither.**
+
+`||` and `&&` are **short-circuit**: the right operand is skipped when the result is already determined. `true || …` never evaluates the right side; `false && …` never evaluates the right side. Nothing prints from `expensive()`.
+
+--
+
+## Q8 · Short answer
+
+Name the **eight** primitive types in Java.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+`byte`, `short`, `int`, `long`, `float`, `double`, `char`, `boolean`
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 3: Methods
+
+Part I: Foundations · ~12 minutes · no IDE required
+
+--
+
+## Q1 · Concept check
+
+Java passes arguments **by value**. What does that mean for:
+
+1. A `int` parameter?
+2. A `String` parameter?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+1. **`int`:** A copy of the value is passed. Changing the parameter inside the method does not affect the caller's variable.
+2. **`String`:** A copy of the **reference** is passed. The method and caller share the same `String` object, but reassigning the parameter to a different object does not change the caller's variable.
+
+Java is always pass-by-value — there is no pass-by-reference for parameters.
+
+--
+
+## Q2 · Predict the behavior
+
+```java
+public static void main(String[] args) {
+    int[] data = {1, 2, 3};
+    mutate(data);
+    System.out.println(data[0]);
+}
+
+static void mutate(int[] arr) {
+    arr[0] = 99;
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+**`99`**
+
+The reference is copied, but both copies point to the **same array object** on the heap. Mutating through `arr[0]` changes the shared object. This is not pass-by-reference — the reference itself was copied.
+
+--
+
+## Q3 · Spot the bug
+
+```java
+public static int add(int a, int b) {
+    return a + b;
+}
+
+public static double add(int a, int b) {
+    return a + b;
+}
+```
+
+Does this compile?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+**No.**
+
+You cannot overload methods by **return type alone**. The compiler cannot distinguish `add(1, 2)` between these two signatures. Overloading requires different parameter types or counts.
+
+--
+
+## Q4 · Concept check
+
+Which overload is called?
+
+```java
+add(1, 2);        // (a)
+add(1.0, 2.0);    // (b)
+add(1, 2, 3);     // (c)
+```
+
+Given:
+
+```java
+static int add(int a, int b) { return a + b; }
+static double add(double a, double b) { return a + b; }
+static int add(int a, int b, int c) { return a + b + c; }
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+- **(a)** `int add(int, int)` — exact match.
+- **(b)** `double add(double, double)` — exact match.
+- **(c)** `int add(int, int, int)` — three-parameter overload.
+
+The compiler picks the most specific match at **compile time**.
+
+--
+
+## Q5 · Spot the bug
+
+```java
+public static void report(int count, int... tags) {
+    System.out.println(count);
+}
+
+public static void report(int... tags, int count) {
+    System.out.println(count);
+}
+```
+
+What's wrong with the second method?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+The **varargs parameter must be last**. `int... tags` cannot appear before `int count`. A method may have at most one varargs parameter.
+
+--
+
+## Q6 · Concept check
+
+Where do these live at runtime?
+
+| Item | Stack or heap? |
+|------|----------------|
+| Local `int count = 42` in `main` | ? |
+| `new int[]{1, 2, 3}` | ? |
+| The reference variable pointing to that array | ? |
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+| Item | Location |
+|------|----------|
+| Local `int count = 42` | **Stack** (in `main`'s stack frame) |
+| `new int[]{1, 2, 3}` (the array object) | **Heap** |
+| The reference variable in `main` | **Stack** (holds the address/reference to the heap object) |
+
+Primitives and references stored in local variables live on the stack; objects live on the heap.
+
+--
+
+## Q7 · Predict the output
+
+```java
+public static void main(String[] args) {
+    System.out.println(sum());
+    System.out.println(sum(1, 2, 3));
+}
+
+static int sum(int... numbers) {
+    int total = 0;
+    for (int n : numbers) {
+        total += n;
+    }
+    return total;
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+```
+0
+6
+```
+
+Varargs accepts **zero or more** arguments. With no arguments, `numbers` is an empty array and the sum is `0`.
+
+--
+
+## Q8 · Short answer
+
+What is the difference between a method's **signature** and its **return type**? Which one matters for overloading?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+- **Signature:** method name + parameter types (and arity). Defines how the compiler identifies overloads.
+- **Return type:** the type of value the method produces (`void` if none).
+
+Overloading is resolved by **signature only**, not return type.
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 4: Classes and Objects
+
+Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+
+--
+
+## Q1 · Concept check
+
+A class defines a `Counter` with no constructors written by you. A student writes:
+
+```java
+Counter a = new Counter();
+Counter b = new Counter(10);
+```
+
+Both lines are in the same program. What happens?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+**Compile error on the second line.**
+
+If you write **no** constructors, Java provides a default no-arg constructor. As soon as you add **any** constructor (e.g. `Counter(int initial)`), the default no-arg constructor **disappears** unless you define it explicitly.
+
+--
+
+## Q2 · Predict the initialization log
+
+```java
+public class Demo {
+    static { System.out.print("S "); }
+    { System.out.print("I "); }
+    Demo() { System.out.print("C "); }
+    public static void main(String[] args) {
+        new Demo();
+    }
+}
+```
+
+What prints?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+**`S I C `**
+
+Order for the first `new Demo()`:
+
+1. Static field initializers and static blocks (once) → `S `
+2. Instance field initializers and instance blocks → `I `
+3. Constructor body → `C `
+
+--
+
+## Q3 · Concept check
+
+Which call is valid?
+
+```java
+public class Counter {
+    private int count;
+    public static int getTotal() { return count; }
+}
+```
+
+- A) `Counter.getTotal()` from `main`
+- B) `counter.getTotal()` on an instance
+- C) Both A and B
+- D) Neither — compile error
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+**D) Neither — compile error**
+
+A **static** method cannot access **instance** fields like `count` directly — there is no `this`. The method must be rewritten to use static state, or made an instance method.
+
+--
+
+## Q4 · Concept check
+
+Match the access modifier to who can access a `private` field:
+
+| Modifier | Same class? | Same package? | Subclass? | Anywhere? |
+|----------|:-----------:|:-------------:|:---------:|:---------:|
+| `private` | ? | ? | ? | ? |
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+| Modifier | Same class | Same package | Subclass | Anywhere |
+|----------|:----------:|:------------:|:--------:|:--------:|
+| `private` | ✓ | | | |
+
+`private` is visible **only in the declaring class**. Subclasses do not inherit access to `private` fields (they may use inherited public/protected accessors instead).
+
+--
+
+## Q5 · Spot the bug
+
+```java
+public class Account {
+    private static final double DEFAULT_BALANCE = 0.0;
+    private final String owner;
+    private double balance = DEFAULT_BALANCE;
+
+    public Account(String owner) {
+        owner = owner.trim();
+        this.balance = 100.0;
+    }
+}
+```
+
+What is wrong?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+The constructor never assigns **`this.owner`**. The parameter `owner` is trimmed locally, but the `final` field `owner` is never initialized — a compile error.
+
+Fix: `this.owner = owner.trim();`
+
+--
+
+## Q6 · True or false
+
+> These two field declarations are equivalent to the compiler: `final public static int X` and `public static final int X`.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+**True.**
+
+Modifier order is **not** semantically significant. Convention is `public static final`, but the compiler accepts any order.
+
+--
+
+## Q7 · Concept check
+
+Why is this encapsulation?
+
+```java
+public class Temperature {
+    private double celsius;
+    public double getCelsius() { return celsius; }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+The internal field is **hidden** (`private`). Outside code uses a **controlled interface** (`getCelsius()`). You can later add validation, logging, or unit conversion without breaking callers — they never touched the field directly.
+
+--
+
+## Q8 · Short answer
+
+List the initialization steps that run when `new Child()` is first called in a program, assuming `Child extends Parent` and both classes have static blocks, instance blocks, and constructors.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+1. Parent static fields and static blocks (once)
+2. Child static fields and static blocks (once)
+3. Parent instance fields and instance blocks
+4. Parent constructor
+5. Child instance fields and instance blocks
+6. Child constructor
+
+(Detailed in Chapter 5; introduced here at the end of Chapter 4.)
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 5: Inheritance and Polymorphism
+
+Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+
+--
+
+## Q1 · Spot the bug
+
+```java
+public class Car extends Vehicle {
+    private int doors;
+
+    public Car(String make, int doors) {
+        this.doors = doors;
+        super(make);
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+**Compile error:** `super(make)` must be the **first statement** in the constructor. You cannot assign `this.doors` before calling `super(...)`.
+
+Correct order:
+
+```java
+public Car(String make, int doors) {
+    super(make);
+    this.doors = doors;
+}
+```
+
+--
+
+## Q2 · Predict the output
+
+```java
+class Animal {
+    String speak() { return "..."; }
+}
+class Dog extends Animal {
+    @Override String speak() { return "woof"; }
+}
+
+Animal a = new Dog();
+System.out.println(a.speak());
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+**`woof`**
+
+**Dynamic dispatch:** the JVM calls the method based on the **actual object type** (`Dog`), not the declared variable type (`Animal`).
+
+--
+
+## Q3 · Concept check
+
+How many direct superclasses can a Java class extend?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+**One** (single inheritance). A class can `extends` at most one class. It may `implements` multiple interfaces.
+
+Every class without an explicit superclass implicitly extends `java.lang.Object`.
+
+--
+
+## Q4 · Concept check
+
+What is the difference between **overriding** and **overloading**?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+| | Overloading | Overriding |
+|---|-------------|------------|
+| **Where** | Same class (or inherited + new) | Subclass replaces superclass method |
+| **Signature** | Must differ (parameter types/count) | Must match (name + parameters) |
+| **Resolved** | Compile time | Runtime (dynamic dispatch) |
+| **Return type** | Can differ | Must be compatible (covariant allowed) |
+
+--
+
+## Q5 · True or false
+
+> If a subclass overrides `equals()`, it is optional to override `hashCode()` as long as `equals()` is correct.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+**False.**
+
+The contract requires: if two objects are equal according to `equals()`, they **must** have the same `hashCode()`. Breaking this breaks hash-based collections (`HashMap`, `HashSet`). Override **both** together.
+
+--
+
+## Q6 · Predict the output
+
+```java
+abstract class Shape {
+    abstract double area();
+}
+class Circle extends Shape {
+    private final double radius;
+    Circle(double radius) { this.radius = radius; }
+    @Override double area() { return Math.PI * radius * radius; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle(1.0);
+        System.out.println(s.area());
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+Prints approximately **`3.14159…`** (`Math.PI`).
+
+You cannot `new Shape()` — abstract classes cannot be instantiated. `new Circle(1.0)` is valid, stored in a `Shape` reference, and `area()` dispatches to `Circle`.
+
+--
+
+## Q7 · Spot the bug
+
+```java
+class Employee {
+    String name;
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Employee)) return false;
+        Employee other = (Employee) o;
+        return name.equals(other.name);
+    }
+}
+```
+
+What edge case is mishandled?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+**`name` may be `null`.** Calling `name.equals(other.name)` throws `NullPointerException` if `name` is null.
+
+Safer: `Objects.equals(name, other.name)`, or compare after null checks. Also consider overriding `hashCode()` (see question 5).
+
+--
+
+## Q8 · Short answer
+
+Why must the superclass constructor run before the subclass constructor body executes?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+The subclass object **is-a** superclass object. The parent part of the object must be in a valid state before the child adds its own fields. That is why initialization order runs parent static → child static → parent instance/constructor → child instance/constructor.
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 6: Interfaces
+
+Part II: Object-Oriented Programming · ~10 minutes · no IDE required
+
+--
+
+## Q1 · Concept check
+
+A class already extends `Vehicle`. How many interfaces can it implement?
+
+```java
+class Car extends Vehicle implements Drivable, Serializable, Comparable<Car> { }
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+**Multiple** — there is no small fixed limit. A class may extend **one** class and implement **any number** of interfaces. This is Java's form of multiple inheritance of **type**.
+
+--
+
+## Q2 · Concept check
+
+What must class `FileLogger` provide if it declares `implements Logger`?
+
+```java
+interface Logger {
+    void log(String message);
+    default void logError(String message) {
+        log("ERROR: " + message);
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+It **must** implement `log(String)`. It **inherits** `logError` with default behavior unless it chooses to override it. Default methods let interfaces evolve without breaking existing implementors.
+
+--
+
+## Q3 · Spot the bug
+
+```java
+interface Converter {
+    static double parse(String s) {
+        return Double.parseDouble(s);
+    }
+}
+
+class App {
+    void run() {
+        double d = parse("3.14");
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+**Compile error** — static interface methods must be called through the **interface name**: `Converter.parse("3.14")`. They are not inherited like instance methods.
+
+--
+
+## Q4 · True or false
+
+> All methods in an interface are `public` and `abstract` unless marked otherwise.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+**True** (with modern exceptions).
+
+- Traditional methods: implicitly `public abstract`.
+- **`default`** methods: have a body; still `public`.
+- **`static`** methods: have a body; not abstract.
+- **`private`** methods (Java 9+): helper methods with bodies inside the interface.
+
+--
+
+## Q5 · Concept check
+
+Which of these can be a `@FunctionalInterface`?
+
+- A) An interface with one abstract method and several `default` methods
+- B) An interface with two abstract methods
+- C) An abstract class with one abstract method
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+**A only.**
+
+A functional interface has **exactly one abstract method** (SAM). Default and static methods do not count. Abstract classes are not interfaces and cannot be `@FunctionalInterface`.
+
+--
+
+## Q6 · Predict the output
+
+```java
+interface Greeter {
+    String greet(String name);
+    default String greetLoud(String name) {
+        return greet(name).toUpperCase();
+    }
+}
+
+class FriendlyGreeter implements Greeter {
+    public String greet(String name) { return "Hi, " + name; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Greeter g = new FriendlyGreeter();
+        System.out.println(g.greetLoud("Ada"));
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+**`HI, ADA`**
+
+`greetLoud` is a default method on the interface. It calls the implementor's `greet`, then uppercases the result.
+
+--
+
+## Q7 · Short answer
+
+When would you choose an **interface** over an **abstract class**?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+Prefer an **interface** when:
+
+- You need a **contract** without shared implementation (or only `default` helpers).
+- Types should participate in **multiple inheritance of type**.
+- You want to allow unrelated classes to share behavior (e.g. `Comparable`).
+
+Prefer an **abstract class** when subclasses share substantial **state and implementation**, and you want protected fields or a single inheritance root with partial behavior filled in.
+
+--
+
+## Q8 · Concept check
+
+Can an interface extend another interface?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+**Yes.** Interfaces can extend one or more other interfaces, inheriting their abstract and default methods. A class implementing the child must implement everything in the chain.
+
+---
+
+<!-- .slide: data-background-color="#1a5276" -->
+# Quiz
+## Chapter 7: Encapsulation and Data Modeling
+
+Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+
+--
+
+## Q1 · Concept check
+
+What does the compiler generate for this record?
+
+```java
+public record Point(double x, double y) { }
+```
+
+Name at least **four** members.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q1
+
+Among others, the compiler generates:
+
+- A **canonical constructor** (`Point(double x, double y)`)
+- **Accessor methods** (`x()`, `y()` — not `getX()`)
+- **`equals()`** and **`hashCode()`**
+- **`toString()`**
+
+Records are implicitly `final`. You cannot add extra instance fields beyond the components.
+
+--
+
+## Q2 · Spot the bug
+
+```java
+public record User(String email) {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q2
+
+**Compile error** — record components are **final**. There is no `this.email` setter field to assign. Records model **immutable** data; create a new record with the updated value instead.
+
+--
+
+## Q3 · Predict the output
+
+```java
+sealed interface Shape permits Circle, Rectangle { }
+record Circle(double radius) implements Shape { }
+record Rectangle(double width, double height) implements Shape { }
+
+static double area(Shape shape) {
+    return switch (shape) {
+        case Circle c -> Math.PI * c.radius() * c.radius();
+        case Rectangle r -> r.width() * r.height();
+    };
+}
+
+public static void main(String[] args) {
+    System.out.println(area(new Circle(1.0)));
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q3
+
+Prints approximately **`3.14159…`**
+
+The `switch` is **exhaustive** because `Shape` is sealed and only permits `Circle` and `Rectangle`. No `default` is required.
+
+--
+
+## Q4 · Concept check
+
+```java
+if (obj instanceof String s) {
+    System.out.println(s.length());
+}
+System.out.println(s.length());
+```
+
+Does the second line compile?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q4
+
+**No.**
+
+The pattern variable `s` is in scope **only where the compiler knows the match succeeded** — inside the `if` block (with flow-scoping rules). Outside that block, `s` is not defined.
+
+--
+
+## Q5 · Concept check
+
+What is wrong?
+
+```java
+public enum Planet {
+    EARTH, MARS;
+    private final double mass;
+    Planet(double mass) { this.mass = mass; }
+}
+```
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q5
+
+The enum constants `EARTH` and `MARS` invoke the **no-arg** constructor, but only `Planet(double mass)` is defined. Either add a no-arg constructor or pass values:
+
+```java
+EARTH(5.97e24), MARS(6.39e23);
+```
+
+Enum constructors are implicitly **private**.
+
+--
+
+## Q6 · True or false
+
+> A sealed class can be extended by any class in the same package.
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q6
+
+**False.**
+
+Only types listed in **`permits`** may extend or implement a sealed type (direct subclasses). The compiler enforces the closed hierarchy — that is the point of sealing.
+
+--
+
+## Q7 · Concept check
+
+When should you choose each tool?
+
+| Concept | Best for |
+|---------|----------|
+| `class` | ? |
+| `record` | ? |
+| `enum` | ? |
+| `sealed` hierarchy | ? |
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q7
+
+| Concept | Best for |
+|---------|----------|
+| `class` | Mutable objects, rich behavior, identity matters |
+| `record` | Immutable data carriers (DTOs, value objects) |
+| `enum` | Fixed set of named constants, possibly with data/behavior |
+| `sealed` hierarchy | Closed set of subtypes — exhaustive `switch`, domain variants |
+
+--
+
+## Q8 · Short answer
+
+Why do sealed types and pattern-matching `switch` work well together?
+
+--
+
+<!-- .slide: class="answer-slide" -->
+## Answer — Q8
+
+Sealing tells the compiler **every possible subtype**. The compiler can verify that a `switch` over a sealed root is **exhaustive** — if you handle every permitted subtype, no `default` is needed and you get a compile-time error when a new subtype is added but not handled.

@@ -209,3 +209,21 @@ Keep `slides.md` in each chapter under version control. Regenerate `full-course.
 | Edit slide content | Edit `NN-chapter/slides.md` → rebuild full course |
 | Preview one chapter | Marp: Open Preview on `slides.md` |
 | Export one chapter | `marp --no-stdin CHAPTER/slides.md -o CHAPTER/slides.html` |
+| **Present all quizzes** | `./quizzes/build-quiz-decks.sh` → open `quizzes/full-quizzes.html` |
+
+---
+
+## In-class quiz decks
+
+Generated from `quizzes/*.md` — see [`quizzes/README.md`](../quizzes/README.md).
+
+```bash
+./quizzes/build-quiz-decks.sh
+```
+
+| Key | Action |
+|-----|--------|
+| **→** / **←** | Next / previous quiz (chapter) |
+| **↓** / **↑** | Question → answer (light green card) → next question |
+
+Per-chapter Marp sources: `quizzes/slides/*.md`

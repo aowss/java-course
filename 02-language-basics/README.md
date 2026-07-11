@@ -240,6 +240,10 @@ mvn test -Dtest="course.ch02.exercises.ArrayStatsTest"
 - `var` is a convenience for local variables — it does not weaken type safety.
 - Arrays are fixed-size; for dynamic collections, use the Collections Framework (Chapter 12).
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 2 quiz](../quizzes/02-language-basics.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §4.2 — Primitive Types and Values](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2)

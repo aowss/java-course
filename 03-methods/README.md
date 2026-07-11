@@ -203,6 +203,10 @@ mvn test -Dtest="course.ch03.exercises.FormatterTest"
 - Varargs are syntactic sugar for array parameters.
 - Keep variable scope as narrow as possible — declare variables where they are first used.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 3 quiz](../quizzes/03-methods.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §8.4 — Method Declarations](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4)

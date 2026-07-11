@@ -167,6 +167,10 @@ mvn test -Dtest="course.ch06.exercises.PluginSystemTest"
 - `@FunctionalInterface` marks a SAM type, enabling **lambdas** and **method references**.
 - A class can **implement multiple interfaces**, achieving flexible polymorphism.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 6 quiz](../quizzes/06-interfaces.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Further Reading
 
 - [JLS §9.1 — Interface Declarations](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1)

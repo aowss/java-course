@@ -153,6 +153,10 @@ mvn test -Dtest="course.ch07.exercises.JsonValueTest"
 - Pattern matching **`switch`** provides concise, compiler-checked dispatch over subtypes.
 - Choose the modeling tool that best fits: records for data, enums for fixed sets, sealed types for known hierarchies.
 
+## In-Class Quiz
+
+Optional formative check for live sessions: [Chapter 7 quiz](../quizzes/07-encapsulation-and-data-modeling.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
+
 ## Bridge Project — Contact Book
 
 Finished Part II? Build a small layered CLI app that combines records, interfaces, and collections: [`bridges/contact-book`](../bridges/contact-book/README.md).

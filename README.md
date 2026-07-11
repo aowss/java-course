@@ -210,3 +210,14 @@ Reference depth beyond the chapter lessons — see [`appendices/`](appendices/RE
 | Appendix | When to read |
 |----------|--------------|
 | [Operator Precedence](appendices/operator-precedence/) | With or after Ch. 2 — exams, tricky expressions |
+
+### In-class quizzes (optional)
+
+Formative checks for live sessions — answers in collapsible sections. See [`quizzes/`](quizzes/README.md):
+
+| Part | Chapters |
+|------|----------|
+| [Part I: Foundations](quizzes/README.md#part-i-foundations) | Ch. 1–3 |
+| [Part II: OOP](quizzes/README.md#part-ii-object-oriented-programming) | Ch. 4–7 |
+
+Slide decks: run `./quizzes/build-quiz-decks.sh`, then open [`quizzes/full-quizzes.html`](quizzes/full-quizzes.html) (**↓** reveals each answer).
