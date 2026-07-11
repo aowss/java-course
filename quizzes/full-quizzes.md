@@ -10,6 +10,8 @@
 
 Pause on each **question** slide. Press **↓** to reveal the answer.
 
+[Course slides](../)
+
 ---
 
 <!-- .slide: data-background-color="#1a5276" -->

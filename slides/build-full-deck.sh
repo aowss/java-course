@@ -52,6 +52,8 @@ lines = [
     "| **↓** / **↑** | Next / previous **slide** in this chapter |",
     "| **Esc** | Slide overview |",
     "",
+    "[In-class quizzes](quizzes/) (Parts I–II)",
+    "",
 ]
 
 for chapter_dir in sorted(root.glob("[0-9][0-9]-*/")):

@@ -17,3 +17,6 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated quiz assets (copied from slides/ during build)
+quizzes/reveal-theme.css

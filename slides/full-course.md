@@ -8,6 +8,8 @@
 | **↓** / **↑** | Next / previous **slide** in this chapter |
 | **Esc** | Slide overview |
 
+[In-class quizzes](quizzes/) (Parts I–II)
+
 ---
 
 <!-- .slide: data-background-color="#1a5276" -->

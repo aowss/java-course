@@ -1,4 +1,4 @@
-name: Deploy slides to GitHub Pages
+name: Deploy site to GitHub Pages
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - '**/slides.md'
       - 'slides/**'
+      - 'quizzes/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -30,11 +31,17 @@ jobs:
       - name: Build slide deck
         run: ./slides/build-full-deck.sh
 
+      - name: Build quiz deck
+        run: ./quizzes/build-quiz-decks.sh
+
       - name: Prepare site
         run: |
-          mkdir -p _site
+          mkdir -p _site/quizzes
           cp slides/index.html _site/index.html
           cp slides/reveal-theme.css _site/reveal-theme.css
+          cp quizzes/index.html _site/quizzes/index.html
+          cp quizzes/reveal-theme.css _site/quizzes/reveal-theme.css
+          cp quizzes/quiz-reveal-theme.css _site/quizzes/quiz-reveal-theme.css
           touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

@@ -237,7 +237,7 @@ Optional reference material — read when you want more depth on a topic already
 
 ## In-Class Quizzes
 
-Optional formative quizzes for live sessions (Parts I–II). Answers are in collapsible sections in the written quizzes — or press **↓** in [`quizzes/full-quizzes.html`](quizzes/full-quizzes.html) (run `./quizzes/build-quiz-decks.sh` first). See [`quizzes/`](quizzes/README.md).
+Optional formative quizzes for live sessions (Parts I–II). Answers are in collapsible sections in the written quizzes — or press **↓** in the [online quiz deck](https://aowss.github.io/java-course/quizzes/). See [`quizzes/`](quizzes/README.md).
 
 | Part | Chapters |
 |------|----------|

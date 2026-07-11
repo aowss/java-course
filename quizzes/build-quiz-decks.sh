@@ -120,6 +120,8 @@ def build_reveal_markdown(all_quizzes: list[tuple[Path, dict]]) -> str:
         "",
         "Pause on each **question** slide. Press **↓** to reveal the answer.",
         "",
+        "[Course slides](../)",
+        "",
     ]
 
     for quiz_path, data in all_quizzes:
@@ -173,7 +175,7 @@ html_doc = f"""<!DOCTYPE html>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
-  <link rel="stylesheet" href="../slides/reveal-theme.css">
+  <link rel="stylesheet" href="reveal-theme.css">
   <link rel="stylesheet" href="quiz-reveal-theme.css">
 </head>
 <body>
@@ -209,9 +211,14 @@ html_doc = f"""<!DOCTYPE html>
 """
 
 out_html.write_text(html_doc, encoding="utf-8")
+index_html = out_html.with_name("index.html")
+index_html.write_text(html_doc, encoding="utf-8")
 print(f"Wrote {len(all_quizzes)} Marp decks under {slides_dir}")
 print(f"Wrote {out_md}")
 print(f"Wrote {out_html}")
+print(f"Wrote {index_html}")
 PY
+
+cp "$ROOT/slides/reveal-theme.css" "$QUIZ_DIR/reveal-theme.css"
 
 chmod +x "$QUIZ_DIR/build-quiz-decks.sh"

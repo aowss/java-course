@@ -151,27 +151,34 @@ Keep `slides.md` in each chapter under version control. Regenerate `full-course.
 
 ## Publish to GitHub Pages
 
-The live slide deck is deployed from this repo to **https://aowss.github.io/java-course/**.
+The live site is deployed from this repo:
+
+| URL | Content |
+|-----|---------|
+| [aowss.github.io/java-course](https://aowss.github.io/java-course/) | Full course slides |
+| [aowss.github.io/java-course/quizzes](https://aowss.github.io/java-course/quizzes/) | In-class quizzes (Parts I–II) |
 
 ### One-time setup (repo owner)
 
 1. Open the repo on GitHub → **Settings** → **Pages**.
 2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
 3. Push `.github/workflows/pages.yml` to `main` (included in this repo).
-4. After the **Deploy slides to GitHub Pages** workflow succeeds, the site is live.
+4. After the **Deploy site to GitHub Pages** workflow succeeds, the site is live.
 
 ### How it works
 
 - Workflow: [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)
-- On each push to `main` that touches `slides.md` or `slides/`, CI runs `./slides/build-full-deck.sh` and publishes:
-  - `slides/index.html` → site homepage (same content as `full-course.html`)
-  - `slides/reveal-theme.css` → styles
+- On each push to `main` that touches `slides.md`, `slides/`, or `quizzes/`, CI runs both build scripts and publishes:
+  - `slides/index.html` → site homepage (full course)
+  - `quizzes/index.html` → `/quizzes/` (in-class quizzes)
+  - Shared `reveal-theme.css` + `quiz-reveal-theme.css`
 - Reveal.js, Mermaid, and fonts load from CDNs — no extra assets to ship.
 
 ### Manual deploy
 
 ```bash
-./slides/build-full-deck.sh   # writes slides/index.html + full-course.html
+./slides/build-full-deck.sh      # slides/index.html + full-course.html
+./quizzes/build-quiz-decks.sh    # quizzes/index.html + full-quizzes.html
 ```
 
 Then push to `main`; the Pages workflow handles the rest.
@@ -242,6 +249,7 @@ Then push to `main`; the Pages workflow handles the rest.
 | Preview one chapter | Marp: Open Preview on `slides.md` |
 | Export one chapter | `marp --no-stdin CHAPTER/slides.md -o CHAPTER/slides.html` |
 | **Present all quizzes** | `./quizzes/build-quiz-decks.sh` → open `quizzes/full-quizzes.html` |
+| **Present online** | [Course](https://aowss.github.io/java-course/) · [Quizzes](https://aowss.github.io/java-course/quizzes/) |
 
 ---
 

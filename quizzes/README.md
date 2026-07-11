@@ -9,6 +9,7 @@ Each chapter quiz has 6–8 questions: predict-the-output, spot-the-bug, and con
 | **Written quiz** | `01-….md` | Self-study, printing; answers in collapsible `<details>` sections |
 | **Slide deck (one chapter)** | `slides/01-….md` | Marp preview/export for a single quiz |
 | **All quizzes (present)** | `full-quizzes.html` | Reveal.js — question on **↓**, answer on light green card |
+| **Present online** | [aowss.github.io/java-course/quizzes](https://aowss.github.io/java-course/quizzes/) (GitHub Pages) |
 
 ## Part I: Foundations
 
@@ -44,12 +45,13 @@ Creates:
 | Output | Purpose |
 |--------|---------|
 | `quizzes/full-quizzes.html` | Open in a browser — **present from here** |
+| `quizzes/index.html` | Same deck — used by GitHub Pages at `/quizzes/` |
 | `quizzes/full-quizzes.md` | Combined Reveal.js source (generated) |
 | `quizzes/slides/*.md` | Per-chapter Marp decks (generated) |
 
 ### 2. Navigate
 
-Open `quizzes/full-quizzes.html` in a browser.
+Open `quizzes/full-quizzes.html` in a browser (or [online](https://aowss.github.io/java-course/quizzes/)).
 
 | Key | Action |
 |-----|--------|
@@ -68,6 +70,8 @@ Edit the written quiz files (`01-….md`, etc.), then rebuild:
 ```
 
 Slide decks are **generated** from the written quizzes — do not edit `slides/*.md` or `full-quizzes.*` by hand.
+
+`reveal-theme.css` in this folder is copied from `slides/` during the build so CSS paths work locally and on GitHub Pages.
 
 ---
 
