@@ -196,10 +196,11 @@ The chapters build on each other. Follow the numbered order.
 
 ### Bridge projects (optional)
 
-After key milestones, try the multi-class **bridge projects** in [`bridges/`](bridges/README.md) — smaller than the capstone, but closer to a real app than single-file exercises:
+Multi-class **bridge projects** in [`bridges/`](bridges/README.md):
 
 | When | Project |
 |------|---------|
+| After Ch. 6 (Part II) | [University Registration](bridges/university-registration/) — progressive OOP (Steps 1–5) |
 | After Part II (Ch. 7) | [Contact Book](bridges/contact-book/) |
 | After Part IV (Ch. 16) | [Log Analyzer](bridges/log-analyzer/) |
 | After Part VII (Ch. 22) | [Catalog Service](bridges/catalog-service/) |

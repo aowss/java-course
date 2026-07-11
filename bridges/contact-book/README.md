@@ -1,6 +1,8 @@
-# Bridge Project 1 — Contact Book (after Part II)
+# Bridge Project — Contact Book (after Part II)
 
 A small CLI application that practices **records**, **interfaces**, **collections**, and **layered structure** without file I/O or streams. Complete this after Chapter 7 (Encapsulation and Data Modeling).
+
+If you have not done it yet, start with [University Registration](../university-registration/) — a progressive OOP warm-up after Ch. 4–6.
 
 ## What you will practice
 

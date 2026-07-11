@@ -218,6 +218,10 @@ mvn test -Dtest="course.ch05.exercises.ExprTest"
 - Always override `hashCode` when you override `equals` — the contract demands it.
 - Use `@Override` on every overridden method to catch mistakes at compile time.
 
+## Bridge — University Registration (Steps 3–4)
+
+After this chapter, continue the URS bridge with **Steps 3–4** (instructor + bidirectional enrollment): [`bridges/university-registration`](../bridges/university-registration/README.md).
+
 ## In-Class Quiz
 
 Optional formative check for live sessions: [Chapter 5 quiz](../quizzes/05-inheritance-and-polymorphism.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).

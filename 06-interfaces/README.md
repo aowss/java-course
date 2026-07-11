@@ -171,6 +171,10 @@ mvn test -Dtest="course.ch06.exercises.PluginSystemTest"
 
 Optional formative check for live sessions: [Chapter 6 quiz](../quizzes/06-interfaces.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
 
+## Bridge — University Registration (Step 5)
+
+Finish the progressive URS project — full model, tests, and CLI: [`bridges/university-registration`](../bridges/university-registration/README.md).
+
 ## Further Reading
 
 - [JLS §9.1 — Interface Declarations](https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1)

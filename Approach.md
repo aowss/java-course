@@ -115,6 +115,8 @@ Synthesis matters. Without it, the course is a reference manual. With it, studen
 
 Three **bridge projects** in `bridges/` (contact book, log analyzer, catalog service) provide stepping stones between chapter exercises and the capstone.
 
+**University Registration** (`bridges/university-registration`) is a fourth bridge — a progressive OOP arc (Student → Course → Instructor → enrollment) to run after Ch. 4–6, before Contact Book at Ch. 7.
+
 ### 11. Stack and heap introduced early (Chapter 3), JVM internals late (Chapter 28)
 
 The stack/heap memory model is introduced in Chapter 3 (Methods) with a visual diagram — just enough for students to understand pass-by-value, why primitives differ from objects, and what a stack frame is. Initialization blocks and modifier combinations land in Chapter 4 (Classes and Objects), where students first need them; Chapter 5 extends the order for inheritance; Chapter 28 connects the same sequence to class loading, `<clinit>`, and JVM memory areas.

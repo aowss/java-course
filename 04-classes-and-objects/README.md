@@ -278,6 +278,10 @@ mvn test -Dtest="course.ch04.exercises.StopwatchTest"
 - Initialization blocks run in a fixed order — static once per class, instance before every constructor.
 - Prefer the most restrictive access level that works.
 
+## Bridge — University Registration (Step 1)
+
+After this chapter, try **Step 1** of the progressive OOP bridge: [`bridges/university-registration`](../bridges/university-registration/README.md) (`Step1BasicDemo`).
+
 ## In-Class Quiz
 
 Optional formative check for live sessions: [Chapter 4 quiz](../quizzes/04-classes-and-objects.md) (answers in collapsible sections). [Slide-friendly version](../quizzes/README.md#present-all-quizzes-recommended).
