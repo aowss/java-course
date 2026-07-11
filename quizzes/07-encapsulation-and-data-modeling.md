@@ -1,6 +1,6 @@
 # Quiz — Chapter 7: Encapsulation and Data Modeling
 
-**Part II: Object-Oriented Programming** · ~12 minutes · no IDE required
+**Part II: Object-Oriented Programming** · ~12 minutes
 
 ---
 

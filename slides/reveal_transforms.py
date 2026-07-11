@@ -163,6 +163,20 @@ def line_to_flow_html(line: str) -> str | None:
     return "".join(chunks)
 
 
+def rewrite_repo_links(slide: str, ctx: SlideContext) -> str:
+    def to_url(relative: str) -> str:
+        segments: list[str] = []
+        if ctx.link_prefix:
+            segments.append(ctx.link_prefix.rstrip("/"))
+        segments.append(relative)
+        return "/".join(segments)
+
+    def repl(match: re.Match[str]) -> str:
+        return f"]({to_url(f'appendices/{match.group(1)}')})"
+
+    return re.sub(r"\]\((?:\.\./)+appendices/([^)]+)\)", repl, slide)
+
+
 def transform_flow_lines(slide: str) -> str:
     lines = slide.splitlines()
     result: list[str] = []
@@ -378,6 +392,8 @@ def transform_further_reading(slide: str) -> str:
 
 def transform_slide(slide: str, ctx: SlideContext | None = None) -> str:
     slide = transform_flow_lines(slide)
+    if ctx is not None:
+        slide = rewrite_repo_links(slide, ctx)
     slide = transform_blockquotes(slide)
     if ctx is not None:
         slide = transform_examples_table(slide, ctx)

@@ -16,7 +16,7 @@ style: |
 # Quiz
 ## Chapter 5: Inheritance and Polymorphism
 
-Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+Part II: Object-Oriented Programming · ~12 minutes
 
 ---
 

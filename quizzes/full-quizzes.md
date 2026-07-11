@@ -10,7 +10,7 @@
 
 Pause on each **question** slide. Press **↓** to reveal the answer.
 
-[Course slides](../)
+Opened from the course? Use your browser **←** to return to the same slide.
 
 ---
 
@@ -18,7 +18,7 @@ Pause on each **question** slide. Press **↓** to reveal the answer.
 # Quiz
 ## Chapter 1: Introduction to Java
 
-Part I: Foundations · ~10 minutes · no IDE required
+Part I: Foundations · ~10 minutes
 
 --
 
@@ -151,7 +151,7 @@ Any two of:
 # Quiz
 ## Chapter 2: Language Basics
 
-Part I: Foundations · ~12 minutes · no IDE required
+Part I: Foundations · ~12 minutes
 
 --
 
@@ -327,7 +327,7 @@ Name the **eight** primitive types in Java.
 # Quiz
 ## Chapter 3: Methods
 
-Part I: Foundations · ~12 minutes · no IDE required
+Part I: Foundations · ~12 minutes
 
 --
 
@@ -530,7 +530,7 @@ Overloading is resolved by **signature only**, not return type.
 # Quiz
 ## Chapter 4: Classes and Objects
 
-Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+Part II: Object-Oriented Programming · ~12 minutes
 
 --
 
@@ -721,7 +721,7 @@ List the initialization steps that run when `new Child()` is first called in a p
 # Quiz
 ## Chapter 5: Inheritance and Polymorphism
 
-Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+Part II: Object-Oriented Programming · ~12 minutes
 
 --
 
@@ -904,7 +904,7 @@ The subclass object **is-a** superclass object. The parent part of the object mu
 # Quiz
 ## Chapter 6: Interfaces
 
-Part II: Object-Oriented Programming · ~10 minutes · no IDE required
+Part II: Object-Oriented Programming · ~10 minutes
 
 --
 
@@ -1078,7 +1078,7 @@ Can an interface extend another interface?
 # Quiz
 ## Chapter 7: Encapsulation and Data Modeling
 
-Part II: Object-Oriented Programming · ~12 minutes · no IDE required
+Part II: Object-Oriented Programming · ~12 minutes
 
 --
 

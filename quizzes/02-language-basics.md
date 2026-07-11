@@ -1,6 +1,6 @@
 # Quiz — Chapter 2: Language Basics
 
-**Part I: Foundations** · ~12 minutes · no IDE required
+**Part I: Foundations** · ~12 minutes
 
 ---
 

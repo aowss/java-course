@@ -128,6 +128,12 @@
   font-size: 0.8em;
 }
 
+.reveal .slides section.intro-slide aside.link-box {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
 /* Body text */
 .reveal .slides section:not([data-background-color]):not([data-background-gradient]) p,
 .reveal .slides section:not([data-background-color]):not([data-background-gradient]) li {

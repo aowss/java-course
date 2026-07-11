@@ -16,7 +16,7 @@ style: |
 # Quiz
 ## Chapter 3: Methods
 
-Part I: Foundations · ~12 minutes · no IDE required
+Part I: Foundations · ~12 minutes
 
 ---
 

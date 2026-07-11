@@ -1,6 +1,6 @@
 # Quiz — Chapter 6: Interfaces
 
-**Part II: Object-Oriented Programming** · ~10 minutes · no IDE required
+**Part II: Object-Oriented Programming** · ~10 minutes
 
 ---
 

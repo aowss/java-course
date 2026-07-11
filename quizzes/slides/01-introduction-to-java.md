@@ -16,7 +16,7 @@ style: |
 # Quiz
 ## Chapter 1: Introduction to Java
 
-Part I: Foundations · ~10 minutes · no IDE required
+Part I: Foundations · ~10 minutes
 
 ---
 

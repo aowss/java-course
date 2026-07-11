@@ -42,6 +42,7 @@ def parse_quiz(path: Path) -> dict:
         line = line.strip()
         if line and not line.startswith("#"):
             subtitle = re.sub(r"\*+", "", line).strip()
+            subtitle = re.sub(r"\s*·\s*no IDE required", "", subtitle, flags=re.I)
             break
 
     questions = []
@@ -123,7 +124,7 @@ def build_reveal_markdown(all_quizzes: list[tuple[Path, dict]]) -> str:
         "",
         "Pause on each **question** slide. Press **↓** to reveal the answer.",
         "",
-        "[Course slides](../)",
+        "Opened from the course? Use your browser **←** to return to the same slide.",
         "",
     ]
 

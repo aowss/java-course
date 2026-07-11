@@ -1,6 +1,6 @@
 # Quiz — Chapter 4: Classes and Objects
 
-**Part II: Object-Oriented Programming** · ~12 minutes · no IDE required
+**Part II: Object-Oriented Programming** · ~12 minutes
 
 ---
 

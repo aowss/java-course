@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 
 sys.path.insert(0, str(Path(sys.argv[1]) / "slides"))
-from reveal_transforms import SlideContext, transform_slide
+from reveal_transforms import SlideContext, link_box_html, transform_slide
 
 root = Path(sys.argv[1])
 out_md = Path(sys.argv[2])
@@ -40,6 +40,13 @@ quiz_hash_by_slug = {
     for index, path in enumerate(sorted((root / "quizzes").glob("[0-9][0-9]-*.md")))
 }
 
+quiz_note = link_box_html(
+    "slide-footer further-reading",
+    "Quizzes",
+    "Quizzes for a given chapter can be accessed from the Examples slide. "
+    "To return to the course slide, use your browser ←.",
+)
+
 lines = [
     '<!-- .slide: class="intro-slide" -->',
     "# Java Course",
@@ -51,7 +58,7 @@ lines = [
     "| **↓** / **↑** | Next / previous **slide** in this chapter |",
     "| **Esc** | Slide overview |",
     "",
-    "[In-class quizzes](quizzes/) (Parts I–II)",
+    quiz_note,
     "",
 ]
 
