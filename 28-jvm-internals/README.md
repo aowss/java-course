@@ -20,7 +20,7 @@ The JVM loads classes lazily — a class is loaded when first referenced. The pr
 | Linking      | Verify bytecode, prepare static fields, resolve symbolic references |
 | Initialization | Run static initializers (`<clinit>`) in source order           |
 
-**Initialization order** for a class hierarchy:
+**Initialization order** for a class hierarchy (introduced in [Chapter 4](../04-classes-and-objects/README.md), extended here for inheritance):
 
 ```
 1. Parent static fields (in source order)

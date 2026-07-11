@@ -223,3 +223,14 @@
 - Requirements and design
 - Implementation walkthrough
 - Testing, packaging, and delivery
+
+## Appendices
+
+Optional reference material — read when you want more depth on a topic already introduced in the main chapters.
+
+### A. Operator Precedence and Evaluation
+
+- Operand evaluation order and short-circuit rules
+- Precedence table and numeric promotion
+- Tricky expression samples
+- Related: Chapter 2

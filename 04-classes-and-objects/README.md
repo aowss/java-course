@@ -6,7 +6,9 @@
 - Declare fields, constructors, and methods
 - Use the `this` keyword to refer to the current instance
 - Apply access modifiers (`private`, `protected`, `public`, package-private) to enforce encapsulation
+- Combine member modifiers (`static`, `final`) and read them in conventional order
 - Distinguish between static (class-level) and instance (object-level) members
+- Explain initialization blocks and the order in which fields, blocks, and constructors run
 
 ## Concepts
 
@@ -144,12 +146,73 @@ public class Counter {
 - Instance methods *can* access static members.
 - Access static members through the class name: `Counter.getTotalCount()`.
 
+### Combining Modifiers
+
+Fields and methods can carry more than one modifier. The compiler accepts any order, but teams follow a conventional sequence:
+
+```
+access → static → final
+```
+
+| Example | Meaning |
+|---------|---------|
+| `public static final int MAX = 100;` | Class constant, visible everywhere |
+| `private static int count;` | Per-class mutable state, hidden from outside |
+| `private final String name;` | Set once per instance (usually in the constructor) |
+
+`final` on a field means it must be assigned exactly once — at declaration or in every constructor. `static final` is the usual pattern for named constants.
+
+### Initialization Blocks
+
+Besides constructors, a class can run code in **initializer blocks**:
+
+```java
+public class Cache {
+    private static final Map<String, String> STORE = new HashMap<>();
+
+    static {
+        STORE.put("default", "value");   // runs once when the class is first used
+    }
+
+    private final String key;
+
+    {
+        System.out.println("Preparing entry");   // runs before each constructor
+    }
+
+    public Cache(String key) {
+        this.key = key;
+    }
+}
+```
+
+| Construct | When it runs | How often |
+|-----------|--------------|-----------|
+| Static field initializer | When the class is first loaded | Once per class |
+| `static { }` block | After static fields, in source order | Once per class |
+| Instance field initializer | Before each constructor | Once per object |
+| `{ }` instance block | After instance fields, before constructor body | Once per object |
+| Constructor | Last step of object creation | Once per object |
+
+**Order when you call `new Cache("k")`:**
+
+```
+1. Static field initializers (if class not yet initialized)
+2. Static blocks
+3. Instance field initializers
+4. Instance blocks
+5. Constructor body
+```
+
+Chapter 5 extends this when inheritance is involved — the superclass finishes its initialization before the subclass constructor body runs.
+
 ## Examples
 
 | File                                                                                | Demonstrates                                           |
 |-------------------------------------------------------------------------------------|--------------------------------------------------------|
 | [`BankAccount.java`](src/main/java/course/ch04/examples/BankAccount.java)           | Fields, constructor, methods, `this`, encapsulation     |
 | [`Counter.java`](src/main/java/course/ch04/examples/Counter.java)                   | Static vs. instance fields, static methods              |
+| [`InitializationOrder.java`](src/main/java/course/ch04/examples/InitializationOrder.java) | Static/instance blocks and field initializer order |
 
 ## Exercises
 
@@ -202,6 +265,8 @@ mvn test -Dtest="course.ch04.exercises.StopwatchTest"
 - Constructors initialize objects — use `this` to disambiguate parameters from fields.
 - Make fields `private` and expose only what clients need — this is **encapsulation**.
 - `static` members belong to the class, not to instances — use them for shared state and utility methods.
+- Combine modifiers in conventional order: access, then `static`, then `final`.
+- Initialization blocks run in a fixed order — static once per class, instance before every constructor.
 - Prefer the most restrictive access level that works.
 
 ## Further Reading

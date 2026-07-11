@@ -95,6 +95,8 @@ var name = "Alice";         // inferred as String (Java 10+)
 | Ternary | `condition ? trueVal : falseVal` |
 
 > **Integer division truncates:** `7 / 2` → `3`, not `3.5`
+>
+> Deeper precedence and evaluation rules: [Operator Precedence appendix](../../appendices/operator-precedence/README.md)
 
 ---
 

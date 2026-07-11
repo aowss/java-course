@@ -91,6 +91,8 @@ var name = "Alice";         // type inferred as String (Java 10+)
 
 **Integer division truncates:** `7 / 2` evaluates to `3`, not `3.5`.
 
+For precedence tables, evaluation-order rules, and tricky expression samples, see the [Operator Precedence appendix](../../appendices/operator-precedence/README.md).
+
 ### Control Flow
 
 **`if` / `else if` / `else`:**
@@ -241,5 +243,6 @@ mvn test -Dtest="course.ch02.exercises.ArrayStatsTest"
 ## Further Reading
 
 - [JLS §4.2 — Primitive Types and Values](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2)
+- [Appendix: Operator Precedence](../../appendices/operator-precedence/README.md)
 - [JLS §14.11 — The `switch` Statement](https://docs.oracle.com/javase/specs/jls/se25/html/jls-14.html#jls-14.11)
 - Effective Java, Item 61: Prefer primitive types to boxed primitives

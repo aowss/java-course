@@ -21,7 +21,9 @@ style: |
 - Declare **fields**, **constructors**, and **methods**
 - Use **`this`** to refer to the current instance
 - Apply **access modifiers** for encapsulation
+- Combine **`static`** and **`final`** modifiers
 - Distinguish **static** (class) vs **instance** (object) members
+- Understand **initialization blocks** and their execution order
 
 ---
 
@@ -137,12 +139,35 @@ public class Counter {
 
 ---
 
+## Combining Modifiers
+
+Convention: **access → static → final**
+
+```java
+public static final int MAX = 100;   // class constant
+private final String name;           // set once per instance
+```
+
+---
+
+## Initialization Blocks
+
+```java
+static { /* runs once when class loads */ }
+{ /* runs before each constructor */ }
+```
+
+**Order for `new Demo()`:** static fields → static blocks → instance fields → instance blocks → constructor
+
+---
+
 ## Examples in This Chapter
 
 | File | Topic |
 |------|-------|
 | `BankAccount` | Fields, constructor, `this`, encapsulation |
-| `Counter` | Static vs instance fields and methods |
+| `Counter` | Static vs instance members |
+| `InitializationOrder` | Static/instance blocks and field initializer order |
 
 ```bash
 mvn test -pl 04-classes-and-objects
@@ -170,5 +195,6 @@ Full lesson: [`README.md`](README.md) · Solutions: `solutions/`
 - Use `this` in constructors to disambiguate parameters from fields
 - **Encapsulation** — `private` fields, controlled public interface
 - `static` members belong to the class, not instances
+- Initialization blocks run in a fixed, predictable order
 
 Further reading: [JLS §8.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2) · *Effective Java* Items 15–16

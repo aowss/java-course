@@ -202,3 +202,11 @@ After key milestones, try the multi-class **bridge projects** in [`bridges/`](br
 | After Part II (Ch. 7) | [Contact Book](bridges/contact-book/) |
 | After Part IV (Ch. 16) | [Log Analyzer](bridges/log-analyzer/) |
 | After Part VII (Ch. 22) | [Catalog Service](bridges/catalog-service/) |
+
+### Appendices (optional)
+
+Reference depth beyond the chapter lessons — see [`appendices/`](appendices/README.md):
+
+| Appendix | When to read |
+|----------|--------------|
+| [Operator Precedence](appendices/operator-precedence/) | With or after Ch. 2 — exams, tricky expressions |

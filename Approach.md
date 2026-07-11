@@ -117,4 +117,8 @@ Three **bridge projects** in `bridges/` (contact book, log analyzer, catalog ser
 
 ### 11. Stack and heap introduced early (Chapter 3), JVM internals late (Chapter 28)
 
-The stack/heap memory model is introduced in Chapter 3 (Methods) with a visual diagram — just enough for students to understand pass-by-value, why primitives differ from objects, and what a stack frame is. The full treatment — class loading lifecycle, all memory areas, garbage collection, JIT compilation, and diagnostic tools — lives in Chapter 28 (JVM Internals) in Part VIII. This progressive disclosure avoids overwhelming beginners while ensuring advanced students get the complete picture.
+The stack/heap memory model is introduced in Chapter 3 (Methods) with a visual diagram — just enough for students to understand pass-by-value, why primitives differ from objects, and what a stack frame is. Initialization blocks and modifier combinations land in Chapter 4 (Classes and Objects), where students first need them; Chapter 5 extends the order for inheritance; Chapter 28 connects the same sequence to class loading, `<clinit>`, and JVM memory areas.
+
+### 12. Appendices for reference depth
+
+Chapter lessons stay practical. Material that is useful but easy to over-teach early — operator precedence tables, promotion rules, evaluation-order puzzles — lives in `appendices/` and is linked from the relevant chapter. This mirrors how the old PPTX course had a dedicated Operators section without forcing every student through exam-level detail on day one.

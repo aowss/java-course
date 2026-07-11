@@ -46,6 +46,21 @@ Java supports **single inheritance** only — a class can extend at most one sup
 | Call overridden method       | `super.describe()`              |
 | Access superclass field      | `super.field` (if accessible)   |
 
+### Initialization Order with Inheritance
+
+Chapter 4 covered initialization within a single class. With inheritance, the **superclass always finishes before the subclass constructor body runs**:
+
+```
+1. Parent static fields and static blocks (once per class hierarchy load)
+2. Child static fields and static blocks
+3. Parent instance fields and instance blocks
+4. Parent constructor
+5. Child instance fields and instance blocks
+6. Child constructor
+```
+
+That is why `super(...)` must be the first statement in a subclass constructor — the parent must be fully constructed before the child adds its own state. Chapter 28 connects this sequence to JVM class loading and `<clinit>`.
+
 ### Method Overriding and Dynamic Dispatch
 
 A subclass can **override** a method by providing a new implementation with the same signature:
