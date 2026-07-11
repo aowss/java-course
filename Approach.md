@@ -125,4 +125,8 @@ Chapter lessons stay practical. Material that is useful but easy to over-teach e
 
 ### 13. In-class quizzes for Parts I–II
 
-`quizzes/` holds short formative checks for live sessions (predict-the-output, spot-the-bug, concept checks). Answers use collapsible `<details>` sections in the written quizzes; `build-quiz-decks.sh` generates Marp and Reveal.js slide decks where **↓** reveals each answer on a green slide.
+`quizzes/` holds short formative checks for live sessions (predict-the-output, spot-the-bug, concept checks). Answers use collapsible `<details>` sections in the written quizzes; `build-quiz-decks.sh` generates Marp and Reveal.js slide decks where **↓** reveals each answer on a light green card.
+
+### 14. Mermaid diagrams for spatial concepts
+
+Flowcharts, sequence diagrams, and class diagrams (Mermaid) replace ASCII art where concepts are spatial or sequential — compile pipeline, stack/heap, pass-by-value, initialization order, dynamic dispatch, sealed hierarchies, JVM memory. Diagrams live in chapter `README.md` and `slides.md`; the full-course Reveal deck renders them via Mermaid.js.

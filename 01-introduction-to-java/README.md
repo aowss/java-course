@@ -29,6 +29,15 @@ Java was created by James Gosling at Sun Microsystems in 1995. Its core design p
 
 > Since Java 11, the JRE is no longer distributed separately. The JDK is the only download.
 
+```mermaid
+flowchart TB
+    JDK["JDK - develop and run"]
+    JRE["JRE / runtime libraries"]
+    JVM["JVM - executes bytecode"]
+    JDK --> JRE
+    JRE --> JVM
+```
+
 ### Compiled vs. Interpreted Languages
 
 Programming languages are often described as either **compiled** or **interpreted**, but the distinction is really about implementation strategy, not the language itself.
@@ -47,20 +56,12 @@ This two-stage approach gives Java the best of both worlds:
 
 ### Compilation and Execution
 
-```
-  Source code (.java)
-        │
-        ▼
-    javac (compiler)          ← ahead-of-time compilation
-        │
-        ▼
-  Bytecode (.class)
-        │
-        ▼
-    java (JVM)                ← interpretation + JIT compilation
-        │
-        ▼
-   Program output
+```mermaid
+flowchart TD
+    A["Source code (.java)"] --> B["javac - ahead-of-time compile"]
+    B --> C["Bytecode (.class)"]
+    C --> D["JVM - interpret + JIT"]
+    D --> E["Program output"]
 ```
 
 1. You write source code in `.java` files.

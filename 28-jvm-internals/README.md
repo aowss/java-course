@@ -20,55 +20,47 @@ The JVM loads classes lazily — a class is loaded when first referenced. The pr
 | Linking      | Verify bytecode, prepare static fields, resolve symbolic references |
 | Initialization | Run static initializers (`<clinit>`) in source order           |
 
+```mermaid
+flowchart LR
+    A["Loading"] --> B["Linking"]
+    B --> C["Initialization"]
+```
+
 **Initialization order** for a class hierarchy (introduced in [Chapter 4](../04-classes-and-objects/README.md), extended here for inheritance):
 
-```
-1. Parent static fields (in source order)
-2. Parent static blocks
-3. Child static fields
-4. Child static blocks
-5. Parent instance fields / instance blocks
-6. Parent constructor
-7. Child instance fields / instance blocks
-8. Child constructor
+```mermaid
+flowchart TD
+    A["Parent static fields and blocks"] --> B["Child static fields and blocks"]
+    B --> C["Parent instance fields and blocks"]
+    C --> D["Parent constructor"]
+    D --> E["Child instance fields and blocks"]
+    E --> F["Child constructor"]
 ```
 
 Class loaders form a delegation hierarchy:
 
-```
-Bootstrap ClassLoader (JDK core: java.lang.*)
-    ↑
-Platform ClassLoader (JDK modules)
-    ↑
-Application ClassLoader (classpath / module path)
+```mermaid
+flowchart BT
+    App["Application ClassLoader / classpath / module path"]
+    Plat["Platform ClassLoader / JDK modules"]
+    Boot["Bootstrap ClassLoader / java.lang.*"]
+    App --> Plat
+    Plat --> Boot
 ```
 
 Each loader asks its parent first, ensuring core classes cannot be spoofed.
 
 ### Memory Areas
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        JVM Process                          │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │  Heap (shared)                                       │    │
-│  │  Young Gen (Eden + Survivor) │ Old Gen               │    │
-│  │  All objects live here (except thread stacks)        │    │
-│  └─────────────────────────────────────────────────────┘    │
-│                                                             │
-│  ┌──────────────────┐  ┌──────────────────────────────┐     │
-│  │ Metaspace        │  │ Thread Stacks (per thread)   │     │
-│  │ Class metadata,  │  │ Local variables, operands,   │     │
-│  │ constant pools   │  │ return addresses             │     │
-│  └──────────────────┘  └──────────────────────────────┘     │
-│                                                             │
-│  ┌──────────────────┐  ┌──────────────────────────────┐     │
-│  │ Code Cache       │  │ PC Registers (per thread)    │     │
-│  │ JIT-compiled     │  │ Current instruction pointer  │     │
-│  │ native code      │  │                              │     │
-│  └──────────────────┘  └──────────────────────────────┘     │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph jvm["JVM process"]
+        heap["Heap (shared) / Young Gen · Old Gen / objects and arrays"]
+        meta["Metaspace / class metadata"]
+        stacks["Thread stacks / frames and locals"]
+        code["Code cache / JIT native code"]
+        pc["PC registers / per thread"]
+    end
 ```
 
 | Area         | Stores                          | GC?    | Size flag              |

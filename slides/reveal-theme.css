@@ -284,3 +284,18 @@
 .reveal .backgrounds {
   background: var(--jc-bg);
 }
+
+/* Mermaid diagrams */
+.reveal .mermaid {
+  margin: 0.6em auto;
+  text-align: center;
+}
+
+.reveal .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.reveal .slides section .mermaid {
+  font-size: 0.72em;
+}

@@ -50,13 +50,13 @@ Java supports **single inheritance** only — a class can extend at most one sup
 
 Chapter 4 covered initialization within a single class. With inheritance, the **superclass always finishes before the subclass constructor body runs**:
 
-```
-1. Parent static fields and static blocks (once per class hierarchy load)
-2. Child static fields and static blocks
-3. Parent instance fields and instance blocks
-4. Parent constructor
-5. Child instance fields and instance blocks
-6. Child constructor
+```mermaid
+flowchart TD
+    A["Parent static fields and blocks"] --> B["Child static fields and blocks"]
+    B --> C["Parent instance fields and blocks"]
+    C --> D["Parent constructor"]
+    D --> E["Child instance fields and blocks"]
+    E --> F["Child constructor"]
 ```
 
 That is why `super(...)` must be the first statement in a subclass constructor — the parent must be fully constructed before the child adds its own state. Chapter 28 connects this sequence to JVM class loading and `<clinit>`.
@@ -79,6 +79,15 @@ At runtime, the JVM uses **dynamic dispatch** — it looks at the actual type of
 ```java
 Vehicle v = new Car("Toyota", 4);
 v.describe();   // → "Toyota car with 4 doors" (Car's version)
+```
+
+```mermaid
+flowchart LR
+    V["Declared type: Vehicle"]
+    O["Actual object: Car"]
+    M["JVM calls Car describe"]
+    V -.-> O
+    O --> M
 ```
 
 The `@Override` annotation is optional but strongly recommended — the compiler will catch typos in the method name or mismatched parameter types.

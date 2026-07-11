@@ -103,6 +103,15 @@ Access modifiers control **visibility** — who can see a field, method, or clas
 
 **Best practice:** make fields `private` and provide `public` getter/setter methods only when needed. This is **encapsulation** — hiding internal state and exposing a controlled interface.
 
+```mermaid
+classDiagram
+    class BankAccount {
+        -double balance
+        +deposit(amount)
+        +getBalance
+    }
+```
+
 ```java
 public class Temperature {
     private double celsius;
@@ -196,12 +205,12 @@ public class Cache {
 
 **Order when you call `new Cache("k")`:**
 
-```
-1. Static field initializers (if class not yet initialized)
-2. Static blocks
-3. Instance field initializers
-4. Instance blocks
-5. Constructor body
+```mermaid
+flowchart TD
+    A["1. Static field initializers"] --> B["2. Static blocks"]
+    B --> C["3. Instance field initializers"]
+    C --> D["4. Instance blocks"]
+    D --> E["5. Constructor body"]
 ```
 
 Chapter 5 extends this when inheritance is involved — the superclass finishes its initialization before the subclass constructor body runs.

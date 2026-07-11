@@ -31,6 +31,16 @@ def split_slides(body: str) -> list[str]:
     return [p.strip() for p in parts if p.strip()]
 
 
+def mermaid_to_div(slide: str) -> str:
+    """Reveal highlight breaks ```mermaid blocks — emit raw divs instead."""
+
+    def repl(match: re.Match[str]) -> str:
+        content = match.group(1).strip()
+        return f'<div class="mermaid">\n{content}\n</div>'
+
+    return re.sub(r"```mermaid\s*\n(.*?)```", repl, slide, flags=re.DOTALL)
+
+
 lines = [
     '<!-- .slide: class="intro-slide" -->',
     "# Java Course",
@@ -55,9 +65,9 @@ for chapter_dir in sorted(root.glob("[0-9][0-9]-*/")):
     lines.append("---")
     lines.append("")
     lines.append('<!-- .slide: data-background-color="#1a5276" -->')
-    lines.append(slides[0])
+    lines.append(mermaid_to_div(slides[0]))
     for slide in slides[1:]:
-        lines.extend(["", "--", "", slide])
+        lines.extend(["", "--", "", mermaid_to_div(slide)])
     lines.append("")
 
 markdown = "\n".join(lines).strip() + "\n"
@@ -94,7 +104,25 @@ html_doc = f"""<!DOCTYPE html>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
+    mermaid.initialize({{
+      startOnLoad: false,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      fontFamily: 'Inter, system-ui, sans-serif'
+    }});
+
+    function renderMermaidInSlide(slide) {{
+      if (!slide) return;
+      var nodes = slide.querySelectorAll('.mermaid:not([data-processed])');
+      if (!nodes.length) return;
+      mermaid.run({{ nodes: Array.from(nodes) }}).catch(function(err) {{
+        console.error('Mermaid render failed:', err);
+      }});
+    }}
+
     Reveal.initialize({{
       hash: true,
       slideNumber: 'c/t',
@@ -103,6 +131,12 @@ html_doc = f"""<!DOCTYPE html>
       backgroundTransition: 'fade',
       plugins: [RevealMarkdown, RevealHighlight],
       markdown: {{ smartypants: true }}
+    }}).then(function() {{
+      renderMermaidInSlide(Reveal.getCurrentSlide());
+    }});
+
+    Reveal.on('slidechanged', function(event) {{
+      renderMermaidInSlide(event.currentSlide);
     }});
   </script>
 </body>

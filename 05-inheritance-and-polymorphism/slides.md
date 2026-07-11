@@ -44,6 +44,19 @@ public class Car extends Vehicle {
 
 ---
 
+## Initialization with Inheritance
+
+```mermaid
+flowchart TD
+    A["Parent static"] --> B["Child static"]
+    B --> C["Parent instance + ctor"]
+    C --> D["Child instance + ctor"]
+```
+
+`super(...)` must be the **first** statement in a subclass constructor.
+
+---
+
 ## `super` Keyword
 
 | Usage | Example |
@@ -76,6 +89,12 @@ The JVM calls the method for the object's **actual** type, not the variable's de
 ```java
 Vehicle v = new Car("Toyota", 4);
 v.describe();   // → "Toyota car with 4 doors" (Car's version)
+```
+
+```mermaid
+flowchart LR
+    V["Declared: Vehicle"] --> O["Actual: Car"]
+    O --> M["Calls Car describe"]
 ```
 
 This is **polymorphism** — same interface, different behavior.

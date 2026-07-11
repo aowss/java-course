@@ -131,6 +131,8 @@ Chapter 30 (capstone) uses a project walkthrough instead of the three-tier exerc
 
 When editing, separate slides with a line containing only `---`. The chapter `README.md` remains the source of truth for depth.
 
+**Mermaid diagrams** — chapters use ` ```mermaid ` blocks in `slides.md` and `README.md`. The build script converts them to `<div class="mermaid">` in `full-course.html` (Reveal's syntax highlighter breaks fenced mermaid blocks). Diagrams render via Mermaid.js when you navigate to the slide.
+
 ---
 
 ## Files in `slides/`

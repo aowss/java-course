@@ -108,7 +108,47 @@ else if (score >= 80) grade = 'B';
 else grade = 'C';
 ```
 
-**Enhanced `switch`** (Java 14+) — no fall-through, can return a value:
+**Classic `switch`** — each `case` needs `break` unless fall-through is intentional:
+
+```java
+switch (day) {
+    case "MONDAY":
+    case "TUESDAY":
+        System.out.println("Start of the week");
+        break;
+    case "WEDNESDAY":
+        System.out.println("Midweek");
+        break;
+    default:
+        System.out.println("Other");
+        break;
+}
+```
+
+---
+
+## Switch Fall-Through Pitfall
+
+Without `break`, execution **falls through** to the next case:
+
+```java
+switch (day) {
+    case "WEDNESDAY":
+        System.out.print("Wed ");
+    case "THURSDAY":
+        System.out.print("Thu ");
+        break;
+}
+// day = "WEDNESDAY" prints: Wed Thu
+```
+
+Grouping cases (`MONDAY` / `TUESDAY`) is the only intentional use of fall-through.
+
+---
+
+## Enhanced `switch` (Java 14+)
+
+Arrow form — no fall-through, can return a value:
 
 ```java
 String label = switch (day) {

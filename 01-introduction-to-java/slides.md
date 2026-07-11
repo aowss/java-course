@@ -46,6 +46,15 @@ Created by James Gosling at Sun Microsystems (1995):
 
 > Since Java 11, only the **JDK** is distributed — no separate JRE download.
 
+```mermaid
+flowchart TB
+    JDK["JDK - develop and run"]
+    JRE["JRE / runtime libraries"]
+    JVM["JVM executes bytecode"]
+    JDK --> JRE
+    JRE --> JVM
+```
+
 ---
 
 ## Compiled vs Interpreted
@@ -71,14 +80,12 @@ Java does **both** — ahead-of-time compilation *and* runtime interpretation.
 
 ## Compilation and Execution
 
-```
-  Source (.java)
-       │
-       ▼  javac
-  Bytecode (.class)
-       │
-       ▼  java (JVM)
-  Program output
+```mermaid
+flowchart TD
+    A["Source (.java)"] --> B["javac"]
+    B --> C["Bytecode (.class)"]
+    C --> D["JVM and JIT"]
+    D --> E["Program output"]
 ```
 
 - Bytecode is **platform-independent**

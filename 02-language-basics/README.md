@@ -130,6 +130,17 @@ switch (day) {
 
 Each `case` falls through to the next unless you add `break`. Forgetting `break` is a common source of bugs — the code silently executes the next case's body. Grouping cases (like `MONDAY` and `TUESDAY` above) is the only legitimate use of fall-through.
 
+```java
+switch (day) {
+    case "WEDNESDAY":
+        System.out.print("Wed ");
+    case "THURSDAY":
+        System.out.print("Thu ");
+        break;
+}
+// day = "WEDNESDAY" → prints "Wed Thu "
+```
+
 **Enhanced `switch` (expression form, Java 14+):**
 
 The arrow (`->`) form eliminates fall-through entirely and can return a value:

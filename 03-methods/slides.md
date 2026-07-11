@@ -44,7 +44,7 @@ public static double circleArea(double radius) {
 Java passes **everything by value**:
 
 - Primitives → a **copy** of the value
-- References → a **copy** of the reference (object is shared)
+- References → a **copy** of the reference (the object itself is shared)
 
 ```java
 public static void tryToReassign(String s) {
@@ -52,6 +52,8 @@ public static void tryToReassign(String s) {
 }
 // caller's variable is unchanged
 ```
+
+Reassigning the parameter does **not** change the caller's variable.
 
 ---
 
@@ -90,6 +92,19 @@ Rules: at most **one** varargs param, must be **last**.
 ---
 
 ## Stack and Heap
+
+```
+        ┌─────────────────────────────────────┐
+        │              HEAP (shared)          │
+        │   String "Hi"    int[] {2, 3, 5}    │
+        └──────────────▲──────────▲───────────┘
+                       │          │
+        ┌──────────────┴──────────┴───────────┐
+        │  STACK (per thread)                 │
+        │  main(): greeting → ref, count = 42 │
+        │  add():  result = 7                 │
+        └─────────────────────────────────────┘
+```
 
 | Memory | Holds | Lifetime |
 |--------|-------|----------|

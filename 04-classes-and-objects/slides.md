@@ -157,7 +157,15 @@ static { /* runs once when class loads */ }
 { /* runs before each constructor */ }
 ```
 
-**Order for `new Demo()`:** static fields → static blocks → instance fields → instance blocks → constructor
+**Order for `new Demo()`:**
+
+```mermaid
+flowchart TD
+    A["Static fields"] --> B["Static blocks"]
+    B --> C["Instance fields"]
+    C --> D["Instance blocks"]
+    D --> E["Constructor"]
+```
 
 ---
 

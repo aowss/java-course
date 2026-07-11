@@ -47,6 +47,15 @@ Created by James Gosling at Sun Microsystems (1995):
 
 > Since Java 11, only the **JDK** is distributed — no separate JRE download.
 
+<div class="mermaid">
+flowchart TB
+    JDK["JDK - develop and run"]
+    JRE["JRE / runtime libraries"]
+    JVM["JVM executes bytecode"]
+    JDK --> JRE
+    JRE --> JVM
+</div>
+
 --
 
 ## Compiled vs Interpreted
@@ -72,15 +81,13 @@ Java does **both** — ahead-of-time compilation *and* runtime interpretation.
 
 ## Compilation and Execution
 
-```
-  Source (.java)
-       │
-       ▼  javac
-  Bytecode (.class)
-       │
-       ▼  java (JVM)
-  Program output
-```
+<div class="mermaid">
+flowchart TD
+    A["Source (.java)"] --> B["javac"]
+    B --> C["Bytecode (.class)"]
+    C --> D["JVM and JIT"]
+    D --> E["Program output"]
+</div>
 
 - Bytecode is **platform-independent**
 - The JVM is **platform-specific**
@@ -255,7 +262,47 @@ else if (score >= 80) grade = 'B';
 else grade = 'C';
 ```
 
-**Enhanced `switch`** (Java 14+) — no fall-through, can return a value:
+**Classic `switch`** — each `case` needs `break` unless fall-through is intentional:
+
+```java
+switch (day) {
+    case "MONDAY":
+    case "TUESDAY":
+        System.out.println("Start of the week");
+        break;
+    case "WEDNESDAY":
+        System.out.println("Midweek");
+        break;
+    default:
+        System.out.println("Other");
+        break;
+}
+```
+
+--
+
+## Switch Fall-Through Pitfall
+
+Without `break`, execution **falls through** to the next case:
+
+```java
+switch (day) {
+    case "WEDNESDAY":
+        System.out.print("Wed ");
+    case "THURSDAY":
+        System.out.print("Thu ");
+        break;
+}
+// day = "WEDNESDAY" prints: Wed Thu
+```
+
+Grouping cases (`MONDAY` / `TUESDAY`) is the only intentional use of fall-through.
+
+--
+
+## Enhanced `switch` (Java 14+)
+
+Arrow form — no fall-through, can return a value:
 
 ```java
 String label = switch (day) {
@@ -377,7 +424,7 @@ public static double circleArea(double radius) {
 Java passes **everything by value**:
 
 - Primitives → a **copy** of the value
-- References → a **copy** of the reference (object is shared)
+- References → a **copy** of the reference (the object itself is shared)
 
 ```java
 public static void tryToReassign(String s) {
@@ -385,6 +432,8 @@ public static void tryToReassign(String s) {
 }
 // caller's variable is unchanged
 ```
+
+Reassigning the parameter does **not** change the caller's variable.
 
 --
 
@@ -423,6 +472,19 @@ Rules: at most **one** varargs param, must be **last**.
 --
 
 ## Stack and Heap
+
+```
+        ┌─────────────────────────────────────┐
+        │              HEAP (shared)          │
+        │   String "Hi"    int[] {2, 3, 5}    │
+        └──────────────▲──────────▲───────────┘
+                       │          │
+        ┌──────────────┴──────────┴───────────┐
+        │  STACK (per thread)                 │
+        │  main(): greeting → ref, count = 42 │
+        │  add():  result = 7                 │
+        └─────────────────────────────────────┘
+```
 
 | Memory | Holds | Lifetime |
 |--------|-------|----------|
@@ -655,7 +717,15 @@ static { /* runs once when class loads */ }
 { /* runs before each constructor */ }
 ```
 
-**Order for `new Demo()`:** static fields → static blocks → instance fields → instance blocks → constructor
+**Order for `new Demo()`:**
+
+<div class="mermaid">
+flowchart TD
+    A["Static fields"] --> B["Static blocks"]
+    B --> C["Instance fields"]
+    C --> D["Instance blocks"]
+    D --> E["Constructor"]
+</div>
 
 --
 
@@ -734,6 +804,19 @@ public class Car extends Vehicle {
 
 --
 
+## Initialization with Inheritance
+
+<div class="mermaid">
+flowchart TD
+    A["Parent static"] --> B["Child static"]
+    B --> C["Parent instance + ctor"]
+    C --> D["Child instance + ctor"]
+</div>
+
+`super(...)` must be the **first** statement in a subclass constructor.
+
+--
+
 ## `super` Keyword
 
 | Usage | Example |
@@ -767,6 +850,12 @@ The JVM calls the method for the object's **actual** type, not the variable's de
 Vehicle v = new Car("Toyota", 4);
 v.describe();   // → "Toyota car with 4 doors" (Car's version)
 ```
+
+<div class="mermaid">
+flowchart LR
+    V["Declared: Vehicle"] --> O["Actual: Car"]
+    O --> M["Calls Car describe"]
+</div>
 
 This is **polymorphism** — same interface, different behavior.
 
@@ -4913,20 +5002,22 @@ The JVM loads classes **lazily** — when first referenced:
 | **Linking** | Verify bytecode, prepare static fields, resolve references |
 | **Initialization** | Run static initializers (`<clinit>`) in source order |
 
+<div class="mermaid">
+flowchart LR
+    A["Loading"] --> B["Linking"]
+    B --> C["Initialization"]
+</div>
+
 --
 
 ## Initialization Order
 
-```
-1. Parent static fields (in source order)
-2. Parent static blocks
-3. Child static fields
-4. Child static blocks
-5. Parent instance fields / instance blocks
-6. Parent constructor
-7. Child instance fields / instance blocks
-8. Child constructor
-```
+<div class="mermaid">
+flowchart TD
+    A["Parent static"] --> B["Child static"]
+    B --> C["Parent instance + ctor"]
+    C --> D["Child instance + ctor"]
+</div>
 
 Parent before child; static before instance.
 
@@ -4934,13 +5025,14 @@ Parent before child; static before instance.
 
 ## Class Loader Hierarchy
 
-```
-Bootstrap ClassLoader (JDK core: java.lang.*)
-    ↑
-Platform ClassLoader (JDK modules)
-    ↑
-Application ClassLoader (classpath / module path)
-```
+<div class="mermaid">
+flowchart BT
+    App["Application ClassLoader"]
+    Plat["Platform ClassLoader"]
+    Boot["Bootstrap ClassLoader"]
+    App --> Plat
+    Plat --> Boot
+</div>
 
 Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
@@ -4948,15 +5040,15 @@ Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
 ## JVM Memory Areas
 
-```
-┌─────────────────────────────────────────────┐
-│  Heap (shared) — Young Gen │ Old Gen         │
-│  Metaspace — class metadata, constant pools │
-│  Thread Stacks — local variables, frames    │
-│  Code Cache — JIT-compiled native code      │
-│  PC Registers — current instruction pointer │
-└─────────────────────────────────────────────┘
-```
+<div class="mermaid">
+flowchart TB
+    subgraph jvm["JVM process"]
+        heap["Heap - objects and arrays"]
+        meta["Metaspace - class metadata"]
+        stacks["Thread stacks"]
+        code["Code cache - JIT"]
+    end
+</div>
 
 --
 

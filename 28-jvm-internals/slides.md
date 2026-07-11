@@ -35,19 +35,21 @@ The JVM loads classes **lazily** — when first referenced:
 | **Linking** | Verify bytecode, prepare static fields, resolve references |
 | **Initialization** | Run static initializers (`<clinit>`) in source order |
 
+```mermaid
+flowchart LR
+    A["Loading"] --> B["Linking"]
+    B --> C["Initialization"]
+```
+
 ---
 
 ## Initialization Order
 
-```
-1. Parent static fields (in source order)
-2. Parent static blocks
-3. Child static fields
-4. Child static blocks
-5. Parent instance fields / instance blocks
-6. Parent constructor
-7. Child instance fields / instance blocks
-8. Child constructor
+```mermaid
+flowchart TD
+    A["Parent static"] --> B["Child static"]
+    B --> C["Parent instance + ctor"]
+    C --> D["Child instance + ctor"]
 ```
 
 Parent before child; static before instance.
@@ -56,12 +58,13 @@ Parent before child; static before instance.
 
 ## Class Loader Hierarchy
 
-```
-Bootstrap ClassLoader (JDK core: java.lang.*)
-    ↑
-Platform ClassLoader (JDK modules)
-    ↑
-Application ClassLoader (classpath / module path)
+```mermaid
+flowchart BT
+    App["Application ClassLoader"]
+    Plat["Platform ClassLoader"]
+    Boot["Bootstrap ClassLoader"]
+    App --> Plat
+    Plat --> Boot
 ```
 
 Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
@@ -70,14 +73,14 @@ Each loader asks its **parent first**, ensuring core classes cannot be spoofed.
 
 ## JVM Memory Areas
 
-```
-┌─────────────────────────────────────────────┐
-│  Heap (shared) — Young Gen │ Old Gen         │
-│  Metaspace — class metadata, constant pools │
-│  Thread Stacks — local variables, frames    │
-│  Code Cache — JIT-compiled native code      │
-│  PC Registers — current instruction pointer │
-└─────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph jvm["JVM process"]
+        heap["Heap - objects and arrays"]
+        meta["Metaspace - class metadata"]
+        stacks["Thread stacks"]
+        code["Code cache - JIT"]
+    end
 ```
 
 ---
