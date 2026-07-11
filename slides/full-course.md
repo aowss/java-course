@@ -117,6 +117,8 @@ mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 
 ## Examples
 
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/1">Chapter 1 quiz</a></span></aside>
+
 | File | Topic |
 |------|-------|
 | [`HelloWorld`](../01-introduction-to-java/src/main/java/course/ch01/examples/HelloWorld.java) | Minimal program — class, main, println |
@@ -340,6 +342,8 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 
 ## Examples
 
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/2">Chapter 2 quiz</a></span></aside>
+
 | File | Topic |
 |------|-------|
 | [`PrimitiveTypes`](../02-language-basics/src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitives, literals, ranges |
@@ -518,6 +522,8 @@ for (int i = 0; i < 5; i++) {
 --
 
 ## Examples
+
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/3">Chapter 3 quiz</a></span></aside>
 
 | File | Topic |
 |------|-------|
@@ -711,6 +717,8 @@ static { /* runs once when class loads */ }
 
 ## Examples
 
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/4">Chapter 4 quiz</a></span></aside>
+
 | File | Topic |
 |------|-------|
 | [`BankAccount`](../04-classes-and-objects/src/main/java/course/ch04/examples/BankAccount.java) | Fields, constructor, `this`, encapsulation |
@@ -883,6 +891,8 @@ Equal objects **must** share the same hash code — required for `HashMap` / `Ha
 
 ## Examples
 
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/5">Chapter 5 quiz</a></span></aside>
+
 | File | Topic |
 |------|-------|
 | `Shape` + Circle, Rectangle | Abstract classes, overriding, polymorphic calls |
@@ -1051,6 +1061,8 @@ Prefer interfaces for pure contracts. Use abstract classes when related types sh
 
 ## Examples
 
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/6">Chapter 6 quiz</a></span></aside>
+
 | File | Topic |
 |------|-------|
 | [`Printable`](../06-interfaces/src/main/java/course/ch06/examples/Printable.java) | Basic interface, default `print()`, static `printAll()` |
@@ -1215,6 +1227,8 @@ Choose the tool that best fits each domain concept.
 --
 
 ## Examples
+
+<aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/7">Chapter 7 quiz</a></span></aside>
 
 | File | Topic |
 |------|-------|

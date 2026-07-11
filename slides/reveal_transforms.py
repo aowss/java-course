@@ -12,6 +12,7 @@ class SlideContext:
     chapter_slug: str
     chapter_dir: Path
     link_prefix: str = "../"
+    quiz_hash: str | None = None
 
     def chapter_url(self, *parts: str) -> str:
         segments: list[str] = []
@@ -20,6 +21,15 @@ class SlideContext:
         segments.append(self.chapter_slug)
         segments.extend(parts)
         return "/".join(segments)
+
+    def quiz_deck_url(self) -> str | None:
+        if self.quiz_hash is None:
+            return None
+        segments: list[str] = []
+        if self.link_prefix:
+            segments.append(self.link_prefix.rstrip("/"))
+        segments.append("quizzes/index.html")
+        return f"{'/'.join(segments)}#/{self.quiz_hash}"
 
 
 def md_inline_to_html(text: str) -> str:
@@ -323,6 +333,25 @@ def footer_html(label: str, css_class: str, body: str) -> str:
     return link_box_html(f"slide-footer {css_class}", label, body)
 
 
+def transform_quiz_link(slide: str, ctx: SlideContext) -> str:
+    url = ctx.quiz_deck_url()
+    if not url or not re.search(r"^## Examples\b", slide, flags=re.MULTILINE):
+        return slide
+
+    chapter_num = ctx.chapter_slug[:2].lstrip("0") or "0"
+    body = f"[Chapter {chapter_num} quiz]({url})"
+    box = link_box_html("quiz-link link-top", "Check your understanding", body)
+
+    lines = slide.splitlines()
+    result: list[str] = []
+    for line in lines:
+        result.append(line)
+        if re.match(r"^## Examples\b", line):
+            result.append("")
+            result.append(box)
+    return "\n".join(result)
+
+
 def transform_full_lesson(slide: str, ctx: SlideContext) -> str:
     def repl(match: re.Match[str]) -> str:
         body = match.group(1).strip()
@@ -352,6 +381,7 @@ def transform_slide(slide: str, ctx: SlideContext | None = None) -> str:
     slide = transform_blockquotes(slide)
     if ctx is not None:
         slide = transform_examples_table(slide, ctx)
+        slide = transform_quiz_link(slide, ctx)
         slide = transform_exercise_items(slide, ctx)
         slide = transform_full_lesson(slide, ctx)
     slide = transform_further_reading(slide)

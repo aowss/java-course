@@ -348,6 +348,15 @@
 }
 
 /* Link boxes — footers and per-exercise code links */
+.reveal aside.quiz-link {
+  margin-top: 0.15em;
+  margin-bottom: 0.4em;
+}
+
+.reveal aside.quiz-link .footer-label {
+  color: #6b8f7a;
+}
+
 .reveal .slides section.slide-has-footer {
   display: flex;
   flex-direction: column;

@@ -35,6 +35,11 @@ def split_slides(body: str) -> list[str]:
     return [p.strip() for p in parts if p.strip()]
 
 
+quiz_hash_by_slug = {
+    path.stem: str(index + 1)
+    for index, path in enumerate(sorted((root / "quizzes").glob("[0-9][0-9]-*.md")))
+}
+
 lines = [
     '<!-- .slide: class="intro-slide" -->',
     "# Java Course",
@@ -58,7 +63,12 @@ for chapter_dir in sorted(root.glob("[0-9][0-9]-*/")):
     if not slides:
         continue
 
-    ctx = SlideContext(chapter_dir.name, chapter_dir, link_prefix)
+    ctx = SlideContext(
+        chapter_dir.name,
+        chapter_dir,
+        link_prefix,
+        quiz_hash_by_slug.get(chapter_dir.name),
+    )
 
     lines.append("---")
     lines.append("")
