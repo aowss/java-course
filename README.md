@@ -8,7 +8,8 @@ See the [Table of Content](Table%20of%20Content.md) for the full curriculum and 
 
 Every chapter includes a slide deck for classroom or video use:
 
-- **Full course** — run `./slides/build-full-deck.sh`, then open [`slides/full-course.html`](slides/full-course.html) (Reveal.js: **→** chapter, **↓** slide). See [`slides/README.md`](slides/README.md).
+- **Present online** — [Full course slides](https://aowss.github.io/java-course/) (GitHub Pages). Rebuilds automatically when `slides.md` files change on `main`.
+- **Present locally** — run `./slides/build-full-deck.sh`, then open [`slides/full-course.html`](slides/full-course.html) (Reveal.js: **→** chapter, **↓** slide). See [`slides/README.md`](slides/README.md).
 - **Per chapter** — `slides.md` in each chapter folder (Marp). Same guide covers editing and single-chapter export.
 
 ## Prerequisites

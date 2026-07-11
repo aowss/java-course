@@ -145,7 +145,36 @@ When editing, separate slides with a line containing only `---`. The chapter `RE
 | `full-course.md` | Generated — do not edit by hand |
 | `full-course.html` | Generated — open this to present |
 
-Keep `slides.md` in each chapter under version control. Regenerate `full-course.*` after slide edits.
+Keep `slides.md` in each chapter under version control. Regenerate `full-course.*` and `index.html` after slide edits.
+
+---
+
+## Publish to GitHub Pages
+
+The live slide deck is deployed from this repo to **https://aowss.github.io/java-course/**.
+
+### One-time setup (repo owner)
+
+1. Open the repo on GitHub → **Settings** → **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+3. Push `.github/workflows/pages.yml` to `main` (included in this repo).
+4. After the **Deploy slides to GitHub Pages** workflow succeeds, the site is live.
+
+### How it works
+
+- Workflow: [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)
+- On each push to `main` that touches `slides.md` or `slides/`, CI runs `./slides/build-full-deck.sh` and publishes:
+  - `slides/index.html` → site homepage (same content as `full-course.html`)
+  - `slides/reveal-theme.css` → styles
+- Reveal.js, Mermaid, and fonts load from CDNs — no extra assets to ship.
+
+### Manual deploy
+
+```bash
+./slides/build-full-deck.sh   # writes slides/index.html + full-course.html
+```
+
+Then push to `main`; the Pages workflow handles the rest.
 
 ---
 
@@ -205,6 +234,7 @@ Keep `slides.md` in each chapter under version control. Regenerate `full-course.
 | Goal | What to do |
 |------|------------|
 | **Present full course** | `./slides/build-full-deck.sh` → open `slides/full-course.html` |
+| **Present online** | [aowss.github.io/java-course](https://aowss.github.io/java-course/) (GitHub Pages) |
 | Navigate chapters | **→** / **←** |
 | Navigate slides in a chapter | **↓** / **↑** |
 | Full-course PDF | URL + `?print-pdf` → Print → Save as PDF |

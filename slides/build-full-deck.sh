@@ -144,6 +144,9 @@ html_doc = f"""<!DOCTYPE html>
 """
 
 out_html.write_text(html_doc, encoding="utf-8")
+index_html = out_html.with_name("index.html")
+index_html.write_text(html_doc, encoding="utf-8")
 print(f"Wrote {out_md}")
 print(f"Wrote {out_html}")
+print(f"Wrote {index_html}")
 PY
