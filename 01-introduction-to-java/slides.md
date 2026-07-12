@@ -22,6 +22,7 @@ style: |
 - Know the roles of **JDK**, **JRE**, and **JVM**
 - Compile and run a program from the command line
 - Trace the path from source code → bytecode → JVM
+- Recognize comments and **Javadoc** in source code
 
 ---
 
@@ -97,6 +98,56 @@ Every Java program needs:
 
 ---
 
+## Comments and Javadoc
+
+Comments can appear anywhere in a source file:
+
+| Style | Syntax | Compiler | Javadoc tool |
+|-------|--------|----------|--------------|
+| End-of-line | `//` … | Ignored | No |
+| Block | `/*` … `*/` | Ignored | No |
+| **Javadoc** | `/**` … `*/` | Ignored | **Included** in generated docs |
+
+```java
+// end-of-line comment
+/* block comment */
+/**
+ * Javadoc comment — documents classes and members.
+ */
+```
+
+> Inside `/*` … `*/`, `//` and nested `/*` have no special meaning. Comments do not nest.
+
+---
+
+## Generating Javadoc
+
+Document **public** APIs for other developers — see `HelloWorld` and `CommentedHelloWorld`:
+
+```java
+/**
+ * Greets the user by name.
+ *
+ * @param name the person to greet
+ * @return a greeting string
+ */
+public static String greet(String name) { ... }
+```
+
+| Tag | Use |
+|-----|-----|
+| `@param` | Method parameter |
+| `@return` | Return value |
+| `@throws` | Exception a method may throw |
+
+```bash
+javadoc -d target/javadoc -sourcepath src/main/java course.ch01.examples
+```
+
+Open `target/javadoc/index.html` — same style as the [JDK API documentation](https://docs.oracle.com/en/java/javase/25/docs/api/).
+
+---
+
 ## Compile and Run
 
 ```bash
@@ -109,6 +160,34 @@ Or with Maven:
 ```bash
 mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 ```
+
+---
+
+## A Simpler Start (Java 25)
+
+Since Java 25, a **compact source file** can omit the class and boilerplate `main`:
+
+```java
+void main() {
+    System.out.println("Hello, World!");
+}
+```
+
+Run directly from the source file:
+
+```bash
+cd 01-introduction-to-java/compact-examples
+java HelloWorld.java
+```
+
+**What happens behind the scenes**
+
+1. The `java` launcher **compiles** the source to bytecode (no separate `javac` step)
+2. With no class declaration, the compiler creates an **implicit class** wrapping your code
+3. The launcher invokes the instance `main` method on a new object
+4. The JVM **loads and executes** that bytecode — same interpret + JIT pipeline as before
+
+> The previous slides show the **explicit** form used in real projects and throughout this course. Compact files must live in the **unnamed package**, so they cannot replace our Maven layout.
 
 ---
 
@@ -142,8 +221,8 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 
 - Java source compiles to platform-independent **bytecode** executed by the **JVM**
 - The **JDK** includes the compiler (`javac`) and the runtime
-- Every program starts at `public static void main(String[] args)`
-- File name must match the public class name
+- Real projects use `public static void main(String[] args)` in named classes
+- Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — still bytecode on the JVM
 
 Full lesson: [`README.md`](README.md)
 Further reading: [JLS §7.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6) · [Oracle Getting Started](https://docs.oracle.com/en/java/javase/25/docs/api/)

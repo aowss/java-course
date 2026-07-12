@@ -115,6 +115,34 @@ mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 
 --
 
+## A Simpler Start (Java 25)
+
+Since Java 25, a **compact source file** can omit the class and boilerplate `main`:
+
+```java
+void main() {
+    System.out.println("Hello, World!");
+}
+```
+
+Run directly from the source file:
+
+```bash
+cd 01-introduction-to-java/compact-examples
+java HelloWorld.java
+```
+
+**What happens behind the scenes**
+
+1. The `java` launcher **compiles** the source to bytecode (no separate `javac` step)
+2. With no class declaration, the compiler creates an **implicit class** wrapping your code
+3. The launcher invokes the instance `main` method on a new object
+4. The JVM **loads and executes** that bytecode — same interpret + JIT pipeline as before
+
+<aside class="callout-note"><p>The previous slides show the <strong>explicit</strong> form used in real projects and throughout this course. Compact files must live in the <strong>unnamed package</strong>, so they cannot replace our Maven layout.</p></aside>
+
+--
+
 ## Examples
 
 <aside class="link-box quiz-link link-top"><span class="footer-label">Check your understanding</span><span class="footer-links"><a href="../quizzes/index.html#/1">Chapter 1 quiz</a></span></aside>
@@ -145,8 +173,8 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 
 - Java source compiles to platform-independent **bytecode** executed by the **JVM**
 - The **JDK** includes the compiler (`javac`) and the runtime
-- Every program starts at `public static void main(String[] args)`
-- File name must match the public class name
+- Real projects use `public static void main(String[] args)` in named classes
+- Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — still bytecode on the JVM
 
 <aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../01-introduction-to-java/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6">JLS §7.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/">Oracle Getting Started</a></span></aside>

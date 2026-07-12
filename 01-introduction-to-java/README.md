@@ -102,6 +102,32 @@ Or use Maven:
 mvn compile exec:java -Dexec.mainClass="course.ch01.examples.HelloWorld"
 ```
 
+### A Simpler Start (Java 25)
+
+Since Java 25 ([JEP 512](https://openjdk.org/jeps/512)), a **compact source file** can omit the class declaration and the traditional `main` signature. See [`compact-examples/HelloWorld.java`](compact-examples/HelloWorld.java):
+
+```java
+void main() {
+    System.out.println("Hello, World!");
+}
+```
+
+Run directly from the source file — no separate `javac` step:
+
+```bash
+cd 01-introduction-to-java/compact-examples
+java HelloWorld.java
+```
+
+**What happens behind the scenes**
+
+1. The `java` launcher **compiles** the source to bytecode (in memory or a temp directory).
+2. With no class declaration, the compiler creates an **implicit final class** that wraps your top-level methods and fields.
+3. The launcher picks a **launchable** `main` method — here, the instance method `void main()` — creates an object, and invokes it.
+4. The JVM **loads and executes** that bytecode — the same interpret + JIT pipeline described above.
+
+The explicit form in the previous section is what real projects and this course use: packages, access modifiers, and `public static void main(String[] args)` matter once you move beyond hello-world. Compact files must live in the **unnamed package**, so they cannot replace the Maven module layout used from Chapter 1 onward.
+
 ## Examples
 
 | File                                                                     | Demonstrates                                       |
@@ -137,8 +163,8 @@ mvn test -Dtest="course.ch01.exercises.SystemReporterTest"
 
 - Java source code is compiled to platform-independent **bytecode**, which the **JVM** executes.
 - The **JDK** is the development kit; it includes the compiler (`javac`) and the runtime.
-- Every Java program starts at `public static void main(String[] args)`.
-- The file name must match the public class name.
+- Real projects use `public static void main(String[] args)` in named classes; file name must match the public class name.
+- Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — the launcher still compiles to bytecode for the JVM.
 
 ## In-Class Quiz
 
@@ -148,4 +174,5 @@ Optional formative check for live sessions: [Chapter 1 quiz](../quizzes/01-intro
 
 - [JLS §7.6 — Top Level Type Declarations](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6)
 - [Oracle: Getting Started](https://docs.oracle.com/en/java/javase/25/docs/api/)
+- [JEP 512: Compact Source Files and Instance Main Methods](https://openjdk.org/jeps/512)
 - [JEP 458: Launch Multi-File Source-Code Programs](https://openjdk.org/jeps/458)
