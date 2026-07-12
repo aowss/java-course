@@ -8,8 +8,29 @@
 - Write expressions using arithmetic, relational, logical, and bitwise operators
 - Control program flow with `if`, `switch`, `for`, `while`, and `do-while`
 - Create, access, and iterate over arrays
+- Use Java's three **comment** styles
 
 ## Concepts
+
+### Comments
+
+Comments can appear anywhere in a source file:
+
+| Style         | Syntax        | Compiler | Included in Javadoc? |
+|---------------|---------------|----------|--------------------|
+| End-of-line   | `//` …        | Ignored  | No                 |
+| Block         | `/*` … `*/`   | Ignored  | No                 |
+| **Javadoc**   | `/**` … `*/`  | Ignored  | **Yes**            |
+
+```java
+// end-of-line comment
+/* block comment */
+/**
+ * Javadoc comment — documents classes and members (Chapter 3).
+ */
+```
+
+See [`CommentedHelloWorld.java`](src/main/java/course/ch02/examples/CommentedHelloWorld.java) for all three styles in one file. Inside `/*` … `*/`, `//` and nested `/*` have no special meaning. Comments do not nest.
 
 ### Static vs. Dynamic Typing
 
@@ -202,6 +223,7 @@ for (int p : primes) {
 | File                                                                               | Demonstrates                                      |
 |------------------------------------------------------------------------------------|--------------------------------------------------|
 | [`PrimitiveTypes.java`](src/main/java/course/ch02/examples/PrimitiveTypes.java)    | All eight primitive types, literals, and ranges    |
+| [`CommentedHelloWorld.java`](src/main/java/course/ch02/examples/CommentedHelloWorld.java) | End-of-line, block, and Javadoc comments |
 | [`ControlFlow.java`](src/main/java/course/ch02/examples/ControlFlow.java)          | `if`, enhanced `switch`, all loop forms            |
 | [`ArrayBasics.java`](src/main/java/course/ch02/examples/ArrayBasics.java)          | Array creation, access, iteration, common pitfalls |
 
@@ -250,6 +272,7 @@ mvn test -Dtest="course.ch02.exercises.ArrayStatsTest"
 - Use `final` for values that should not change.
 - `var` is a convenience for local variables — it does not weaken type safety.
 - Arrays are fixed-size; for dynamic collections, use the Collections Framework (Chapter 12).
+- Three comment styles: `//`, `/* */`, and `/**` (Javadoc method tags in Chapter 3).
 
 ## In-Class Quiz
 

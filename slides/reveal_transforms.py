@@ -194,8 +194,21 @@ def transform_flow_lines(slide: str) -> str:
     return "\n".join(result)
 
 
+PRESENTER_PREFIXES = ("Presenter:", "**Presenter:**")
+
+
+def strip_presenter_prefix(text: str) -> str:
+    text = text.strip()
+    for prefix in PRESENTER_PREFIXES:
+        if text.startswith(prefix):
+            return text[len(prefix) :].lstrip()
+    return text
+
+
 def blockquote_class(first_line: str) -> str:
     body = first_line[2:].strip()
+    if body.startswith("Presenter:") or body.startswith("**Presenter:**"):
+        return "callout-presenter"
     if body.startswith("**Item") or body.startswith("**Effective") or body.startswith("**P**roducer"):
         return "callout-tip"
     cli_prefixes = ("add ", "list", "update ", "count", "exit")
@@ -220,6 +233,8 @@ def transform_blockquotes(slide: str) -> str:
             for quote_line in quote_lines:
                 css_class = blockquote_class(f"> {quote_line}")
                 break
+            if css_class == "callout-presenter":
+                quote_lines = [strip_presenter_prefix(part) for part in quote_lines]
             paragraphs = [md_inline_to_html(part) for part in quote_lines]
             body = "".join(f"<p>{part}</p>" for part in paragraphs)
             result.append(f'<aside class="{css_class}">{body}</aside>')

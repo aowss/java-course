@@ -22,6 +22,7 @@ style: |
 - Use **varargs** for variable-length argument lists
 - Model **stack** and **heap** memory — and pass-by-value
 - Reason about variable **scope** and **lifetime**
+- Document methods with **Javadoc** and generate HTML API docs
 
 ---
 
@@ -36,6 +37,42 @@ public static double circleArea(double radius) {
 - **Return type** — value produced (`void` if none)
 - **Parameters** — inputs from the caller
 - **`static`** — belongs to the class, callable without an instance
+
+---
+
+## Javadoc for Methods
+
+Document **public** methods for other developers — same format as the [JDK API](https://docs.oracle.com/en/java/javase/25/docs/api/) you browsed in Chapter 1:
+
+```java
+/**
+ * Returns the area of a circle with the given radius.
+ *
+ * @param radius the radius (must be non-negative)
+ * @return the area, or {@code 0} if {@code radius} is negative
+ */
+public static double circleArea(double radius) { ... }
+```
+
+| Tag | Use |
+|-----|-----|
+| `@param` | Method parameter |
+| `@return` | Return value |
+| `@throws` | Exception a method may throw |
+
+> Presenter: Exercise skeletons in this chapter include Javadoc stubs — fill them in as you implement each method.
+
+---
+
+## Generating Javadoc
+
+Generate HTML from your documented code:
+
+```bash
+javadoc -d target/javadoc -sourcepath src/main/java course.ch03.examples
+```
+
+Open `target/javadoc/index.html` in a browser — the same layout as the JDK docs (**Summary** and **Detail** views).
 
 ---
 
@@ -184,6 +221,7 @@ mvn test -pl 03-methods -Dtest="MathUtilsTest"
 - Java is **pass-by-value** for primitives and references alike
 - Overloading ≠ polymorphism (that's Chapter 5)
 - Keep variable scope as **narrow** as possible
+- Use **Javadoc** (`@param`, `@return`, `@throws`) on public methods; run `javadoc` to publish HTML docs
 
 Full lesson: [`README.md`](README.md)
 Further reading: [JLS §8.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4) · *Effective Java* Item 52

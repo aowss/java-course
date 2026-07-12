@@ -25,6 +25,7 @@
 - Know the roles of **JDK**, **JRE**, and **JVM**
 - Compile and run a program from the command line
 - Trace the path from source code → bytecode → JVM
+- Navigate the **JDK API documentation**
 
 --
 
@@ -97,6 +98,38 @@ public class HelloWorld {
 Every Java program needs:
 - A `class` — file name must match the class name
 - `public static void main(String[] args)` — the entry point
+
+--
+
+## Reading the JDK API Documentation
+
+The JDK ships **API documentation** for the standard library — generated from Javadoc, same format as your own:
+
+[Java SE 25 API](https://docs.oracle.com/en/java/javase/25/docs/api/)
+
+| Step | What to do |
+|------|------------|
+| 1 | Browse by **module** (e.g. `java.base`) |
+| 2 | Open a **package** (e.g. `java.lang`) |
+| 3 | Open a **class** (e.g. [`String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)) |
+
+You will use these docs constantly — IDE tooltips and search results usually link here.
+
+--
+
+## Class and Method Pages
+
+Every class page has a **summary** and **detail** view:
+
+**Summary** (on the class page)
+- **Fields** — constants and variables belonging to the class
+- **Constructors** — ways to create instances
+- **Methods** — operations the class supports
+
+**Detail** (click a method, e.g. `substring`)
+- Full description · **Parameters** (`@param`) · **Returns** (`@return`)
+- **Throws** (`@throws`) — exceptions you may need to handle
+- **Since** — Java version when the API was added
 
 --
 
@@ -175,6 +208,7 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 - The **JDK** includes the compiler (`javac`) and the runtime
 - Real projects use `public static void main(String[] args)` in named classes
 - Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — still bytecode on the JVM
+- Know how to read the **JDK API**: **Fields**, **Constructors**, **Methods**, then method **detail**
 
 <aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../01-introduction-to-java/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6">JLS §7.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/">Oracle Getting Started</a></span></aside>
@@ -194,6 +228,29 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 - Declare variables, constants, and use `var` for type inference
 - Use arithmetic, relational, logical, and bitwise operators
 - Control flow with `if`, `switch`, loops, and **arrays**
+- Use Java's three **comment** styles
+
+--
+
+## Comments
+
+Comments can appear anywhere in a source file:
+
+| Style | Syntax | Compiler | Javadoc tool |
+|-------|--------|----------|--------------|
+| End-of-line | `//` … | Ignored | No |
+| Block | `/*` … `*/` | Ignored | No |
+| **Javadoc** | `/**` … `*/` | Ignored | **Included** in generated docs |
+
+```java
+// end-of-line comment
+/* block comment */
+/**
+ * Javadoc comment — documents classes and members (Chapter 3).
+ */
+```
+
+<aside class="callout-note"><p>Inside <code>/<em></code> … <code></em>/</code>, <code>//</code> and nested <code>/*</code> have no special meaning. Comments do not nest.</p></aside>
 
 --
 
@@ -375,6 +432,7 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 | File | Topic |
 |------|-------|
 | [`PrimitiveTypes`](../02-language-basics/src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitives, literals, ranges |
+| [`CommentedHelloWorld`](../02-language-basics/src/main/java/course/ch02/examples/CommentedHelloWorld.java) | End-of-line, block, and Javadoc comments |
 | [`ControlFlow`](../02-language-basics/src/main/java/course/ch02/examples/ControlFlow.java) | `if`, enhanced `switch`, all loop forms |
 | [`ArrayBasics`](../02-language-basics/src/main/java/course/ch02/examples/ArrayBasics.java) | Creation, access, iteration, pitfalls |
 
@@ -402,6 +460,7 @@ mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 - Prefer `int` and `double`; use `final` for values that must not change
 - `var` is a local convenience — it does not weaken type safety
 - Arrays are fixed-size; for dynamic collections, see Chapter 12
+- Three comment styles: `//`, `/* */`, and `/**` (Javadoc — method tags in Chapter 3)
 
 <aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../02-language-basics/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2">JLS §4.2</a> · <em>Effective Java</em> Item 61</span></aside>
@@ -421,6 +480,7 @@ mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 - Use **varargs** for variable-length argument lists
 - Model **stack** and **heap** memory — and pass-by-value
 - Reason about variable **scope** and **lifetime**
+- Document methods with **Javadoc** and generate HTML API docs
 
 --
 
@@ -435,6 +495,42 @@ public static double circleArea(double radius) {
 - **Return type** — value produced (`void` if none)
 - **Parameters** — inputs from the caller
 - **`static`** — belongs to the class, callable without an instance
+
+--
+
+## Javadoc for Methods
+
+Document **public** methods for other developers — same format as the [JDK API](https://docs.oracle.com/en/java/javase/25/docs/api/) you browsed in Chapter 1:
+
+```java
+/**
+ * Returns the area of a circle with the given radius.
+ *
+ * @param radius the radius (must be non-negative)
+ * @return the area, or {@code 0} if {@code radius} is negative
+ */
+public static double circleArea(double radius) { ... }
+```
+
+| Tag | Use |
+|-----|-----|
+| `@param` | Method parameter |
+| `@return` | Return value |
+| `@throws` | Exception a method may throw |
+
+<aside class="callout-presenter"><p>Exercise skeletons in this chapter include Javadoc stubs — fill them in as you implement each method.</p></aside>
+
+--
+
+## Generating Javadoc
+
+Generate HTML from your documented code:
+
+```bash
+javadoc -d target/javadoc -sourcepath src/main/java course.ch03.examples
+```
+
+Open `target/javadoc/index.html` in a browser — the same layout as the JDK docs (**Summary** and **Detail** views).
 
 --
 
@@ -583,6 +679,7 @@ mvn test -pl 03-methods -Dtest="MathUtilsTest"
 - Java is **pass-by-value** for primitives and references alike
 - Overloading ≠ polymorphism (that's Chapter 5)
 - Keep variable scope as **narrow** as possible
+- Use **Javadoc** (`@param`, `@return`, `@throws`) on public methods; run `javadoc` to publish HTML docs
 
 <aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../03-methods/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4">JLS §8.4</a> · <em>Effective Java</em> Item 52</span></aside>

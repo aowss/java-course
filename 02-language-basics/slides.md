@@ -22,6 +22,29 @@ style: |
 - Declare variables, constants, and use `var` for type inference
 - Use arithmetic, relational, logical, and bitwise operators
 - Control flow with `if`, `switch`, loops, and **arrays**
+- Use Java's three **comment** styles
+
+---
+
+## Comments
+
+Comments can appear anywhere in a source file:
+
+| Style | Syntax | Compiler | Javadoc tool |
+|-------|--------|----------|--------------|
+| End-of-line | `//` … | Ignored | No |
+| Block | `/*` … `*/` | Ignored | No |
+| **Javadoc** | `/**` … `*/` | Ignored | **Included** in generated docs |
+
+```java
+// end-of-line comment
+/* block comment */
+/**
+ * Javadoc comment — documents classes and members (Chapter 3).
+ */
+```
+
+> Inside `/*` … `*/`, `//` and nested `/*` have no special meaning. Comments do not nest.
 
 ---
 
@@ -201,6 +224,7 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 | File | Topic |
 |------|-------|
 | `PrimitiveTypes` | All eight primitives, literals, ranges |
+| `CommentedHelloWorld` | End-of-line, block, and Javadoc comments |
 | `ControlFlow` | `if`, enhanced `switch`, all loop forms |
 | `ArrayBasics` | Creation, access, iteration, pitfalls |
 
@@ -230,6 +254,7 @@ mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 - Prefer `int` and `double`; use `final` for values that must not change
 - `var` is a local convenience — it does not weaken type safety
 - Arrays are fixed-size; for dynamic collections, see Chapter 12
+- Three comment styles: `//`, `/* */`, and `/**` (Javadoc — method tags in Chapter 3)
 
 Full lesson: [`README.md`](README.md)
 Further reading: [JLS §4.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2) · *Effective Java* Item 61

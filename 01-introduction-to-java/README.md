@@ -7,6 +7,7 @@
 - Distinguish between the JDK, JRE, and JVM
 - Compile and run a Java program from the command line
 - Understand the relationship between source code, bytecode, and the JVM
+- Navigate the **JDK API documentation**
 
 ## Concepts
 
@@ -89,6 +90,16 @@ Every Java program needs:
 - A `main` method with the exact signature `public static void main(String[] args)` — this is the entry point.
 - `System.out.println` writes to standard output.
 
+### Reading the JDK API Documentation
+
+The JDK publishes documentation for the standard library:
+
+[Java SE 25 API](https://docs.oracle.com/en/java/javase/25/docs/api/)
+
+1. Browse by **module** (e.g. `java.base`), then **package** (e.g. `java.lang`), then **class** (e.g. [`String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)).
+2. On the **class page**, scan the summary sections: **Fields**, **Constructors**, and **Methods**.
+3. Click a method name for the **detail** view: description, parameters (`@param`), return value (`@return`), exceptions (`@throws`), and **Since** (the Java version that added the API).
+
 **Compile and run from the command line:**
 
 ```bash
@@ -165,6 +176,7 @@ mvn test -Dtest="course.ch01.exercises.SystemReporterTest"
 - The **JDK** is the development kit; it includes the compiler (`javac`) and the runtime.
 - Real projects use `public static void main(String[] args)` in named classes; file name must match the public class name.
 - Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — the launcher still compiles to bytecode for the JVM.
+- Know how to read the **JDK API**: **Fields**, **Constructors**, **Methods**, then method **detail**.
 
 ## In-Class Quiz
 

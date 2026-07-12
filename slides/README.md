@@ -133,7 +133,7 @@ When editing, separate slides with a line containing only `---`. The chapter `RE
 
 **Flow diagrams** — use text arrow chains in `slides.md` (e.g. `Source → javac → Bytecode → JVM`). Chapter `README.md` files may still use Mermaid for self-study on GitHub.
 
-**Callouts and further reading** — the build script tags blockquotes (`callout-note`, `callout-tip`, `callout-cli`) and `Further reading:` lines for distinct styling in `reveal-theme.css`.
+**Callouts and further reading** — blockquotes become styled asides in `reveal-theme.css`: `callout-note`, `callout-tip`, `callout-cli`, and `callout-presenter` (prefix a blockquote with `> Presenter:` in source — the label is stripped on build).
 
 ---
 

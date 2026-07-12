@@ -7,6 +7,7 @@
 - Use varargs for variable-length argument lists
 - Understand the stack and heap memory model and how it relates to pass-by-value
 - Reason about variable scope and lifetime
+- Document methods with **Javadoc** and generate HTML API docs
 
 ## Concepts
 
@@ -23,6 +24,36 @@ public static double circleArea(double radius) {
 - **Return type** — the type of value the method produces (`void` if none).
 - **Parameters** — inputs the caller provides. Java passes everything **by value**: primitives are copied, references are copied (the object is shared, the reference is not).
 - **`static`** — the method belongs to the class, not to an instance. You can call it without creating an object.
+
+### Javadoc for Methods
+
+Document **public** methods for other developers — the same format as the [JDK API](https://docs.oracle.com/en/java/javase/25/docs/api/) introduced in Chapter 1:
+
+```java
+/**
+ * Returns the area of a circle with the given radius.
+ *
+ * @param radius the radius (must be non-negative)
+ * @return the area, or {@code 0} if {@code radius} is negative
+ */
+public static double circleArea(double radius) { ... }
+```
+
+| Tag       | Use                    |
+|-----------|------------------------|
+| `@param`  | Method parameter       |
+| `@return` | Return value           |
+| `@throws` | Exception thrown       |
+
+Exercise skeletons in this chapter include Javadoc stubs — complete them as you implement each method.
+
+### Generating Javadoc
+
+```bash
+javadoc -d target/javadoc -sourcepath src/main/java course.ch03.examples
+```
+
+Open `target/javadoc/index.html` in a browser. The layout matches the JDK docs: **Summary** sections on the class page and a **Detail** view per method.
 
 ### Overloading
 
@@ -190,6 +221,7 @@ mvn test -Dtest="course.ch03.exercises.FormatterTest"
 - Overloading provides convenience but should not be confused with polymorphism (Chapter 5).
 - Varargs are syntactic sugar for array parameters.
 - Keep variable scope as narrow as possible — declare variables where they are first used.
+- Use **Javadoc** (`@param`, `@return`, `@throws`) on public methods; run `javadoc` to publish HTML docs.
 
 ## In-Class Quiz
 

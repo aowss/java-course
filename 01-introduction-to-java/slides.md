@@ -22,7 +22,7 @@ style: |
 - Know the roles of **JDK**, **JRE**, and **JVM**
 - Compile and run a program from the command line
 - Trace the path from source code → bytecode → JVM
-- Recognize comments and **Javadoc** in source code
+- Navigate the **JDK API documentation**
 
 ---
 
@@ -98,53 +98,35 @@ Every Java program needs:
 
 ---
 
-## Comments and Javadoc
+## Reading the JDK API Documentation
 
-Comments can appear anywhere in a source file:
+The JDK ships **API documentation** for the standard library — generated from Javadoc, same format as your own:
 
-| Style | Syntax | Compiler | Javadoc tool |
-|-------|--------|----------|--------------|
-| End-of-line | `//` … | Ignored | No |
-| Block | `/*` … `*/` | Ignored | No |
-| **Javadoc** | `/**` … `*/` | Ignored | **Included** in generated docs |
+[Java SE 25 API](https://docs.oracle.com/en/java/javase/25/docs/api/)
 
-```java
-// end-of-line comment
-/* block comment */
-/**
- * Javadoc comment — documents classes and members.
- */
-```
+| Step | What to do |
+|------|------------|
+| 1 | Browse by **module** (e.g. `java.base`) |
+| 2 | Open a **package** (e.g. `java.lang`) |
+| 3 | Open a **class** (e.g. [`String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)) |
 
-> Inside `/*` … `*/`, `//` and nested `/*` have no special meaning. Comments do not nest.
+You will use these docs constantly — IDE tooltips and search results usually link here.
 
 ---
 
-## Generating Javadoc
+## Class and Method Pages
 
-Document **public** APIs for other developers — see `HelloWorld` and `CommentedHelloWorld`:
+Every class page has a **summary** and **detail** view:
 
-```java
-/**
- * Greets the user by name.
- *
- * @param name the person to greet
- * @return a greeting string
- */
-public static String greet(String name) { ... }
-```
+**Summary** (on the class page)
+- **Fields** — constants and variables belonging to the class
+- **Constructors** — ways to create instances
+- **Methods** — operations the class supports
 
-| Tag | Use |
-|-----|-----|
-| `@param` | Method parameter |
-| `@return` | Return value |
-| `@throws` | Exception a method may throw |
-
-```bash
-javadoc -d target/javadoc -sourcepath src/main/java course.ch01.examples
-```
-
-Open `target/javadoc/index.html` — same style as the [JDK API documentation](https://docs.oracle.com/en/java/javase/25/docs/api/).
+**Detail** (click a method, e.g. `substring`)
+- Full description · **Parameters** (`@param`) · **Returns** (`@return`)
+- **Throws** (`@throws`) — exceptions you may need to handle
+- **Since** — Java version when the API was added
 
 ---
 
@@ -223,6 +205,7 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 - The **JDK** includes the compiler (`javac`) and the runtime
 - Real projects use `public static void main(String[] args)` in named classes
 - Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — still bytecode on the JVM
+- Know how to read the **JDK API**: **Fields**, **Constructors**, **Methods**, then method **detail**
 
 Full lesson: [`README.md`](README.md)
 Further reading: [JLS §7.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6) · [Oracle Getting Started](https://docs.oracle.com/en/java/javase/25/docs/api/)

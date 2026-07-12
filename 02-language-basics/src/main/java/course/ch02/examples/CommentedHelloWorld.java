@@ -1,11 +1,11 @@
-package course.ch01.examples;
+package course.ch02.examples;
 
 // End-of-line comment — ignored by the compiler
 
 /**
  * Sample class demonstrating the three Java comment styles.
  *
- * <p>See {@link HelloWorld} for a minimal program with class-level Javadoc.
+ * <p>Method-level Javadoc tags ({@code @param}, {@code @return}) are covered in Chapter 3.
  */
 public class CommentedHelloWorld {
 
