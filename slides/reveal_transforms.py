@@ -177,6 +177,23 @@ def rewrite_repo_links(slide: str, ctx: SlideContext) -> str:
     return re.sub(r"\]\((?:\.\./)+appendices/([^)]+)\)", repl, slide)
 
 
+def rewrite_chapter_assets(slide: str, ctx: SlideContext) -> str:
+    def to_url(path: str) -> str:
+        return ctx.chapter_url(path)
+
+    slide = re.sub(
+        r'!\[([^\]]*)\]\((assets/[^)]+)\)',
+        lambda m: f"![{m.group(1)}]({to_url(m.group(2))})",
+        slide,
+    )
+    slide = re.sub(
+        r'src="(assets/[^"]+)"',
+        lambda m: f'src="{to_url(m.group(1))}"',
+        slide,
+    )
+    return slide
+
+
 def transform_flow_lines(slide: str) -> str:
     lines = slide.splitlines()
     result: list[str] = []
@@ -409,6 +426,7 @@ def transform_slide(slide: str, ctx: SlideContext | None = None) -> str:
     slide = transform_flow_lines(slide)
     if ctx is not None:
         slide = rewrite_repo_links(slide, ctx)
+        slide = rewrite_chapter_assets(slide, ctx)
     slide = transform_blockquotes(slide)
     if ctx is not None:
         slide = transform_examples_table(slide, ctx)

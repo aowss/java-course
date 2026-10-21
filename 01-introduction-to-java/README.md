@@ -71,6 +71,20 @@ flowchart TD
 
 Bytecode is platform-independent. The JVM is platform-specific. This is the mechanism behind "write once, run anywhere."
 
+### Reading the JDK API Documentation
+
+The JDK publishes documentation for the standard library:
+
+[Java SE 25 API](https://docs.oracle.com/en/java/javase/25/docs/api/)
+
+1. Browse by **module** (e.g. `java.base`), then **package** (e.g. `java.lang`), then **class** (e.g. [`String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)).
+2. On the **class page**, scan the summary sections: **Fields**, **Constructors**, and **Methods**.
+3. Click a method name for the **detail** view: description, parameters (`@param`), return value (`@return`), exceptions (`@throws`), and **Since** (the Java version that added the API).
+
+![Field, Constructor, and Method summary sections on `java.lang.String`](assets/jdk-api-class-summary.png)
+
+![Method detail for `substring(int, int)`](assets/jdk-api-method-detail.png)
+
 ### Your First Program
 
 See [`HelloWorld.java`](src/main/java/course/ch01/examples/HelloWorld.java):
@@ -89,16 +103,6 @@ Every Java program needs:
 - A `class` declaration — the file name must match the class name.
 - A `main` method with the exact signature `public static void main(String[] args)` — this is the entry point.
 - `System.out.println` writes to standard output.
-
-### Reading the JDK API Documentation
-
-The JDK publishes documentation for the standard library:
-
-[Java SE 25 API](https://docs.oracle.com/en/java/javase/25/docs/api/)
-
-1. Browse by **module** (e.g. `java.base`), then **package** (e.g. `java.lang`), then **class** (e.g. [`String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)).
-2. On the **class page**, scan the summary sections: **Fields**, **Constructors**, and **Methods**.
-3. Click a method name for the **detail** view: description, parameters (`@param`), return value (`@return`), exceptions (`@throws`), and **Since** (the Java version that added the API).
 
 **Compile and run from the command line:**
 

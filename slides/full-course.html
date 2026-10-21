@@ -106,22 +106,6 @@ Java does **both** — ahead-of-time compilation *and* runtime interpretation.
 
 --
 
-## Your First Program
-
-```java
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-
-Every Java program needs:
-- A `class` — file name must match the class name
-- `public static void main(String[] args)` — the entry point
-
---
-
 ## Reading the JDK API Documentation
 
 The JDK ships **API documentation** for the standard library — generated from Javadoc, same format as your own:
@@ -138,19 +122,61 @@ You will use these docs constantly — IDE tooltips and search results usually l
 
 --
 
+<!-- .slide: class="slide-doc-screenshots" -->
+
 ## Class and Method Pages
 
 Every class page has a **summary** and **detail** view:
+
+<div class="doc-screenshot-layout">
+
+<div class="doc-screenshot-row">
+<div class="doc-screenshot-text">
 
 **Summary** (on the class page)
 - **Fields** — constants and variables belonging to the class
 - **Constructors** — ways to create instances
 - **Methods** — operations the class supports
 
+</div>
+<div class="doc-screenshot-media">
+<img src="../01-introduction-to-java/assets/jdk-api-class-summary.png" alt="JDK API — Field, Constructor, and Method summary sections" class="doc-screenshot-img">
+</div>
+</div>
+
+<div class="doc-screenshot-row">
+<div class="doc-screenshot-text">
+
 **Detail** (click a method, e.g. `substring`)
 - Full description · **Parameters** (`@param`) · **Returns** (`@return`)
 - **Throws** (`@throws`) — exceptions you may need to handle
 - **Since** — Java version when the API was added
+
+</div>
+<div class="doc-screenshot-media">
+<img src="../01-introduction-to-java/assets/jdk-api-method-detail.png" alt="JDK API — substring method detail with Parameters, Returns, Throws" class="doc-screenshot-img">
+</div>
+</div>
+
+</div>
+
+<small class="doc-screenshot-caption">Examples from [`java.lang.String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html) (Java SE 25 API)</small>
+
+--
+
+## Your First Program
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+Every Java program needs:
+- A `class` — file name must match the class name
+- `public static void main(String[] args)` — the entry point
 
 --
 
