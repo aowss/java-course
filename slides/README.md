@@ -124,7 +124,7 @@ Each `slides.md` follows the same layout:
 2. **Objectives**
 3. **Concepts** — short bullets, code snippets (one idea per slide)
 4. **Examples** — table + `mvn test -pl …`
-5. **Exercises** — Guided / Practice / Challenge
+5. **Exercises** — Guided / Practice / Challenge. **Test** and **Solution** open in a new tab through [`source.html`](source.html), which syntax-highlights the `.java` file. The build writes [`sources.js`](sources.js) so this works when the deck is opened as a local file. Example class names use the same viewer.
 6. **Key takeaways**
 
 Chapter 30 (capstone) uses a project walkthrough instead of the three-tier exercise pattern.
@@ -172,6 +172,7 @@ The live site is deployed from this repo:
 - Workflow: [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)
 - On each push to `main` that touches `slides.md`, `slides/`, or `quizzes/`, CI runs both build scripts and publishes:
   - `slides/index.html` → site homepage (full course)
+  - `slides/source.html` and `slides/sources.js` → highlighted Java source for Test, Solution, and example links
   - `quizzes/index.html` → `/quizzes/` (in-class quizzes)
   - Shared `reveal-theme.css` + `quiz-reveal-theme.css`
 - Reveal.js and fonts load from CDNs — no extra assets to ship.

@@ -7,6 +7,7 @@ OUT_MD="$ROOT/slides/full-course.md"
 OUT_HTML="$ROOT/slides/full-course.html"
 
 python3 - "$ROOT" "$OUT_MD" "$OUT_HTML" <<'PY'
+import json
 import re
 import sys
 import os
@@ -132,6 +133,16 @@ html_doc = f"""<!DOCTYPE html>
       plugins: [RevealMarkdown, RevealHighlight],
       markdown: {{ smartypants: true }}
     }});
+    Reveal.on("ready", () => {{
+      document.querySelector(".reveal").addEventListener("click", (event) => {{
+        const link = event.target.closest("a");
+        if (!link) return;
+        const href = link.getAttribute("href") || "";
+        if (!href.includes("source.html?path=")) return;
+        event.preventDefault();
+        window.open(link.href, "_blank", "noopener");
+      }});
+    }});
   </script>
 </body>
 </html>
@@ -140,7 +151,19 @@ html_doc = f"""<!DOCTYPE html>
 out_html.write_text(html_doc, encoding="utf-8")
 index_html = out_html.with_name("index.html")
 index_html.write_text(html_doc, encoding="utf-8")
+
+sources = {}
+for path in sorted(root.rglob("*.java")):
+    if any(part in {"slides", "target", ".git"} for part in path.parts):
+        continue
+    rel = path.relative_to(root).as_posix()
+    sources[rel] = path.read_text(encoding="utf-8")
+sources_js = root / "slides" / "sources.js"
+payload = json.dumps(sources, ensure_ascii=False).replace("</", "<\\/")
+sources_js.write_text("window.COURSE_SOURCES = " + payload + ";\n", encoding="utf-8")
+
 print(f"Wrote {out_md}")
 print(f"Wrote {out_html}")
 print(f"Wrote {index_html}")
+print(f"Wrote {sources_js} ({len(sources)} files)")
 PY

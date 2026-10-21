@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/monokai.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    :root {
+      --jc-primary: #1a5276;
+      --jc-accent: #e67e22;
+      --jc-bg: #f4f6f8;
+      --jc-text: #2c3e50;
+      --jc-muted: #5d6d7e;
+      --jc-code-bg: #272822;
+      --jc-border: #d5dbdb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--jc-bg);
+      color: var(--jc-text);
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 3px solid var(--jc-accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--jc-primary);
+    }
+
+    .path {
+      margin: 0.2rem 0 0;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      color: var(--jc-muted);
+    }
+
+    .actions a {
+      color: var(--jc-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 1rem 1.25rem 2rem;
+    }
+
+    pre {
+      margin: 0;
+      padding: 1rem 0;
+      overflow: auto;
+      background: var(--jc-code-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(26, 82, 118, 0.08);
+    }
+
+    code.hljs {
+      display: table;
+      min-width: 100%;
+      padding: 0;
+      background: transparent;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 14.5px;
+      line-height: 1.55;
+      border-collapse: collapse;
+    }
+
+    .line {
+      display: table-row;
+    }
+
+    .num,
+    .src {
+      display: table-cell;
+      white-space: pre;
+      vertical-align: top;
+    }
+
+    .num {
+      width: 1%;
+      padding-right: 0.75rem;
+      border-right: 1px solid #3e3d32;
+      color: #75715e;
+      text-align: right;
+      user-select: none;
+    }
+
+    .src {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .message {
+      margin: 2rem auto;
+      max-width: 40rem;
+      padding: 1.25rem 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--jc-border);
+    }
+
+    .message h1 { font-size: 1.1rem; }
+    .message a { color: var(--jc-primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 id="filename">Source</h1>
+      <p class="path" id="filepath"></p>
+    </div>
+    <div class="actions" id="actions" hidden>
+      <a id="github" href="" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </header>
+  <main id="main">
+    <p class="message">Loading…</p>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="sources.js"></script>
+  <script>
+    const GITHUB_BLOB = "https://github.com/aowss/java-course/blob/main/";
+    const SAFE_PATH = /^(?:[0-9]{2}-[a-z0-9-]+|bridges\/[a-z0-9-]+|appendices\/[a-z0-9-]+)\/[A-Za-z0-9_./+-]+\.java$/;
+
+    const params = new URLSearchParams(location.search);
+    const path = params.get("path") || "";
+    const filename = path.split("/").pop() || "Source";
+    const githubUrl = GITHUB_BLOB + path.split("/").map(encodeURIComponent).join("/");
+
+    document.title = filename;
+    document.getElementById("filename").textContent = filename;
+    const filepath = document.getElementById("filepath");
+    path.split("/").forEach((part, index) => {
+      if (index) {
+        filepath.append("/");
+        filepath.append(document.createElement("wbr"));
+      }
+      filepath.append(part);
+    });
+
+    function showError(text) {
+      const main = document.getElementById("main");
+      main.innerHTML = "";
+      const box = document.createElement("div");
+      box.className = "message";
+      const heading = document.createElement("h1");
+      heading.textContent = "Could not open this file";
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      box.append(heading, paragraph);
+      if (SAFE_PATH.test(path)) {
+        const link = document.createElement("a");
+        link.href = githubUrl;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "Open the GitHub copy";
+        box.append(link);
+      }
+      main.append(box);
+    }
+
+    function showSource(code) {
+      const pre = document.createElement("pre");
+      pre.append(code);
+      const main = document.getElementById("main");
+      main.replaceChildren(pre);
+      document.getElementById("github").href = githubUrl;
+      document.getElementById("actions").hidden = false;
+    }
+
+    function highlightedLines(source) {
+      const highlighted = hljs.highlight(source, { language: "java" }).value;
+      const openTags = [];
+      return highlighted.split("\n").map((line) => {
+        const prefix = openTags.join("");
+        const tagRe = /<(\/)?span\b[^>]*>/g;
+        let match;
+        while ((match = tagRe.exec(line))) {
+          if (match[1]) openTags.pop();
+          else openTags.push(match[0]);
+        }
+        const suffix = "</span>".repeat(openTags.length);
+        return prefix + line + suffix;
+      });
+    }
+
+    function render(source) {
+      const normalized = source.replace(/\r\n/g, "\n").replace(/\n$/, "");
+      const code = document.createElement("code");
+      code.className = "hljs language-java";
+      if (typeof hljs !== "undefined") {
+        code.innerHTML = highlightedLines(normalized).map((line, index) => (
+          `<span class="line"><span class="num">${index + 1}</span><span class="src">${line || " "}</span></span>`
+        )).join("");
+      } else {
+        code.textContent = normalized;
+      }
+      showSource(code);
+    }
+
+    function embeddedSource() {
+      const table = window.COURSE_SOURCES;
+      if (!table || !Object.prototype.hasOwnProperty.call(table, path)) return null;
+      return table[path];
+    }
+
+    const embedded = SAFE_PATH.test(path) ? embeddedSource() : null;
+    if (!SAFE_PATH.test(path)) {
+      showError("The link is missing a Java file path.");
+    } else if (embedded != null) {
+      render(embedded);
+    } else if (location.protocol === "file:") {
+      showError("This copy of the deck has no embedded source. Run ./slides/build-full-deck.sh, then reopen the slides.");
+    } else {
+      const prefix = location.pathname.includes("/slides/") ? "../" : "";
+      fetch(prefix + path)
+        .then((response) => {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.text();
+        })
+        .then(render)
+        .catch(() => {
+          showError("This file is not available from the slide site.");
+        });
+    }
+  </script>
+</body>
+</html>

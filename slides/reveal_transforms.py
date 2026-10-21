@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import quote
 
 
 @dataclass
@@ -21,6 +22,11 @@ class SlideContext:
         segments.append(self.chapter_slug)
         segments.extend(parts)
         return "/".join(segments)
+
+    def source_view_url(self, relative_to_chapter: str) -> str:
+        """Highlighted viewer next to the deck HTML (local slides/ or Pages root)."""
+        repo_path = "/".join((self.chapter_slug, relative_to_chapter))
+        return "source.html?path=" + quote(repo_path, safe="/")
 
     def quiz_deck_url(self) -> str | None:
         if self.quiz_hash is None:
@@ -284,7 +290,7 @@ def transform_examples_table(slide: str, ctx: SlideContext) -> str:
             java_file = find_example_java(ctx.chapter_dir, class_name)
             if java_file:
                 rel = java_file.relative_to(ctx.chapter_dir).as_posix()
-                url = ctx.chapter_url(rel)
+                url = ctx.source_view_url(rel)
                 line = f"| [`{class_name}`]({url}) |{rest}"
         result.append(line)
 
@@ -356,10 +362,10 @@ def transform_exercise_items(slide: str, ctx: SlideContext) -> str:
             link_parts: list[str] = []
             if test_file:
                 rel = test_file.relative_to(ctx.chapter_dir).as_posix()
-                link_parts.append(f"[Test]({ctx.chapter_url(rel)})")
+                link_parts.append(f"[Test]({ctx.source_view_url(rel)})")
             if solution_file:
                 rel = solution_file.relative_to(ctx.chapter_dir).as_posix()
-                link_parts.append(f"[Solution]({ctx.chapter_url(rel)})")
+                link_parts.append(f"[Solution]({ctx.source_view_url(rel)})")
             line = f"{number}. **{name}**{rest.rstrip()}"
             if link_parts:
                 line += (

@@ -208,8 +208,8 @@ java HelloWorld.java
 
 | File | Topic |
 |------|-------|
-| [`HelloWorld`](../01-introduction-to-java/src/main/java/course/ch01/examples/HelloWorld.java) | Minimal program — class, main, println |
-| [`JvmInfo`](../01-introduction-to-java/src/main/java/course/ch01/examples/JvmInfo.java) | Querying JVM properties at runtime |
+| [`HelloWorld`](source.html?path=01-introduction-to-java/src/main/java/course/ch01/examples/HelloWorld.java) | Minimal program — class, main, println |
+| [`JvmInfo`](source.html?path=01-introduction-to-java/src/main/java/course/ch01/examples/JvmInfo.java) | Querying JVM properties at runtime |
 
 ```bash
 mvn test -pl 01-introduction-to-java
@@ -219,8 +219,8 @@ mvn test -pl 01-introduction-to-java
 
 ## Exercises
 
-1. **Greeting** (Guided) — print `Hello, <name>!` from command-line args<br><span class="exercise-links">[Test](../01-introduction-to-java/src/test/java/course/ch01/exercises/GreetingTest.java) · [Solution](../01-introduction-to-java/solutions/course/ch01/exercises/Greeting.java)</span>
-2. **System Reporter** (Practice) — return Java version, OS name, and architecture<br><span class="exercise-links">[Test](../01-introduction-to-java/src/test/java/course/ch01/exercises/SystemReporterTest.java) · [Solution](../01-introduction-to-java/solutions/course/ch01/exercises/SystemReporter.java)</span>
+1. **Greeting** (Guided) — print `Hello, <name>!` from command-line args<br><span class="exercise-links">[Test](source.html?path=01-introduction-to-java/src/test/java/course/ch01/exercises/GreetingTest.java) · [Solution](source.html?path=01-introduction-to-java/solutions/course/ch01/exercises/Greeting.java)</span>
+2. **System Reporter** (Practice) — return Java version, OS name, and architecture<br><span class="exercise-links">[Test](source.html?path=01-introduction-to-java/src/test/java/course/ch01/exercises/SystemReporterTest.java) · [Solution](source.html?path=01-introduction-to-java/solutions/course/ch01/exercises/SystemReporter.java)</span>
 
 ```bash
 mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
@@ -457,10 +457,10 @@ Indices: `0` to `length - 1`. No compile-time bounds checking.
 
 | File | Topic |
 |------|-------|
-| [`PrimitiveTypes`](../02-language-basics/src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitives, literals, ranges |
-| [`CommentedHelloWorld`](../02-language-basics/src/main/java/course/ch02/examples/CommentedHelloWorld.java) | End-of-line, block, and Javadoc comments |
-| [`ControlFlow`](../02-language-basics/src/main/java/course/ch02/examples/ControlFlow.java) | `if`, enhanced `switch`, all loop forms |
-| [`ArrayBasics`](../02-language-basics/src/main/java/course/ch02/examples/ArrayBasics.java) | Creation, access, iteration, pitfalls |
+| [`PrimitiveTypes`](source.html?path=02-language-basics/src/main/java/course/ch02/examples/PrimitiveTypes.java) | All eight primitives, literals, ranges |
+| [`CommentedHelloWorld`](source.html?path=02-language-basics/src/main/java/course/ch02/examples/CommentedHelloWorld.java) | End-of-line, block, and Javadoc comments |
+| [`ControlFlow`](source.html?path=02-language-basics/src/main/java/course/ch02/examples/ControlFlow.java) | `if`, enhanced `switch`, all loop forms |
+| [`ArrayBasics`](source.html?path=02-language-basics/src/main/java/course/ch02/examples/ArrayBasics.java) | Creation, access, iteration, pitfalls |
 
 ```bash
 mvn test -pl 02-language-basics
@@ -470,9 +470,9 @@ mvn test -pl 02-language-basics
 
 ## Exercises
 
-1. **Temperature Converter** (Guided) — Celsius ↔ Fahrenheit<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/TemperatureConverterTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/TemperatureConverter.java)</span>
-2. **FizzBuzz** (Practice) — divisibility by 3 and 5<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/FizzBuzzTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/FizzBuzz.java)</span>
-3. **Array Statistics** (Challenge) — min, max, sum, average<br><span class="exercise-links">[Test](../02-language-basics/src/test/java/course/ch02/exercises/ArrayStatsTest.java) · [Solution](../02-language-basics/solutions/course/ch02/exercises/ArrayStats.java)</span>
+1. **Temperature Converter** (Guided) — Celsius ↔ Fahrenheit<br><span class="exercise-links">[Test](source.html?path=02-language-basics/src/test/java/course/ch02/exercises/TemperatureConverterTest.java) · [Solution](source.html?path=02-language-basics/solutions/course/ch02/exercises/TemperatureConverter.java)</span>
+2. **FizzBuzz** (Practice) — divisibility by 3 and 5<br><span class="exercise-links">[Test](source.html?path=02-language-basics/src/test/java/course/ch02/exercises/FizzBuzzTest.java) · [Solution](source.html?path=02-language-basics/solutions/course/ch02/exercises/FizzBuzz.java)</span>
+3. **Array Statistics** (Challenge) — min, max, sum, average<br><span class="exercise-links">[Test](source.html?path=02-language-basics/src/test/java/course/ch02/exercises/ArrayStatsTest.java) · [Solution](source.html?path=02-language-basics/solutions/course/ch02/exercises/ArrayStats.java)</span>
 
 ```bash
 mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
@@ -677,9 +677,9 @@ for (int i = 0; i < 5; i++) {
 
 | File | Topic |
 |------|-------|
-| [`MethodBasics`](../03-methods/src/main/java/course/ch03/examples/MethodBasics.java) | Defining, calling, return types, pass-by-value |
-| [`Overloading`](../03-methods/src/main/java/course/ch03/examples/Overloading.java) | Overloaded methods and resolution rules |
-| [`VarargsDemo`](../03-methods/src/main/java/course/ch03/examples/VarargsDemo.java) | Varargs syntax and usage |
+| [`MethodBasics`](source.html?path=03-methods/src/main/java/course/ch03/examples/MethodBasics.java) | Defining, calling, return types, pass-by-value |
+| [`Overloading`](source.html?path=03-methods/src/main/java/course/ch03/examples/Overloading.java) | Overloaded methods and resolution rules |
+| [`VarargsDemo`](source.html?path=03-methods/src/main/java/course/ch03/examples/VarargsDemo.java) | Varargs syntax and usage |
 
 ```bash
 mvn test -pl 03-methods
@@ -689,9 +689,9 @@ mvn test -pl 03-methods
 
 ## Exercises
 
-1. **Math Utilities** (Guided) — `clamp`, `isPrime`, `factorial`<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/MathUtilsTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/MathUtils.java)</span>
-2. **String Utilities** (Practice) — `reverse`, `isPalindrome`, `countOccurrences`<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/StringUtilsTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/StringUtils.java)</span>
-3. **Overloaded `format`** (Challenge) — three overloads with varargs<br><span class="exercise-links">[Test](../03-methods/src/test/java/course/ch03/exercises/FormatterTest.java) · [Solution](../03-methods/solutions/course/ch03/exercises/Formatter.java)</span>
+1. **Math Utilities** (Guided) — `clamp`, `isPrime`, `factorial`<br><span class="exercise-links">[Test](source.html?path=03-methods/src/test/java/course/ch03/exercises/MathUtilsTest.java) · [Solution](source.html?path=03-methods/solutions/course/ch03/exercises/MathUtils.java)</span>
+2. **String Utilities** (Practice) — `reverse`, `isPalindrome`, `countOccurrences`<br><span class="exercise-links">[Test](source.html?path=03-methods/src/test/java/course/ch03/exercises/StringUtilsTest.java) · [Solution](source.html?path=03-methods/solutions/course/ch03/exercises/StringUtils.java)</span>
+3. **Overloaded `format`** (Challenge) — three overloads with varargs<br><span class="exercise-links">[Test](source.html?path=03-methods/src/test/java/course/ch03/exercises/FormatterTest.java) · [Solution](source.html?path=03-methods/solutions/course/ch03/exercises/Formatter.java)</span>
 
 ```bash
 mvn test -pl 03-methods -Dtest="MathUtilsTest"
@@ -872,9 +872,9 @@ static { /* runs once when class loads */ }
 
 | File | Topic |
 |------|-------|
-| [`BankAccount`](../04-classes-and-objects/src/main/java/course/ch04/examples/BankAccount.java) | Fields, constructor, `this`, encapsulation |
-| [`Counter`](../04-classes-and-objects/src/main/java/course/ch04/examples/Counter.java) | Static vs instance members |
-| [`InitializationOrder`](../04-classes-and-objects/src/main/java/course/ch04/examples/InitializationOrder.java) | Static/instance blocks and field initializer order |
+| [`BankAccount`](source.html?path=04-classes-and-objects/src/main/java/course/ch04/examples/BankAccount.java) | Fields, constructor, `this`, encapsulation |
+| [`Counter`](source.html?path=04-classes-and-objects/src/main/java/course/ch04/examples/Counter.java) | Static vs instance members |
+| [`InitializationOrder`](source.html?path=04-classes-and-objects/src/main/java/course/ch04/examples/InitializationOrder.java) | Static/instance blocks and field initializer order |
 
 ```bash
 mvn test -pl 04-classes-and-objects
@@ -884,9 +884,9 @@ mvn test -pl 04-classes-and-objects
 
 ## Exercises
 
-1. **Rectangle** (Guided) — area, perimeter, `toString`<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/RectangleTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Rectangle.java)</span>
-2. **Student** (Practice) — grades, average, highest, unmodifiable view<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/StudentTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Student.java)</span>
-3. **Stopwatch** (Challenge) — `System.nanoTime()` timing with state checks<br><span class="exercise-links">[Test](../04-classes-and-objects/src/test/java/course/ch04/exercises/StopwatchTest.java) · [Solution](../04-classes-and-objects/solutions/course/ch04/exercises/Stopwatch.java)</span>
+1. **Rectangle** (Guided) — area, perimeter, `toString`<br><span class="exercise-links">[Test](source.html?path=04-classes-and-objects/src/test/java/course/ch04/exercises/RectangleTest.java) · [Solution](source.html?path=04-classes-and-objects/solutions/course/ch04/exercises/Rectangle.java)</span>
+2. **Student** (Practice) — grades, average, highest, unmodifiable view<br><span class="exercise-links">[Test](source.html?path=04-classes-and-objects/src/test/java/course/ch04/exercises/StudentTest.java) · [Solution](source.html?path=04-classes-and-objects/solutions/course/ch04/exercises/Student.java)</span>
+3. **Stopwatch** (Challenge) — `System.nanoTime()` timing with state checks<br><span class="exercise-links">[Test](source.html?path=04-classes-and-objects/src/test/java/course/ch04/exercises/StopwatchTest.java) · [Solution](source.html?path=04-classes-and-objects/solutions/course/ch04/exercises/Stopwatch.java)</span>
 
 ```bash
 mvn test -pl 04-classes-and-objects -Dtest="RectangleTest"
@@ -1057,9 +1057,9 @@ mvn test -pl 05-inheritance-and-polymorphism
 
 ## Exercises
 
-1. **Animal Hierarchy** (Guided) — `speak()` and `toString` for Dog, Cat<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/AnimalTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Animal.java)</span>
-2. **Employee Hierarchy** (Practice) — `equals`, `hashCode`, `toString` with `getClass()`<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/EmployeeTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Employee.java)</span>
-3. **Expression Tree** (Challenge) — `eval()` and parenthesized `toString()`<br><span class="exercise-links">[Test](../05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/ExprTest.java) · [Solution](../05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Expr.java)</span>
+1. **Animal Hierarchy** (Guided) — `speak()` and `toString` for Dog, Cat<br><span class="exercise-links">[Test](source.html?path=05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/AnimalTest.java) · [Solution](source.html?path=05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Animal.java)</span>
+2. **Employee Hierarchy** (Practice) — `equals`, `hashCode`, `toString` with `getClass()`<br><span class="exercise-links">[Test](source.html?path=05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/EmployeeTest.java) · [Solution](source.html?path=05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Employee.java)</span>
+3. **Expression Tree** (Challenge) — `eval()` and parenthesized `toString()`<br><span class="exercise-links">[Test](source.html?path=05-inheritance-and-polymorphism/src/test/java/course/ch05/exercises/ExprTest.java) · [Solution](source.html?path=05-inheritance-and-polymorphism/solutions/course/ch05/exercises/Expr.java)</span>
 
 ```bash
 mvn test -pl 05-inheritance-and-polymorphism -Dtest="AnimalTest"
@@ -1216,9 +1216,9 @@ Prefer interfaces for pure contracts. Use abstract classes when related types sh
 
 | File | Topic |
 |------|-------|
-| [`Printable`](../06-interfaces/src/main/java/course/ch06/examples/Printable.java) | Basic interface, default `print()`, static `printAll()` |
-| [`Sortable`](../06-interfaces/src/main/java/course/ch06/examples/Sortable.java) | Default methods, private helpers, F-bounded type parameter |
-| [`ComparatorDemo`](../06-interfaces/src/main/java/course/ch06/examples/ComparatorDemo.java) | `Comparator` functional interface, `comparing`, `thenComparing` |
+| [`Printable`](source.html?path=06-interfaces/src/main/java/course/ch06/examples/Printable.java) | Basic interface, default `print()`, static `printAll()` |
+| [`Sortable`](source.html?path=06-interfaces/src/main/java/course/ch06/examples/Sortable.java) | Default methods, private helpers, F-bounded type parameter |
+| [`ComparatorDemo`](source.html?path=06-interfaces/src/main/java/course/ch06/examples/ComparatorDemo.java) | `Comparator` functional interface, `comparing`, `thenComparing` |
 
 ```bash
 mvn test -pl 06-interfaces
@@ -1228,9 +1228,9 @@ mvn test -pl 06-interfaces
 
 ## Exercises
 
-1. **Measurable Shapes** (Guided) — `Circle` and `Rectangle` records implementing `MeasurableShape`<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/MeasurableTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/Measurable.java)</span>
-2. **Validator** (Practice) — `@FunctionalInterface` with factory methods and `and()`<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/ValidatorTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/Validator.java)</span>
-3. **Plugin System** (Challenge) — `PluginManager` with registration and ordered execution<br><span class="exercise-links">[Test](../06-interfaces/src/test/java/course/ch06/exercises/PluginSystemTest.java) · [Solution](../06-interfaces/solutions/course/ch06/exercises/PluginSystem.java)</span>
+1. **Measurable Shapes** (Guided) — `Circle` and `Rectangle` records implementing `MeasurableShape`<br><span class="exercise-links">[Test](source.html?path=06-interfaces/src/test/java/course/ch06/exercises/MeasurableTest.java) · [Solution](source.html?path=06-interfaces/solutions/course/ch06/exercises/Measurable.java)</span>
+2. **Validator** (Practice) — `@FunctionalInterface` with factory methods and `and()`<br><span class="exercise-links">[Test](source.html?path=06-interfaces/src/test/java/course/ch06/exercises/ValidatorTest.java) · [Solution](source.html?path=06-interfaces/solutions/course/ch06/exercises/Validator.java)</span>
+3. **Plugin System** (Challenge) — `PluginManager` with registration and ordered execution<br><span class="exercise-links">[Test](source.html?path=06-interfaces/src/test/java/course/ch06/exercises/PluginSystemTest.java) · [Solution](source.html?path=06-interfaces/solutions/course/ch06/exercises/PluginSystem.java)</span>
 
 ```bash
 mvn test -pl 06-interfaces -Dtest="MeasurableTest"
@@ -1383,9 +1383,9 @@ Choose the tool that best fits each domain concept.
 
 | File | Topic |
 |------|-------|
-| [`Point`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Point.java) | Record basics, custom methods, compact data modeling |
-| [`Season`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Season.java) | Enum fields, constructors, instance methods |
-| [`ShapeDemo`](../07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/ShapeDemo.java) | Sealed hierarchy, pattern matching `switch`/`instanceof` |
+| [`Point`](source.html?path=07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Point.java) | Record basics, custom methods, compact data modeling |
+| [`Season`](source.html?path=07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/Season.java) | Enum fields, constructors, instance methods |
+| [`ShapeDemo`](source.html?path=07-encapsulation-and-data-modeling/src/main/java/course/ch07/examples/ShapeDemo.java) | Sealed hierarchy, pattern matching `switch`/`instanceof` |
 
 ```bash
 mvn test -pl 07-encapsulation-and-data-modeling
@@ -1395,9 +1395,9 @@ mvn test -pl 07-encapsulation-and-data-modeling
 
 ## Exercises
 
-1. **Color Enum** (Guided) — `fromHex()`, `isDark()`, `complement()`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ColorTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Color.java)</span>
-2. **Result Type** (Practice) — sealed `Result<T>` with `Success` and `Failure`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ResultTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Result.java)</span>
-3. **JSON Pretty Printer** (Challenge) — sealed `JsonValue` hierarchy with `prettyPrint()`<br><span class="exercise-links">[Test](../07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/JsonValueTest.java) · [Solution](../07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/JsonValue.java)</span>
+1. **Color Enum** (Guided) — `fromHex()`, `isDark()`, `complement()`<br><span class="exercise-links">[Test](source.html?path=07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ColorTest.java) · [Solution](source.html?path=07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Color.java)</span>
+2. **Result Type** (Practice) — sealed `Result<T>` with `Success` and `Failure`<br><span class="exercise-links">[Test](source.html?path=07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/ResultTest.java) · [Solution](source.html?path=07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/Result.java)</span>
+3. **JSON Pretty Printer** (Challenge) — sealed `JsonValue` hierarchy with `prettyPrint()`<br><span class="exercise-links">[Test](source.html?path=07-encapsulation-and-data-modeling/src/test/java/course/ch07/exercises/JsonValueTest.java) · [Solution](source.html?path=07-encapsulation-and-data-modeling/solutions/course/ch07/exercises/JsonValue.java)</span>
 
 ```bash
 mvn test -pl 07-encapsulation-and-data-modeling -Dtest="ColorTest"
@@ -1568,10 +1568,10 @@ Also: catch **specific** types, use **exception chaining** (`cause`), prefer try
 
 | File | Topic |
 |------|-------|
-| [`ExceptionHierarchy`](../08-exception-handling/src/main/java/course/ch08/examples/ExceptionHierarchy.java) | Specific catch, multi-catch |
-| [`ThrowsClauseDemo`](../08-exception-handling/src/main/java/course/ch08/examples/ThrowsClauseDemo.java) | Checked + unchecked in `throws` |
-| [`TryWithResources`](../08-exception-handling/src/main/java/course/ch08/examples/TryWithResources.java) | `AutoCloseable`, suppressed exceptions |
-| [`CustomExceptions`](../08-exception-handling/src/main/java/course/ch08/examples/CustomExceptions.java) | `BankAccount` with domain exceptions |
+| [`ExceptionHierarchy`](source.html?path=08-exception-handling/src/main/java/course/ch08/examples/ExceptionHierarchy.java) | Specific catch, multi-catch |
+| [`ThrowsClauseDemo`](source.html?path=08-exception-handling/src/main/java/course/ch08/examples/ThrowsClauseDemo.java) | Checked + unchecked in `throws` |
+| [`TryWithResources`](source.html?path=08-exception-handling/src/main/java/course/ch08/examples/TryWithResources.java) | `AutoCloseable`, suppressed exceptions |
+| [`CustomExceptions`](source.html?path=08-exception-handling/src/main/java/course/ch08/examples/CustomExceptions.java) | `BankAccount` with domain exceptions |
 
 ```bash
 mvn test -pl 08-exception-handling
@@ -1581,9 +1581,9 @@ mvn test -pl 08-exception-handling
 
 ## Exercises
 
-1. **Validator** (Guided) — custom checked `ValidationException`<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/ValidatorTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/Validator.java)</span>
-2. **RetryExecutor** (Practice) — retry with suppressed exceptions<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/RetryExecutorTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/RetryExecutor.java)</span>
-3. **ResourcePool** (Challenge) — pooled `AutoCloseable` resources<br><span class="exercise-links">[Test](../08-exception-handling/src/test/java/course/ch08/exercises/ResourcePoolTest.java) · [Solution](../08-exception-handling/solutions/course/ch08/exercises/ResourcePool.java)</span>
+1. **Validator** (Guided) — custom checked `ValidationException`<br><span class="exercise-links">[Test](source.html?path=08-exception-handling/src/test/java/course/ch08/exercises/ValidatorTest.java) · [Solution](source.html?path=08-exception-handling/solutions/course/ch08/exercises/Validator.java)</span>
+2. **RetryExecutor** (Practice) — retry with suppressed exceptions<br><span class="exercise-links">[Test](source.html?path=08-exception-handling/src/test/java/course/ch08/exercises/RetryExecutorTest.java) · [Solution](source.html?path=08-exception-handling/solutions/course/ch08/exercises/RetryExecutor.java)</span>
+3. **ResourcePool** (Challenge) — pooled `AutoCloseable` resources<br><span class="exercise-links">[Test](source.html?path=08-exception-handling/src/test/java/course/ch08/exercises/ResourcePoolTest.java) · [Solution](source.html?path=08-exception-handling/solutions/course/ch08/exercises/ResourcePool.java)</span>
 
 ```bash
 mvn test -pl 08-exception-handling -Dtest="ValidatorTest"
@@ -1785,8 +1785,8 @@ for (Codec codec : loader) {
 
 | File | Topic |
 |------|-------|
-| [`PackageStructure`](../09-packages-and-modules/src/main/java/course/ch09/examples/PackageStructure.java) | Package naming conventions, validation, and project layout |
-| [`ServiceLoaderDemo`](../09-packages-and-modules/src/main/java/course/ch09/examples/ServiceLoaderDemo.java) | Discovering JDK tools via `ServiceLoader` and `ToolProvider` |
+| [`PackageStructure`](source.html?path=09-packages-and-modules/src/main/java/course/ch09/examples/PackageStructure.java) | Package naming conventions, validation, and project layout |
+| [`ServiceLoaderDemo`](source.html?path=09-packages-and-modules/src/main/java/course/ch09/examples/ServiceLoaderDemo.java) | Discovering JDK tools via `ServiceLoader` and `ToolProvider` |
 
 ```bash
 mvn test -pl 09-packages-and-modules
@@ -1796,9 +1796,9 @@ mvn test -pl 09-packages-and-modules
 
 ## Exercises
 
-1. **Package Organizer** (Guided) — assign class names to correct package layers<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/PackageOrganizerTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/PackageOrganizer.java)</span>
-2. **Module Info Parser** (Practice) — parse `module-info.java` into a `ModuleInfo` record<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/ModuleInfoParserTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/ModuleInfoParser.java)</span>
-3. **Service Registry** (Challenge) — type-safe service locator mimicking `ServiceLoader`<br><span class="exercise-links">[Test](../09-packages-and-modules/src/test/java/course/ch09/exercises/ServiceRegistryTest.java) · [Solution](../09-packages-and-modules/solutions/course/ch09/exercises/ServiceRegistry.java)</span>
+1. **Package Organizer** (Guided) — assign class names to correct package layers<br><span class="exercise-links">[Test](source.html?path=09-packages-and-modules/src/test/java/course/ch09/exercises/PackageOrganizerTest.java) · [Solution](source.html?path=09-packages-and-modules/solutions/course/ch09/exercises/PackageOrganizer.java)</span>
+2. **Module Info Parser** (Practice) — parse `module-info.java` into a `ModuleInfo` record<br><span class="exercise-links">[Test](source.html?path=09-packages-and-modules/src/test/java/course/ch09/exercises/ModuleInfoParserTest.java) · [Solution](source.html?path=09-packages-and-modules/solutions/course/ch09/exercises/ModuleInfoParser.java)</span>
+3. **Service Registry** (Challenge) — type-safe service locator mimicking `ServiceLoader`<br><span class="exercise-links">[Test](source.html?path=09-packages-and-modules/src/test/java/course/ch09/exercises/ServiceRegistryTest.java) · [Solution](source.html?path=09-packages-and-modules/solutions/course/ch09/exercises/ServiceRegistry.java)</span>
 
 ```bash
 mvn test -pl 09-packages-and-modules -Dtest="PackageOrganizerTest"
@@ -1994,9 +1994,9 @@ String[] parts = "one,two,three".split(",");           // ["one","two","three"]
 
 | File | Topic |
 |------|-------|
-| [`StringImmutability`](../10-strings-and-text/src/main/java/course/ch10/examples/StringImmutability.java) | Immutability, interning, common String methods |
-| [`TextBlockDemo`](../10-strings-and-text/src/main/java/course/ch10/examples/TextBlockDemo.java) | Text blocks, `String.format()`, `formatted()` |
-| [`RegexBasics`](../10-strings-and-text/src/main/java/course/ch10/examples/RegexBasics.java) | `Pattern`, `Matcher`, `findAll`, `replaceAll`, capture groups |
+| [`StringImmutability`](source.html?path=10-strings-and-text/src/main/java/course/ch10/examples/StringImmutability.java) | Immutability, interning, common String methods |
+| [`TextBlockDemo`](source.html?path=10-strings-and-text/src/main/java/course/ch10/examples/TextBlockDemo.java) | Text blocks, `String.format()`, `formatted()` |
+| [`RegexBasics`](source.html?path=10-strings-and-text/src/main/java/course/ch10/examples/RegexBasics.java) | `Pattern`, `Matcher`, `findAll`, `replaceAll`, capture groups |
 
 ```bash
 mvn test -pl 10-strings-and-text
@@ -2006,9 +2006,9 @@ mvn test -pl 10-strings-and-text
 
 ## Exercises
 
-1. **Word Counter** (Guided) — `countWords()`, `countUniqueWords()`, `mostFrequentWord()`<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/WordCounterTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/WordCounter.java)</span>
-2. **Template Engine** (Practice) — replace `{{placeholder}}` patterns from a map<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/TemplateEngineTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/TemplateEngine.java)</span>
-3. **Markdown to HTML** (Challenge) — convert `**bold**`, `*italic*`, and `` `code` `` to HTML<br><span class="exercise-links">[Test](../10-strings-and-text/src/test/java/course/ch10/exercises/MarkdownToHtmlTest.java) · [Solution](../10-strings-and-text/solutions/course/ch10/exercises/MarkdownToHtml.java)</span>
+1. **Word Counter** (Guided) — `countWords()`, `countUniqueWords()`, `mostFrequentWord()`<br><span class="exercise-links">[Test](source.html?path=10-strings-and-text/src/test/java/course/ch10/exercises/WordCounterTest.java) · [Solution](source.html?path=10-strings-and-text/solutions/course/ch10/exercises/WordCounter.java)</span>
+2. **Template Engine** (Practice) — replace `{{placeholder}}` patterns from a map<br><span class="exercise-links">[Test](source.html?path=10-strings-and-text/src/test/java/course/ch10/exercises/TemplateEngineTest.java) · [Solution](source.html?path=10-strings-and-text/solutions/course/ch10/exercises/TemplateEngine.java)</span>
+3. **Markdown to HTML** (Challenge) — convert `**bold**`, `*italic*`, and `` `code` `` to HTML<br><span class="exercise-links">[Test](source.html?path=10-strings-and-text/src/test/java/course/ch10/exercises/MarkdownToHtmlTest.java) · [Solution](source.html?path=10-strings-and-text/solutions/course/ch10/exercises/MarkdownToHtml.java)</span>
 
 ```bash
 mvn test -pl 10-strings-and-text -Dtest="WordCounterTest"
@@ -2218,9 +2218,9 @@ Workaround: use `Object[]` internally (as `ArrayList` does) and cast on return.
 
 | File | Topic |
 |------|-------|
-| [`Box`](../11-generics/src/main/java/course/ch11/examples/Box.java) | Simple generic class with one type parameter |
-| [`Pair`](../11-generics/src/main/java/course/ch11/examples/Pair.java) | Two type parameters and a factory method |
-| [`GenericUtils`](../11-generics/src/main/java/course/ch11/examples/GenericUtils.java) | Generic methods (max, swap) and wildcards |
+| [`Box`](source.html?path=11-generics/src/main/java/course/ch11/examples/Box.java) | Simple generic class with one type parameter |
+| [`Pair`](source.html?path=11-generics/src/main/java/course/ch11/examples/Pair.java) | Two type parameters and a factory method |
+| [`GenericUtils`](source.html?path=11-generics/src/main/java/course/ch11/examples/GenericUtils.java) | Generic methods (max, swap) and wildcards |
 
 ```bash
 mvn test -pl 11-generics
@@ -2230,9 +2230,9 @@ mvn test -pl 11-generics
 
 ## Exercises
 
-1. **Stack\<T\>** (Guided) — LIFO stack backed by `Object[]`<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/StackTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/Stack.java)</span>
-2. **Transformer\<T,R\>** (Practice) — compose transformers, apply to lists<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/TransformerTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/Transformer.java)</span>
-3. **SortedList\<T extends Comparable\<T\>\>** (Challenge) — sorted insert + binary search<br><span class="exercise-links">[Test](../11-generics/src/test/java/course/ch11/exercises/SortedListTest.java) · [Solution](../11-generics/solutions/course/ch11/exercises/SortedList.java)</span>
+1. **Stack\<T\>** (Guided) — LIFO stack backed by `Object[]`<br><span class="exercise-links">[Test](source.html?path=11-generics/src/test/java/course/ch11/exercises/StackTest.java) · [Solution](source.html?path=11-generics/solutions/course/ch11/exercises/Stack.java)</span>
+2. **Transformer\<T,R\>** (Practice) — compose transformers, apply to lists<br><span class="exercise-links">[Test](source.html?path=11-generics/src/test/java/course/ch11/exercises/TransformerTest.java) · [Solution](source.html?path=11-generics/solutions/course/ch11/exercises/Transformer.java)</span>
+3. **SortedList\<T extends Comparable\<T\>\>** (Challenge) — sorted insert + binary search<br><span class="exercise-links">[Test](source.html?path=11-generics/src/test/java/course/ch11/exercises/SortedListTest.java) · [Solution](source.html?path=11-generics/solutions/course/ch11/exercises/SortedList.java)</span>
 
 ```bash
 mvn test -pl 11-generics -Dtest="StackTest"
@@ -2390,10 +2390,10 @@ Prefer `ArrayDeque` over `LinkedList` for queue and stack operations.
 
 | File | Topic |
 |------|-------|
-| [`ListOperations`](../12-collections-framework/src/main/java/course/ch12/examples/ListOperations.java) | `ArrayList`, sorting, reversing |
-| [`SetOperations`](../12-collections-framework/src/main/java/course/ch12/examples/SetOperations.java) | `HashSet`, `TreeSet`, uniqueness |
-| [`MapOperations`](../12-collections-framework/src/main/java/course/ch12/examples/MapOperations.java) | `HashMap`, `TreeMap`, key-value ops |
-| [`QueueDemo`](../12-collections-framework/src/main/java/course/ch12/examples/QueueDemo.java) | `ArrayDeque`, FIFO and LIFO |
+| [`ListOperations`](source.html?path=12-collections-framework/src/main/java/course/ch12/examples/ListOperations.java) | `ArrayList`, sorting, reversing |
+| [`SetOperations`](source.html?path=12-collections-framework/src/main/java/course/ch12/examples/SetOperations.java) | `HashSet`, `TreeSet`, uniqueness |
+| [`MapOperations`](source.html?path=12-collections-framework/src/main/java/course/ch12/examples/MapOperations.java) | `HashMap`, `TreeMap`, key-value ops |
+| [`QueueDemo`](source.html?path=12-collections-framework/src/main/java/course/ch12/examples/QueueDemo.java) | `ArrayDeque`, FIFO and LIFO |
 
 ```bash
 mvn test -pl 12-collections-framework
@@ -2403,9 +2403,9 @@ mvn test -pl 12-collections-framework
 
 ## Exercises
 
-1. **Frequency Counter** (Guided) — word frequencies with `HashMap`, sorted by count<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/FrequencyCounterTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/FrequencyCounter.java)</span>
-2. **Unique Queue** (Practice) — FIFO queue that rejects duplicates<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/UniqueQueueTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/UniqueQueue.java)</span>
-3. **LRU Cache** (Challenge) — fixed-capacity cache with `LinkedHashMap`<br><span class="exercise-links">[Test](../12-collections-framework/src/test/java/course/ch12/exercises/LRUCacheTest.java) · [Solution](../12-collections-framework/solutions/course/ch12/exercises/LRUCache.java)</span>
+1. **Frequency Counter** (Guided) — word frequencies with `HashMap`, sorted by count<br><span class="exercise-links">[Test](source.html?path=12-collections-framework/src/test/java/course/ch12/exercises/FrequencyCounterTest.java) · [Solution](source.html?path=12-collections-framework/solutions/course/ch12/exercises/FrequencyCounter.java)</span>
+2. **Unique Queue** (Practice) — FIFO queue that rejects duplicates<br><span class="exercise-links">[Test](source.html?path=12-collections-framework/src/test/java/course/ch12/exercises/UniqueQueueTest.java) · [Solution](source.html?path=12-collections-framework/solutions/course/ch12/exercises/UniqueQueue.java)</span>
+3. **LRU Cache** (Challenge) — fixed-capacity cache with `LinkedHashMap`<br><span class="exercise-links">[Test](source.html?path=12-collections-framework/src/test/java/course/ch12/exercises/LRUCacheTest.java) · [Solution](source.html?path=12-collections-framework/solutions/course/ch12/exercises/LRUCache.java)</span>
 
 ```bash
 mvn test -pl 12-collections-framework -Dtest="FrequencyCounterTest"
@@ -2552,9 +2552,9 @@ Lambdas are the foundation of the **Streams API** (Chapter 14).
 
 | File | Topic |
 |------|-------|
-| [`LambdaBasics`](../13-functional-programming/src/main/java/course/ch13/examples/LambdaBasics.java) | Comparator lambdas, Runnable |
-| [`MethodReferenceDemo`](../13-functional-programming/src/main/java/course/ch13/examples/MethodReferenceDemo.java) | All four method reference forms |
-| [`FunctionComposition`](../13-functional-programming/src/main/java/course/ch13/examples/FunctionComposition.java) | `andThen`, `compose`, predicate chaining |
+| [`LambdaBasics`](source.html?path=13-functional-programming/src/main/java/course/ch13/examples/LambdaBasics.java) | Comparator lambdas, Runnable |
+| [`MethodReferenceDemo`](source.html?path=13-functional-programming/src/main/java/course/ch13/examples/MethodReferenceDemo.java) | All four method reference forms |
+| [`FunctionComposition`](source.html?path=13-functional-programming/src/main/java/course/ch13/examples/FunctionComposition.java) | `andThen`, `compose`, predicate chaining |
 
 ```bash
 mvn test -pl 13-functional-programming
@@ -2564,9 +2564,9 @@ mvn test -pl 13-functional-programming
 
 ## Exercises
 
-1. **String Filters** (Guided) — `Predicate<String>` factories and a filter method<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/StringFiltersTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/StringFilters.java)</span>
-2. **Pipeline** (Practice) — chain `Function<T, T>` transformations in a fluent builder<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/PipelineTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/Pipeline.java)</span>
-3. **Event Bus** (Challenge) — register listeners by type, publish to matching consumers<br><span class="exercise-links">[Test](../13-functional-programming/src/test/java/course/ch13/exercises/EventBusTest.java) · [Solution](../13-functional-programming/solutions/course/ch13/exercises/EventBus.java)</span>
+1. **String Filters** (Guided) — `Predicate<String>` factories and a filter method<br><span class="exercise-links">[Test](source.html?path=13-functional-programming/src/test/java/course/ch13/exercises/StringFiltersTest.java) · [Solution](source.html?path=13-functional-programming/solutions/course/ch13/exercises/StringFilters.java)</span>
+2. **Pipeline** (Practice) — chain `Function<T, T>` transformations in a fluent builder<br><span class="exercise-links">[Test](source.html?path=13-functional-programming/src/test/java/course/ch13/exercises/PipelineTest.java) · [Solution](source.html?path=13-functional-programming/solutions/course/ch13/exercises/Pipeline.java)</span>
+3. **Event Bus** (Challenge) — register listeners by type, publish to matching consumers<br><span class="exercise-links">[Test](source.html?path=13-functional-programming/src/test/java/course/ch13/exercises/EventBusTest.java) · [Solution](source.html?path=13-functional-programming/solutions/course/ch13/exercises/EventBus.java)</span>
 
 ```bash
 mvn test -pl 13-functional-programming -Dtest="StringFiltersTest"
@@ -2735,10 +2735,10 @@ Avoid for small data, I/O-bound work, or when order matters.
 
 | File | Topic |
 |------|-------|
-| [`StreamCreation`](../14-streams-api/src/main/java/course/ch14/examples/StreamCreation.java) | Collections, arrays, ranges, generators |
-| [`IntermediateOps`](../14-streams-api/src/main/java/course/ch14/examples/IntermediateOps.java) | `filter`, `map`, `flatMap`, `distinct`, `sorted` |
-| [`TerminalOps`](../14-streams-api/src/main/java/course/ch14/examples/TerminalOps.java) | `reduce`, `collect`, `count`, `min`/`max` |
-| [`CollectorExamples`](../14-streams-api/src/main/java/course/ch14/examples/CollectorExamples.java) | `groupingBy`, `partitioningBy`, `joining` |
+| [`StreamCreation`](source.html?path=14-streams-api/src/main/java/course/ch14/examples/StreamCreation.java) | Collections, arrays, ranges, generators |
+| [`IntermediateOps`](source.html?path=14-streams-api/src/main/java/course/ch14/examples/IntermediateOps.java) | `filter`, `map`, `flatMap`, `distinct`, `sorted` |
+| [`TerminalOps`](source.html?path=14-streams-api/src/main/java/course/ch14/examples/TerminalOps.java) | `reduce`, `collect`, `count`, `min`/`max` |
+| [`CollectorExamples`](source.html?path=14-streams-api/src/main/java/course/ch14/examples/CollectorExamples.java) | `groupingBy`, `partitioningBy`, `joining` |
 
 ```bash
 mvn test -pl 14-streams-api
@@ -2748,9 +2748,9 @@ mvn test -pl 14-streams-api
 
 ## Exercises
 
-1. **Stream Exercises** (Guided) — evens, squares, sum, average<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/StreamExercisesTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/StreamExercises.java)</span>
-2. **Text Analyzer** (Practice) — word count, frequencies, longest word<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/TextAnalyzerTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/TextAnalyzer.java)</span>
-3. **Transaction Report** (Challenge) — group by category, top expenses<br><span class="exercise-links">[Test](../14-streams-api/src/test/java/course/ch14/exercises/TransactionReportTest.java) · [Solution](../14-streams-api/solutions/course/ch14/exercises/TransactionReport.java)</span>
+1. **Stream Exercises** (Guided) — evens, squares, sum, average<br><span class="exercise-links">[Test](source.html?path=14-streams-api/src/test/java/course/ch14/exercises/StreamExercisesTest.java) · [Solution](source.html?path=14-streams-api/solutions/course/ch14/exercises/StreamExercises.java)</span>
+2. **Text Analyzer** (Practice) — word count, frequencies, longest word<br><span class="exercise-links">[Test](source.html?path=14-streams-api/src/test/java/course/ch14/exercises/TextAnalyzerTest.java) · [Solution](source.html?path=14-streams-api/solutions/course/ch14/exercises/TextAnalyzer.java)</span>
+3. **Transaction Report** (Challenge) — group by category, top expenses<br><span class="exercise-links">[Test](source.html?path=14-streams-api/src/test/java/course/ch14/exercises/TransactionReportTest.java) · [Solution](source.html?path=14-streams-api/solutions/course/ch14/exercises/TransactionReport.java)</span>
 
 ```bash
 mvn test -pl 14-streams-api -Dtest="StreamExercisesTest"
@@ -2894,9 +2894,9 @@ Terminal ops like `findFirst`, `min`, `max` return `Optional` — no more sentin
 
 | File | Topic |
 |------|-------|
-| [`OptionalCreation`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalCreation.java) | `of`, `ofNullable`, `empty`, unwrapping |
-| [`OptionalChaining`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalChaining.java) | `map`, `flatMap`, `filter`, pipelines |
-| [`OptionalAntiPatterns`](../15-the-optional-type/src/main/java/course/ch15/examples/OptionalAntiPatterns.java) | Common mistakes and correct alternatives |
+| [`OptionalCreation`](source.html?path=15-the-optional-type/src/main/java/course/ch15/examples/OptionalCreation.java) | `of`, `ofNullable`, `empty`, unwrapping |
+| [`OptionalChaining`](source.html?path=15-the-optional-type/src/main/java/course/ch15/examples/OptionalChaining.java) | `map`, `flatMap`, `filter`, pipelines |
+| [`OptionalAntiPatterns`](source.html?path=15-the-optional-type/src/main/java/course/ch15/examples/OptionalAntiPatterns.java) | Common mistakes and correct alternatives |
 
 ```bash
 mvn test -pl 15-the-optional-type
@@ -2906,9 +2906,9 @@ mvn test -pl 15-the-optional-type
 
 ## Exercises
 
-1. **Safe Parser** (Guided) — `parseInt`, `parseDouble`, `firstValidInt`<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/SafeParserTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/SafeParser.java)</span>
-2. **User Service** (Practice) — lookup, email domain, greeting with Optional chains<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/UserServiceTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/UserService.java)</span>
-3. **Config Reader** (Challenge) — typed accessors with defaults and `requireString`<br><span class="exercise-links">[Test](../15-the-optional-type/src/test/java/course/ch15/exercises/ConfigReaderTest.java) · [Solution](../15-the-optional-type/solutions/course/ch15/exercises/ConfigReader.java)</span>
+1. **Safe Parser** (Guided) — `parseInt`, `parseDouble`, `firstValidInt`<br><span class="exercise-links">[Test](source.html?path=15-the-optional-type/src/test/java/course/ch15/exercises/SafeParserTest.java) · [Solution](source.html?path=15-the-optional-type/solutions/course/ch15/exercises/SafeParser.java)</span>
+2. **User Service** (Practice) — lookup, email domain, greeting with Optional chains<br><span class="exercise-links">[Test](source.html?path=15-the-optional-type/src/test/java/course/ch15/exercises/UserServiceTest.java) · [Solution](source.html?path=15-the-optional-type/solutions/course/ch15/exercises/UserService.java)</span>
+3. **Config Reader** (Challenge) — typed accessors with defaults and `requireString`<br><span class="exercise-links">[Test](source.html?path=15-the-optional-type/src/test/java/course/ch15/exercises/ConfigReaderTest.java) · [Solution](source.html?path=15-the-optional-type/solutions/course/ch15/exercises/ConfigReader.java)</span>
 
 ```bash
 mvn test -pl 15-the-optional-type -Dtest="SafeParserTest"
@@ -3062,9 +3062,9 @@ Write with `ObjectOutputStream`, read with `ObjectInputStream`.
 
 | File | Topic |
 |------|-------|
-| [`FileReadWrite`](../16-io-and-nio/src/main/java/course/ch16/examples/FileReadWrite.java) | NIO.2 Files API: write, read, append, readAllLines |
-| [`DirectoryWalker`](../16-io-and-nio/src/main/java/course/ch16/examples/DirectoryWalker.java) | Walking directory trees, filtering, calculating sizes |
-| [`ByteStreamDemo`](../16-io-and-nio/src/main/java/course/ch16/examples/ByteStreamDemo.java) | Byte-oriented I/O with streams and Files convenience |
+| [`FileReadWrite`](source.html?path=16-io-and-nio/src/main/java/course/ch16/examples/FileReadWrite.java) | NIO.2 Files API: write, read, append, readAllLines |
+| [`DirectoryWalker`](source.html?path=16-io-and-nio/src/main/java/course/ch16/examples/DirectoryWalker.java) | Walking directory trees, filtering, calculating sizes |
+| [`ByteStreamDemo`](source.html?path=16-io-and-nio/src/main/java/course/ch16/examples/ByteStreamDemo.java) | Byte-oriented I/O with streams and Files convenience |
 
 ```bash
 mvn test -pl 16-io-and-nio
@@ -3074,9 +3074,9 @@ mvn test -pl 16-io-and-nio
 
 ## Exercises
 
-1. **LineCounter** (Guided) — count lines, words, and characters in a file<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/LineCounterTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/LineCounter.java)</span>
-2. **FileSearch** (Practice) — recursively search directories with glob patterns<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/FileSearchTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/FileSearch.java)</span>
-3. **CsvParser** (Challenge) — parse CSV into `List<Map<String,String>>`<br><span class="exercise-links">[Test](../16-io-and-nio/src/test/java/course/ch16/exercises/CsvParserTest.java) · [Solution](../16-io-and-nio/solutions/course/ch16/exercises/CsvParser.java)</span>
+1. **LineCounter** (Guided) — count lines, words, and characters in a file<br><span class="exercise-links">[Test](source.html?path=16-io-and-nio/src/test/java/course/ch16/exercises/LineCounterTest.java) · [Solution](source.html?path=16-io-and-nio/solutions/course/ch16/exercises/LineCounter.java)</span>
+2. **FileSearch** (Practice) — recursively search directories with glob patterns<br><span class="exercise-links">[Test](source.html?path=16-io-and-nio/src/test/java/course/ch16/exercises/FileSearchTest.java) · [Solution](source.html?path=16-io-and-nio/solutions/course/ch16/exercises/FileSearch.java)</span>
+3. **CsvParser** (Challenge) — parse CSV into `List<Map<String,String>>`<br><span class="exercise-links">[Test](source.html?path=16-io-and-nio/src/test/java/course/ch16/exercises/CsvParserTest.java) · [Solution](source.html?path=16-io-and-nio/solutions/course/ch16/exercises/CsvParser.java)</span>
 
 ```bash
 mvn test -pl 16-io-and-nio -Dtest="LineCounterTest"
@@ -3241,9 +3241,9 @@ Keep critical sections **as short as possible** to reduce contention.
 
 | File | Topic |
 |------|-------|
-| [`ThreadCreation`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/ThreadCreation.java) | Thread subclass, Runnable lambda, `Thread.ofPlatform()` |
-| [`SynchronizedCounter`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/SynchronizedCounter.java) | Thread-safe vs unsafe counter with `synchronized` |
-| [`DeadlockDemo`](../17-threads-and-synchronization/src/main/java/course/ch17/examples/DeadlockDemo.java) | Deadlock scenario and fix with consistent lock ordering |
+| [`ThreadCreation`](source.html?path=17-threads-and-synchronization/src/main/java/course/ch17/examples/ThreadCreation.java) | Thread subclass, Runnable lambda, `Thread.ofPlatform()` |
+| [`SynchronizedCounter`](source.html?path=17-threads-and-synchronization/src/main/java/course/ch17/examples/SynchronizedCounter.java) | Thread-safe vs unsafe counter with `synchronized` |
+| [`DeadlockDemo`](source.html?path=17-threads-and-synchronization/src/main/java/course/ch17/examples/DeadlockDemo.java) | Deadlock scenario and fix with consistent lock ordering |
 
 ```bash
 mvn test -pl 17-threads-and-synchronization
@@ -3253,9 +3253,9 @@ mvn test -pl 17-threads-and-synchronization
 
 ## Exercises
 
-1. **SafeCounter** (Guided) — thread-safe counter with `synchronized`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/SafeCounterTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/SafeCounter.java)</span>
-2. **ProducerConsumer** (Practice) — bounded buffer with `wait()` / `notifyAll()`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/ProducerConsumerTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/ProducerConsumer.java)</span>
-3. **DiningPhilosophers** (Challenge) — solve without deadlock using `ReentrantLock.tryLock()`<br><span class="exercise-links">[Test](../17-threads-and-synchronization/src/test/java/course/ch17/exercises/DiningPhilosophersTest.java) · [Solution](../17-threads-and-synchronization/solutions/course/ch17/exercises/DiningPhilosophers.java)</span>
+1. **SafeCounter** (Guided) — thread-safe counter with `synchronized`<br><span class="exercise-links">[Test](source.html?path=17-threads-and-synchronization/src/test/java/course/ch17/exercises/SafeCounterTest.java) · [Solution](source.html?path=17-threads-and-synchronization/solutions/course/ch17/exercises/SafeCounter.java)</span>
+2. **ProducerConsumer** (Practice) — bounded buffer with `wait()` / `notifyAll()`<br><span class="exercise-links">[Test](source.html?path=17-threads-and-synchronization/src/test/java/course/ch17/exercises/ProducerConsumerTest.java) · [Solution](source.html?path=17-threads-and-synchronization/solutions/course/ch17/exercises/ProducerConsumer.java)</span>
+3. **DiningPhilosophers** (Challenge) — solve without deadlock using `ReentrantLock.tryLock()`<br><span class="exercise-links">[Test](source.html?path=17-threads-and-synchronization/src/test/java/course/ch17/exercises/DiningPhilosophersTest.java) · [Solution](source.html?path=17-threads-and-synchronization/solutions/course/ch17/exercises/DiningPhilosophers.java)</span>
 
 ```bash
 mvn test -pl 17-threads-and-synchronization -Dtest="SafeCounterTest"
@@ -3405,9 +3405,9 @@ if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
 
 | File | Topic |
 |------|-------|
-| [`ExecutorServiceDemo`](../18-concurrency-utilities/src/main/java/course/ch18/examples/ExecutorServiceDemo.java) | Thread pools, `Future` results, graceful shutdown |
-| [`CompletableFutureChaining`](../18-concurrency-utilities/src/main/java/course/ch18/examples/CompletableFutureChaining.java) | `thenApply`, `thenCompose`, `thenCombine`, `exceptionally` |
-| [`AtomicCounter`](../18-concurrency-utilities/src/main/java/course/ch18/examples/AtomicCounter.java) | `AtomicInteger` vs non-atomic, `compareAndSet`, `getAndUpdate` |
+| [`ExecutorServiceDemo`](source.html?path=18-concurrency-utilities/src/main/java/course/ch18/examples/ExecutorServiceDemo.java) | Thread pools, `Future` results, graceful shutdown |
+| [`CompletableFutureChaining`](source.html?path=18-concurrency-utilities/src/main/java/course/ch18/examples/CompletableFutureChaining.java) | `thenApply`, `thenCompose`, `thenCombine`, `exceptionally` |
+| [`AtomicCounter`](source.html?path=18-concurrency-utilities/src/main/java/course/ch18/examples/AtomicCounter.java) | `AtomicInteger` vs non-atomic, `compareAndSet`, `getAndUpdate` |
 
 ```bash
 mvn test -pl 18-concurrency-utilities
@@ -3417,9 +3417,9 @@ mvn test -pl 18-concurrency-utilities
 
 ## Exercises
 
-1. **ParallelSum** (Guided) — split array into chunks, sum in parallel with `ExecutorService`<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/ParallelSumTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/ParallelSum.java)</span>
-2. **AsyncPipeline** (Practice) — chain `CompletableFuture` stages with error handling<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/AsyncPipelineTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/AsyncPipeline.java)</span>
-3. **ConcurrentWordCounter** (Challenge) — count word frequencies with `ConcurrentHashMap.merge()`<br><span class="exercise-links">[Test](../18-concurrency-utilities/src/test/java/course/ch18/exercises/ConcurrentWordCounterTest.java) · [Solution](../18-concurrency-utilities/solutions/course/ch18/exercises/ConcurrentWordCounter.java)</span>
+1. **ParallelSum** (Guided) — split array into chunks, sum in parallel with `ExecutorService`<br><span class="exercise-links">[Test](source.html?path=18-concurrency-utilities/src/test/java/course/ch18/exercises/ParallelSumTest.java) · [Solution](source.html?path=18-concurrency-utilities/solutions/course/ch18/exercises/ParallelSum.java)</span>
+2. **AsyncPipeline** (Practice) — chain `CompletableFuture` stages with error handling<br><span class="exercise-links">[Test](source.html?path=18-concurrency-utilities/src/test/java/course/ch18/exercises/AsyncPipelineTest.java) · [Solution](source.html?path=18-concurrency-utilities/solutions/course/ch18/exercises/AsyncPipeline.java)</span>
+3. **ConcurrentWordCounter** (Challenge) — count word frequencies with `ConcurrentHashMap.merge()`<br><span class="exercise-links">[Test](source.html?path=18-concurrency-utilities/src/test/java/course/ch18/exercises/ConcurrentWordCounterTest.java) · [Solution](source.html?path=18-concurrency-utilities/solutions/course/ch18/exercises/ConcurrentWordCounter.java)</span>
 
 ```bash
 mvn test -pl 18-concurrency-utilities -Dtest="ParallelSumTest"
@@ -3565,9 +3565,9 @@ Rule of thumb: if the task **blocks waiting**, virtual threads shine. If it **co
 
 | File | Topic |
 |------|-------|
-| [`VirtualThreadBasics`](../19-virtual-threads/src/main/java/course/ch19/examples/VirtualThreadBasics.java) | Creating virtual threads, named factories, daemon behavior |
-| [`VirtualVsPlatformThreads`](../19-virtual-threads/src/main/java/course/ch19/examples/VirtualVsPlatformThreads.java) | Scalability comparison, `newVirtualThreadPerTaskExecutor()` |
-| [`StructuredConcurrencyDemo`](../19-virtual-threads/src/main/java/course/ch19/examples/StructuredConcurrencyDemo.java) | Structured concurrency with virtual threads and executors |
+| [`VirtualThreadBasics`](source.html?path=19-virtual-threads/src/main/java/course/ch19/examples/VirtualThreadBasics.java) | Creating virtual threads, named factories, daemon behavior |
+| [`VirtualVsPlatformThreads`](source.html?path=19-virtual-threads/src/main/java/course/ch19/examples/VirtualVsPlatformThreads.java) | Scalability comparison, `newVirtualThreadPerTaskExecutor()` |
+| [`StructuredConcurrencyDemo`](source.html?path=19-virtual-threads/src/main/java/course/ch19/examples/StructuredConcurrencyDemo.java) | Structured concurrency with virtual threads and executors |
 
 ```bash
 mvn test -pl 19-virtual-threads
@@ -3577,9 +3577,9 @@ mvn test -pl 19-virtual-threads
 
 ## Exercises
 
-1. **VirtualThreadPool** (Guided) — execute tasks with `newVirtualThreadPerTaskExecutor()`<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/VirtualThreadPoolTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/VirtualThreadPool.java)</span>
-2. **WebScraper** (Practice) — concurrent URL fetching with timeout support<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/WebScraperTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/WebScraper.java)</span>
-3. **StructuredFanOut** (Challenge) — `firstSuccess` and `allSuccesses` patterns<br><span class="exercise-links">[Test](../19-virtual-threads/src/test/java/course/ch19/exercises/StructuredFanOutTest.java) · [Solution](../19-virtual-threads/solutions/course/ch19/exercises/StructuredFanOut.java)</span>
+1. **VirtualThreadPool** (Guided) — execute tasks with `newVirtualThreadPerTaskExecutor()`<br><span class="exercise-links">[Test](source.html?path=19-virtual-threads/src/test/java/course/ch19/exercises/VirtualThreadPoolTest.java) · [Solution](source.html?path=19-virtual-threads/solutions/course/ch19/exercises/VirtualThreadPool.java)</span>
+2. **WebScraper** (Practice) — concurrent URL fetching with timeout support<br><span class="exercise-links">[Test](source.html?path=19-virtual-threads/src/test/java/course/ch19/exercises/WebScraperTest.java) · [Solution](source.html?path=19-virtual-threads/solutions/course/ch19/exercises/WebScraper.java)</span>
+3. **StructuredFanOut** (Challenge) — `firstSuccess` and `allSuccesses` patterns<br><span class="exercise-links">[Test](source.html?path=19-virtual-threads/src/test/java/course/ch19/exercises/StructuredFanOutTest.java) · [Solution](source.html?path=19-virtual-threads/solutions/course/ch19/exercises/StructuredFanOut.java)</span>
 
 ```bash
 mvn test -pl 19-virtual-threads -Dtest="VirtualThreadPoolTest"
@@ -3784,7 +3784,7 @@ Building the same source should always produce the same artifact:
 
 | File | Topic |
 |------|-------|
-| [`MavenLifecycleDemo`](../20-build-tools/src/main/java/course/ch20/examples/MavenLifecycleDemo.java) | Maven lifecycle phases modeled as data, phase ordering |
+| [`MavenLifecycleDemo`](source.html?path=20-build-tools/src/main/java/course/ch20/examples/MavenLifecycleDemo.java) | Maven lifecycle phases modeled as data, phase ordering |
 
 ```bash
 mvn test -pl 20-build-tools
@@ -3794,9 +3794,9 @@ mvn test -pl 20-build-tools
 
 ## Exercises
 
-1. **DependencyAnalyzer** (Guided) — parse POM XML into `Dependency` records<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/DependencyAnalyzerTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/DependencyAnalyzer.java)</span>
-2. **VersionResolver** (Practice) — semantic version parsing and range matching<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/VersionResolverTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/VersionResolver.java)</span>
-3. **BuildOrderSolver** (Challenge) — topological sort for module build order<br><span class="exercise-links">[Test](../20-build-tools/src/test/java/course/ch20/exercises/BuildOrderSolverTest.java) · [Solution](../20-build-tools/solutions/course/ch20/exercises/BuildOrderSolver.java)</span>
+1. **DependencyAnalyzer** (Guided) — parse POM XML into `Dependency` records<br><span class="exercise-links">[Test](source.html?path=20-build-tools/src/test/java/course/ch20/exercises/DependencyAnalyzerTest.java) · [Solution](source.html?path=20-build-tools/solutions/course/ch20/exercises/DependencyAnalyzer.java)</span>
+2. **VersionResolver** (Practice) — semantic version parsing and range matching<br><span class="exercise-links">[Test](source.html?path=20-build-tools/src/test/java/course/ch20/exercises/VersionResolverTest.java) · [Solution](source.html?path=20-build-tools/solutions/course/ch20/exercises/VersionResolver.java)</span>
+3. **BuildOrderSolver** (Challenge) — topological sort for module build order<br><span class="exercise-links">[Test](source.html?path=20-build-tools/src/test/java/course/ch20/exercises/BuildOrderSolverTest.java) · [Solution](source.html?path=20-build-tools/solutions/course/ch20/exercises/BuildOrderSolver.java)</span>
 
 ```bash
 mvn test -pl 20-build-tools -Dtest="DependencyAnalyzerTest"
@@ -4016,9 +4016,9 @@ mvn test -pl 21-unit-testing-with-junit
 
 Exercises are **reversed** — production code is provided; you write the tests.
 
-1. **Calculator Tests** (Guided) — `add`, `subtract`, `multiply`, `divide`, division by zero<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/CalculatorTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/CalculatorTest.java)</span>
-2. **Roman Numeral** (Practice) — parameterized tests with `@CsvSource` / `@MethodSource`<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/RomanNumeralTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/RomanNumeralTest.java)</span>
-3. **Shopping Cart** (Challenge) — nested tests: `WhenEmpty`, `WhenHasItems`, `WithDiscount`<br><span class="exercise-links">[Test](../21-unit-testing-with-junit/src/test/java/course/ch21/exercises/ShoppingCartTest.java) · [Solution](../21-unit-testing-with-junit/solutions/course/ch21/exercises/ShoppingCartTest.java)</span>
+1. **Calculator Tests** (Guided) — `add`, `subtract`, `multiply`, `divide`, division by zero<br><span class="exercise-links">[Test](source.html?path=21-unit-testing-with-junit/src/test/java/course/ch21/exercises/CalculatorTest.java) · [Solution](source.html?path=21-unit-testing-with-junit/solutions/course/ch21/exercises/CalculatorTest.java)</span>
+2. **Roman Numeral** (Practice) — parameterized tests with `@CsvSource` / `@MethodSource`<br><span class="exercise-links">[Test](source.html?path=21-unit-testing-with-junit/src/test/java/course/ch21/exercises/RomanNumeralTest.java) · [Solution](source.html?path=21-unit-testing-with-junit/solutions/course/ch21/exercises/RomanNumeralTest.java)</span>
+3. **Shopping Cart** (Challenge) — nested tests: `WhenEmpty`, `WhenHasItems`, `WithDiscount`<br><span class="exercise-links">[Test](source.html?path=21-unit-testing-with-junit/src/test/java/course/ch21/exercises/ShoppingCartTest.java) · [Solution](source.html?path=21-unit-testing-with-junit/solutions/course/ch21/exercises/ShoppingCartTest.java)</span>
 
 ```bash
 mvn test -pl 21-unit-testing-with-junit -Dtest="CalculatorTest"
@@ -4173,9 +4173,9 @@ mvn test -pl 22-mocking-and-integration-testing
 
 ## Exercises
 
-1. **UserService** (Guided) — mock `UserRepository` and `EmailService`<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/UserServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/UserServiceTest.java)</span>
-2. **OrderService** (Practice) — mock `PaymentGateway` and `InventoryService`<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/OrderServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/OrderServiceTest.java)</span>
-3. **NotificationService** (Challenge) — use a spy to verify dispatch methods by preference<br><span class="exercise-links">[Test](../22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/NotificationServiceTest.java) · [Solution](../22-mocking-and-integration-testing/solutions/course/ch22/exercises/NotificationServiceTest.java)</span>
+1. **UserService** (Guided) — mock `UserRepository` and `EmailService`<br><span class="exercise-links">[Test](source.html?path=22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/UserServiceTest.java) · [Solution](source.html?path=22-mocking-and-integration-testing/solutions/course/ch22/exercises/UserServiceTest.java)</span>
+2. **OrderService** (Practice) — mock `PaymentGateway` and `InventoryService`<br><span class="exercise-links">[Test](source.html?path=22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/OrderServiceTest.java) · [Solution](source.html?path=22-mocking-and-integration-testing/solutions/course/ch22/exercises/OrderServiceTest.java)</span>
+3. **NotificationService** (Challenge) — use a spy to verify dispatch methods by preference<br><span class="exercise-links">[Test](source.html?path=22-mocking-and-integration-testing/src/test/java/course/ch22/exercises/NotificationServiceTest.java) · [Solution](source.html?path=22-mocking-and-integration-testing/solutions/course/ch22/exercises/NotificationServiceTest.java)</span>
 
 ```bash
 mvn test -pl 22-mocking-and-integration-testing -Dtest="UserServiceTest"
@@ -4328,9 +4328,9 @@ This pattern powers validation, serialization, and framework-style behavior.
 
 | File | Topic |
 |------|-------|
-| [`BuiltInAnnotations`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/BuiltInAnnotations.java) | `@Override`, `@Deprecated`, `@FunctionalInterface` |
-| [`CustomAnnotationDemo`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/CustomAnnotationDemo.java) | Custom `@NotNull` and `@Range` with runtime validation |
-| [`ReflectionBasics`](../23-annotations-and-reflection/src/main/java/course/ch23/examples/ReflectionBasics.java) | Inspecting fields, methods, invoking behavior |
+| [`BuiltInAnnotations`](source.html?path=23-annotations-and-reflection/src/main/java/course/ch23/examples/BuiltInAnnotations.java) | `@Override`, `@Deprecated`, `@FunctionalInterface` |
+| [`CustomAnnotationDemo`](source.html?path=23-annotations-and-reflection/src/main/java/course/ch23/examples/CustomAnnotationDemo.java) | Custom `@NotNull` and `@Range` with runtime validation |
+| [`ReflectionBasics`](source.html?path=23-annotations-and-reflection/src/main/java/course/ch23/examples/ReflectionBasics.java) | Inspecting fields, methods, invoking behavior |
 
 ```bash
 mvn test -pl 23-annotations-and-reflection
@@ -4340,9 +4340,9 @@ mvn test -pl 23-annotations-and-reflection
 
 ## Exercises
 
-1. **Object Inspector** (Guided) — summarize class name, fields, and methods via reflection<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/ObjectInspectorTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/ObjectInspector.java)</span>
-2. **Simple Serializer** (Practice) — serialize only `@Serializable` fields to `key=value,...`<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/SimpleSerializerTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/SimpleSerializer.java)</span>
-3. **Mini Test Runner** (Challenge) — discover and run methods annotated with course `@Test`<br><span class="exercise-links">[Test](../23-annotations-and-reflection/src/test/java/course/ch23/exercises/MiniTestRunnerTest.java) · [Solution](../23-annotations-and-reflection/solutions/course/ch23/exercises/MiniTestRunner.java)</span>
+1. **Object Inspector** (Guided) — summarize class name, fields, and methods via reflection<br><span class="exercise-links">[Test](source.html?path=23-annotations-and-reflection/src/test/java/course/ch23/exercises/ObjectInspectorTest.java) · [Solution](source.html?path=23-annotations-and-reflection/solutions/course/ch23/exercises/ObjectInspector.java)</span>
+2. **Simple Serializer** (Practice) — serialize only `@Serializable` fields to `key=value,...`<br><span class="exercise-links">[Test](source.html?path=23-annotations-and-reflection/src/test/java/course/ch23/exercises/SimpleSerializerTest.java) · [Solution](source.html?path=23-annotations-and-reflection/solutions/course/ch23/exercises/SimpleSerializer.java)</span>
+3. **Mini Test Runner** (Challenge) — discover and run methods annotated with course `@Test`<br><span class="exercise-links">[Test](source.html?path=23-annotations-and-reflection/src/test/java/course/ch23/exercises/MiniTestRunnerTest.java) · [Solution](source.html?path=23-annotations-and-reflection/solutions/course/ch23/exercises/MiniTestRunner.java)</span>
 
 ```bash
 mvn test -pl 23-annotations-and-reflection -Dtest="ObjectInspectorTest"
@@ -4479,10 +4479,10 @@ Never use legacy `Date`/`Calendar` in new code.
 
 | File | Topic |
 |------|-------|
-| [`DateTimeCreation`](../24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeCreation.java) | Creating and parsing local dates and times |
-| [`DateTimeFormatting`](../24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeFormatting.java) | Formatting with ISO and custom patterns |
-| [`DurationAndPeriod`](../24-date-and-time-api/src/main/java/course/ch24/examples/DurationAndPeriod.java) | Elapsed time and calendar periods |
-| [`ZonedDateTimeDemo`](../24-date-and-time-api/src/main/java/course/ch24/examples/ZonedDateTimeDemo.java) | Zone conversion and offsets |
+| [`DateTimeCreation`](source.html?path=24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeCreation.java) | Creating and parsing local dates and times |
+| [`DateTimeFormatting`](source.html?path=24-date-and-time-api/src/main/java/course/ch24/examples/DateTimeFormatting.java) | Formatting with ISO and custom patterns |
+| [`DurationAndPeriod`](source.html?path=24-date-and-time-api/src/main/java/course/ch24/examples/DurationAndPeriod.java) | Elapsed time and calendar periods |
+| [`ZonedDateTimeDemo`](source.html?path=24-date-and-time-api/src/main/java/course/ch24/examples/ZonedDateTimeDemo.java) | Zone conversion and offsets |
 
 ```bash
 mvn test -pl 24-date-and-time-api
@@ -4492,9 +4492,9 @@ mvn test -pl 24-date-and-time-api
 
 ## Exercises
 
-1. **Age Calculator** (Guided) — age in years and as a full `Period`<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/AgeCalculatorTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/AgeCalculator.java)</span>
-2. **Meeting Scheduler** (Practice) — detect overlapping meetings, find next slot<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/MeetingSchedulerTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/MeetingScheduler.java)</span>
-3. **Time Zone Converter** (Challenge) — convert zoned date-times between regions<br><span class="exercise-links">[Test](../24-date-and-time-api/src/test/java/course/ch24/exercises/TimeZoneConverterTest.java) · [Solution](../24-date-and-time-api/solutions/course/ch24/exercises/TimeZoneConverter.java)</span>
+1. **Age Calculator** (Guided) — age in years and as a full `Period`<br><span class="exercise-links">[Test](source.html?path=24-date-and-time-api/src/test/java/course/ch24/exercises/AgeCalculatorTest.java) · [Solution](source.html?path=24-date-and-time-api/solutions/course/ch24/exercises/AgeCalculator.java)</span>
+2. **Meeting Scheduler** (Practice) — detect overlapping meetings, find next slot<br><span class="exercise-links">[Test](source.html?path=24-date-and-time-api/src/test/java/course/ch24/exercises/MeetingSchedulerTest.java) · [Solution](source.html?path=24-date-and-time-api/solutions/course/ch24/exercises/MeetingScheduler.java)</span>
+3. **Time Zone Converter** (Challenge) — convert zoned date-times between regions<br><span class="exercise-links">[Test](source.html?path=24-date-and-time-api/src/test/java/course/ch24/exercises/TimeZoneConverterTest.java) · [Solution](source.html?path=24-date-and-time-api/solutions/course/ch24/exercises/TimeZoneConverter.java)</span>
 
 ```bash
 mvn test -pl 24-date-and-time-api -Dtest="AgeCalculatorTest"
@@ -4661,8 +4661,8 @@ In tests: use `com.sun.net.httpserver.HttpServer` on a random port or a stub `Ht
 
 | File | Topic |
 |------|-------|
-| [`HttpClientDemo`](../25-networking-basics/src/main/java/course/ch25/examples/HttpClientDemo.java) | Creating clients, sending GET requests |
-| [`RequestBuilderDemo`](../25-networking-basics/src/main/java/course/ch25/examples/RequestBuilderDemo.java) | POST with JSON, timeouts, Authorization headers |
+| [`HttpClientDemo`](source.html?path=25-networking-basics/src/main/java/course/ch25/examples/HttpClientDemo.java) | Creating clients, sending GET requests |
+| [`RequestBuilderDemo`](source.html?path=25-networking-basics/src/main/java/course/ch25/examples/RequestBuilderDemo.java) | POST with JSON, timeouts, Authorization headers |
 
 ```bash
 mvn test -pl 25-networking-basics
@@ -4672,9 +4672,9 @@ mvn test -pl 25-networking-basics
 
 ## Exercises
 
-1. **Request Builder** (Guided) — build GET and POST requests with appropriate headers<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/RequestBuilderTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/RequestBuilder.java)</span>
-2. **JSON Placeholder Client** (Practice) — REST client with injectable `HttpClient` and base URL<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/JsonPlaceholderClientTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/JsonPlaceholderClient.java)</span>
-3. **Retrying HTTP Client** (Challenge) — automatic retries via injectable `HttpSender`<br><span class="exercise-links">[Test](../25-networking-basics/src/test/java/course/ch25/exercises/RetryingHttpClientTest.java) · [Solution](../25-networking-basics/solutions/course/ch25/exercises/RetryingHttpClient.java)</span>
+1. **Request Builder** (Guided) — build GET and POST requests with appropriate headers<br><span class="exercise-links">[Test](source.html?path=25-networking-basics/src/test/java/course/ch25/exercises/RequestBuilderTest.java) · [Solution](source.html?path=25-networking-basics/solutions/course/ch25/exercises/RequestBuilder.java)</span>
+2. **JSON Placeholder Client** (Practice) — REST client with injectable `HttpClient` and base URL<br><span class="exercise-links">[Test](source.html?path=25-networking-basics/src/test/java/course/ch25/exercises/JsonPlaceholderClientTest.java) · [Solution](source.html?path=25-networking-basics/solutions/course/ch25/exercises/JsonPlaceholderClient.java)</span>
+3. **Retrying HTTP Client** (Challenge) — automatic retries via injectable `HttpSender`<br><span class="exercise-links">[Test](source.html?path=25-networking-basics/src/test/java/course/ch25/exercises/RetryingHttpClientTest.java) · [Solution](source.html?path=25-networking-basics/solutions/course/ch25/exercises/RetryingHttpClient.java)</span>
 
 ```bash
 mvn test -pl 25-networking-basics -Dtest="RequestBuilderTest"
@@ -4881,9 +4881,9 @@ In production, always use a pool — never `DriverManager` per request.
 
 | File | Topic |
 |------|-------|
-| [`JdbcBasics`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/JdbcBasics.java) | `Statement`, `ResultSet`, row counting |
-| [`PreparedStatementDemo`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/PreparedStatementDemo.java) | Parameterized queries, inserts, generated keys |
-| [`TransactionDemo`](../26-database-access-with-jdbc/src/main/java/course/ch26/examples/TransactionDemo.java) | Commit, rollback, fund transfer |
+| [`JdbcBasics`](source.html?path=26-database-access-with-jdbc/src/main/java/course/ch26/examples/JdbcBasics.java) | `Statement`, `ResultSet`, row counting |
+| [`PreparedStatementDemo`](source.html?path=26-database-access-with-jdbc/src/main/java/course/ch26/examples/PreparedStatementDemo.java) | Parameterized queries, inserts, generated keys |
+| [`TransactionDemo`](source.html?path=26-database-access-with-jdbc/src/main/java/course/ch26/examples/TransactionDemo.java) | Commit, rollback, fund transfer |
 
 ```bash
 mvn test -pl 26-database-access-with-jdbc
@@ -4893,9 +4893,9 @@ mvn test -pl 26-database-access-with-jdbc
 
 ## Exercises
 
-1. **StudentDao** (Guided) — find and insert for a students table<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/StudentDaoTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/StudentDao.java)</span>
-2. **TransactionManager** (Practice) — wrap work in commit/rollback<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/TransactionManagerTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/TransactionManager.java)</span>
-3. **GenericDao** (Challenge) — reusable query helper with `RowMapper`<br><span class="exercise-links">[Test](../26-database-access-with-jdbc/src/test/java/course/ch26/exercises/GenericDaoTest.java) · [Solution](../26-database-access-with-jdbc/solutions/course/ch26/exercises/GenericDao.java)</span>
+1. **StudentDao** (Guided) — find and insert for a students table<br><span class="exercise-links">[Test](source.html?path=26-database-access-with-jdbc/src/test/java/course/ch26/exercises/StudentDaoTest.java) · [Solution](source.html?path=26-database-access-with-jdbc/solutions/course/ch26/exercises/StudentDao.java)</span>
+2. **TransactionManager** (Practice) — wrap work in commit/rollback<br><span class="exercise-links">[Test](source.html?path=26-database-access-with-jdbc/src/test/java/course/ch26/exercises/TransactionManagerTest.java) · [Solution](source.html?path=26-database-access-with-jdbc/solutions/course/ch26/exercises/TransactionManager.java)</span>
+3. **GenericDao** (Challenge) — reusable query helper with `RowMapper`<br><span class="exercise-links">[Test](source.html?path=26-database-access-with-jdbc/src/test/java/course/ch26/exercises/GenericDaoTest.java) · [Solution](source.html?path=26-database-access-with-jdbc/solutions/course/ch26/exercises/GenericDao.java)</span>
 
 ```bash
 mvn test -pl 26-database-access-with-jdbc -Dtest="StudentDaoTest"
@@ -5053,9 +5053,9 @@ Do not use preview APIs in production without understanding stability risk.
 
 | File | Topic |
 |------|-------|
-| [`PatternMatchingSwitch`](../27-modern-java-features/src/main/java/course/ch27/examples/PatternMatchingSwitch.java) | Type patterns, null cases, `when` guards |
-| [`UnnamedVariables`](../27-modern-java-features/src/main/java/course/ch27/examples/UnnamedVariables.java) | `_` in loops, catch, lambdas, record patterns |
-| [`GuardedPatterns`](../27-modern-java-features/src/main/java/course/ch27/examples/GuardedPatterns.java) | Sealed `Shape` hierarchy with exhaustive switch |
+| [`PatternMatchingSwitch`](source.html?path=27-modern-java-features/src/main/java/course/ch27/examples/PatternMatchingSwitch.java) | Type patterns, null cases, `when` guards |
+| [`UnnamedVariables`](source.html?path=27-modern-java-features/src/main/java/course/ch27/examples/UnnamedVariables.java) | `_` in loops, catch, lambdas, record patterns |
+| [`GuardedPatterns`](source.html?path=27-modern-java-features/src/main/java/course/ch27/examples/GuardedPatterns.java) | Sealed `Shape` hierarchy with exhaustive switch |
 
 ```bash
 mvn test -pl 27-modern-java-features
@@ -5065,9 +5065,9 @@ mvn test -pl 27-modern-java-features
 
 ## Exercises
 
-1. **ShapeFormatter** (Guided) — pattern matching switch with guards for squares<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/ShapeFormatterTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/ShapeFormatter.java)</span>
-2. **ExpressionEvaluator** (Practice) — evaluate sealed `Expr` hierarchy recursively<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/ExpressionEvaluatorTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/ExpressionEvaluator.java)</span>
-3. **JsonPrettyPrinter** (Challenge) — pretty-print sealed `JsonValue` with indentation<br><span class="exercise-links">[Test](../27-modern-java-features/src/test/java/course/ch27/exercises/JsonPrettyPrinterTest.java) · [Solution](../27-modern-java-features/solutions/course/ch27/exercises/JsonPrettyPrinter.java)</span>
+1. **ShapeFormatter** (Guided) — pattern matching switch with guards for squares<br><span class="exercise-links">[Test](source.html?path=27-modern-java-features/src/test/java/course/ch27/exercises/ShapeFormatterTest.java) · [Solution](source.html?path=27-modern-java-features/solutions/course/ch27/exercises/ShapeFormatter.java)</span>
+2. **ExpressionEvaluator** (Practice) — evaluate sealed `Expr` hierarchy recursively<br><span class="exercise-links">[Test](source.html?path=27-modern-java-features/src/test/java/course/ch27/exercises/ExpressionEvaluatorTest.java) · [Solution](source.html?path=27-modern-java-features/solutions/course/ch27/exercises/ExpressionEvaluator.java)</span>
+3. **JsonPrettyPrinter** (Challenge) — pretty-print sealed `JsonValue` with indentation<br><span class="exercise-links">[Test](source.html?path=27-modern-java-features/src/test/java/course/ch27/exercises/JsonPrettyPrinterTest.java) · [Solution](source.html?path=27-modern-java-features/solutions/course/ch27/exercises/JsonPrettyPrinter.java)</span>
 
 ```bash
 mvn test -pl 27-modern-java-features -Dtest="ShapeFormatterTest"
@@ -5237,9 +5237,9 @@ java -XX:+HeapDumpOnOutOfMemoryError MyApp
 
 | File | Topic |
 |------|-------|
-| [`ClassLoadingOrder`](../28-jvm-internals/src/main/java/course/ch28/examples/ClassLoadingOrder.java) | Static and instance initialization order |
-| [`MemoryDemo`](../28-jvm-internals/src/main/java/course/ch28/examples/MemoryDemo.java) | Heap sizing via `Runtime`, allocation, `System.gc()` |
-| [`GCObserver`](../28-jvm-internals/src/main/java/course/ch28/examples/GCObserver.java) | GC statistics via `GarbageCollectorMXBean` |
+| [`ClassLoadingOrder`](source.html?path=28-jvm-internals/src/main/java/course/ch28/examples/ClassLoadingOrder.java) | Static and instance initialization order |
+| [`MemoryDemo`](source.html?path=28-jvm-internals/src/main/java/course/ch28/examples/MemoryDemo.java) | Heap sizing via `Runtime`, allocation, `System.gc()` |
+| [`GCObserver`](source.html?path=28-jvm-internals/src/main/java/course/ch28/examples/GCObserver.java) | GC statistics via `GarbageCollectorMXBean` |
 
 ```bash
 mvn test -pl 28-jvm-internals
@@ -5249,9 +5249,9 @@ mvn test -pl 28-jvm-internals
 
 ## Exercises
 
-1. **MemoryAnalyzer** (Guided) — report heap usage with `Runtime`<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/MemoryAnalyzerTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/MemoryAnalyzer.java)</span>
-2. **ClassInspector** (Practice) — extract class metadata via reflection<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/ClassInspectorTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/ClassInspector.java)</span>
-3. **ObjectSizeEstimator** (Challenge) — estimate sizes with HotSpot heuristics<br><span class="exercise-links">[Test](../28-jvm-internals/src/test/java/course/ch28/exercises/ObjectSizeEstimatorTest.java) · [Solution](../28-jvm-internals/solutions/course/ch28/exercises/ObjectSizeEstimator.java)</span>
+1. **MemoryAnalyzer** (Guided) — report heap usage with `Runtime`<br><span class="exercise-links">[Test](source.html?path=28-jvm-internals/src/test/java/course/ch28/exercises/MemoryAnalyzerTest.java) · [Solution](source.html?path=28-jvm-internals/solutions/course/ch28/exercises/MemoryAnalyzer.java)</span>
+2. **ClassInspector** (Practice) — extract class metadata via reflection<br><span class="exercise-links">[Test](source.html?path=28-jvm-internals/src/test/java/course/ch28/exercises/ClassInspectorTest.java) · [Solution](source.html?path=28-jvm-internals/solutions/course/ch28/exercises/ClassInspector.java)</span>
+3. **ObjectSizeEstimator** (Challenge) — estimate sizes with HotSpot heuristics<br><span class="exercise-links">[Test](source.html?path=28-jvm-internals/src/test/java/course/ch28/exercises/ObjectSizeEstimatorTest.java) · [Solution](source.html?path=28-jvm-internals/solutions/course/ch28/exercises/ObjectSizeEstimator.java)</span>
 
 ```bash
 mvn test -pl 28-jvm-internals -Dtest="MemoryAnalyzerTest"
@@ -5408,10 +5408,10 @@ Use when: an object has many optional parameters, or construction involves multi
 
 | File | Topic |
 |------|-------|
-| [`StrategyPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/StrategyPattern.java) | Pricing strategies (no/percentage/fixed) |
-| [`ObserverPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/ObserverPattern.java) | Weather station with temperature observers |
-| [`BuilderPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/BuilderPattern.java) | Fluent pizza builder |
-| [`FactoryPattern`](../29-design-principles-and-patterns/src/main/java/course/ch29/examples/FactoryPattern.java) | Vehicle factory by type name |
+| [`StrategyPattern`](source.html?path=29-design-principles-and-patterns/src/main/java/course/ch29/examples/StrategyPattern.java) | Pricing strategies (no/percentage/fixed) |
+| [`ObserverPattern`](source.html?path=29-design-principles-and-patterns/src/main/java/course/ch29/examples/ObserverPattern.java) | Weather station with temperature observers |
+| [`BuilderPattern`](source.html?path=29-design-principles-and-patterns/src/main/java/course/ch29/examples/BuilderPattern.java) | Fluent pizza builder |
+| [`FactoryPattern`](source.html?path=29-design-principles-and-patterns/src/main/java/course/ch29/examples/FactoryPattern.java) | Vehicle factory by type name |
 
 ```bash
 mvn test -pl 29-design-principles-and-patterns
@@ -5421,9 +5421,9 @@ mvn test -pl 29-design-principles-and-patterns
 
 ## Exercises
 
-1. **NotificationStrategy** (Guided) — email, SMS, and push notification strategies<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/NotificationStrategyTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/NotificationStrategy.java)</span>
-2. **EventSystem** (Practice) — generic event bus with subscribe/publish<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/EventSystemTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/EventSystem.java)</span>
-3. **QueryBuilder** (Challenge) — SQL SELECT with optional WHERE, ORDER BY, LIMIT<br><span class="exercise-links">[Test](../29-design-principles-and-patterns/src/test/java/course/ch29/exercises/QueryBuilderTest.java) · [Solution](../29-design-principles-and-patterns/solutions/course/ch29/exercises/QueryBuilder.java)</span>
+1. **NotificationStrategy** (Guided) — email, SMS, and push notification strategies<br><span class="exercise-links">[Test](source.html?path=29-design-principles-and-patterns/src/test/java/course/ch29/exercises/NotificationStrategyTest.java) · [Solution](source.html?path=29-design-principles-and-patterns/solutions/course/ch29/exercises/NotificationStrategy.java)</span>
+2. **EventSystem** (Practice) — generic event bus with subscribe/publish<br><span class="exercise-links">[Test](source.html?path=29-design-principles-and-patterns/src/test/java/course/ch29/exercises/EventSystemTest.java) · [Solution](source.html?path=29-design-principles-and-patterns/solutions/course/ch29/exercises/EventSystem.java)</span>
+3. **QueryBuilder** (Challenge) — SQL SELECT with optional WHERE, ORDER BY, LIMIT<br><span class="exercise-links">[Test](source.html?path=29-design-principles-and-patterns/src/test/java/course/ch29/exercises/QueryBuilderTest.java) · [Solution](source.html?path=29-design-principles-and-patterns/solutions/course/ch29/exercises/QueryBuilder.java)</span>
 
 ```bash
 mvn test -pl 29-design-principles-and-patterns -Dtest="NotificationStrategyTest"

@@ -40,6 +40,8 @@ jobs:
         run: |
           mkdir -p _site/quizzes
           cp slides/index.html _site/index.html
+          cp slides/source.html _site/source.html
+          cp slides/sources.js _site/sources.js
           cp slides/reveal-theme.css _site/reveal-theme.css
           cp quizzes/index.html _site/quizzes/index.html
           cp quizzes/reveal-theme.css _site/quizzes/reveal-theme.css
