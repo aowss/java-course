@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/monokai.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    :root {
+      --jc-primary: #1a5276;
+      --jc-accent: #e67e22;
+      --jc-bg: #f4f6f8;
+      --jc-text: #2c3e50;
+      --jc-muted: #5d6d7e;
+      --jc-code-bg: #272822;
+      --jc-border: #d5dbdb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--jc-bg);
+      color: var(--jc-text);
+      line-height: 1.55;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 3px solid var(--jc-accent);
+    }
+
+    h1.page-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--jc-primary);
+    }
+
+    .path {
+      margin: 0.2rem 0 0;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      color: var(--jc-muted);
+    }
+
+    .actions a {
+      color: var(--jc-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    article {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+
+    article h1,
+    article h2,
+    article h3,
+    article h4 {
+      color: var(--jc-primary);
+      line-height: 1.25;
+      margin: 1.6em 0 0.5em;
+    }
+
+    article h1 { font-size: 1.8rem; }
+    article h2 {
+      font-size: 1.35rem;
+      padding-bottom: 0.2em;
+      border-bottom: 3px solid var(--jc-accent);
+    }
+    article h3 { font-size: 1.1rem; color: #2e86ab; }
+
+    article p { margin: 0.7em 0; }
+
+    article a { color: #1a5276; }
+
+    article code {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.9em;
+      background: #e8eef2;
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+    }
+
+    article pre {
+      margin: 1em 0;
+      padding: 1rem;
+      overflow: auto;
+      background: var(--jc-code-bg);
+      border-radius: 8px;
+    }
+
+    article pre code {
+      background: transparent;
+      padding: 0;
+      color: #f8f8f2;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    article th,
+    article td {
+      border: 1px solid var(--jc-border);
+      padding: 0.45em 0.7em;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    article th { background: #eaf2f6; }
+
+    article blockquote {
+      margin: 1em 0;
+      padding: 0.2em 1em;
+      border-left: 4px solid var(--jc-accent);
+      background: #fff;
+      color: var(--jc-text);
+    }
+
+    article img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1em 0;
+      background: #fff;
+      border: 1px solid var(--jc-border);
+      border-radius: 6px;
+    }
+
+    article .mermaid {
+      margin: 1em 0;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid var(--jc-border);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .message {
+      margin: 2rem auto;
+      max-width: 40rem;
+      padding: 1.25rem 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--jc-border);
+    }
+
+    .message h1 { margin-top: 0; font-size: 1.1rem; color: var(--jc-primary); }
+    .message a { color: var(--jc-primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 class="page-title" id="filename">Lesson</h1>
+      <p class="path" id="filepath"></p>
+    </div>
+    <div class="actions" id="actions" hidden>
+      <a id="github" href="" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </header>
+  <article id="doc"><p class="message">Loading…</p></article>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+  <script src="sources.js"></script>
+  <script>
+    const GITHUB_BLOB = "https://github.com/aowss/java-course/blob/main/";
+    const SAFE_PATH = /^(?:[0-9]{2}-[a-z0-9-]+|bridges|appendices|quizzes)(?:\/[A-Za-z0-9_.+-]+)+\.md$/;
+
+    const params = new URLSearchParams(location.search);
+    const path = params.get("path") || "";
+    const filename = path.split("/").pop() || "Lesson";
+    const githubUrl = GITHUB_BLOB + path.split("/").map(encodeURIComponent).join("/");
+    const docDir = path.includes("/") ? path.slice(0, path.lastIndexOf("/")) : "";
+
+    document.title = filename;
+    document.getElementById("filename").textContent = filename;
+    const filepath = document.getElementById("filepath");
+    path.split("/").forEach((part, index) => {
+      if (index) {
+        filepath.append("/");
+        filepath.append(document.createElement("wbr"));
+      }
+      filepath.append(part);
+    });
+
+    function escapeHtml(value) {
+      return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function slug(value) {
+      return value.toLowerCase().trim()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-");
+    }
+
+    function resolveRelative(href) {
+      const hashAt = href.indexOf("#");
+      const hash = hashAt >= 0 ? href.slice(hashAt) : "";
+      const raw = hashAt >= 0 ? href.slice(0, hashAt) : href;
+      const stack = docDir.split("/").filter(Boolean);
+      raw.split("/").forEach((part) => {
+        if (!part || part === ".") return;
+        if (part === "..") stack.pop();
+        else stack.push(part);
+      });
+      return stack.join("/") + hash;
+    }
+
+    function fileHref(href) {
+      if (!href || href.startsWith("#") || /^(https?:|mailto:)/.test(href)) return href;
+      const resolved = resolveRelative(href);
+      const bare = resolved.split("#")[0];
+      const hash = resolved.includes("#") ? resolved.slice(resolved.indexOf("#")) : "";
+      if (bare.endsWith(".md")) return "preview.html?path=" + encodeURI(bare) + hash;
+      if (bare.endsWith(".java")) return "source.html?path=" + encodeURI(bare);
+      const prefix = location.pathname.includes("/slides/") ? "../" : "";
+      return prefix + resolved;
+    }
+
+    function showError(text) {
+      const doc = document.getElementById("doc");
+      doc.innerHTML = "";
+      const box = document.createElement("div");
+      box.className = "message";
+      const heading = document.createElement("h1");
+      heading.textContent = "Could not open this lesson";
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      box.append(heading, paragraph);
+      doc.append(box);
+    }
+
+    function render(markdown) {
+      marked.use({
+        gfm: true,
+        renderer: {
+          heading(token) {
+            const inner = this.parser.parseInline(token.tokens);
+            return `<h${token.depth} id="${slug(token.text)}">${inner}</h${token.depth}>`;
+          },
+          link(token) {
+            const inner = this.parser.parseInline(token.tokens);
+            const title = token.title ? ` title="${escapeHtml(token.title)}"` : "";
+            return `<a href="${escapeHtml(fileHref(token.href))}"${title}>${inner}</a>`;
+          },
+          image(token) {
+            const alt = escapeHtml(token.text || "");
+            return `<img src="${escapeHtml(fileHref(token.href))}" alt="${alt}">`;
+          },
+          code(token) {
+            const lang = (token.lang || "").trim();
+            if (lang === "mermaid") {
+              return `<div class="mermaid">${escapeHtml(token.text)}</div>`;
+            }
+            const language = lang && hljs.getLanguage(lang) ? lang : "plaintext";
+            const highlighted = hljs.highlight(token.text, { language }).value;
+            return `<pre><code class="hljs language-${escapeHtml(language)}">${highlighted}</code></pre>`;
+          }
+        }
+      });
+
+      const doc = document.getElementById("doc");
+      doc.innerHTML = marked.parse(markdown);
+      const title = doc.querySelector("h1");
+      if (title && title.textContent) document.title = title.textContent;
+      document.getElementById("github").href = githubUrl;
+      document.getElementById("actions").hidden = false;
+      if (window.mermaid) {
+        mermaid.initialize({ startOnLoad: false, theme: "neutral", securityLevel: "strict" });
+        mermaid.run({ querySelector: "#doc .mermaid" }).catch(() => {});
+      }
+    }
+
+    function embeddedSource() {
+      const table = window.COURSE_SOURCES;
+      if (!table || !Object.prototype.hasOwnProperty.call(table, path)) return null;
+      return table[path];
+    }
+
+    const embedded = SAFE_PATH.test(path) ? embeddedSource() : null;
+    if (!SAFE_PATH.test(path)) {
+      showError("The link is missing a Markdown file path.");
+    } else if (embedded != null) {
+      render(embedded);
+    } else if (location.protocol === "file:") {
+      showError("This copy of the deck has no embedded lesson. Run ./slides/build-full-deck.sh, then reopen the slides.");
+    } else {
+      const prefix = location.pathname.includes("/slides/") ? "../" : "";
+      fetch(prefix + path)
+        .then((response) => {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.text();
+        })
+        .then(render)
+        .catch(() => showError("This lesson is not available from the slide site."));
+    }
+  </script>
+</body>
+</html>

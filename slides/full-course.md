@@ -236,7 +236,7 @@ mvn test -pl 01-introduction-to-java -Dtest="GreetingTest"
 - Java 25 **compact source files** can use `void main()` and `java HelloWorld.java` — still bytecode on the JVM
 - Know how to read the **JDK API**: **Fields**, **Constructors**, **Methods**, then method **detail**
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../01-introduction-to-java/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=01-introduction-to-java/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html#jls-7.6">JLS §7.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/">Oracle Getting Started</a></span></aside>
 
 ---
@@ -351,7 +351,7 @@ var name = "Alice";         // inferred as String (Java 10+)
 
 <aside class="callout-note"><p><strong>Integer division truncates:</strong> <code>7 / 2</code> → <code>3</code>, not <code>3.5</code></p></aside>
 
-<aside class="callout-note"><p>Deeper precedence and evaluation rules: <a href="../appendices/operator-precedence/README.md">Operator Precedence appendix</a></p></aside>
+<aside class="callout-note"><p>Deeper precedence and evaluation rules: <a href="preview.html?path=appendices/operator-precedence/README.md">Operator Precedence appendix</a></p></aside>
 
 --
 
@@ -488,7 +488,7 @@ mvn test -pl 02-language-basics -Dtest="TemperatureConverterTest"
 - Arrays are fixed-size; for dynamic collections, see Chapter 12
 - Three comment styles: `//`, `/* */`, and `/**` (Javadoc — method tags in Chapter 3)
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../02-language-basics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=02-language-basics/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2">JLS §4.2</a> · <em>Effective Java</em> Item 61</span></aside>
 
 ---
@@ -707,7 +707,7 @@ mvn test -pl 03-methods -Dtest="MathUtilsTest"
 - Keep variable scope as **narrow** as possible
 - Use **Javadoc** (`@param`, `@return`, `@throws`) on public methods; run `javadoc` to publish HTML docs
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../03-methods/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=03-methods/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.4">JLS §8.4</a> · <em>Effective Java</em> Item 52</span></aside>
 
 ---
@@ -902,7 +902,7 @@ mvn test -pl 04-classes-and-objects -Dtest="RectangleTest"
 - `static` members belong to the class, not instances
 - Initialization blocks run in a fixed, predictable order
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../04-classes-and-objects/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=04-classes-and-objects/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.2">JLS §8.2</a> · <em>Effective Java</em> Items 15–16</span></aside>
 
 ---
@@ -1074,7 +1074,7 @@ mvn test -pl 05-inheritance-and-polymorphism -Dtest="AnimalTest"
 - **Abstract classes** define a contract subclasses must fulfill
 - Always override `hashCode` when you override `equals`; use `@Override` everywhere
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../05-inheritance-and-polymorphism/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=05-inheritance-and-polymorphism/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.1.4">JLS §8.1.4</a> · <em>Effective Java</em> Items 10–11</span></aside>
 
 ---
@@ -1246,7 +1246,7 @@ mvn test -pl 06-interfaces -Dtest="MeasurableTest"
 - `@FunctionalInterface` marks a SAM type, enabling **lambdas** and **method references**
 - A class can **implement multiple interfaces**, achieving flexible polymorphism
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../06-interfaces/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=06-interfaces/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.1">JLS §9.1</a> · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.4">JLS §9.4</a> · <em>Effective Java</em> Item 20</span></aside>
 
 ---
@@ -1413,7 +1413,7 @@ mvn test -pl 07-encapsulation-and-data-modeling -Dtest="ColorTest"
 - Pattern matching **`instanceof`** eliminates manual casting in conditionals
 - Pattern matching **`switch`** provides concise, compiler-checked dispatch over subtypes
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../07-encapsulation-and-data-modeling/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=07-encapsulation-and-data-modeling/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10">JLS §8.10</a> · <a href="https://openjdk.org/jeps/409">JEP 409</a> · <a href="https://openjdk.org/jeps/394">JEP 394</a> · <a href="https://openjdk.org/jeps/441">JEP 441</a></span></aside>
 
 ---
@@ -1598,7 +1598,7 @@ mvn test -pl 08-exception-handling -Dtest="ValidatorTest"
 - **try-with-resources** is the standard pattern for closing resources
 - Prefer standard exception types with **informative messages**
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../08-exception-handling/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=08-exception-handling/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Items 69–75, 77–78 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-11.html">JLS §11</a></span></aside>
 
 ---
@@ -1814,7 +1814,7 @@ mvn test -pl 09-packages-and-modules -Dtest="PackageOrganizerTest"
 - **`ServiceLoader`** decouples interfaces from implementations, enabling plug-in architectures
 - Every module implicitly requires `java.base`; the JDK itself is modularized
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../09-packages-and-modules/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=09-packages-and-modules/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-7.html">JLS §7</a> · <a href="https://openjdk.org/jeps/261">JEP 261</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ServiceLoader.html">ServiceLoader Javadoc</a></span></aside>
 
 ---
@@ -2025,7 +2025,7 @@ mvn test -pl 10-strings-and-text -Dtest="WordCounterTest"
 - `String.format()` and `formatted()` provide powerful formatting with `%s`, `%d`, `%f`, etc.
 - `Pattern` and `Matcher` provide full regex support; `matches()`, `replaceAll()`, and `split()` offer shortcuts
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../10-strings-and-text/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=10-strings-and-text/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-3.html#jls-3.10.5">JLS §3.10.5</a> · <a href="https://openjdk.org/jeps/378">JEP 378</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/regex/Pattern.html">Pattern API</a></span></aside>
 
 ---
@@ -2248,7 +2248,7 @@ mvn test -pl 11-generics -Dtest="StackTest"
 - **Type erasure** removes generic info at runtime — no `instanceof`, no generic arrays
 - Prefer `List<String>` over raw `List`
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../11-generics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=11-generics/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 31 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.5">JLS §4.5</a></span></aside>
 
 ---
@@ -2420,7 +2420,7 @@ mvn test -pl 12-collections-framework -Dtest="FrequencyCounterTest"
 - Collections are **not thread-safe** unless designed for concurrency (Chapter 18)
 - Use **streams** (Chapter 14) for declarative collection processing
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../12-collections-framework/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=12-collections-framework/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 54 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.8">JLS §4.8</a></span></aside>
 
 ---
@@ -2581,7 +2581,7 @@ mvn test -pl 13-functional-programming -Dtest="StringFiltersTest"
 - Use `Predicate`, `Function`, `Consumer` from `java.util.function` — don't reinvent
 - Lambdas are the foundation of the **Streams API** (Chapter 14)
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../13-functional-programming/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=13-functional-programming/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 42 · <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.27">JLS §15.27</a></span></aside>
 
 ---
@@ -2766,7 +2766,7 @@ mvn test -pl 14-streams-api -Dtest="StreamExercisesTest"
 - **Parallel streams** help large CPU-bound workloads but add overhead for small data
 - Streams are **one-shot** — create a new stream for each pipeline
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../14-streams-api/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=14-streams-api/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Items 45, 48 · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html">java.util.stream</a></span></aside>
 
 ---
@@ -2924,7 +2924,7 @@ mvn test -pl 15-the-optional-type -Dtest="SafeParserTest"
 - **`filter`** narrows to values matching a predicate
 - Use Optional for **return types only** — not fields, parameters, or collections
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../15-the-optional-type/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=15-the-optional-type/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><em>Effective Java</em> Item 55 · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html">java.util.Optional</a></span></aside>
 
 ---
@@ -3092,7 +3092,7 @@ mvn test -pl 16-io-and-nio -Dtest="LineCounterTest"
 - `Files.walk()` returns a `Stream<Path>` that must be closed
 - Avoid Java serialization for data exchange — use JSON or CSV instead
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../16-io-and-nio/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=16-io-and-nio/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/package-summary.html">java.nio.file package</a> · <em>Effective Java</em> Item 85</span></aside>
 
 ---
@@ -3271,7 +3271,7 @@ mvn test -pl 17-threads-and-synchronization -Dtest="SafeCounterTest"
 - Acquire locks in a **consistent global order** to prevent deadlock
 - `volatile` provides visibility but **not** atomicity
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../17-threads-and-synchronization/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=17-threads-and-synchronization/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4">JLS §17.4 — Memory Model</a> · <em>Effective Java</em> Items 78–79</span></aside>
 
 ---
@@ -3435,7 +3435,7 @@ mvn test -pl 18-concurrency-utilities -Dtest="ParallelSumTest"
 - `ConcurrentHashMap` provides atomic compound operations without external synchronization
 - `AtomicInteger` and friends are the right tool for simple counters and flags
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../18-concurrency-utilities/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=18-concurrency-utilities/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html">java.util.concurrent</a> · <em>Effective Java</em> Item 81</span></aside>
 
 ---
@@ -3595,7 +3595,7 @@ mvn test -pl 19-virtual-threads -Dtest="VirtualThreadPoolTest"
 - **Structured concurrency** treats subtasks as a unit — no thread leaks, clear error propagation
 - Avoid pooling VTs; avoid `synchronized` on blocking paths; prefer `ReentrantLock`
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../19-virtual-threads/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=19-virtual-threads/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://openjdk.org/jeps/444">JEP 444: Virtual Threads</a> · <a href="https://openjdk.org/jeps/453">JEP 453: Structured Concurrency</a> · <em>Effective Java</em> Item 80</span></aside>
 
 ---
@@ -3812,7 +3812,7 @@ mvn test -pl 20-build-tools -Dtest="DependencyAnalyzerTest"
 - **Gradle** offers a flexible, script-based alternative with incremental builds
 - Always **pin dependency and plugin versions** for reproducible builds
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../20-build-tools/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=20-build-tools/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 Minutes</a> · <a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle User Manual</a></span></aside>
 
 ---
@@ -4034,7 +4034,7 @@ mvn test -pl 21-unit-testing-with-junit -Dtest="CalculatorTest"
 - **Parameterized tests** eliminate duplication; **nested tests** organize by state
 - `@DisplayName` makes test output human-readable
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../21-unit-testing-with-junit/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=21-unit-testing-with-junit/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a> · <a href="https://www.baeldung.com/parameterized-tests-junit-5">Parameterized Tests (Baeldung)</a></span></aside>
 
 ---
@@ -4190,7 +4190,7 @@ mvn test -pl 22-mocking-and-integration-testing -Dtest="UserServiceTest"
 - Use `@ExtendWith(MockitoExtension.class)` to initialize mocks
 - Over-mocking leads to brittle tests — mock only what you need to isolate
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../22-mocking-and-integration-testing/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=22-mocking-and-integration-testing/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html">Mockito documentation</a> · <em>Effective Java</em> Item 51</span></aside>
 
 ---
@@ -4357,7 +4357,7 @@ mvn test -pl 23-annotations-and-reflection -Dtest="ObjectInspectorTest"
 - **Custom annotations** power validation, serialization, and framework behavior
 - **Reflection** inspects types at runtime — use sparingly (performance and encapsulation costs)
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../23-annotations-and-reflection/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=23-annotations-and-reflection/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.6">JLS §9.6</a> · <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/package-summary.html">java.lang.reflect API</a></span></aside>
 
 ---
@@ -4509,7 +4509,7 @@ mvn test -pl 24-date-and-time-api -Dtest="AgeCalculatorTest"
 - **`Duration`** measures time; **`Period`** measures calendar dates
 - **`DateTimeFormatter`** is immutable and thread-safe — define formatters as constants
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../24-date-and-time-api/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=24-date-and-time-api/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/package-summary.html">java.time API</a> · <a href="https://openjdk.org/jeps/150">JEP 150</a></span></aside>
 
 ---
@@ -4690,7 +4690,7 @@ mvn test -pl 25-networking-basics -Dtest="RequestBuilderTest"
 - Accept **injectable dependencies** so network code can be tested locally
 - Handle **status codes** explicitly — do not assume every response is 200
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../25-networking-basics/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=25-networking-basics/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html">HttpClient API</a> · <a href="https://openjdk.org/jeps/321">JEP 321</a></span></aside>
 
 ---
@@ -4911,7 +4911,7 @@ mvn test -pl 26-database-access-with-jdbc -Dtest="StudentDaoTest"
 - In production, use a **connection pool** — not `DriverManager` per request
 - Tests can use in-memory **H2** without external infrastructure
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../26-database-access-with-jdbc/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=26-database-access-with-jdbc/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">JDBC Tutorial</a> · <a href="https://github.com/brettwooldridge/HikariCP">HikariCP</a></span></aside>
 
 ---
@@ -5083,7 +5083,7 @@ mvn test -pl 27-modern-java-features -Dtest="ShapeFormatterTest"
 - **Sealed types + patterns** give compile-time exhaustiveness checking
 - **Preview features** require explicit opt-in — prefer finalized APIs for production
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../27-modern-java-features/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=27-modern-java-features/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://openjdk.org/jeps/441">JEP 441</a> · <a href="https://openjdk.org/jeps/456">JEP 456</a> · <a href="https://openjdk.org/jeps/409">JEP 409</a></span></aside>
 
 ---
@@ -5267,7 +5267,7 @@ mvn test -pl 28-jvm-internals -Dtest="MemoryAnalyzerTest"
 - The **JIT compiler** profiles hot methods and compiles them after warmup
 - **Diagnostic tools** (`jcmd`, `jstat`, `jfr`, JMX) observe memory, GC, and threads at runtime
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../28-jvm-internals/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=28-jvm-internals/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html">JVM Spec Ch. 5</a> · <a href="https://www.oreilly.com/library/view/java-performance-2nd/9781492056102/">Java Performance (Oaks)</a></span></aside>
 
 ---
@@ -5439,7 +5439,7 @@ mvn test -pl 29-design-principles-and-patterns -Dtest="NotificationStrategyTest"
 - **Factory** hides concrete types and centralizes creation logic
 - **Builder** makes complex object construction readable and safe
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../29-design-principles-and-patterns/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=29-design-principles-and-patterns/README.md"><code>README.md</code></a></span></aside>
 <aside class="link-box slide-footer further-reading"><span class="footer-label">Further reading</span><span class="footer-links"><a href="https://www.oreilly.com/library/view/design-patterns-elements/0201633612/">GoF Design Patterns</a> · <a href="https://refactoring.guru/design-patterns">Refactoring Guru</a></span></aside>
 
 ---
@@ -5661,4 +5661,4 @@ Goodbye.
 - A complete application combines language features, design patterns, I/O, testing, and build tooling
 - This project is a **foundation** — extend it to make it your own
 
-<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="../30-capstone-project/README.md"><code>README.md</code></a></span></aside>
+<aside class="link-box slide-footer lesson-link"><span class="footer-label">Full lesson</span><span class="footer-links"><a href="preview.html?path=30-capstone-project/README.md"><code>README.md</code></a></span></aside>

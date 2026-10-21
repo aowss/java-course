@@ -138,7 +138,7 @@ html_doc = f"""<!DOCTYPE html>
         const link = event.target.closest("a");
         if (!link) return;
         const href = link.getAttribute("href") || "";
-        if (!href.includes("source.html?path=")) return;
+        if (!href.includes("source.html?path=") && !href.includes("preview.html?path=")) return;
         event.preventDefault();
         window.open(link.href, "_blank", "noopener");
       }});
@@ -153,8 +153,11 @@ index_html = out_html.with_name("index.html")
 index_html.write_text(html_doc, encoding="utf-8")
 
 sources = {}
-for path in sorted(root.rglob("*.java")):
-    if any(part in {"slides", "target", ".git"} for part in path.parts):
+skip_parts = {"slides", "target", ".git"}
+for path in sorted(root.rglob("*")):
+    if not path.is_file() or path.suffix not in {".java", ".md"}:
+        continue
+    if path.name == "slides.md" or any(part in skip_parts for part in path.parts):
         continue
     rel = path.relative_to(root).as_posix()
     sources[rel] = path.read_text(encoding="utf-8")

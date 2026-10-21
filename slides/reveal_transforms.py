@@ -28,6 +28,11 @@ class SlideContext:
         repo_path = "/".join((self.chapter_slug, relative_to_chapter))
         return "source.html?path=" + quote(repo_path, safe="/")
 
+    def preview_url(self, relative_to_chapter: str) -> str:
+        """Rendered Markdown preview next to the deck HTML."""
+        repo_path = "/".join((self.chapter_slug, relative_to_chapter))
+        return "preview.html?path=" + quote(repo_path, safe="/")
+
     def quiz_deck_url(self) -> str | None:
         if self.quiz_hash is None:
             return None
@@ -178,7 +183,10 @@ def rewrite_repo_links(slide: str, ctx: SlideContext) -> str:
         return "/".join(segments)
 
     def repl(match: re.Match[str]) -> str:
-        return f"]({to_url(f'appendices/{match.group(1)}')})"
+        relative = f"appendices/{match.group(1)}"
+        if relative.endswith(".md"):
+            return "](preview.html?path=" + quote(relative, safe="/") + ")"
+        return f"]({to_url(relative)})"
 
     return re.sub(r"\]\((?:\.\./)+appendices/([^)]+)\)", repl, slide)
 
@@ -408,7 +416,7 @@ def transform_full_lesson(slide: str, ctx: SlideContext) -> str:
     def repl(match: re.Match[str]) -> str:
         body = match.group(1).strip()
         body = re.sub(r"\s*·\s*Solutions:\s*`solutions/`", "", body)
-        readme_url = ctx.chapter_url("README.md")
+        readme_url = ctx.preview_url("README.md")
         body = re.sub(
             r"\[`README\.md`\]\(README\.md\)",
             f"[`README.md`]({readme_url})",
